@@ -1,0 +1,3234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="Crystal Docs 1.1.0">
+<meta name="crystal_docs.project_version" content="main">
+<meta name="crystal_docs.project_name" content="ph-core">
+
+
+
+<link href="../css/style.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="../js/doc.js"></script>
+
+  <meta name="repository-name" content="ph-core">
+  <title>Phase::MultiIndexable(T) - ph-core main</title>
+  <script type="text/javascript">
+    CrystalDocs.base_path = "../";
+  </script>
+</head>
+<body>
+
+<svg class="hidden">
+  <symbol id="octicon-link" viewBox="0 0 16 16">
+    <path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path>
+  </symbol>
+</svg>
+<div class="sidebar">
+  <div class="sidebar-header">
+    <div class="search-box">
+      <input type="search" class="search-input" placeholder="Search..." spellcheck="false" aria-label="Search">
+    </div>
+
+    <div class="project-summary">
+      <h1 class="project-name">
+        <a href="../index.html">
+          ph-core
+        </a>
+      </h1>
+
+      <span class="project-version">
+        main
+      </span>
+    </div>
+  </div>
+
+  <div class="search-results hidden">
+    <ul class="search-list"></ul>
+  </div>
+
+  <div class="types-list">
+    <ul>
+  
+  <li class=" " data-id="ph-core/Complex" data-name="complex">
+      <a href="../Complex.html">Complex</a>
+      
+    </li>
+  
+  <li class=" " data-id="ph-core/Number" data-name="number">
+      <a href="../Number.html">Number</a>
+      
+    </li>
+  
+  <li class="parent open current" data-id="ph-core/Phase" data-name="phase">
+      <a href="../Phase.html">Phase</a>
+      
+        <ul>
+  
+  <li class=" " data-id="ph-core/Phase/CartesianProduct" data-name="phase::cartesianproduct(*u)">
+      <a href="../Phase/CartesianProduct.html">CartesianProduct</a>
+      
+    </li>
+  
+  <li class="parent " data-id="ph-core/Phase/ChunkAndRegionIterator" data-name="phase::chunkandregioniterator(e, i)">
+      <a href="../Phase/ChunkAndRegionIterator.html">ChunkAndRegionIterator</a>
+      
+        <ul>
+  
+  <li class=" " data-id="ph-core/Phase/ChunkAndRegionIterator/FB" data-name="phase::chunkandregioniterator::fb">
+      <a href="../Phase/ChunkAndRegionIterator/FB.html">FB</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class="parent " data-id="ph-core/Phase/ChunkIterator" data-name="phase::chunkiterator(e, i)">
+      <a href="../Phase/ChunkIterator.html">ChunkIterator</a>
+      
+        <ul>
+  
+  <li class=" " data-id="ph-core/Phase/ChunkIterator/FB" data-name="phase::chunkiterator::fb">
+      <a href="../Phase/ChunkIterator/FB.html">FB</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class=" " data-id="ph-core/Phase/ColexIterator" data-name="phase::colexiterator(t)">
+      <a href="../Phase/ColexIterator.html">ColexIterator</a>
+      
+    </li>
+  
+  <li class=" " data-id="ph-core/Phase/ComposedTransform" data-name="phase::composedtransform">
+      <a href="../Phase/ComposedTransform.html">ComposedTransform</a>
+      
+    </li>
+  
+  <li class=" " data-id="ph-core/Phase/Coord" data-name="phase::coord">
+      <a href="../Phase/Coord.html">Coord</a>
+      
+    </li>
+  
+  <li class=" " data-id="ph-core/Phase/CoordIterator" data-name="phase::coorditerator(t)">
+      <a href="../Phase/CoordIterator.html">CoordIterator</a>
+      
+    </li>
+  
+  <li class=" " data-id="ph-core/Phase/CoordTransform" data-name="phase::coordtransform">
+      <a href="../Phase/CoordTransform.html">CoordTransform</a>
+      
+    </li>
+  
+  <li class=" " data-id="ph-core/Phase/CoordUtil" data-name="phase::coordutil">
+      <a href="../Phase/CoordUtil.html">CoordUtil</a>
+      
+    </li>
+  
+  <li class=" " data-id="ph-core/Phase/DimensionError" data-name="phase::dimensionerror">
+      <a href="../Phase/DimensionError.html">DimensionError</a>
+      
+    </li>
+  
+  <li class=" " data-id="ph-core/Phase/ElemAndCoordIterator" data-name="phase::elemandcoorditerator(e, i)">
+      <a href="../Phase/ElemAndCoordIterator.html">ElemAndCoordIterator</a>
+      
+    </li>
+  
+  <li class=" " data-id="ph-core/Phase/ElemIterator" data-name="phase::elemiterator(e, i)">
+      <a href="../Phase/ElemIterator.html">ElemIterator</a>
+      
+    </li>
+  
+  <li class=" " data-id="ph-core/Phase/GeneralCoordIterator" data-name="phase::generalcoorditerator(t)">
+      <a href="../Phase/GeneralCoordIterator.html">GeneralCoordIterator</a>
+      
+    </li>
+  
+  <li class=" " data-id="ph-core/Phase/IdentityTransform" data-name="phase::identitytransform">
+      <a href="../Phase/IdentityTransform.html">IdentityTransform</a>
+      
+    </li>
+  
+  <li class=" " data-id="ph-core/Phase/IndexRegion" data-name="phase::indexregion(t)">
+      <a href="../Phase/IndexRegion.html">IndexRegion</a>
+      
+    </li>
+  
+  <li class=" " data-id="ph-core/Phase/LexIterator" data-name="phase::lexiterator(t)">
+      <a href="../Phase/LexIterator.html">LexIterator</a>
+      
+    </li>
+  
+  <li class="parent open current" data-id="ph-core/Phase/MultiIndexable" data-name="phase::multiindexable(t)">
+      <a href="../Phase/MultiIndexable.html">MultiIndexable</a>
+      
+        <ul>
+  
+  <li class="parent " data-id="ph-core/Phase/MultiIndexable/Formatter" data-name="phase::multiindexable::formatter(e, i)">
+      <a href="../Phase/MultiIndexable/Formatter.html">Formatter</a>
+      
+        <ul>
+  
+  <li class="parent " data-id="ph-core/Phase/MultiIndexable/Formatter/Settings" data-name="phase::multiindexable::formatter::settings">
+      <a href="../Phase/MultiIndexable/Formatter/Settings.html">Settings</a>
+      
+        <ul>
+  
+  <li class=" " data-id="ph-core/Phase/MultiIndexable/Formatter/Settings/ColorConverter" data-name="phase::multiindexable::formatter::settings::colorconverter">
+      <a href="../Phase/MultiIndexable/Formatter/Settings/ColorConverter.html">ColorConverter</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class=" " data-id="ph-core/Phase/MultiWritable" data-name="phase::multiwritable(t)">
+      <a href="../Phase/MultiWritable.html">MultiWritable</a>
+      
+    </li>
+  
+  <li class="parent " data-id="ph-core/Phase/NArray" data-name="phase::narray(t)">
+      <a href="../Phase/NArray.html">NArray</a>
+      
+        <ul>
+  
+  <li class="parent " data-id="ph-core/Phase/NArray/BufferUtil" data-name="phase::narray::bufferutil">
+      <a href="../Phase/NArray/BufferUtil.html">BufferUtil</a>
+      
+        <ul>
+  
+  <li class=" " data-id="ph-core/Phase/NArray/BufferUtil/BufferedECIterator" data-name="phase::narray::bufferutil::bufferedeciterator(t, i)">
+      <a href="../Phase/NArray/BufferUtil/BufferedECIterator.html">BufferedECIterator</a>
+      
+    </li>
+  
+  <li class=" " data-id="ph-core/Phase/NArray/BufferUtil/IndexedColexIterator" data-name="phase::narray::bufferutil::indexedcolexiterator(i)">
+      <a href="../Phase/NArray/BufferUtil/IndexedColexIterator.html">IndexedColexIterator</a>
+      
+    </li>
+  
+  <li class=" " data-id="ph-core/Phase/NArray/BufferUtil/IndexedCoordIterator" data-name="phase::narray::bufferutil::indexedcoorditerator(i)">
+      <a href="../Phase/NArray/BufferUtil/IndexedCoordIterator.html">IndexedCoordIterator</a>
+      
+    </li>
+  
+  <li class=" " data-id="ph-core/Phase/NArray/BufferUtil/IndexedLexIterator" data-name="phase::narray::bufferutil::indexedlexiterator(i)">
+      <a href="../Phase/NArray/BufferUtil/IndexedLexIterator.html">IndexedLexIterator</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class=" " data-id="ph-core/Phase/PermuteTransform" data-name="phase::permutetransform">
+      <a href="../Phase/PermuteTransform.html">PermuteTransform</a>
+      
+    </li>
+  
+  <li class=" " data-id="ph-core/Phase/ProcView" data-name="phase::procview(s, t, r)">
+      <a href="../Phase/ProcView.html">ProcView</a>
+      
+    </li>
+  
+  <li class=" " data-id="ph-core/Phase/ReadonlyView" data-name="phase::readonlyview(s, r)">
+      <a href="../Phase/ReadonlyView.html">ReadonlyView</a>
+      
+    </li>
+  
+  <li class="parent " data-id="ph-core/Phase/RegionIterator" data-name="phase::regioniterator(i)">
+      <a href="../Phase/RegionIterator.html">RegionIterator</a>
+      
+        <ul>
+  
+  <li class=" " data-id="ph-core/Phase/RegionIterator/FringeBehaviour" data-name="phase::regioniterator::fringebehaviour">
+      <a href="../Phase/RegionIterator/FringeBehaviour.html">FringeBehaviour</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class=" " data-id="ph-core/Phase/RegionTransform" data-name="phase::regiontransform">
+      <a href="../Phase/RegionTransform.html">RegionTransform</a>
+      
+    </li>
+  
+  <li class=" " data-id="ph-core/Phase/ReshapeTransform" data-name="phase::reshapetransform">
+      <a href="../Phase/ReshapeTransform.html">ReshapeTransform</a>
+      
+    </li>
+  
+  <li class=" " data-id="ph-core/Phase/ReverseTransform" data-name="phase::reversetransform">
+      <a href="../Phase/ReverseTransform.html">ReverseTransform</a>
+      
+    </li>
+  
+  <li class=" " data-id="ph-core/Phase/Shape" data-name="phase::shape">
+      <a href="../Phase/Shape.html">Shape</a>
+      
+    </li>
+  
+  <li class=" " data-id="ph-core/Phase/ShapeError" data-name="phase::shapeerror">
+      <a href="../Phase/ShapeError.html">ShapeError</a>
+      
+    </li>
+  
+  <li class=" " data-id="ph-core/Phase/ShapeUtil" data-name="phase::shapeutil">
+      <a href="../Phase/ShapeUtil.html">ShapeUtil</a>
+      
+    </li>
+  
+  <li class=" " data-id="ph-core/Phase/SpecificCartesianProduct" data-name="phase::specificcartesianproduct">
+      <a href="../Phase/SpecificCartesianProduct.html">SpecificCartesianProduct</a>
+      
+    </li>
+  
+  <li class=" " data-id="ph-core/Phase/View" data-name="phase::view(s, r)">
+      <a href="../Phase/View.html">View</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+</ul>
+
+  </div>
+</div>
+
+
+<div class="main-content">
+<h1 class="type-name">
+
+  <span class="kind">module</span> Phase::MultiIndexable(T)
+
+</h1>
+
+
+
+
+
+  <h2>
+    <a id="overview" class="anchor" href="#overview">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Overview
+  </h2>
+
+  <p>Assumptions:</p>
+
+<ul><li>length along every axis is finite and positive, and each element is positively indexed</li><li>size is stored as an Int32, i.e. there are no more than Int32::MAX elements.</li></ul>
+
+
+
+
+
+  <h2>
+    <a id="included-modules" class="anchor" href="#included-modules">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Included Modules
+  </h2>
+  <ul class="other-types-list">
+    
+      <li class="other-type">Enumerable(T)</li>
+    
+  </ul>
+
+
+
+
+
+
+
+  <h2>
+    <a id="direct-including-types" class="anchor" href="#direct-including-types">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Direct including types
+  </h2>
+  <ul class="other-types-list">
+    
+      <li class="other-type"><a href="../Phase/CartesianProduct.html">Phase::CartesianProduct(*U)</a></li>
+    
+      <li class="other-type"><a href="../Phase/IndexRegion.html">Phase::IndexRegion(T)</a></li>
+    
+      <li class="other-type"><a href="../Phase/NArray.html">Phase::NArray(T)</a></li>
+    
+      <li class="other-type"><a href="../Phase/ReadonlyView.html">Phase::ReadonlyView(S, R)</a></li>
+    
+  </ul>
+
+
+
+
+  <h2>
+    <a id="defined-in" class="anchor" href="#defined-in">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Defined in:
+  </h2>
+  
+    
+      <a href="https://github.com/in-phase/ph-core/blob/0ca19eb664ef717074bac168f5d3ad57ad063bb9/src/formatter/formatter.cr#L7" target="_blank">
+        formatter/formatter.cr
+      </a>
+    
+    <br/>
+  
+    
+      <a href="https://github.com/in-phase/ph-core/blob/0ca19eb664ef717074bac168f5d3ad57ad063bb9/src/formatter/settings.cr#L4" target="_blank">
+        formatter/settings.cr
+      </a>
+    
+    <br/>
+  
+    
+      <a href="https://github.com/in-phase/ph-core/blob/0ca19eb664ef717074bac168f5d3ad57ad063bb9/src/multi_indexable.cr#L5" target="_blank">
+        multi_indexable.cr
+      </a>
+    
+    <br/>
+  
+
+
+
+  
+    <h2>
+      <a id="constant-summary" class="anchor" href="#constant-summary">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+      Constant Summary
+    </h2>
+  
+  <dl>
+    
+      <dt class="entry-const" id="DROP_BY_DEFAULT">
+        <strong>DROP_BY_DEFAULT</strong> = <code><span class="n">true</span></code>
+      </dt>
+      
+    
+  </dl>
+
+
+
+
+
+
+
+  <h2>
+    <a id="instance-method-summary" class="anchor" href="#instance-method-summary">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Instance Method Summary
+  </h2>
+  <ul class="list-summary">
+    
+      <li class="entry-summary">
+        <a href="#%25(other:MultiIndexable(U))forallU-instance-method" class="signature"><strong>#%</strong>(other : MultiIndexable(U)) forall U</a>
+        
+          <div class="summary"><p>Invokes <code>#%</code> element-wise between <code>self</code> and <em>other</em>, returning an <code><a href="../Phase/NArray.html">NArray</a></code> that contains the results.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#%25(other)-instance-method" class="signature"><strong>#%</strong>(other)</a>
+        
+          <div class="summary"><p>Invokes <code>#%(other)</code> on each element in <code>self</code>, returning an <code><a href="../Phase/NArray.html">NArray</a></code> that contains the results.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#&(other:MultiIndexable(U))forallU-instance-method" class="signature"><strong>#&</strong>(other : MultiIndexable(U)) forall U</a>
+        
+          <div class="summary"><p>Invokes <code><a href="../Phase/MultiIndexable.html#&(other:MultiIndexable(U))forallU-instance-method">#&</a></code> element-wise between <code>self</code> and <em>other</em>, returning an <code><a href="../Phase/NArray.html">NArray</a></code> that contains the results.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#&(other)-instance-method" class="signature"><strong>#&</strong>(other)</a>
+        
+          <div class="summary"><p>Invokes <code><a href="../Phase/MultiIndexable.html#&(other:MultiIndexable(U))forallU-instance-method">#&(other)</a></code> on each element in <code>self</code>, returning an <code><a href="../Phase/NArray.html">NArray</a></code> that contains the results.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#&**(other:MultiIndexable(U))forallU-instance-method" class="signature"><strong>#&**</strong>(other : MultiIndexable(U)) forall U</a>
+        
+          <div class="summary"><p>Invokes <code><a href="../Phase/MultiIndexable.html#&**(other:MultiIndexable(U))forallU-instance-method">#&**</a></code> element-wise between <code>self</code> and <em>other</em>, returning an <code><a href="../Phase/NArray.html">NArray</a></code> that contains the results.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#&**(other)-instance-method" class="signature"><strong>#&**</strong>(other)</a>
+        
+          <div class="summary"><p>Invokes <code><a href="../Phase/MultiIndexable.html#&**(other:MultiIndexable(U))forallU-instance-method">#&**(other)</a></code> on each element in <code>self</code>, returning an <code><a href="../Phase/NArray.html">NArray</a></code> that contains the results.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#&+(other:MultiIndexable(U))forallU-instance-method" class="signature"><strong>#&+</strong>(other : MultiIndexable(U)) forall U</a>
+        
+          <div class="summary"><p>Invokes <code><a href="../Phase/MultiIndexable.html#&+(other:MultiIndexable(U))forallU-instance-method">#&+</a></code> element-wise between <code>self</code> and <em>other</em>, returning an <code><a href="../Phase/NArray.html">NArray</a></code> that contains the results.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#&+(other)-instance-method" class="signature"><strong>#&+</strong>(other)</a>
+        
+          <div class="summary"><p>Invokes <code><a href="../Phase/MultiIndexable.html#&+(other:MultiIndexable(U))forallU-instance-method">#&+(other)</a></code> on each element in <code>self</code>, returning an <code><a href="../Phase/NArray.html">NArray</a></code> that contains the results.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#&-(other:MultiIndexable(U))forallU-instance-method" class="signature"><strong>#&-</strong>(other : MultiIndexable(U)) forall U</a>
+        
+          <div class="summary"><p>Invokes <code><a href="../Phase/MultiIndexable.html#&-(other:MultiIndexable(U))forallU-instance-method">#&-</a></code> element-wise between <code>self</code> and <em>other</em>, returning an <code><a href="../Phase/NArray.html">NArray</a></code> that contains the results.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#&-(other)-instance-method" class="signature"><strong>#&-</strong>(other)</a>
+        
+          <div class="summary"><p>Invokes <code><a href="../Phase/MultiIndexable.html#&-(other:MultiIndexable(U))forallU-instance-method">#&-(other)</a></code> on each element in <code>self</code>, returning an <code><a href="../Phase/NArray.html">NArray</a></code> that contains the results.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#*(other:MultiIndexable(U))forallU-instance-method" class="signature"><strong>#*</strong>(other : MultiIndexable(U)) forall U</a>
+        
+          <div class="summary"><p>Invokes <code><a href="../Phase/MultiIndexable.html#*(other:MultiIndexable(U))forallU-instance-method">#*</a></code> element-wise between <code>self</code> and <em>other</em>, returning an <code><a href="../Phase/NArray.html">NArray</a></code> that contains the results.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#*(other)-instance-method" class="signature"><strong>#*</strong>(other)</a>
+        
+          <div class="summary"><p>Invokes <code><a href="../Phase/MultiIndexable.html#*(other:MultiIndexable(U))forallU-instance-method">#*(other)</a></code> on each element in <code>self</code>, returning an <code><a href="../Phase/NArray.html">NArray</a></code> that contains the results.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#**(other:MultiIndexable(U))forallU-instance-method" class="signature"><strong>#**</strong>(other : MultiIndexable(U)) forall U</a>
+        
+          <div class="summary"><p>Invokes <code><a href="../Phase/MultiIndexable.html#**(other:MultiIndexable(U))forallU-instance-method">#**</a></code> element-wise between <code>self</code> and <em>other</em>, returning an <code><a href="../Phase/NArray.html">NArray</a></code> that contains the results.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#**(other)-instance-method" class="signature"><strong>#**</strong>(other)</a>
+        
+          <div class="summary"><p>Invokes <code><a href="../Phase/MultiIndexable.html#**(other:MultiIndexable(U))forallU-instance-method">#**(other)</a></code> on each element in <code>self</code>, returning an <code><a href="../Phase/NArray.html">NArray</a></code> that contains the results.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#+(other:MultiIndexable(U))forallU-instance-method" class="signature"><strong>#+</strong>(other : MultiIndexable(U)) forall U</a>
+        
+          <div class="summary"><p>Invokes <code><a href="../Phase/MultiIndexable.html#+-instance-method">#+</a></code> element-wise between <code>self</code> and <em>other</em>, returning an <code><a href="../Phase/NArray.html">NArray</a></code> that contains the results.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#+(other)-instance-method" class="signature"><strong>#+</strong>(other)</a>
+        
+          <div class="summary"><p>Invokes <code><a href="../Phase/MultiIndexable.html#+(other:MultiIndexable(U))forallU-instance-method">#+(other)</a></code> on each element in <code>self</code>, returning an <code><a href="../Phase/NArray.html">NArray</a></code> that contains the results.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#+-instance-method" class="signature"><strong>#+</strong></a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#-(other:MultiIndexable(U))forallU-instance-method" class="signature"><strong>#-</strong>(other : MultiIndexable(U)) forall U</a>
+        
+          <div class="summary"><p>Invokes <code><a href="../Phase/MultiIndexable.html#--instance-method">#-</a></code> element-wise between <code>self</code> and <em>other</em>, returning an <code><a href="../Phase/NArray.html">NArray</a></code> that contains the results.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#-(other)-instance-method" class="signature"><strong>#-</strong>(other)</a>
+        
+          <div class="summary"><p>Invokes <code><a href="../Phase/MultiIndexable.html#-(other:MultiIndexable(U))forallU-instance-method">#-(other)</a></code> on each element in <code>self</code>, returning an <code><a href="../Phase/NArray.html">NArray</a></code> that contains the results.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#--instance-method" class="signature"><strong>#-</strong></a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#/(other:MultiIndexable(U))forallU-instance-method" class="signature"><strong>#/</strong>(other : MultiIndexable(U)) forall U</a>
+        
+          <div class="summary"><p>Invokes <code><a href="../Phase/MultiIndexable.html#/(other:MultiIndexable(U))forallU-instance-method">#/</a></code> element-wise between <code>self</code> and <em>other</em>, returning an <code><a href="../Phase/NArray.html">NArray</a></code> that contains the results.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#/(other)-instance-method" class="signature"><strong>#/</strong>(other)</a>
+        
+          <div class="summary"><p>Invokes <code><a href="../Phase/MultiIndexable.html#/(other:MultiIndexable(U))forallU-instance-method">#/(other)</a></code> on each element in <code>self</code>, returning an <code><a href="../Phase/NArray.html">NArray</a></code> that contains the results.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#//(other:MultiIndexable(U))forallU-instance-method" class="signature"><strong>#//</strong>(other : MultiIndexable(U)) forall U</a>
+        
+          <div class="summary"><p>Invokes <code><a href="../Phase/MultiIndexable.html#//(other:MultiIndexable(U))forallU-instance-method">#//</a></code> element-wise between <code>self</code> and <em>other</em>, returning an <code><a href="../Phase/NArray.html">NArray</a></code> that contains the results.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#//(other)-instance-method" class="signature"><strong>#//</strong>(other)</a>
+        
+          <div class="summary"><p>Invokes <code><a href="../Phase/MultiIndexable.html#//(other:MultiIndexable(U))forallU-instance-method">#//(other)</a></code> on each element in <code>self</code>, returning an <code><a href="../Phase/NArray.html">NArray</a></code> that contains the results.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#%3C(other:MultiIndexable(U))forallU-instance-method" class="signature"><strong>#<</strong>(other : MultiIndexable(U)) forall U</a>
+        
+          <div class="summary"><p>Invokes <code><a href="../Phase/MultiIndexable.html#%3C(other:MultiIndexable(U))forallU-instance-method">#<</a></code> element-wise between <code>self</code> and <em>other</em>, returning an <code><a href="../Phase/NArray.html">NArray</a></code> that contains the results.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#%3C(other)-instance-method" class="signature"><strong>#<</strong>(other)</a>
+        
+          <div class="summary"><p>Invokes <code><a href="../Phase/MultiIndexable.html#%3C(other:MultiIndexable(U))forallU-instance-method">#<(other)</a></code> on each element in <code>self</code>, returning an <code><a href="../Phase/NArray.html">NArray</a></code> that contains the results.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#%3C=(other:MultiIndexable(U))forallU-instance-method" class="signature"><strong>#<=</strong>(other : MultiIndexable(U)) forall U</a>
+        
+          <div class="summary"><p>Invokes <code><a href="../Phase/MultiIndexable.html#%3C=(other:MultiIndexable(U))forallU-instance-method">#<=</a></code> element-wise between <code>self</code> and <em>other</em>, returning an <code><a href="../Phase/NArray.html">NArray</a></code> that contains the results.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#%3C=(other)-instance-method" class="signature"><strong>#<=</strong>(other)</a>
+        
+          <div class="summary"><p>Invokes <code><a href="../Phase/MultiIndexable.html#%3C=(other:MultiIndexable(U))forallU-instance-method">#<=(other)</a></code> on each element in <code>self</code>, returning an <code><a href="../Phase/NArray.html">NArray</a></code> that contains the results.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#%3C=%3E(other:MultiIndexable(U))forallU-instance-method" class="signature"><strong>#<=></strong>(other : MultiIndexable(U)) forall U</a>
+        
+          <div class="summary"><p>Invokes <code><a href="../Phase/MultiIndexable.html#%3C=%3E(other:MultiIndexable(U))forallU-instance-method">#<=></a></code> element-wise between <code>self</code> and <em>other</em>, returning an <code><a href="../Phase/NArray.html">NArray</a></code> that contains the results.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#%3C=%3E(other)-instance-method" class="signature"><strong>#<=></strong>(other)</a>
+        
+          <div class="summary"><p>Invokes <code><a href="../Phase/MultiIndexable.html#%3C=%3E(other:MultiIndexable(U))forallU-instance-method">#<=>(other)</a></code> on each element in <code>self</code>, returning an <code><a href="../Phase/NArray.html">NArray</a></code> that contains the results.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#%3E(other:MultiIndexable(U))forallU-instance-method" class="signature"><strong>#></strong>(other : MultiIndexable(U)) forall U</a>
+        
+          <div class="summary"><p>Invokes <code><a href="../Phase/MultiIndexable.html#%3E(other:MultiIndexable(U))forallU-instance-method">#></a></code> element-wise between <code>self</code> and <em>other</em>, returning an <code><a href="../Phase/NArray.html">NArray</a></code> that contains the results.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#%3E(other)-instance-method" class="signature"><strong>#></strong>(other)</a>
+        
+          <div class="summary"><p>Invokes <code><a href="../Phase/MultiIndexable.html#%3E(other:MultiIndexable(U))forallU-instance-method">#>(other)</a></code> on each element in <code>self</code>, returning an <code><a href="../Phase/NArray.html">NArray</a></code> that contains the results.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#%3E=(other:MultiIndexable(U))forallU-instance-method" class="signature"><strong>#>=</strong>(other : MultiIndexable(U)) forall U</a>
+        
+          <div class="summary"><p>Invokes <code><a href="../Phase/MultiIndexable.html#%3E=(other:MultiIndexable(U))forallU-instance-method">#>=</a></code> element-wise between <code>self</code> and <em>other</em>, returning an <code><a href="../Phase/NArray.html">NArray</a></code> that contains the results.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#%3E=(other)-instance-method" class="signature"><strong>#>=</strong>(other)</a>
+        
+          <div class="summary"><p>Invokes <code><a href="../Phase/MultiIndexable.html#%3E=(other:MultiIndexable(U))forallU-instance-method">#>=(other)</a></code> on each element in <code>self</code>, returning an <code><a href="../Phase/NArray.html">NArray</a></code> that contains the results.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#[](bool_mask:MultiIndexable(Bool)):self-instance-method" class="signature"><strong>#[]</strong>(bool_mask : MultiIndexable(Bool)) : <span class="k">self</span></a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#[](region:Indexable%7CIndexRegion,drop:Bool=MultiIndexable::DROP_BY_DEFAULT)-instance-method" class="signature"><strong>#[]</strong>(region : Indexable | IndexRegion, drop : Bool = <span class="t">MultiIndexable</span><span class="t">::</span><span class="t">DROP_BY_DEFAULT</span>)</a>
+        
+          <div class="summary"><p>Copies the elements in <code>region</code> to a new <code>{{@type}}</code>, and throws an error if <code>region</code> is out-of-bounds for this <code>{{@type}}</code>.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#[](*tuple,drop:Bool=MultiIndexable::DROP_BY_DEFAULT)-instance-method" class="signature"><strong>#[]</strong>(*tuple, drop : Bool = <span class="t">MultiIndexable</span><span class="t">::</span><span class="t">DROP_BY_DEFAULT</span>)</a>
+        
+          <div class="summary"><p>Tuple-accepting overload of <code>#"[]"</code>.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#[]?(bool_mask:MultiIndexable(Bool)):MultiIndexable(T?)-instance-method" class="signature"><strong>#[]?</strong>(bool_mask : MultiIndexable(Bool)) : MultiIndexable(T?)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#[]?(region:Indexable%7CIndexRegion,drop:Bool=MultiIndexable::DROP_BY_DEFAULT):self?-instance-method" class="signature"><strong>#[]?</strong>(region : Indexable | IndexRegion, drop : Bool = <span class="t">MultiIndexable</span><span class="t">::</span><span class="t">DROP_BY_DEFAULT</span>) : <span class="k">self</span>?</a>
+        
+          <div class="summary"><p>Copies the elements in <code>region</code> to a new <code>{{@type}}</code>, or returns false if <code>region</code> is out-of-bounds for this <code>{{@type}}</code>.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#[]?(*tuple,drop:Bool=MultiIndexable::DROP_BY_DEFAULT)-instance-method" class="signature"><strong>#[]?</strong>(*tuple, drop : Bool = <span class="t">MultiIndexable</span><span class="t">::</span><span class="t">DROP_BY_DEFAULT</span>)</a>
+        
+          <div class="summary"><p>Tuple-accepting overload of <code>#"[]?"</code>.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#%5E(other:MultiIndexable(U))forallU-instance-method" class="signature"><strong>#^</strong>(other : MultiIndexable(U)) forall U</a>
+        
+          <div class="summary"><p>Invokes <code><a href="../Phase/MultiIndexable.html#%5E(other:MultiIndexable(U))forallU-instance-method">#^</a></code> element-wise between <code>self</code> and <em>other</em>, returning an <code><a href="../Phase/NArray.html">NArray</a></code> that contains the results.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#%5E(other)-instance-method" class="signature"><strong>#^</strong>(other)</a>
+        
+          <div class="summary"><p>Invokes <code><a href="../Phase/MultiIndexable.html#%5E(other:MultiIndexable(U))forallU-instance-method">#^(other)</a></code> on each element in <code>self</code>, returning an <code><a href="../Phase/NArray.html">NArray</a></code> that contains the results.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#dimensions:Int-instance-method" class="signature"><strong>#dimensions</strong> : Int</a>
+        
+          <div class="summary"><p>Returns the number of indices required to specify an element in <code>{{@type}}</code>.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#each(iter:CoordIterator(I)):Iterator(T)forallI-instance-method" class="signature"><strong>#each</strong>(iter : CoordIterator(I)) : Iterator(T) forall I</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#each:Iterator(T)-instance-method" class="signature"><strong>#each</strong> : Iterator(T)</a>
+        
+          <div class="summary"><p>The default iterator must be lexicographic</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#each(&):Nil-instance-method" class="signature"><strong>#each</strong>(&) : Nil</a>
+        
+          <div class="summary"><p>Block accepting form of "each".</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#each_coord:Iterator-instance-method" class="signature"><strong>#each_coord</strong> : Iterator</a>
+        
+          <div class="summary"><p>Iterators ====================================================================</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#each_coord(&):Nil-instance-method" class="signature"><strong>#each_coord</strong>(&) : Nil</a>
+        
+          <div class="summary"><p>Block accepting form of "each_coord".</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#each_slice(axis=0):Iterator-instance-method" class="signature"><strong>#each_slice</strong>(axis = <span class="n">0</span>) : Iterator</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#each_slice(&):Nil-instance-method" class="signature"><strong>#each_slice</strong>(&) : Nil</a>
+        
+          <div class="summary"><p>Block accepting form of "each_slice".</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#each_with_coord(iter:CoordIterator(I)):IteratorforallI-instance-method" class="signature"><strong>#each_with_coord</strong>(iter : CoordIterator(I)) : Iterator forall I</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#each_with_coord:Iterator-instance-method" class="signature"><strong>#each_with_coord</strong> : Iterator</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#each_with_coord(&):Nil-instance-method" class="signature"><strong>#each_with_coord</strong>(&) : Nil</a>
+        
+          <div class="summary"><p>Block accepting form of "each_with_coord".</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#empty?:Bool-instance-method" class="signature"><strong>#empty?</strong> : Bool</a>
+        
+          <div class="summary"><p>Checks that the <code>{{@type}}</code> contains no elements.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#eq(other:MultiIndexable(U)):MultiIndexable(Bool)forallU-instance-method" class="signature"><strong>#eq</strong>(other : MultiIndexable(U)) : MultiIndexable(Bool) forall U</a>
+        
+          <div class="summary"><p><span class="flag orange">TODO</span>  rename! Produces an NArray(Bool) (by default) describing which elements of self and other are equal.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#eq(value):MultiIndexable(Bool)-instance-method" class="signature"><strong>#eq</strong>(value) : MultiIndexable(Bool)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#equals?(other:MultiIndexable):Bool-instance-method" class="signature"><strong>#equals?</strong>(other : MultiIndexable) : Bool</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#equals?(other:MultiIndexable,&):Bool-instance-method" class="signature"><strong>#equals?</strong>(other : MultiIndexable, &) : Bool</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#fast:Iterator(T)-instance-method" class="signature"><strong>#fast</strong> : Iterator(T)</a>
+        
+          <div class="summary"><p>A method to get all elements in this <code>{{@type}}</code> when order is irrelevant.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#fast(&):Nil-instance-method" class="signature"><strong>#fast</strong>(&) : Nil</a>
+        
+          <div class="summary"><p>Block accepting form of "fast".</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#first:T-instance-method" class="signature"><strong>#first</strong> : T</a>
+        
+          <div class="summary"><p>Returns the element at position <code>0</code> along every axis.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#get(coord:Indexable):T-instance-method" class="signature"><strong>#get</strong>(coord : Indexable) : T</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#get(*tuple)-instance-method" class="signature"><strong>#get</strong>(*tuple)</a>
+        
+          <div class="summary"><p>Tuple-accepting overload of <code>#"get"</code>.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#get_available(region:Indexable,drop:Bool=DROP_BY_DEFAULT)-instance-method" class="signature"><strong>#get_available</strong>(region : Indexable, drop : Bool = <span class="t">DROP_BY_DEFAULT</span>)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#get_available(region:IndexRegion,drop:Bool=DROP_BY_DEFAULT)-instance-method" class="signature"><strong>#get_available</strong>(region : IndexRegion, drop : Bool = <span class="t">DROP_BY_DEFAULT</span>)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#get_chunk(region:Indexable,drop:Bool=DROP_BY_DEFAULT)-instance-method" class="signature"><strong>#get_chunk</strong>(region : Indexable, drop : Bool = <span class="t">DROP_BY_DEFAULT</span>)</a>
+        
+          <div class="summary"><p>Copies the elements in <code>region</code> to a new <code>{{@type}}</code>, and throws an error if <code>region</code> is out-of-bounds for this <code>{{@type}}</code>.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#get_chunk(coord:Indexable,region_shape:Indexable)-instance-method" class="signature"><strong>#get_chunk</strong>(coord : Indexable, region_shape : Indexable)</a>
+        
+          <div class="summary"><p>"drags out" a region of shape region_shape with coord as the top left corner</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#get_chunk(region:IndexRegion):MultiIndexable(T)-instance-method" class="signature"><strong>#get_chunk</strong>(region : IndexRegion) : MultiIndexable(T)</a>
+        
+          <div class="summary"><p>Copies the elements in <code>region</code> to a new <code>{{@type}}</code>, and throws an error if <code>region</code> is out-of-bounds for this <code>{{@type}}</code>.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#get_chunk(*tuple,drop:Bool=MultiIndexable::DROP_BY_DEFAULT)-instance-method" class="signature"><strong>#get_chunk</strong>(*tuple, drop : Bool = <span class="t">MultiIndexable</span><span class="t">::</span><span class="t">DROP_BY_DEFAULT</span>)</a>
+        
+          <div class="summary"><p>Tuple-accepting overload of <code>#"get_chunk"</code>.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#get_element(coord:Indexable):T-instance-method" class="signature"><strong>#get_element</strong>(coord : Indexable) : T</a>
+        
+          <div class="summary"><p>Retrieves the element specified by <code>coord</code>, and throws an error if <code>coord</code> is out-of-bounds for this <code>{{@type}}</code>.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#get_element(*tuple)-instance-method" class="signature"><strong>#get_element</strong>(*tuple)</a>
+        
+          <div class="summary"><p>Tuple-accepting overload of <code>#"get_element"</code>.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#has_coord?(coord:Indexable):Bool-instance-method" class="signature"><strong>#has_coord?</strong>(coord : Indexable) : Bool</a>
+        
+          <div class="summary"><p>Checks that <code>coord</code> is in-bounds for this <code>{{@type}}</code>.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#has_coord?(*tuple)-instance-method" class="signature"><strong>#has_coord?</strong>(*tuple)</a>
+        
+          <div class="summary"><p>Tuple-accepting overload of <code>#"has_coord?"</code>.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#has_region?(region:Indexable):Bool-instance-method" class="signature"><strong>#has_region?</strong>(region : Indexable) : Bool</a>
+        
+          <div class="summary"><p>Checks that <code>region</code> is in-bounds for this <code>{{@type}}</code>.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#has_region?(*tuple)-instance-method" class="signature"><strong>#has_region?</strong>(*tuple)</a>
+        
+          <div class="summary"><p>Tuple-accepting overload of <code>#"has_region?"</code>.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#hash(hasher)-instance-method" class="signature"><strong>#hash</strong>(hasher)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#map(&block:T-%3ER):MultiIndexable(R)forallR-instance-method" class="signature"><strong>#map</strong>(&block : T -> R) : MultiIndexable(R) forall R</a>
+        
+          <div class="summary"><p>By default, gives an NArray</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#map_with_coord(&)-instance-method" class="signature"><strong>#map_with_coord</strong>(&)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#permute(*args):MultiIndexable(T)-instance-method" class="signature"><strong>#permute</strong>(*args) : MultiIndexable(T)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#process(&block:T-%3ER):ProcView(self,T,R)forallR-instance-method" class="signature"><strong>#process</strong>(&block : T -> R) : ProcView(<span class="k">self</span>, T, R) forall R</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#process(proc:Proc(T,R)):ProcView(self,T,R)forallR-instance-method" class="signature"><strong>#process</strong>(proc : Proc(T, R)) : ProcView(<span class="k">self</span>, T, R) forall R</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#reshape(*args):MultiIndexable(T)-instance-method" class="signature"><strong>#reshape</strong>(*args) : MultiIndexable(T)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#reverse(*args):MultiIndexable(T)-instance-method" class="signature"><strong>#reverse</strong>(*args) : MultiIndexable(T)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#sample(n:Int,random=Random::DEFAULT):Enumerable(T)-instance-method" class="signature"><strong>#sample</strong>(n : Int, random = <span class="t">Random</span><span class="t">::</span><span class="t">DEFAULT</span>) : Enumerable(T)</a>
+        
+          <div class="summary"><p>Returns a random element from the <code>{{@type}}</code>.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#sample(random=Random::DEFAULT):T-instance-method" class="signature"><strong>#sample</strong>(random = <span class="t">Random</span><span class="t">::</span><span class="t">DEFAULT</span>) : T</a>
+        
+          <div class="summary"><p>Returns a random element from the <code>{{@type}}</code>.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#scalar?:Bool-instance-method" class="signature"><strong>#scalar?</strong> : Bool</a>
+        
+          <div class="summary"><p>Checks that this <code>{{@type}}</code> is one-dimensional, and contains a single element.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#shape:Array-instance-method" class="signature"><strong>#shape</strong> : Array</a>
+        
+          <div class="summary"><p>Returns the length of the <code>{{@type}}</code> in each dimension.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#size-instance-method" class="signature"><strong>#size</strong></a>
+        
+          <div class="summary"><p>Returns the number of elements in the <code>{{@type}}</code>; equal to <code>shape.product</code>.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#slices(axis=0):Enumerable-instance-method" class="signature"><strong>#slices</strong>(axis = <span class="n">0</span>) : Enumerable</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#to_f:Float-instance-method" class="signature"><strong>#to_f</strong> : Float</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#to_literal_s(io:IO):Nil-instance-method" class="signature"><strong>#to_literal_s</strong>(io : IO) : Nil</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#to_narr:NArray(T)-instance-method" class="signature"><strong>#to_narr</strong> : NArray(T)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#to_s(io:IO,settings=Formatter::Settings.new):Nil-instance-method" class="signature"><strong>#to_s</strong>(io : IO, settings = <span class="t">Formatter</span><span class="t">::</span><span class="t">Settings</span>.<span class="k">new</span>) : Nil</a>
+        
+          <div class="summary"><p><span class="flag yellow">FIXME</span>  NArrayFormatter depends on buffer indices.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#to_s(settings=Formatter::Settings.new):String-instance-method" class="signature"><strong>#to_s</strong>(settings = <span class="t">Formatter</span><span class="t">::</span><span class="t">Settings</span>.<span class="k">new</span>) : String</a>
+        
+          <div class="summary"><p><span class="flag yellow">FIXME</span>  NArrayFormatter depends on buffer indices.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#to_scalar:T-instance-method" class="signature"><strong>#to_scalar</strong> : T</a>
+        
+          <div class="summary"><p>Maps a single-element 1D <code>{{@type}}</code> to the element it contains.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#to_scalar?:T?-instance-method" class="signature"><strong>#to_scalar?</strong> : T?</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#unsafe_fetch_chunk(region:IndexRegion)-instance-method" class="signature"><strong>#unsafe_fetch_chunk</strong>(region : IndexRegion)</a>
+        
+          <div class="summary"><p>Copies the elements in <code>region</code> to a new <code>{{@type}}</code>, assuming that <code>region</code> is in canonical form and in-bounds for this <code>{{@type}}</code>.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#unsafe_fetch_element(coord:Coord):T-instance-method" class="signature"><strong>#unsafe_fetch_element</strong>(coord : Coord) : T</a>
+        
+          <div class="summary"><p>Retrieves the element specified by <code>coord</code>, assuming that <code>coord</code> is in canonical form and in-bounds for this <code>{{@type}}</code>.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#view(region:Indexable?%7CIndexRegion=nil):View(self,T)-instance-method" class="signature"><strong>#view</strong>(region : Indexable? | IndexRegion = <span class="n">nil</span>) : View(<span class="k">self</span>, T)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#view(*region):View(self,T)-instance-method" class="signature"><strong>#view</strong>(*region) : View(<span class="k">self</span>, T)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#%7C(other:MultiIndexable(U))forallU-instance-method" class="signature"><strong>#|</strong>(other : MultiIndexable(U)) forall U</a>
+        
+          <div class="summary"><p>Invokes <code><a href="../Phase/MultiIndexable.html#%7C(other:MultiIndexable(U))forallU-instance-method">#|</a></code> element-wise between <code>self</code> and <em>other</em>, returning an <code><a href="../Phase/NArray.html">NArray</a></code> that contains the results.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#%7C(other)-instance-method" class="signature"><strong>#|</strong>(other)</a>
+        
+          <div class="summary"><p>Invokes <code><a href="../Phase/MultiIndexable.html#%7C(other:MultiIndexable(U))forallU-instance-method">#|(other)</a></code> on each element in <code>self</code>, returning an <code><a href="../Phase/NArray.html">NArray</a></code> that contains the results.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#~-instance-method" class="signature"><strong>#~</strong></a>
+        
+      </li>
+    
+  </ul>
+
+
+
+
+
+<div class="methods-inherited">
+  
+    
+
+
+    
+
+
+    
+
+
+  
+</div>
+
+
+
+
+
+
+  <h2>
+    <a id="instance-method-detail" class="anchor" href="#instance-method-detail">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Instance Method Detail
+  </h2>
+  
+    <div class="entry-detail" id="%(other:MultiIndexable(U))forallU-instance-method">
+      <div class="signature">
+        
+        def <strong>%</strong>(other : <a href="../Phase/MultiIndexable.html">MultiIndexable</a>(U)) forall U
+
+        <a class="method-permalink" href="#%25(other:MultiIndexable(U))forallU-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Invokes <code>#%</code> element-wise between <code>self</code> and <em>other</em>, returning
+an <code><a href="../Phase/NArray.html">NArray</a></code> that contains the results.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/in-phase/ph-core/blob/0ca19eb664ef717074bac168f5d3ad57ad063bb9/src/multi_indexable.cr#L329" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="%(other)-instance-method">
+      <div class="signature">
+        
+        def <strong>%</strong>(other)
+
+        <a class="method-permalink" href="#%25(other)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Invokes <code>#%(other)</code> on each element in <code>self</code>, returning an
+<code><a href="../Phase/NArray.html">NArray</a></code> that contains the results.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/in-phase/ph-core/blob/0ca19eb664ef717074bac168f5d3ad57ad063bb9/src/multi_indexable.cr#L329" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="&amp;(other:MultiIndexable(U))forallU-instance-method">
+      <div class="signature">
+        
+        def <strong>&</strong>(other : <a href="../Phase/MultiIndexable.html">MultiIndexable</a>(U)) forall U
+
+        <a class="method-permalink" href="#&(other:MultiIndexable(U))forallU-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Invokes <code><a href="../Phase/MultiIndexable.html#&(other:MultiIndexable(U))forallU-instance-method">#&</a></code> element-wise between <code>self</code> and <em>other</em>, returning
+an <code><a href="../Phase/NArray.html">NArray</a></code> that contains the results.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/in-phase/ph-core/blob/0ca19eb664ef717074bac168f5d3ad57ad063bb9/src/multi_indexable.cr#L329" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="&amp;(other)-instance-method">
+      <div class="signature">
+        
+        def <strong>&</strong>(other)
+
+        <a class="method-permalink" href="#&(other)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Invokes <code><a href="../Phase/MultiIndexable.html#&(other:MultiIndexable(U))forallU-instance-method">#&(other)</a></code> on each element in <code>self</code>, returning an
+<code><a href="../Phase/NArray.html">NArray</a></code> that contains the results.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/in-phase/ph-core/blob/0ca19eb664ef717074bac168f5d3ad57ad063bb9/src/multi_indexable.cr#L329" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="&amp;**(other:MultiIndexable(U))forallU-instance-method">
+      <div class="signature">
+        
+        def <strong>&**</strong>(other : <a href="../Phase/MultiIndexable.html">MultiIndexable</a>(U)) forall U
+
+        <a class="method-permalink" href="#&**(other:MultiIndexable(U))forallU-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Invokes <code><a href="../Phase/MultiIndexable.html#&**(other:MultiIndexable(U))forallU-instance-method">#&**</a></code> element-wise between <code>self</code> and <em>other</em>, returning
+an <code><a href="../Phase/NArray.html">NArray</a></code> that contains the results.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/in-phase/ph-core/blob/0ca19eb664ef717074bac168f5d3ad57ad063bb9/src/multi_indexable.cr#L329" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="&amp;**(other)-instance-method">
+      <div class="signature">
+        
+        def <strong>&**</strong>(other)
+
+        <a class="method-permalink" href="#&**(other)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Invokes <code><a href="../Phase/MultiIndexable.html#&**(other:MultiIndexable(U))forallU-instance-method">#&**(other)</a></code> on each element in <code>self</code>, returning an
+<code><a href="../Phase/NArray.html">NArray</a></code> that contains the results.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/in-phase/ph-core/blob/0ca19eb664ef717074bac168f5d3ad57ad063bb9/src/multi_indexable.cr#L329" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="&amp;+(other:MultiIndexable(U))forallU-instance-method">
+      <div class="signature">
+        
+        def <strong>&+</strong>(other : <a href="../Phase/MultiIndexable.html">MultiIndexable</a>(U)) forall U
+
+        <a class="method-permalink" href="#&+(other:MultiIndexable(U))forallU-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Invokes <code><a href="../Phase/MultiIndexable.html#&+(other:MultiIndexable(U))forallU-instance-method">#&+</a></code> element-wise between <code>self</code> and <em>other</em>, returning
+an <code><a href="../Phase/NArray.html">NArray</a></code> that contains the results.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/in-phase/ph-core/blob/0ca19eb664ef717074bac168f5d3ad57ad063bb9/src/multi_indexable.cr#L329" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="&amp;+(other)-instance-method">
+      <div class="signature">
+        
+        def <strong>&+</strong>(other)
+
+        <a class="method-permalink" href="#&+(other)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Invokes <code><a href="../Phase/MultiIndexable.html#&+(other:MultiIndexable(U))forallU-instance-method">#&+(other)</a></code> on each element in <code>self</code>, returning an
+<code><a href="../Phase/NArray.html">NArray</a></code> that contains the results.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/in-phase/ph-core/blob/0ca19eb664ef717074bac168f5d3ad57ad063bb9/src/multi_indexable.cr#L329" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="&amp;-(other:MultiIndexable(U))forallU-instance-method">
+      <div class="signature">
+        
+        def <strong>&-</strong>(other : <a href="../Phase/MultiIndexable.html">MultiIndexable</a>(U)) forall U
+
+        <a class="method-permalink" href="#&-(other:MultiIndexable(U))forallU-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Invokes <code><a href="../Phase/MultiIndexable.html#&-(other:MultiIndexable(U))forallU-instance-method">#&-</a></code> element-wise between <code>self</code> and <em>other</em>, returning
+an <code><a href="../Phase/NArray.html">NArray</a></code> that contains the results.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/in-phase/ph-core/blob/0ca19eb664ef717074bac168f5d3ad57ad063bb9/src/multi_indexable.cr#L329" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="&amp;-(other)-instance-method">
+      <div class="signature">
+        
+        def <strong>&-</strong>(other)
+
+        <a class="method-permalink" href="#&-(other)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Invokes <code><a href="../Phase/MultiIndexable.html#&-(other:MultiIndexable(U))forallU-instance-method">#&-(other)</a></code> on each element in <code>self</code>, returning an
+<code><a href="../Phase/NArray.html">NArray</a></code> that contains the results.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/in-phase/ph-core/blob/0ca19eb664ef717074bac168f5d3ad57ad063bb9/src/multi_indexable.cr#L329" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="*(other:MultiIndexable(U))forallU-instance-method">
+      <div class="signature">
+        
+        def <strong>*</strong>(other : <a href="../Phase/MultiIndexable.html">MultiIndexable</a>(U)) forall U
+
+        <a class="method-permalink" href="#*(other:MultiIndexable(U))forallU-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Invokes <code><a href="../Phase/MultiIndexable.html#*(other:MultiIndexable(U))forallU-instance-method">#*</a></code> element-wise between <code>self</code> and <em>other</em>, returning
+an <code><a href="../Phase/NArray.html">NArray</a></code> that contains the results.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/in-phase/ph-core/blob/0ca19eb664ef717074bac168f5d3ad57ad063bb9/src/multi_indexable.cr#L329" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="*(other)-instance-method">
+      <div class="signature">
+        
+        def <strong>*</strong>(other)
+
+        <a class="method-permalink" href="#*(other)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Invokes <code><a href="../Phase/MultiIndexable.html#*(other:MultiIndexable(U))forallU-instance-method">#*(other)</a></code> on each element in <code>self</code>, returning an
+<code><a href="../Phase/NArray.html">NArray</a></code> that contains the results.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/in-phase/ph-core/blob/0ca19eb664ef717074bac168f5d3ad57ad063bb9/src/multi_indexable.cr#L329" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="**(other:MultiIndexable(U))forallU-instance-method">
+      <div class="signature">
+        
+        def <strong>**</strong>(other : <a href="../Phase/MultiIndexable.html">MultiIndexable</a>(U)) forall U
+
+        <a class="method-permalink" href="#**(other:MultiIndexable(U))forallU-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Invokes <code><a href="../Phase/MultiIndexable.html#**(other:MultiIndexable(U))forallU-instance-method">#**</a></code> element-wise between <code>self</code> and <em>other</em>, returning
+an <code><a href="../Phase/NArray.html">NArray</a></code> that contains the results.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/in-phase/ph-core/blob/0ca19eb664ef717074bac168f5d3ad57ad063bb9/src/multi_indexable.cr#L329" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="**(other)-instance-method">
+      <div class="signature">
+        
+        def <strong>**</strong>(other)
+
+        <a class="method-permalink" href="#**(other)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Invokes <code><a href="../Phase/MultiIndexable.html#**(other:MultiIndexable(U))forallU-instance-method">#**(other)</a></code> on each element in <code>self</code>, returning an
+<code><a href="../Phase/NArray.html">NArray</a></code> that contains the results.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/in-phase/ph-core/blob/0ca19eb664ef717074bac168f5d3ad57ad063bb9/src/multi_indexable.cr#L329" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="+(other:MultiIndexable(U))forallU-instance-method">
+      <div class="signature">
+        
+        def <strong>+</strong>(other : <a href="../Phase/MultiIndexable.html">MultiIndexable</a>(U)) forall U
+
+        <a class="method-permalink" href="#+(other:MultiIndexable(U))forallU-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Invokes <code><a href="../Phase/MultiIndexable.html#+-instance-method">#+</a></code> element-wise between <code>self</code> and <em>other</em>, returning
+an <code><a href="../Phase/NArray.html">NArray</a></code> that contains the results.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/in-phase/ph-core/blob/0ca19eb664ef717074bac168f5d3ad57ad063bb9/src/multi_indexable.cr#L329" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="+(other)-instance-method">
+      <div class="signature">
+        
+        def <strong>+</strong>(other)
+
+        <a class="method-permalink" href="#+(other)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Invokes <code><a href="../Phase/MultiIndexable.html#+(other:MultiIndexable(U))forallU-instance-method">#+(other)</a></code> on each element in <code>self</code>, returning an
+<code><a href="../Phase/NArray.html">NArray</a></code> that contains the results.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/in-phase/ph-core/blob/0ca19eb664ef717074bac168f5d3ad57ad063bb9/src/multi_indexable.cr#L329" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="+-instance-method">
+      <div class="signature">
+        
+        def <strong>+</strong>
+
+        <a class="method-permalink" href="#+-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/in-phase/ph-core/blob/0ca19eb664ef717074bac168f5d3ad57ad063bb9/src/multi_indexable.cr#L329" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="-(other:MultiIndexable(U))forallU-instance-method">
+      <div class="signature">
+        
+        def <strong>-</strong>(other : <a href="../Phase/MultiIndexable.html">MultiIndexable</a>(U)) forall U
+
+        <a class="method-permalink" href="#-(other:MultiIndexable(U))forallU-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Invokes <code><a href="../Phase/MultiIndexable.html#--instance-method">#-</a></code> element-wise between <code>self</code> and <em>other</em>, returning
+an <code><a href="../Phase/NArray.html">NArray</a></code> that contains the results.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/in-phase/ph-core/blob/0ca19eb664ef717074bac168f5d3ad57ad063bb9/src/multi_indexable.cr#L329" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="-(other)-instance-method">
+      <div class="signature">
+        
+        def <strong>-</strong>(other)
+
+        <a class="method-permalink" href="#-(other)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Invokes <code><a href="../Phase/MultiIndexable.html#-(other:MultiIndexable(U))forallU-instance-method">#-(other)</a></code> on each element in <code>self</code>, returning an
+<code><a href="../Phase/NArray.html">NArray</a></code> that contains the results.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/in-phase/ph-core/blob/0ca19eb664ef717074bac168f5d3ad57ad063bb9/src/multi_indexable.cr#L329" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="--instance-method">
+      <div class="signature">
+        
+        def <strong>-</strong>
+
+        <a class="method-permalink" href="#--instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/in-phase/ph-core/blob/0ca19eb664ef717074bac168f5d3ad57ad063bb9/src/multi_indexable.cr#L329" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="/(other:MultiIndexable(U))forallU-instance-method">
+      <div class="signature">
+        
+        def <strong>/</strong>(other : <a href="../Phase/MultiIndexable.html">MultiIndexable</a>(U)) forall U
+
+        <a class="method-permalink" href="#/(other:MultiIndexable(U))forallU-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Invokes <code><a href="../Phase/MultiIndexable.html#/(other:MultiIndexable(U))forallU-instance-method">#/</a></code> element-wise between <code>self</code> and <em>other</em>, returning
+an <code><a href="../Phase/NArray.html">NArray</a></code> that contains the results.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/in-phase/ph-core/blob/0ca19eb664ef717074bac168f5d3ad57ad063bb9/src/multi_indexable.cr#L329" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="/(other)-instance-method">
+      <div class="signature">
+        
+        def <strong>/</strong>(other)
+
+        <a class="method-permalink" href="#/(other)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Invokes <code><a href="../Phase/MultiIndexable.html#/(other:MultiIndexable(U))forallU-instance-method">#/(other)</a></code> on each element in <code>self</code>, returning an
+<code><a href="../Phase/NArray.html">NArray</a></code> that contains the results.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/in-phase/ph-core/blob/0ca19eb664ef717074bac168f5d3ad57ad063bb9/src/multi_indexable.cr#L329" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="//(other:MultiIndexable(U))forallU-instance-method">
+      <div class="signature">
+        
+        def <strong>//</strong>(other : <a href="../Phase/MultiIndexable.html">MultiIndexable</a>(U)) forall U
+
+        <a class="method-permalink" href="#//(other:MultiIndexable(U))forallU-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Invokes <code><a href="../Phase/MultiIndexable.html#//(other:MultiIndexable(U))forallU-instance-method">#//</a></code> element-wise between <code>self</code> and <em>other</em>, returning
+an <code><a href="../Phase/NArray.html">NArray</a></code> that contains the results.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/in-phase/ph-core/blob/0ca19eb664ef717074bac168f5d3ad57ad063bb9/src/multi_indexable.cr#L329" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="//(other)-instance-method">
+      <div class="signature">
+        
+        def <strong>//</strong>(other)
+
+        <a class="method-permalink" href="#//(other)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Invokes <code><a href="../Phase/MultiIndexable.html#//(other:MultiIndexable(U))forallU-instance-method">#//(other)</a></code> on each element in <code>self</code>, returning an
+<code><a href="../Phase/NArray.html">NArray</a></code> that contains the results.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/in-phase/ph-core/blob/0ca19eb664ef717074bac168f5d3ad57ad063bb9/src/multi_indexable.cr#L329" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="&lt;(other:MultiIndexable(U))forallU-instance-method">
+      <div class="signature">
+        
+        def <strong><</strong>(other : <a href="../Phase/MultiIndexable.html">MultiIndexable</a>(U)) forall U
+
+        <a class="method-permalink" href="#%3C(other:MultiIndexable(U))forallU-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Invokes <code><a href="../Phase/MultiIndexable.html#%3C(other:MultiIndexable(U))forallU-instance-method">#<</a></code> element-wise between <code>self</code> and <em>other</em>, returning
+an <code><a href="../Phase/NArray.html">NArray</a></code> that contains the results.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/in-phase/ph-core/blob/0ca19eb664ef717074bac168f5d3ad57ad063bb9/src/multi_indexable.cr#L329" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="&lt;(other)-instance-method">
+      <div class="signature">
+        
+        def <strong><</strong>(other)
+
+        <a class="method-permalink" href="#%3C(other)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Invokes <code><a href="../Phase/MultiIndexable.html#%3C(other:MultiIndexable(U))forallU-instance-method">#<(other)</a></code> on each element in <code>self</code>, returning an
+<code><a href="../Phase/NArray.html">NArray</a></code> that contains the results.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/in-phase/ph-core/blob/0ca19eb664ef717074bac168f5d3ad57ad063bb9/src/multi_indexable.cr#L329" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="&lt;=(other:MultiIndexable(U))forallU-instance-method">
+      <div class="signature">
+        
+        def <strong><=</strong>(other : <a href="../Phase/MultiIndexable.html">MultiIndexable</a>(U)) forall U
+
+        <a class="method-permalink" href="#%3C=(other:MultiIndexable(U))forallU-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Invokes <code><a href="../Phase/MultiIndexable.html#%3C=(other:MultiIndexable(U))forallU-instance-method">#<=</a></code> element-wise between <code>self</code> and <em>other</em>, returning
+an <code><a href="../Phase/NArray.html">NArray</a></code> that contains the results.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/in-phase/ph-core/blob/0ca19eb664ef717074bac168f5d3ad57ad063bb9/src/multi_indexable.cr#L329" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="&lt;=(other)-instance-method">
+      <div class="signature">
+        
+        def <strong><=</strong>(other)
+
+        <a class="method-permalink" href="#%3C=(other)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Invokes <code><a href="../Phase/MultiIndexable.html#%3C=(other:MultiIndexable(U))forallU-instance-method">#<=(other)</a></code> on each element in <code>self</code>, returning an
+<code><a href="../Phase/NArray.html">NArray</a></code> that contains the results.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/in-phase/ph-core/blob/0ca19eb664ef717074bac168f5d3ad57ad063bb9/src/multi_indexable.cr#L329" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="&lt;=&gt;(other:MultiIndexable(U))forallU-instance-method">
+      <div class="signature">
+        
+        def <strong><=></strong>(other : <a href="../Phase/MultiIndexable.html">MultiIndexable</a>(U)) forall U
+
+        <a class="method-permalink" href="#%3C=%3E(other:MultiIndexable(U))forallU-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Invokes <code><a href="../Phase/MultiIndexable.html#%3C=%3E(other:MultiIndexable(U))forallU-instance-method">#<=></a></code> element-wise between <code>self</code> and <em>other</em>, returning
+an <code><a href="../Phase/NArray.html">NArray</a></code> that contains the results.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/in-phase/ph-core/blob/0ca19eb664ef717074bac168f5d3ad57ad063bb9/src/multi_indexable.cr#L329" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="&lt;=&gt;(other)-instance-method">
+      <div class="signature">
+        
+        def <strong><=></strong>(other)
+
+        <a class="method-permalink" href="#%3C=%3E(other)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Invokes <code><a href="../Phase/MultiIndexable.html#%3C=%3E(other:MultiIndexable(U))forallU-instance-method">#<=>(other)</a></code> on each element in <code>self</code>, returning an
+<code><a href="../Phase/NArray.html">NArray</a></code> that contains the results.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/in-phase/ph-core/blob/0ca19eb664ef717074bac168f5d3ad57ad063bb9/src/multi_indexable.cr#L329" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="&gt;(other:MultiIndexable(U))forallU-instance-method">
+      <div class="signature">
+        
+        def <strong>></strong>(other : <a href="../Phase/MultiIndexable.html">MultiIndexable</a>(U)) forall U
+
+        <a class="method-permalink" href="#%3E(other:MultiIndexable(U))forallU-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Invokes <code><a href="../Phase/MultiIndexable.html#%3E(other:MultiIndexable(U))forallU-instance-method">#></a></code> element-wise between <code>self</code> and <em>other</em>, returning
+an <code><a href="../Phase/NArray.html">NArray</a></code> that contains the results.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/in-phase/ph-core/blob/0ca19eb664ef717074bac168f5d3ad57ad063bb9/src/multi_indexable.cr#L329" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="&gt;(other)-instance-method">
+      <div class="signature">
+        
+        def <strong>></strong>(other)
+
+        <a class="method-permalink" href="#%3E(other)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Invokes <code><a href="../Phase/MultiIndexable.html#%3E(other:MultiIndexable(U))forallU-instance-method">#>(other)</a></code> on each element in <code>self</code>, returning an
+<code><a href="../Phase/NArray.html">NArray</a></code> that contains the results.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/in-phase/ph-core/blob/0ca19eb664ef717074bac168f5d3ad57ad063bb9/src/multi_indexable.cr#L329" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="&gt;=(other:MultiIndexable(U))forallU-instance-method">
+      <div class="signature">
+        
+        def <strong>>=</strong>(other : <a href="../Phase/MultiIndexable.html">MultiIndexable</a>(U)) forall U
+
+        <a class="method-permalink" href="#%3E=(other:MultiIndexable(U))forallU-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Invokes <code><a href="../Phase/MultiIndexable.html#%3E=(other:MultiIndexable(U))forallU-instance-method">#>=</a></code> element-wise between <code>self</code> and <em>other</em>, returning
+an <code><a href="../Phase/NArray.html">NArray</a></code> that contains the results.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/in-phase/ph-core/blob/0ca19eb664ef717074bac168f5d3ad57ad063bb9/src/multi_indexable.cr#L329" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="&gt;=(other)-instance-method">
+      <div class="signature">
+        
+        def <strong>>=</strong>(other)
+
+        <a class="method-permalink" href="#%3E=(other)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Invokes <code><a href="../Phase/MultiIndexable.html#%3E=(other:MultiIndexable(U))forallU-instance-method">#>=(other)</a></code> on each element in <code>self</code>, returning an
+<code><a href="../Phase/NArray.html">NArray</a></code> that contains the results.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/in-phase/ph-core/blob/0ca19eb664ef717074bac168f5d3ad57ad063bb9/src/multi_indexable.cr#L329" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="[](bool_mask:MultiIndexable(Bool)):self-instance-method">
+      <div class="signature">
+        
+        def <strong>[]</strong>(bool_mask : <a href="../Phase/MultiIndexable.html">MultiIndexable</a>(Bool)) : <span class="k">self</span>
+
+        <a class="method-permalink" href="#[](bool_mask:MultiIndexable(Bool)):self-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/in-phase/ph-core/blob/0ca19eb664ef717074bac168f5d3ad57ad063bb9/src/multi_indexable.cr#L142" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="[](region:Indexable|IndexRegion,drop:Bool=MultiIndexable::DROP_BY_DEFAULT)-instance-method">
+      <div class="signature">
+        
+        def <strong>[]</strong>(region : Indexable | <a href="../Phase/IndexRegion.html">IndexRegion</a>, drop : Bool = <span class="t">MultiIndexable</span><span class="t">::</span><span class="t">DROP_BY_DEFAULT</span>)
+
+        <a class="method-permalink" href="#[](region:Indexable%7CIndexRegion,drop:Bool=MultiIndexable::DROP_BY_DEFAULT)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Copies the elements in <code>region</code> to a new <code>{{@type}}</code>, and throws an error if <code>region</code> is out-of-bounds for this <code>{{@type}}</code>.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/in-phase/ph-core/blob/0ca19eb664ef717074bac168f5d3ad57ad063bb9/src/multi_indexable.cr#L157" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="[](*tuple,drop:Bool=MultiIndexable::DROP_BY_DEFAULT)-instance-method">
+      <div class="signature">
+        
+        def <strong>[]</strong>(*tuple, drop : Bool = <span class="t">MultiIndexable</span><span class="t">::</span><span class="t">DROP_BY_DEFAULT</span>)
+
+        <a class="method-permalink" href="#[](*tuple,drop:Bool=MultiIndexable::DROP_BY_DEFAULT)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Tuple-accepting overload of <code>#"[]"</code>.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/in-phase/ph-core/blob/0ca19eb664ef717074bac168f5d3ad57ad063bb9/src/multi_indexable.cr#L178" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="[]?(bool_mask:MultiIndexable(Bool)):MultiIndexable(T?)-instance-method">
+      <div class="signature">
+        
+        def <strong>[]?</strong>(bool_mask : <a href="../Phase/MultiIndexable.html">MultiIndexable</a>(Bool)) : <a href="../Phase/MultiIndexable.html">MultiIndexable</a>(T?)
+
+        <a class="method-permalink" href="#[]?(bool_mask:MultiIndexable(Bool)):MultiIndexable(T?)-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/in-phase/ph-core/blob/0ca19eb664ef717074bac168f5d3ad57ad063bb9/src/multi_indexable.cr#L146" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="[]?(region:Indexable|IndexRegion,drop:Bool=MultiIndexable::DROP_BY_DEFAULT):self?-instance-method">
+      <div class="signature">
+        
+        def <strong>[]?</strong>(region : Indexable | <a href="../Phase/IndexRegion.html">IndexRegion</a>, drop : Bool = <span class="t">MultiIndexable</span><span class="t">::</span><span class="t">DROP_BY_DEFAULT</span>) : <span class="k">self</span>?
+
+        <a class="method-permalink" href="#[]?(region:Indexable%7CIndexRegion,drop:Bool=MultiIndexable::DROP_BY_DEFAULT):self?-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Copies the elements in <code>region</code> to a new <code>{{@type}}</code>, or returns false if <code>region</code> is out-of-bounds for this <code>{{@type}}</code>.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/in-phase/ph-core/blob/0ca19eb664ef717074bac168f5d3ad57ad063bb9/src/multi_indexable.cr#L162" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="[]?(*tuple,drop:Bool=MultiIndexable::DROP_BY_DEFAULT)-instance-method">
+      <div class="signature">
+        
+        def <strong>[]?</strong>(*tuple, drop : Bool = <span class="t">MultiIndexable</span><span class="t">::</span><span class="t">DROP_BY_DEFAULT</span>)
+
+        <a class="method-permalink" href="#[]?(*tuple,drop:Bool=MultiIndexable::DROP_BY_DEFAULT)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Tuple-accepting overload of <code>#"[]?"</code>.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/in-phase/ph-core/blob/0ca19eb664ef717074bac168f5d3ad57ad063bb9/src/multi_indexable.cr#L178" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="^(other:MultiIndexable(U))forallU-instance-method">
+      <div class="signature">
+        
+        def <strong>^</strong>(other : <a href="../Phase/MultiIndexable.html">MultiIndexable</a>(U)) forall U
+
+        <a class="method-permalink" href="#%5E(other:MultiIndexable(U))forallU-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Invokes <code><a href="../Phase/MultiIndexable.html#%5E(other:MultiIndexable(U))forallU-instance-method">#^</a></code> element-wise between <code>self</code> and <em>other</em>, returning
+an <code><a href="../Phase/NArray.html">NArray</a></code> that contains the results.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/in-phase/ph-core/blob/0ca19eb664ef717074bac168f5d3ad57ad063bb9/src/multi_indexable.cr#L329" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="^(other)-instance-method">
+      <div class="signature">
+        
+        def <strong>^</strong>(other)
+
+        <a class="method-permalink" href="#%5E(other)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Invokes <code><a href="../Phase/MultiIndexable.html#%5E(other:MultiIndexable(U))forallU-instance-method">#^(other)</a></code> on each element in <code>self</code>, returning an
+<code><a href="../Phase/NArray.html">NArray</a></code> that contains the results.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/in-phase/ph-core/blob/0ca19eb664ef717074bac168f5d3ad57ad063bb9/src/multi_indexable.cr#L329" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="dimensions:Int-instance-method">
+      <div class="signature">
+        
+        def <strong>dimensions</strong> : Int
+
+        <a class="method-permalink" href="#dimensions:Int-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Returns the number of indices required to specify an element in <code>{{@type}}</code>.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/in-phase/ph-core/blob/0ca19eb664ef717074bac168f5d3ad57ad063bb9/src/multi_indexable.cr#L91" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="each(iter:CoordIterator(I)):Iterator(T)forallI-instance-method">
+      <div class="signature">
+        
+        def <strong>each</strong>(iter : <a href="../Phase/CoordIterator.html">CoordIterator</a>(I)) : Iterator(T) forall I
+
+        <a class="method-permalink" href="#each(iter:CoordIterator(I)):Iterator(T)forallI-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/in-phase/ph-core/blob/0ca19eb664ef717074bac168f5d3ad57ad063bb9/src/multi_indexable.cr#L206" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="each:Iterator(T)-instance-method">
+      <div class="signature">
+        
+        def <strong>each</strong> : Iterator(T)
+
+        <a class="method-permalink" href="#each:Iterator(T)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>The default iterator must be lexicographic</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/in-phase/ph-core/blob/0ca19eb664ef717074bac168f5d3ad57ad063bb9/src/multi_indexable.cr#L202" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="each(&amp;):Nil-instance-method">
+      <div class="signature">
+        
+        def <strong>each</strong>(&) : Nil
+
+        <a class="method-permalink" href="#each(&):Nil-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Block accepting form of "each".</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/in-phase/ph-core/blob/0ca19eb664ef717074bac168f5d3ad57ad063bb9/src/multi_indexable.cr#L253" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="each_coord:Iterator-instance-method">
+      <div class="signature">
+        
+        def <strong>each_coord</strong> : Iterator
+
+        <a class="method-permalink" href="#each_coord:Iterator-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Iterators ====================================================================</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/in-phase/ph-core/blob/0ca19eb664ef717074bac168f5d3ad57ad063bb9/src/multi_indexable.cr#L197" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="each_coord(&amp;):Nil-instance-method">
+      <div class="signature">
+        
+        def <strong>each_coord</strong>(&) : Nil
+
+        <a class="method-permalink" href="#each_coord(&):Nil-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Block accepting form of "each_coord".</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/in-phase/ph-core/blob/0ca19eb664ef717074bac168f5d3ad57ad063bb9/src/multi_indexable.cr#L253" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="each_slice(axis=0):Iterator-instance-method">
+      <div class="signature">
+        
+        def <strong>each_slice</strong>(axis = <span class="n">0</span>) : Iterator
+
+        <a class="method-permalink" href="#each_slice(axis=0):Iterator-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/in-phase/ph-core/blob/0ca19eb664ef717074bac168f5d3ad57ad063bb9/src/multi_indexable.cr#L241" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="each_slice(&amp;):Nil-instance-method">
+      <div class="signature">
+        
+        def <strong>each_slice</strong>(&) : Nil
+
+        <a class="method-permalink" href="#each_slice(&):Nil-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Block accepting form of "each_slice".</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/in-phase/ph-core/blob/0ca19eb664ef717074bac168f5d3ad57ad063bb9/src/multi_indexable.cr#L253" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="each_with_coord(iter:CoordIterator(I)):IteratorforallI-instance-method">
+      <div class="signature">
+        
+        def <strong>each_with_coord</strong>(iter : <a href="../Phase/CoordIterator.html">CoordIterator</a>(I)) : Iterator forall I
+
+        <a class="method-permalink" href="#each_with_coord(iter:CoordIterator(I)):IteratorforallI-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/in-phase/ph-core/blob/0ca19eb664ef717074bac168f5d3ad57ad063bb9/src/multi_indexable.cr#L214" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="each_with_coord:Iterator-instance-method">
+      <div class="signature">
+        
+        def <strong>each_with_coord</strong> : Iterator
+
+        <a class="method-permalink" href="#each_with_coord:Iterator-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/in-phase/ph-core/blob/0ca19eb664ef717074bac168f5d3ad57ad063bb9/src/multi_indexable.cr#L210" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="each_with_coord(&amp;):Nil-instance-method">
+      <div class="signature">
+        
+        def <strong>each_with_coord</strong>(&) : Nil
+
+        <a class="method-permalink" href="#each_with_coord(&):Nil-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Block accepting form of "each_with_coord".</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/in-phase/ph-core/blob/0ca19eb664ef717074bac168f5d3ad57ad063bb9/src/multi_indexable.cr#L253" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="empty?:Bool-instance-method">
+      <div class="signature">
+        
+        def <strong>empty?</strong> : Bool
+
+        <a class="method-permalink" href="#empty?:Bool-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Checks that the <code>{{@type}}</code> contains no elements.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/in-phase/ph-core/blob/0ca19eb664ef717074bac168f5d3ad57ad063bb9/src/multi_indexable.cr#L38" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="eq(other:MultiIndexable(U)):MultiIndexable(Bool)forallU-instance-method">
+      <div class="signature">
+        
+        def <strong>eq</strong>(other : <a href="../Phase/MultiIndexable.html">MultiIndexable</a>(U)) : <a href="../Phase/MultiIndexable.html">MultiIndexable</a>(Bool) forall U
+
+        <a class="method-permalink" href="#eq(other:MultiIndexable(U)):MultiIndexable(Bool)forallU-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p><span class="flag orange">TODO</span>  rename!
+Produces an NArray(Bool) (by default) describing which elements of self and other are equal.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/in-phase/ph-core/blob/0ca19eb664ef717074bac168f5d3ad57ad063bb9/src/multi_indexable.cr#L305" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="eq(value):MultiIndexable(Bool)-instance-method">
+      <div class="signature">
+        
+        def <strong>eq</strong>(value) : <a href="../Phase/MultiIndexable.html">MultiIndexable</a>(Bool)
+
+        <a class="method-permalink" href="#eq(value):MultiIndexable(Bool)-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/in-phase/ph-core/blob/0ca19eb664ef717074bac168f5d3ad57ad063bb9/src/multi_indexable.cr#L315" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="equals?(other:MultiIndexable):Bool-instance-method">
+      <div class="signature">
+        
+        def <strong>equals?</strong>(other : <a href="../Phase/MultiIndexable.html">MultiIndexable</a>) : Bool
+
+        <a class="method-permalink" href="#equals?(other:MultiIndexable):Bool-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/in-phase/ph-core/blob/0ca19eb664ef717074bac168f5d3ad57ad063bb9/src/multi_indexable.cr#L272" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="equals?(other:MultiIndexable,&amp;):Bool-instance-method">
+      <div class="signature">
+        
+        def <strong>equals?</strong>(other : <a href="../Phase/MultiIndexable.html">MultiIndexable</a>, &) : Bool
+
+        <a class="method-permalink" href="#equals?(other:MultiIndexable,&):Bool-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/in-phase/ph-core/blob/0ca19eb664ef717074bac168f5d3ad57ad063bb9/src/multi_indexable.cr#L278" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="fast:Iterator(T)-instance-method">
+      <div class="signature">
+        
+        def <strong>fast</strong> : Iterator(T)
+
+        <a class="method-permalink" href="#fast:Iterator(T)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>A method to get all elements in this <code>{{@type}}</code> when order is irrelevant.
+Recommended that implementers override this method to take advantage of
+the storage scheme the implementation uses</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/in-phase/ph-core/blob/0ca19eb664ef717074bac168f5d3ad57ad063bb9/src/multi_indexable.cr#L234" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="fast(&amp;):Nil-instance-method">
+      <div class="signature">
+        
+        def <strong>fast</strong>(&) : Nil
+
+        <a class="method-permalink" href="#fast(&):Nil-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Block accepting form of "fast".</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/in-phase/ph-core/blob/0ca19eb664ef717074bac168f5d3ad57ad063bb9/src/multi_indexable.cr#L253" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="first:T-instance-method">
+      <div class="signature">
+        
+        def <strong>first</strong> : T
+
+        <a class="method-permalink" href="#first:T-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Returns the element at position <code>0</code> along every axis.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/in-phase/ph-core/blob/0ca19eb664ef717074bac168f5d3ad57ad063bb9/src/multi_indexable.cr#L66" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="get(coord:Indexable):T-instance-method">
+      <div class="signature">
+        
+        def <strong>get</strong>(coord : Indexable) : T
+
+        <a class="method-permalink" href="#get(coord:Indexable):T-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/in-phase/ph-core/blob/0ca19eb664ef717074bac168f5d3ad57ad063bb9/src/multi_indexable.cr#L174" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="get(*tuple)-instance-method">
+      <div class="signature">
+        
+        def <strong>get</strong>(*tuple)
+
+        <a class="method-permalink" href="#get(*tuple)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Tuple-accepting overload of <code>#"get"</code>.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/in-phase/ph-core/blob/0ca19eb664ef717074bac168f5d3ad57ad063bb9/src/multi_indexable.cr#L178" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="get_available(region:Indexable,drop:Bool=DROP_BY_DEFAULT)-instance-method">
+      <div class="signature">
+        
+        def <strong>get_available</strong>(region : Indexable, drop : Bool = <span class="t">DROP_BY_DEFAULT</span>)
+
+        <a class="method-permalink" href="#get_available(region:Indexable,drop:Bool=DROP_BY_DEFAULT)-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/in-phase/ph-core/blob/0ca19eb664ef717074bac168f5d3ad57ad063bb9/src/multi_indexable.cr#L138" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="get_available(region:IndexRegion,drop:Bool=DROP_BY_DEFAULT)-instance-method">
+      <div class="signature">
+        
+        def <strong>get_available</strong>(region : <a href="../Phase/IndexRegion.html">IndexRegion</a>, drop : Bool = <span class="t">DROP_BY_DEFAULT</span>)
+
+        <a class="method-permalink" href="#get_available(region:IndexRegion,drop:Bool=DROP_BY_DEFAULT)-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/in-phase/ph-core/blob/0ca19eb664ef717074bac168f5d3ad57ad063bb9/src/multi_indexable.cr#L134" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="get_chunk(region:Indexable,drop:Bool=DROP_BY_DEFAULT)-instance-method">
+      <div class="signature">
+        
+        def <strong>get_chunk</strong>(region : Indexable, drop : Bool = <span class="t">DROP_BY_DEFAULT</span>)
+
+        <a class="method-permalink" href="#get_chunk(region:Indexable,drop:Bool=DROP_BY_DEFAULT)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Copies the elements in <code>region</code> to a new <code>{{@type}}</code>, and throws an error if <code>region</code> is out-of-bounds for this <code>{{@type}}</code>.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/in-phase/ph-core/blob/0ca19eb664ef717074bac168f5d3ad57ad063bb9/src/multi_indexable.cr#L125" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="get_chunk(coord:Indexable,region_shape:Indexable)-instance-method">
+      <div class="signature">
+        
+        def <strong>get_chunk</strong>(coord : Indexable, region_shape : Indexable)
+
+        <a class="method-permalink" href="#get_chunk(coord:Indexable,region_shape:Indexable)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>"drags out" a region of shape region_shape with coord as the top left corner</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/in-phase/ph-core/blob/0ca19eb664ef717074bac168f5d3ad57ad063bb9/src/multi_indexable.cr#L130" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="get_chunk(region:IndexRegion):MultiIndexable(T)-instance-method">
+      <div class="signature">
+        
+        def <strong>get_chunk</strong>(region : <a href="../Phase/IndexRegion.html">IndexRegion</a>) : <a href="../Phase/MultiIndexable.html">MultiIndexable</a>(T)
+
+        <a class="method-permalink" href="#get_chunk(region:IndexRegion):MultiIndexable(T)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Copies the elements in <code>region</code> to a new <code>{{@type}}</code>, and throws an error if <code>region</code> is out-of-bounds for this <code>{{@type}}</code>.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/in-phase/ph-core/blob/0ca19eb664ef717074bac168f5d3ad57ad063bb9/src/multi_indexable.cr#L117" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="get_chunk(*tuple,drop:Bool=MultiIndexable::DROP_BY_DEFAULT)-instance-method">
+      <div class="signature">
+        
+        def <strong>get_chunk</strong>(*tuple, drop : Bool = <span class="t">MultiIndexable</span><span class="t">::</span><span class="t">DROP_BY_DEFAULT</span>)
+
+        <a class="method-permalink" href="#get_chunk(*tuple,drop:Bool=MultiIndexable::DROP_BY_DEFAULT)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Tuple-accepting overload of <code>#"get_chunk"</code>.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/in-phase/ph-core/blob/0ca19eb664ef717074bac168f5d3ad57ad063bb9/src/multi_indexable.cr#L178" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="get_element(coord:Indexable):T-instance-method">
+      <div class="signature">
+        
+        def <strong>get_element</strong>(coord : Indexable) : T
+
+        <a class="method-permalink" href="#get_element(coord:Indexable):T-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Retrieves the element specified by <code>coord</code>, and throws an error if <code>coord</code> is out-of-bounds for this <code>{{@type}}</code>.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/in-phase/ph-core/blob/0ca19eb664ef717074bac168f5d3ad57ad063bb9/src/multi_indexable.cr#L170" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="get_element(*tuple)-instance-method">
+      <div class="signature">
+        
+        def <strong>get_element</strong>(*tuple)
+
+        <a class="method-permalink" href="#get_element(*tuple)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Tuple-accepting overload of <code>#"get_element"</code>.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/in-phase/ph-core/blob/0ca19eb664ef717074bac168f5d3ad57ad063bb9/src/multi_indexable.cr#L178" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="has_coord?(coord:Indexable):Bool-instance-method">
+      <div class="signature">
+        
+        def <strong>has_coord?</strong>(coord : Indexable) : Bool
+
+        <a class="method-permalink" href="#has_coord?(coord:Indexable):Bool-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Checks that <code>coord</code> is in-bounds for this <code>{{@type}}</code>.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/in-phase/ph-core/blob/0ca19eb664ef717074bac168f5d3ad57ad063bb9/src/multi_indexable.cr#L96" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="has_coord?(*tuple)-instance-method">
+      <div class="signature">
+        
+        def <strong>has_coord?</strong>(*tuple)
+
+        <a class="method-permalink" href="#has_coord?(*tuple)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Tuple-accepting overload of <code>#"has_coord?"</code>.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/in-phase/ph-core/blob/0ca19eb664ef717074bac168f5d3ad57ad063bb9/src/multi_indexable.cr#L178" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="has_region?(region:Indexable):Bool-instance-method">
+      <div class="signature">
+        
+        def <strong>has_region?</strong>(region : Indexable) : Bool
+
+        <a class="method-permalink" href="#has_region?(region:Indexable):Bool-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Checks that <code>region</code> is in-bounds for this <code>{{@type}}</code>.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/in-phase/ph-core/blob/0ca19eb664ef717074bac168f5d3ad57ad063bb9/src/multi_indexable.cr#L101" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="has_region?(*tuple)-instance-method">
+      <div class="signature">
+        
+        def <strong>has_region?</strong>(*tuple)
+
+        <a class="method-permalink" href="#has_region?(*tuple)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Tuple-accepting overload of <code>#"has_region?"</code>.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/in-phase/ph-core/blob/0ca19eb664ef717074bac168f5d3ad57ad063bb9/src/multi_indexable.cr#L178" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="hash(hasher)-instance-method">
+      <div class="signature">
+        
+        def <strong>hash</strong>(hasher)
+
+        <a class="method-permalink" href="#hash(hasher)-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/in-phase/ph-core/blob/0ca19eb664ef717074bac168f5d3ad57ad063bb9/src/multi_indexable.cr#L321" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="map(&amp;block:T-&gt;R):MultiIndexable(R)forallR-instance-method">
+      <div class="signature">
+        
+        def <strong>map</strong>(&block : T -> R) : <a href="../Phase/MultiIndexable.html">MultiIndexable</a>(R) forall R
+
+        <a class="method-permalink" href="#map(&block:T-%3ER):MultiIndexable(R)forallR-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>By default, gives an NArray</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/in-phase/ph-core/blob/0ca19eb664ef717074bac168f5d3ad57ad063bb9/src/multi_indexable.cr#L225" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="map_with_coord(&amp;)-instance-method">
+      <div class="signature">
+        
+        def <strong>map_with_coord</strong>(&)
+
+        <a class="method-permalink" href="#map_with_coord(&)-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/in-phase/ph-core/blob/0ca19eb664ef717074bac168f5d3ad57ad063bb9/src/multi_indexable.cr#L218" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="permute(*args):MultiIndexable(T)-instance-method">
+      <div class="signature">
+        
+        def <strong>permute</strong>(*args) : <a href="../Phase/MultiIndexable.html">MultiIndexable</a>(T)
+
+        <a class="method-permalink" href="#permute(*args):MultiIndexable(T)-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/in-phase/ph-core/blob/0ca19eb664ef717074bac168f5d3ad57ad063bb9/src/multi_indexable.cr#L260" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="process(&amp;block:T-&gt;R):ProcView(self,T,R)forallR-instance-method">
+      <div class="signature">
+        
+        def <strong>process</strong>(&block : T -> R) : <a href="../Phase/ProcView.html">ProcView</a>(<span class="k">self</span>, T, R) forall R
+
+        <a class="method-permalink" href="#process(&block:T-%3ER):ProcView(self,T,R)forallR-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/in-phase/ph-core/blob/0ca19eb664ef717074bac168f5d3ad57ad063bb9/src/multi_indexable.cr#L295" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="process(proc:Proc(T,R)):ProcView(self,T,R)forallR-instance-method">
+      <div class="signature">
+        
+        def <strong>process</strong>(proc : Proc(T, R)) : <a href="../Phase/ProcView.html">ProcView</a>(<span class="k">self</span>, T, R) forall R
+
+        <a class="method-permalink" href="#process(proc:Proc(T,R)):ProcView(self,T,R)forallR-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/in-phase/ph-core/blob/0ca19eb664ef717074bac168f5d3ad57ad063bb9/src/multi_indexable.cr#L299" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="reshape(*args):MultiIndexable(T)-instance-method">
+      <div class="signature">
+        
+        def <strong>reshape</strong>(*args) : <a href="../Phase/MultiIndexable.html">MultiIndexable</a>(T)
+
+        <a class="method-permalink" href="#reshape(*args):MultiIndexable(T)-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/in-phase/ph-core/blob/0ca19eb664ef717074bac168f5d3ad57ad063bb9/src/multi_indexable.cr#L260" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="reverse(*args):MultiIndexable(T)-instance-method">
+      <div class="signature">
+        
+        def <strong>reverse</strong>(*args) : <a href="../Phase/MultiIndexable.html">MultiIndexable</a>(T)
+
+        <a class="method-permalink" href="#reverse(*args):MultiIndexable(T)-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/in-phase/ph-core/blob/0ca19eb664ef717074bac168f5d3ad57ad063bb9/src/multi_indexable.cr#L260" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="sample(n:Int,random=Random::DEFAULT):Enumerable(T)-instance-method">
+      <div class="signature">
+        
+        def <strong>sample</strong>(n : Int, random = <span class="t">Random</span><span class="t">::</span><span class="t">DEFAULT</span>) : Enumerable(T)
+
+        <a class="method-permalink" href="#sample(n:Int,random=Random::DEFAULT):Enumerable(T)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Returns a random element from the <code>{{@type}}</code>. Note that this might not return
+distinct elements if the random number generator returns the same coordinate twice.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/in-phase/ph-core/blob/0ca19eb664ef717074bac168f5d3ad57ad063bb9/src/multi_indexable.cr#L76" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="sample(random=Random::DEFAULT):T-instance-method">
+      <div class="signature">
+        
+        def <strong>sample</strong>(random = <span class="t">Random</span><span class="t">::</span><span class="t">DEFAULT</span>) : T
+
+        <a class="method-permalink" href="#sample(random=Random::DEFAULT):T-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Returns a random element from the <code>{{@type}}</code>.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/in-phase/ph-core/blob/0ca19eb664ef717074bac168f5d3ad57ad063bb9/src/multi_indexable.cr#L85" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="scalar?:Bool-instance-method">
+      <div class="signature">
+        
+        def <strong>scalar?</strong> : Bool
+
+        <a class="method-permalink" href="#scalar?:Bool-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Checks that this <code>{{@type}}</code> is one-dimensional, and contains a single element.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/in-phase/ph-core/blob/0ca19eb664ef717074bac168f5d3ad57ad063bb9/src/multi_indexable.cr#L43" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="shape:Array-instance-method">
+      <div class="signature">
+        abstract 
+        def <strong>shape</strong> : Array
+
+        <a class="method-permalink" href="#shape:Array-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Returns the length of the <code>{{@type}}</code> in each dimension.
+For a <code>coord</code> to specify an element of the <code>{{@type}}</code> it must satisfy <code>coord[i] < shape[i]</code> for each <code>i</code>.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/in-phase/ph-core/blob/0ca19eb664ef717074bac168f5d3ad57ad063bb9/src/multi_indexable.cr#L21" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="size-instance-method">
+      <div class="signature">
+        abstract 
+        def <strong>size</strong>
+
+        <a class="method-permalink" href="#size-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Returns the number of elements in the <code>{{@type}}</code>; equal to <code>shape.product</code>.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/in-phase/ph-core/blob/0ca19eb664ef717074bac168f5d3ad57ad063bb9/src/multi_indexable.cr#L17" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="slices(axis=0):Enumerable-instance-method">
+      <div class="signature">
+        
+        def <strong>slices</strong>(axis = <span class="n">0</span>) : Enumerable
+
+        <a class="method-permalink" href="#slices(axis=0):Enumerable-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/in-phase/ph-core/blob/0ca19eb664ef717074bac168f5d3ad57ad063bb9/src/multi_indexable.cr#L249" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="to_f:Float-instance-method">
+      <div class="signature">
+        
+        def <strong>to_f</strong> : Float
+
+        <a class="method-permalink" href="#to_f:Float-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/in-phase/ph-core/blob/0ca19eb664ef717074bac168f5d3ad57ad063bb9/src/multi_indexable.cr#L61" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="to_literal_s(io:IO):Nil-instance-method">
+      <div class="signature">
+        
+        def <strong>to_literal_s</strong>(io : IO) : Nil
+
+        <a class="method-permalink" href="#to_literal_s(io:IO):Nil-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/in-phase/ph-core/blob/0ca19eb664ef717074bac168f5d3ad57ad063bb9/src/formatter/formatter.cr#L261" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="to_narr:NArray(T)-instance-method">
+      <div class="signature">
+        
+        def <strong>to_narr</strong> : <a href="../Phase/NArray.html">NArray</a>(T)
+
+        <a class="method-permalink" href="#to_narr:NArray(T)-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/in-phase/ph-core/blob/0ca19eb664ef717074bac168f5d3ad57ad063bb9/src/multi_indexable.cr#L266" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="to_s(io:IO,settings=Formatter::Settings.new):Nil-instance-method">
+      <div class="signature">
+        
+        def <strong>to_s</strong>(io : IO, settings = <span class="t">Formatter</span><span class="t">::</span><span class="t">Settings</span>.<span class="k">new</span>) : Nil
+
+        <a class="method-permalink" href="#to_s(io:IO,settings=Formatter::Settings.new):Nil-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p><span class="flag yellow">FIXME</span>  NArrayFormatter depends on buffer indices.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/in-phase/ph-core/blob/0ca19eb664ef717074bac168f5d3ad57ad063bb9/src/formatter/formatter.cr#L273" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="to_s(settings=Formatter::Settings.new):String-instance-method">
+      <div class="signature">
+        
+        def <strong>to_s</strong>(settings = <span class="t">Formatter</span><span class="t">::</span><span class="t">Settings</span>.<span class="k">new</span>) : String
+
+        <a class="method-permalink" href="#to_s(settings=Formatter::Settings.new):String-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p><span class="flag yellow">FIXME</span>  NArrayFormatter depends on buffer indices.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/in-phase/ph-core/blob/0ca19eb664ef717074bac168f5d3ad57ad063bb9/src/formatter/formatter.cr#L266" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="to_scalar:T-instance-method">
+      <div class="signature">
+        
+        def <strong>to_scalar</strong> : T
+
+        <a class="method-permalink" href="#to_scalar:T-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Maps a single-element 1D <code>{{@type}}</code> to the element it contains.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/in-phase/ph-core/blob/0ca19eb664ef717074bac168f5d3ad57ad063bb9/src/multi_indexable.cr#L48" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="to_scalar?:T?-instance-method">
+      <div class="signature">
+        
+        def <strong>to_scalar?</strong> : T?
+
+        <a class="method-permalink" href="#to_scalar?:T?-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/in-phase/ph-core/blob/0ca19eb664ef717074bac168f5d3ad57ad063bb9/src/multi_indexable.cr#L56" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="unsafe_fetch_chunk(region:IndexRegion)-instance-method">
+      <div class="signature">
+        
+        def <strong>unsafe_fetch_chunk</strong>(region : <a href="../Phase/IndexRegion.html">IndexRegion</a>)
+
+        <a class="method-permalink" href="#unsafe_fetch_chunk(region:IndexRegion)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Copies the elements in <code>region</code> to a new <code>{{@type}}</code>, assuming that <code>region</code> is in canonical form and in-bounds for this <code>{{@type}}</code>.
+For full specification of canonical form see <code>RegionHelpers</code> documentation. TODO: make this actually happen</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/in-phase/ph-core/blob/0ca19eb664ef717074bac168f5d3ad57ad063bb9/src/multi_indexable.cr#L110" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="unsafe_fetch_element(coord:Coord):T-instance-method">
+      <div class="signature">
+        abstract 
+        def <strong>unsafe_fetch_element</strong>(coord : <a href="../Phase/Coord.html">Coord</a>) : T
+
+        <a class="method-permalink" href="#unsafe_fetch_element(coord:Coord):T-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Retrieves the element specified by <code>coord</code>, assuming that <code>coord</code> is in canonical form and in-bounds for this <code>{{@type}}</code>.
+For full specification of canonical form see <code>RegionHelpers</code> documentation. TODO: make this actually happen</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/in-phase/ph-core/blob/0ca19eb664ef717074bac168f5d3ad57ad063bb9/src/multi_indexable.cr#L25" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="view(region:Indexable?|IndexRegion=nil):View(self,T)-instance-method">
+      <div class="signature">
+        
+        def <strong>view</strong>(region : Indexable? | <a href="../Phase/IndexRegion.html">IndexRegion</a> = <span class="n">nil</span>) : <a href="../Phase/View.html">View</a>(<span class="k">self</span>, T)
+
+        <a class="method-permalink" href="#view(region:Indexable?%7CIndexRegion=nil):View(self,T)-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/in-phase/ph-core/blob/0ca19eb664ef717074bac168f5d3ad57ad063bb9/src/multi_indexable.cr#L286" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="view(*region):View(self,T)-instance-method">
+      <div class="signature">
+        
+        def <strong>view</strong>(*region) : <a href="../Phase/View.html">View</a>(<span class="k">self</span>, T)
+
+        <a class="method-permalink" href="#view(*region):View(self,T)-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/in-phase/ph-core/blob/0ca19eb664ef717074bac168f5d3ad57ad063bb9/src/multi_indexable.cr#L291" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="|(other:MultiIndexable(U))forallU-instance-method">
+      <div class="signature">
+        
+        def <strong>|</strong>(other : <a href="../Phase/MultiIndexable.html">MultiIndexable</a>(U)) forall U
+
+        <a class="method-permalink" href="#%7C(other:MultiIndexable(U))forallU-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Invokes <code><a href="../Phase/MultiIndexable.html#%7C(other:MultiIndexable(U))forallU-instance-method">#|</a></code> element-wise between <code>self</code> and <em>other</em>, returning
+an <code><a href="../Phase/NArray.html">NArray</a></code> that contains the results.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/in-phase/ph-core/blob/0ca19eb664ef717074bac168f5d3ad57ad063bb9/src/multi_indexable.cr#L329" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="|(other)-instance-method">
+      <div class="signature">
+        
+        def <strong>|</strong>(other)
+
+        <a class="method-permalink" href="#%7C(other)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Invokes <code><a href="../Phase/MultiIndexable.html#%7C(other:MultiIndexable(U))forallU-instance-method">#|(other)</a></code> on each element in <code>self</code>, returning an
+<code><a href="../Phase/NArray.html">NArray</a></code> that contains the results.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/in-phase/ph-core/blob/0ca19eb664ef717074bac168f5d3ad57ad063bb9/src/multi_indexable.cr#L329" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="~-instance-method">
+      <div class="signature">
+        
+        def <strong>~</strong>
+
+        <a class="method-permalink" href="#~-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/in-phase/ph-core/blob/0ca19eb664ef717074bac168f5d3ad57ad063bb9/src/multi_indexable.cr#L329" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+
+
+
+
+</div>
+
+</body>
+</html>

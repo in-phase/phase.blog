@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="Crystal Docs 1.1.0">
+<meta name="crystal_docs.project_version" content="main">
+<meta name="crystal_docs.project_name" content="ph-core">
+
+
+
+<link href="../css/style.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="../js/doc.js"></script>
+
+  <meta name="repository-name" content="ph-core">
+  <title>Phase::CoordUtil - ph-core main</title>
+  <script type="text/javascript">
+    CrystalDocs.base_path = "../";
+  </script>
+</head>
+<body>
+
+<svg class="hidden">
+  <symbol id="octicon-link" viewBox="0 0 16 16">
+    <path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path>
+  </symbol>
+</svg>
+<div class="sidebar">
+  <div class="sidebar-header">
+    <div class="search-box">
+      <input type="search" class="search-input" placeholder="Search..." spellcheck="false" aria-label="Search">
+    </div>
+
+    <div class="project-summary">
+      <h1 class="project-name">
+        <a href="../index.html">
+          ph-core
+        </a>
+      </h1>
+
+      <span class="project-version">
+        main
+      </span>
+    </div>
+  </div>
+
+  <div class="search-results hidden">
+    <ul class="search-list"></ul>
+  </div>
+
+  <div class="types-list">
+    <ul>
+  
+  <li class=" " data-id="ph-core/Complex" data-name="complex">
+      <a href="../Complex.html">Complex</a>
+      
+    </li>
+  
+  <li class=" " data-id="ph-core/Number" data-name="number">
+      <a href="../Number.html">Number</a>
+      
+    </li>
+  
+  <li class="parent open current" data-id="ph-core/Phase" data-name="phase">
+      <a href="../Phase.html">Phase</a>
+      
+        <ul>
+  
+  <li class=" " data-id="ph-core/Phase/CartesianProduct" data-name="phase::cartesianproduct(*u)">
+      <a href="../Phase/CartesianProduct.html">CartesianProduct</a>
+      
+    </li>
+  
+  <li class="parent " data-id="ph-core/Phase/ChunkAndRegionIterator" data-name="phase::chunkandregioniterator(e, i)">
+      <a href="../Phase/ChunkAndRegionIterator.html">ChunkAndRegionIterator</a>
+      
+        <ul>
+  
+  <li class=" " data-id="ph-core/Phase/ChunkAndRegionIterator/FB" data-name="phase::chunkandregioniterator::fb">
+      <a href="../Phase/ChunkAndRegionIterator/FB.html">FB</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class="parent " data-id="ph-core/Phase/ChunkIterator" data-name="phase::chunkiterator(e, i)">
+      <a href="../Phase/ChunkIterator.html">ChunkIterator</a>
+      
+        <ul>
+  
+  <li class=" " data-id="ph-core/Phase/ChunkIterator/FB" data-name="phase::chunkiterator::fb">
+      <a href="../Phase/ChunkIterator/FB.html">FB</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class=" " data-id="ph-core/Phase/ColexIterator" data-name="phase::colexiterator(t)">
+      <a href="../Phase/ColexIterator.html">ColexIterator</a>
+      
+    </li>
+  
+  <li class=" " data-id="ph-core/Phase/ComposedTransform" data-name="phase::composedtransform">
+      <a href="../Phase/ComposedTransform.html">ComposedTransform</a>
+      
+    </li>
+  
+  <li class=" " data-id="ph-core/Phase/Coord" data-name="phase::coord">
+      <a href="../Phase/Coord.html">Coord</a>
+      
+    </li>
+  
+  <li class=" " data-id="ph-core/Phase/CoordIterator" data-name="phase::coorditerator(t)">
+      <a href="../Phase/CoordIterator.html">CoordIterator</a>
+      
+    </li>
+  
+  <li class=" " data-id="ph-core/Phase/CoordTransform" data-name="phase::coordtransform">
+      <a href="../Phase/CoordTransform.html">CoordTransform</a>
+      
+    </li>
+  
+  <li class=" current" data-id="ph-core/Phase/CoordUtil" data-name="phase::coordutil">
+      <a href="../Phase/CoordUtil.html">CoordUtil</a>
+      
+    </li>
+  
+  <li class=" " data-id="ph-core/Phase/DimensionError" data-name="phase::dimensionerror">
+      <a href="../Phase/DimensionError.html">DimensionError</a>
+      
+    </li>
+  
+  <li class=" " data-id="ph-core/Phase/ElemAndCoordIterator" data-name="phase::elemandcoorditerator(e, i)">
+      <a href="../Phase/ElemAndCoordIterator.html">ElemAndCoordIterator</a>
+      
+    </li>
+  
+  <li class=" " data-id="ph-core/Phase/ElemIterator" data-name="phase::elemiterator(e, i)">
+      <a href="../Phase/ElemIterator.html">ElemIterator</a>
+      
+    </li>
+  
+  <li class=" " data-id="ph-core/Phase/GeneralCoordIterator" data-name="phase::generalcoorditerator(t)">
+      <a href="../Phase/GeneralCoordIterator.html">GeneralCoordIterator</a>
+      
+    </li>
+  
+  <li class=" " data-id="ph-core/Phase/IdentityTransform" data-name="phase::identitytransform">
+      <a href="../Phase/IdentityTransform.html">IdentityTransform</a>
+      
+    </li>
+  
+  <li class=" " data-id="ph-core/Phase/IndexRegion" data-name="phase::indexregion(t)">
+      <a href="../Phase/IndexRegion.html">IndexRegion</a>
+      
+    </li>
+  
+  <li class=" " data-id="ph-core/Phase/LexIterator" data-name="phase::lexiterator(t)">
+      <a href="../Phase/LexIterator.html">LexIterator</a>
+      
+    </li>
+  
+  <li class="parent " data-id="ph-core/Phase/MultiIndexable" data-name="phase::multiindexable(t)">
+      <a href="../Phase/MultiIndexable.html">MultiIndexable</a>
+      
+        <ul>
+  
+  <li class="parent " data-id="ph-core/Phase/MultiIndexable/Formatter" data-name="phase::multiindexable::formatter(e, i)">
+      <a href="../Phase/MultiIndexable/Formatter.html">Formatter</a>
+      
+        <ul>
+  
+  <li class="parent " data-id="ph-core/Phase/MultiIndexable/Formatter/Settings" data-name="phase::multiindexable::formatter::settings">
+      <a href="../Phase/MultiIndexable/Formatter/Settings.html">Settings</a>
+      
+        <ul>
+  
+  <li class=" " data-id="ph-core/Phase/MultiIndexable/Formatter/Settings/ColorConverter" data-name="phase::multiindexable::formatter::settings::colorconverter">
+      <a href="../Phase/MultiIndexable/Formatter/Settings/ColorConverter.html">ColorConverter</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class=" " data-id="ph-core/Phase/MultiWritable" data-name="phase::multiwritable(t)">
+      <a href="../Phase/MultiWritable.html">MultiWritable</a>
+      
+    </li>
+  
+  <li class="parent " data-id="ph-core/Phase/NArray" data-name="phase::narray(t)">
+      <a href="../Phase/NArray.html">NArray</a>
+      
+        <ul>
+  
+  <li class="parent " data-id="ph-core/Phase/NArray/BufferUtil" data-name="phase::narray::bufferutil">
+      <a href="../Phase/NArray/BufferUtil.html">BufferUtil</a>
+      
+        <ul>
+  
+  <li class=" " data-id="ph-core/Phase/NArray/BufferUtil/BufferedECIterator" data-name="phase::narray::bufferutil::bufferedeciterator(t, i)">
+      <a href="../Phase/NArray/BufferUtil/BufferedECIterator.html">BufferedECIterator</a>
+      
+    </li>
+  
+  <li class=" " data-id="ph-core/Phase/NArray/BufferUtil/IndexedColexIterator" data-name="phase::narray::bufferutil::indexedcolexiterator(i)">
+      <a href="../Phase/NArray/BufferUtil/IndexedColexIterator.html">IndexedColexIterator</a>
+      
+    </li>
+  
+  <li class=" " data-id="ph-core/Phase/NArray/BufferUtil/IndexedCoordIterator" data-name="phase::narray::bufferutil::indexedcoorditerator(i)">
+      <a href="../Phase/NArray/BufferUtil/IndexedCoordIterator.html">IndexedCoordIterator</a>
+      
+    </li>
+  
+  <li class=" " data-id="ph-core/Phase/NArray/BufferUtil/IndexedLexIterator" data-name="phase::narray::bufferutil::indexedlexiterator(i)">
+      <a href="../Phase/NArray/BufferUtil/IndexedLexIterator.html">IndexedLexIterator</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class=" " data-id="ph-core/Phase/PermuteTransform" data-name="phase::permutetransform">
+      <a href="../Phase/PermuteTransform.html">PermuteTransform</a>
+      
+    </li>
+  
+  <li class=" " data-id="ph-core/Phase/ProcView" data-name="phase::procview(s, t, r)">
+      <a href="../Phase/ProcView.html">ProcView</a>
+      
+    </li>
+  
+  <li class=" " data-id="ph-core/Phase/ReadonlyView" data-name="phase::readonlyview(s, r)">
+      <a href="../Phase/ReadonlyView.html">ReadonlyView</a>
+      
+    </li>
+  
+  <li class="parent " data-id="ph-core/Phase/RegionIterator" data-name="phase::regioniterator(i)">
+      <a href="../Phase/RegionIterator.html">RegionIterator</a>
+      
+        <ul>
+  
+  <li class=" " data-id="ph-core/Phase/RegionIterator/FringeBehaviour" data-name="phase::regioniterator::fringebehaviour">
+      <a href="../Phase/RegionIterator/FringeBehaviour.html">FringeBehaviour</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class=" " data-id="ph-core/Phase/RegionTransform" data-name="phase::regiontransform">
+      <a href="../Phase/RegionTransform.html">RegionTransform</a>
+      
+    </li>
+  
+  <li class=" " data-id="ph-core/Phase/ReshapeTransform" data-name="phase::reshapetransform">
+      <a href="../Phase/ReshapeTransform.html">ReshapeTransform</a>
+      
+    </li>
+  
+  <li class=" " data-id="ph-core/Phase/ReverseTransform" data-name="phase::reversetransform">
+      <a href="../Phase/ReverseTransform.html">ReverseTransform</a>
+      
+    </li>
+  
+  <li class=" " data-id="ph-core/Phase/Shape" data-name="phase::shape">
+      <a href="../Phase/Shape.html">Shape</a>
+      
+    </li>
+  
+  <li class=" " data-id="ph-core/Phase/ShapeError" data-name="phase::shapeerror">
+      <a href="../Phase/ShapeError.html">ShapeError</a>
+      
+    </li>
+  
+  <li class=" " data-id="ph-core/Phase/ShapeUtil" data-name="phase::shapeutil">
+      <a href="../Phase/ShapeUtil.html">ShapeUtil</a>
+      
+    </li>
+  
+  <li class=" " data-id="ph-core/Phase/SpecificCartesianProduct" data-name="phase::specificcartesianproduct">
+      <a href="../Phase/SpecificCartesianProduct.html">SpecificCartesianProduct</a>
+      
+    </li>
+  
+  <li class=" " data-id="ph-core/Phase/View" data-name="phase::view(s, r)">
+      <a href="../Phase/View.html">View</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+</ul>
+
+  </div>
+</div>
+
+
+<div class="main-content">
+<h1 class="type-name">
+
+  <span class="kind">module</span> Phase::CoordUtil
+
+</h1>
+
+
+
+
+
+
+
+
+
+
+
+  <h2>
+    <a id="extended-modules" class="anchor" href="#extended-modules">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Extended Modules
+  </h2>
+  <ul class="other-types-list">
+    
+      <li class="other-type"><a href="../Phase/CoordUtil.html">Phase::CoordUtil</a></li>
+    
+  </ul>
+
+
+
+
+
+
+
+
+  <h2>
+    <a id="defined-in" class="anchor" href="#defined-in">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Defined in:
+  </h2>
+  
+    
+      <a href="https://github.com/in-phase/ph-core/blob/0ca19eb664ef717074bac168f5d3ad57ad063bb9/src/coord_util.cr#L2" target="_blank">
+        coord_util.cr
+      </a>
+    
+    <br/>
+  
+
+
+
+
+
+
+
+
+
+  <h2>
+    <a id="instance-method-summary" class="anchor" href="#instance-method-summary">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Instance Method Summary
+  </h2>
+  <ul class="list-summary">
+    
+      <li class="entry-summary">
+        <a href="#canonicalize_coord(coord,shape):Array(Int32)-instance-method" class="signature"><strong>#canonicalize_coord</strong>(coord, shape) : Array(Int32)</a>
+        
+          <div class="summary"><p>Converts a <code>coord</code> into canonical form, such that each index in <code>coord</code> is positive.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#canonicalize_index(index,shape,axis)-instance-method" class="signature"><strong>#canonicalize_index</strong>(index, shape, axis)</a>
+        
+          <div class="summary"><p>Returns the canonical (positive) form of <code>index</code> along a particular <code>axis</code> of <code>shape</code>.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#canonicalize_index(index,size)-instance-method" class="signature"><strong>#canonicalize_index</strong>(index, size)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#has_coord?(coord,shape)-instance-method" class="signature"><strong>#has_coord?</strong>(coord, shape)</a>
+        
+          <div class="summary"><p>Checks if <code>coord</code> is a valid coordinate for an array-like object with dimensions specified by <code>shape</code>.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#has_index?(index,shape,axis)-instance-method" class="signature"><strong>#has_index?</strong>(index, shape, axis)</a>
+        
+          <div class="summary"><p>Checks if <code>index</code> is a valid index along <code>axis</code> for an array-like object with dimensions specified by <code>shape</code>.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#has_index?(index,size)-instance-method" class="signature"><strong>#has_index?</strong>(index, size)</a>
+        
+      </li>
+    
+  </ul>
+
+
+
+
+
+<div class="methods-inherited">
+  
+</div>
+
+
+
+
+
+
+  <h2>
+    <a id="instance-method-detail" class="anchor" href="#instance-method-detail">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Instance Method Detail
+  </h2>
+  
+    <div class="entry-detail" id="canonicalize_coord(coord,shape):Array(Int32)-instance-method">
+      <div class="signature">
+        
+        def <strong>canonicalize_coord</strong>(coord, shape) : Array(Int32)
+
+        <a class="method-permalink" href="#canonicalize_coord(coord,shape):Array(Int32)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Converts a <code>coord</code> into canonical form, such that each index in <code>coord</code> is positive.
+Throws an <code>IndexError</code> if at least one index specified in <code>coord</code> is out of range for the
+corresponding axis of <code>shape</code>.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/in-phase/ph-core/blob/0ca19eb664ef717074bac168f5d3ad57ad063bb9/src/coord_util.cr#L48" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="canonicalize_index(index,shape,axis)-instance-method">
+      <div class="signature">
+        
+        def <strong>canonicalize_index</strong>(index, shape, axis)
+
+        <a class="method-permalink" href="#canonicalize_index(index,shape,axis)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Returns the canonical (positive) form of <code>index</code> along a particular <code>axis</code> of <code>shape</code>.
+Throws an <code>IndexError</code> if <code>index</code> is out of range of <code>shape</code> along this axis.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/in-phase/ph-core/blob/0ca19eb664ef717074bac168f5d3ad57ad063bb9/src/coord_util.cr#L23" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="canonicalize_index(index,size)-instance-method">
+      <div class="signature">
+        
+        def <strong>canonicalize_index</strong>(index, size)
+
+        <a class="method-permalink" href="#canonicalize_index(index,size)-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/in-phase/ph-core/blob/0ca19eb664ef717074bac168f5d3ad57ad063bb9/src/coord_util.cr#L27" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="has_coord?(coord,shape)-instance-method">
+      <div class="signature">
+        
+        def <strong>has_coord?</strong>(coord, shape)
+
+        <a class="method-permalink" href="#has_coord?(coord,shape)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Checks if <code>coord</code> is a valid coordinate for an array-like object with dimensions specified by <code>shape</code>.
+A coord is a list (Enumerable) of integers specifying an index along each axis in <code>shape</code>.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/in-phase/ph-core/blob/0ca19eb664ef717074bac168f5d3ad57ad063bb9/src/coord_util.cr#L16" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="has_index?(index,shape,axis)-instance-method">
+      <div class="signature">
+        
+        def <strong>has_index?</strong>(index, shape, axis)
+
+        <a class="method-permalink" href="#has_index?(index,shape,axis)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Checks if <code>index</code> is a valid index along <code>axis</code> for an array-like object with dimensions specified by <code>shape</code>.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/in-phase/ph-core/blob/0ca19eb664ef717074bac168f5d3ad57ad063bb9/src/coord_util.cr#L10" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="has_index?(index,size)-instance-method">
+      <div class="signature">
+        
+        def <strong>has_index?</strong>(index, size)
+
+        <a class="method-permalink" href="#has_index?(index,size)-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/in-phase/ph-core/blob/0ca19eb664ef717074bac168f5d3ad57ad063bb9/src/coord_util.cr#L5" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+
+
+
+
+</div>
+
+</body>
+</html>

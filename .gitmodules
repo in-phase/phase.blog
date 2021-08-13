@@ -1,0 +1,9 @@
+[submodule "main/themes/paper"]
+	path = main/themes/paper
+	url = https://github.com/nanxiaobei/hugo-paper
+[submodule "reference/themes/book"]
+	path = reference/themes/book
+	url = https://github.com/alex-shpak/hugo-book
+[submodule "api"]
+	path = api
+	url = git@github.com:in-phase/ph-core

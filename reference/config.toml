@@ -1,0 +1,8 @@
+baseURL = "/reference/"
+languageCode = "en-us"
+title = "My New Hugo Site"
+theme = "book"
+publishDir = "../public/reference"
+
+[params]
+BookTheme = "auto"
