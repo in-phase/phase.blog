@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="Crystal Docs 1.1.0">
+<meta name="crystal_docs.project_version" content="main">
+<meta name="crystal_docs.project_name" content="ph-core">
+
+
+
+<link href="../css/style.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="../js/doc.js"></script>
+
+  <meta name="repository-name" content="ph-core">
+  <title>Phase::ChunkIterator(E, I) - ph-core main</title>
+  <script type="text/javascript">
+    CrystalDocs.base_path = "../";
+  </script>
+</head>
+<body>
+
+<svg class="hidden">
+  <symbol id="octicon-link" viewBox="0 0 16 16">
+    <path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path>
+  </symbol>
+</svg>
+<div class="sidebar">
+  <div class="sidebar-header">
+    <div class="search-box">
+      <input type="search" class="search-input" placeholder="Search..." spellcheck="false" aria-label="Search">
+    </div>
+
+    <div class="project-summary">
+      <h1 class="project-name">
+        <a href="../index.html">
+          ph-core
+        </a>
+      </h1>
+
+      <span class="project-version">
+        main
+      </span>
+    </div>
+  </div>
+
+  <div class="search-results hidden">
+    <ul class="search-list"></ul>
+  </div>
+
+  <div class="types-list">
+    <ul>
+  
+  <li class=" " data-id="ph-core/Complex" data-name="complex">
+      <a href="../Complex.html">Complex</a>
+      
+    </li>
+  
+  <li class=" " data-id="ph-core/Number" data-name="number">
+      <a href="../Number.html">Number</a>
+      
+    </li>
+  
+  <li class="parent open current" data-id="ph-core/Phase" data-name="phase">
+      <a href="../Phase.html">Phase</a>
+      
+        <ul>
+  
+  <li class=" " data-id="ph-core/Phase/CartesianProduct" data-name="phase::cartesianproduct(*u)">
+      <a href="../Phase/CartesianProduct.html">CartesianProduct</a>
+      
+    </li>
+  
+  <li class="parent " data-id="ph-core/Phase/ChunkAndRegionIterator" data-name="phase::chunkandregioniterator(e, i)">
+      <a href="../Phase/ChunkAndRegionIterator.html">ChunkAndRegionIterator</a>
+      
+        <ul>
+  
+  <li class=" " data-id="ph-core/Phase/ChunkAndRegionIterator/FB" data-name="phase::chunkandregioniterator::fb">
+      <a href="../Phase/ChunkAndRegionIterator/FB.html">FB</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class="parent open current" data-id="ph-core/Phase/ChunkIterator" data-name="phase::chunkiterator(e, i)">
+      <a href="../Phase/ChunkIterator.html">ChunkIterator</a>
+      
+        <ul>
+  
+  <li class=" " data-id="ph-core/Phase/ChunkIterator/FB" data-name="phase::chunkiterator::fb">
+      <a href="../Phase/ChunkIterator/FB.html">FB</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class=" " data-id="ph-core/Phase/ColexIterator" data-name="phase::colexiterator(t)">
+      <a href="../Phase/ColexIterator.html">ColexIterator</a>
+      
+    </li>
+  
+  <li class=" " data-id="ph-core/Phase/ComposedTransform" data-name="phase::composedtransform">
+      <a href="../Phase/ComposedTransform.html">ComposedTransform</a>
+      
+    </li>
+  
+  <li class=" " data-id="ph-core/Phase/Coord" data-name="phase::coord">
+      <a href="../Phase/Coord.html">Coord</a>
+      
+    </li>
+  
+  <li class=" " data-id="ph-core/Phase/CoordIterator" data-name="phase::coorditerator(t)">
+      <a href="../Phase/CoordIterator.html">CoordIterator</a>
+      
+    </li>
+  
+  <li class=" " data-id="ph-core/Phase/CoordTransform" data-name="phase::coordtransform">
+      <a href="../Phase/CoordTransform.html">CoordTransform</a>
+      
+    </li>
+  
+  <li class=" " data-id="ph-core/Phase/CoordUtil" data-name="phase::coordutil">
+      <a href="../Phase/CoordUtil.html">CoordUtil</a>
+      
+    </li>
+  
+  <li class=" " data-id="ph-core/Phase/DimensionError" data-name="phase::dimensionerror">
+      <a href="../Phase/DimensionError.html">DimensionError</a>
+      
+    </li>
+  
+  <li class=" " data-id="ph-core/Phase/ElemAndCoordIterator" data-name="phase::elemandcoorditerator(e, i)">
+      <a href="../Phase/ElemAndCoordIterator.html">ElemAndCoordIterator</a>
+      
+    </li>
+  
+  <li class=" " data-id="ph-core/Phase/ElemIterator" data-name="phase::elemiterator(e, i)">
+      <a href="../Phase/ElemIterator.html">ElemIterator</a>
+      
+    </li>
+  
+  <li class=" " data-id="ph-core/Phase/GeneralCoordIterator" data-name="phase::generalcoorditerator(t)">
+      <a href="../Phase/GeneralCoordIterator.html">GeneralCoordIterator</a>
+      
+    </li>
+  
+  <li class=" " data-id="ph-core/Phase/IdentityTransform" data-name="phase::identitytransform">
+      <a href="../Phase/IdentityTransform.html">IdentityTransform</a>
+      
+    </li>
+  
+  <li class=" " data-id="ph-core/Phase/IndexRegion" data-name="phase::indexregion(t)">
+      <a href="../Phase/IndexRegion.html">IndexRegion</a>
+      
+    </li>
+  
+  <li class=" " data-id="ph-core/Phase/LexIterator" data-name="phase::lexiterator(t)">
+      <a href="../Phase/LexIterator.html">LexIterator</a>
+      
+    </li>
+  
+  <li class="parent " data-id="ph-core/Phase/MultiIndexable" data-name="phase::multiindexable(t)">
+      <a href="../Phase/MultiIndexable.html">MultiIndexable</a>
+      
+        <ul>
+  
+  <li class="parent " data-id="ph-core/Phase/MultiIndexable/Formatter" data-name="phase::multiindexable::formatter(e, i)">
+      <a href="../Phase/MultiIndexable/Formatter.html">Formatter</a>
+      
+        <ul>
+  
+  <li class="parent " data-id="ph-core/Phase/MultiIndexable/Formatter/Settings" data-name="phase::multiindexable::formatter::settings">
+      <a href="../Phase/MultiIndexable/Formatter/Settings.html">Settings</a>
+      
+        <ul>
+  
+  <li class=" " data-id="ph-core/Phase/MultiIndexable/Formatter/Settings/ColorConverter" data-name="phase::multiindexable::formatter::settings::colorconverter">
+      <a href="../Phase/MultiIndexable/Formatter/Settings/ColorConverter.html">ColorConverter</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class=" " data-id="ph-core/Phase/MultiWritable" data-name="phase::multiwritable(t)">
+      <a href="../Phase/MultiWritable.html">MultiWritable</a>
+      
+    </li>
+  
+  <li class="parent " data-id="ph-core/Phase/NArray" data-name="phase::narray(t)">
+      <a href="../Phase/NArray.html">NArray</a>
+      
+        <ul>
+  
+  <li class="parent " data-id="ph-core/Phase/NArray/BufferUtil" data-name="phase::narray::bufferutil">
+      <a href="../Phase/NArray/BufferUtil.html">BufferUtil</a>
+      
+        <ul>
+  
+  <li class=" " data-id="ph-core/Phase/NArray/BufferUtil/BufferedECIterator" data-name="phase::narray::bufferutil::bufferedeciterator(t, i)">
+      <a href="../Phase/NArray/BufferUtil/BufferedECIterator.html">BufferedECIterator</a>
+      
+    </li>
+  
+  <li class=" " data-id="ph-core/Phase/NArray/BufferUtil/IndexedColexIterator" data-name="phase::narray::bufferutil::indexedcolexiterator(i)">
+      <a href="../Phase/NArray/BufferUtil/IndexedColexIterator.html">IndexedColexIterator</a>
+      
+    </li>
+  
+  <li class=" " data-id="ph-core/Phase/NArray/BufferUtil/IndexedCoordIterator" data-name="phase::narray::bufferutil::indexedcoorditerator(i)">
+      <a href="../Phase/NArray/BufferUtil/IndexedCoordIterator.html">IndexedCoordIterator</a>
+      
+    </li>
+  
+  <li class=" " data-id="ph-core/Phase/NArray/BufferUtil/IndexedLexIterator" data-name="phase::narray::bufferutil::indexedlexiterator(i)">
+      <a href="../Phase/NArray/BufferUtil/IndexedLexIterator.html">IndexedLexIterator</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class=" " data-id="ph-core/Phase/PermuteTransform" data-name="phase::permutetransform">
+      <a href="../Phase/PermuteTransform.html">PermuteTransform</a>
+      
+    </li>
+  
+  <li class=" " data-id="ph-core/Phase/ProcView" data-name="phase::procview(s, t, r)">
+      <a href="../Phase/ProcView.html">ProcView</a>
+      
+    </li>
+  
+  <li class=" " data-id="ph-core/Phase/ReadonlyView" data-name="phase::readonlyview(s, r)">
+      <a href="../Phase/ReadonlyView.html">ReadonlyView</a>
+      
+    </li>
+  
+  <li class="parent " data-id="ph-core/Phase/RegionIterator" data-name="phase::regioniterator(i)">
+      <a href="../Phase/RegionIterator.html">RegionIterator</a>
+      
+        <ul>
+  
+  <li class=" " data-id="ph-core/Phase/RegionIterator/FringeBehaviour" data-name="phase::regioniterator::fringebehaviour">
+      <a href="../Phase/RegionIterator/FringeBehaviour.html">FringeBehaviour</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class=" " data-id="ph-core/Phase/RegionTransform" data-name="phase::regiontransform">
+      <a href="../Phase/RegionTransform.html">RegionTransform</a>
+      
+    </li>
+  
+  <li class=" " data-id="ph-core/Phase/ReshapeTransform" data-name="phase::reshapetransform">
+      <a href="../Phase/ReshapeTransform.html">ReshapeTransform</a>
+      
+    </li>
+  
+  <li class=" " data-id="ph-core/Phase/ReverseTransform" data-name="phase::reversetransform">
+      <a href="../Phase/ReverseTransform.html">ReverseTransform</a>
+      
+    </li>
+  
+  <li class=" " data-id="ph-core/Phase/Shape" data-name="phase::shape">
+      <a href="../Phase/Shape.html">Shape</a>
+      
+    </li>
+  
+  <li class=" " data-id="ph-core/Phase/ShapeError" data-name="phase::shapeerror">
+      <a href="../Phase/ShapeError.html">ShapeError</a>
+      
+    </li>
+  
+  <li class=" " data-id="ph-core/Phase/ShapeUtil" data-name="phase::shapeutil">
+      <a href="../Phase/ShapeUtil.html">ShapeUtil</a>
+      
+    </li>
+  
+  <li class=" " data-id="ph-core/Phase/SpecificCartesianProduct" data-name="phase::specificcartesianproduct">
+      <a href="../Phase/SpecificCartesianProduct.html">SpecificCartesianProduct</a>
+      
+    </li>
+  
+  <li class=" " data-id="ph-core/Phase/View" data-name="phase::view(s, r)">
+      <a href="../Phase/View.html">View</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+</ul>
+
+  </div>
+</div>
+
+
+<div class="main-content">
+<h1 class="type-name">
+
+  <span class="kind">class</span> Phase::ChunkIterator(E, I)
+
+</h1>
+
+
+  <ul class="superclass-hierarchy"><li class="superclass"><a href="../Phase/ChunkIterator.html">Phase::ChunkIterator(E, I)</a></li><li class="superclass">Reference</li><li class="superclass">Object</li></ul>
+
+
+
+
+
+
+
+
+  <h2>
+    <a id="included-modules" class="anchor" href="#included-modules">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Included Modules
+  </h2>
+  <ul class="other-types-list">
+    
+      <li class="other-type">Iterator(<a href="../Phase/MultiIndexable.html">Phase::MultiIndexable(E)</a>)</li>
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+
+  <h2>
+    <a id="defined-in" class="anchor" href="#defined-in">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Defined in:
+  </h2>
+  
+    
+      <a href="https://github.com/in-phase/ph-core/blob/0ca19eb664ef717074bac168f5d3ad57ad063bb9/src/iterators/chunk_iterator.cr#L4" target="_blank">
+        iterators/chunk_iterator.cr
+      </a>
+    
+    <br/>
+  
+
+
+
+
+
+  <h2>
+    <a id="constructors" class="anchor" href="#constructors">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Constructors
+  </h2>
+  <ul class="list-summary">
+    
+      <li class="entry-summary">
+        <a href="#new(src,chunk_shape,strides=nil,degeneracy=nil,fringe_behaviour:FB=FB::DISCARD)-class-method" class="signature"><strong>.new</strong>(src, chunk_shape, strides = <span class="n">nil</span>, degeneracy = <span class="n">nil</span>, fringe_behaviour : FB = <span class="t">FB</span><span class="t">::</span><span class="t">DISCARD</span>)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#new(chunk_and_region_iterator:ChunkAndRegionIterator(E,I))-class-method" class="signature"><strong>.new</strong>(chunk_and_region_iterator : ChunkAndRegionIterator(E, I))</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#new(src,chunk_shape,strides=nil,degeneracy=nil,fringe_behaviour:FB=FB::DISCARD,&)-class-method" class="signature"><strong>.new</strong>(src, chunk_shape, strides = <span class="n">nil</span>, degeneracy = <span class="n">nil</span>, fringe_behaviour : FB = <span class="t">FB</span><span class="t">::</span><span class="t">DISCARD</span>, &)</a>
+        
+      </li>
+    
+  </ul>
+
+
+
+
+
+  <h2>
+    <a id="instance-method-summary" class="anchor" href="#instance-method-summary">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Instance Method Summary
+  </h2>
+  <ul class="list-summary">
+    
+      <li class="entry-summary">
+        <a href="#next-instance-method" class="signature"><strong>#next</strong></a>
+        
+          <div class="summary"><p>Returns the next element in this iterator, or <code>Iterator::Stop::INSTANCE</code> if there are no more elements.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#reset-instance-method" class="signature"><strong>#reset</strong></a>
+        
+      </li>
+    
+  </ul>
+
+
+
+
+
+<div class="methods-inherited">
+  
+    
+
+
+    
+
+
+    
+
+
+  
+    
+
+
+    
+
+
+    
+
+
+  
+    
+
+
+    
+
+
+    
+
+
+  
+    
+
+
+    
+
+
+    
+
+
+  
+</div>
+
+
+  <h2>
+    <a id="constructor-detail" class="anchor" href="#constructor-detail">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Constructor Detail
+  </h2>
+  
+    <div class="entry-detail" id="new(src,chunk_shape,strides=nil,degeneracy=nil,fringe_behaviour:FB=FB::DISCARD)-class-method">
+      <div class="signature">
+        
+        def self.<strong>new</strong>(src, chunk_shape, strides = <span class="n">nil</span>, degeneracy = <span class="n">nil</span>, fringe_behaviour : <a href="../Phase/ChunkIterator/FB.html">FB</a> = <span class="t">FB</span><span class="t">::</span><span class="t">DISCARD</span>)
+
+        <a class="method-permalink" href="#new(src,chunk_shape,strides=nil,degeneracy=nil,fringe_behaviour:FB=FB::DISCARD)-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/in-phase/ph-core/blob/0ca19eb664ef717074bac168f5d3ad57ad063bb9/src/iterators/chunk_iterator.cr#L19" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="new(chunk_and_region_iterator:ChunkAndRegionIterator(E,I))-class-method">
+      <div class="signature">
+        
+        def self.<strong>new</strong>(chunk_and_region_iterator : <a href="../Phase/ChunkAndRegionIterator.html">ChunkAndRegionIterator</a>(E, I))
+
+        <a class="method-permalink" href="#new(chunk_and_region_iterator:ChunkAndRegionIterator(E,I))-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/in-phase/ph-core/blob/0ca19eb664ef717074bac168f5d3ad57ad063bb9/src/iterators/chunk_iterator.cr#L11" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="new(src,chunk_shape,strides=nil,degeneracy=nil,fringe_behaviour:FB=FB::DISCARD,&amp;)-class-method">
+      <div class="signature">
+        
+        def self.<strong>new</strong>(src, chunk_shape, strides = <span class="n">nil</span>, degeneracy = <span class="n">nil</span>, fringe_behaviour : <a href="../Phase/ChunkIterator/FB.html">FB</a> = <span class="t">FB</span><span class="t">::</span><span class="t">DISCARD</span>, &)
+
+        <a class="method-permalink" href="#new(src,chunk_shape,strides=nil,degeneracy=nil,fringe_behaviour:FB=FB::DISCARD,&)-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/in-phase/ph-core/blob/0ca19eb664ef717074bac168f5d3ad57ad063bb9/src/iterators/chunk_iterator.cr#L14" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+
+
+
+
+
+  <h2>
+    <a id="instance-method-detail" class="anchor" href="#instance-method-detail">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Instance Method Detail
+  </h2>
+  
+    <div class="entry-detail" id="next-instance-method">
+      <div class="signature">
+        
+        def <strong>next</strong>
+
+        <a class="method-permalink" href="#next-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+            <div class="doc-inherited">
+              Description copied from module Iterator(<a href="../Phase/MultiIndexable.html">Phase::MultiIndexable(E)</a>)
+            </div>
+          
+          <p>Returns the next element in this iterator, or <code>Iterator::Stop::INSTANCE</code> if there
+are no more elements.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/in-phase/ph-core/blob/0ca19eb664ef717074bac168f5d3ad57ad063bb9/src/iterators/chunk_iterator.cr#L24" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="reset-instance-method">
+      <div class="signature">
+        
+        def <strong>reset</strong>
+
+        <a class="method-permalink" href="#reset-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/in-phase/ph-core/blob/0ca19eb664ef717074bac168f5d3ad57ad063bb9/src/iterators/chunk_iterator.cr#L28" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+
+
+
+
+</div>
+
+</body>
+</html>

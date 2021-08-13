@@ -1,16 +1,21 @@
+TARGET_DIR=docs
+
 all: main reference api
 
 main:
-	cd main; hugo
+	cd main; hugo -d ../$(TARGET_DIR)
 
 reference:
-	cd reference; hugo
+	cd reference; hugo -d ../$(TARGET_DIR)/reference
 
 api:
 	echo "TODO: API docs"
-	cd api; crystal docs -o ../public/api
+	cd api; crystal docs -o ../$(TARGET_DIR)/api
 
 serve:
-	cd public; python -m http.server 8080
+	cd $(TARGET_DIR); python -m http.server 8080
+
+clean:
+	rm -rf $(TARGET_DIR)
 
 .PHONY: all main reference api serve
