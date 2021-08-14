@@ -39,7 +39,7 @@
 }
 
 .logo > img {
-  height: 60px;
+  height: 70px;
 }
 
 .entry-header, h1.post-title {
@@ -48,11 +48,9 @@
 
 .entry-header h2, h1.post-title {
   font-weight: 500;
-  font-size: 20px;
 }
 
 .first-entry .entry-header h2 {
-  font-size: 30px;
 }
 
 ::selection {
