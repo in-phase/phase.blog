@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="28.153355mm"
+   height="16.94235mm"
+   viewBox="0 0 28.153355 16.94235"
+   version="1.1"
+   id="svg25125"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs25122">
+    <linearGradient
+       xlink:href="#linearGradient70572"
+       id="linearGradient1933"
+       gradientUnits="userSpaceOnUse"
+       x1="1154.4023"
+       y1="664.98242"
+       x2="1280.1445"
+       y2="664.98242" />
+    <linearGradient
+       id="linearGradient70572">
+      <stop
+         style="stop-color:#fc9842;stop-opacity:1"
+         offset="0"
+         id="stop70568" />
+      <stop
+         style="stop-color:#fbb034;stop-opacity:1"
+         offset="1"
+         id="stop70570" />
+    </linearGradient>
+    <rect
+       x="1150.476"
+       y="644.15289"
+       width="737.94226"
+       height="329.92374"
+       id="rect41965-2-7-6" />
+    <linearGradient
+       xlink:href="#linearGradient70572"
+       id="linearGradient2207"
+       gradientUnits="userSpaceOnUse"
+       x1="424.74298"
+       y1="1686.4474"
+       x2="1736.2423"
+       y2="1420.5798"
+       gradientTransform="matrix(0.03162846,0,0,0.03162846,-10.077344,-34.859473)" />
+  </defs>
+  <g
+     id="layer1"
+     transform="translate(-5.2884033,-8.1004178)">
+    <text
+       xml:space="preserve"
+       id="text41963-5-5-1"
+       style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:40px;line-height:1.25;font-family:Poppins;-inkscape-font-specification:'Poppins, Medium';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;white-space:pre;shape-inside:url(#rect41965-2-7-6);fill:url(#linearGradient1933);fill-opacity:1;stroke:none"
+       transform="matrix(0.19305586,0,0,0.19305586,-212.7501,-112.18627)"><tspan
+         x="1150.4766"
+         y="679.15234"
+         id="tspan25361">phase</tspan></text>
+    <path
+       id="path1959-5"
+       style="fill:url(#linearGradient2207);fill-opacity:1;stroke-width:0.504331;stroke-linecap:round;stroke-linejoin:bevel;stop-color:#000000"
+       d="m 13.759579,8.1004178 a 8.4711639,8.4711639 0 0 0 -8.4711757,8.4711732 8.4711639,8.4711639 0 0 0 8.4711757,8.471177 8.4711639,8.4711639 0 0 0 7.122272,-3.88925 l -0.665742,-0.404743 a 7.6902601,7.6902601 0 0 1 -6.45653,3.513106 7.6902601,7.6902601 0 0 1 -7.6902867,-7.69029 7.6902601,7.6902601 0 0 1 7.6902867,-7.6902222 7.6902601,7.6902601 0 0 1 6.23927,3.1989822 l 0.657588,-0.423338 A 8.4711639,8.4711639 0 0 0 13.759579,8.1004178 Z" />
+  </g>
+</svg>

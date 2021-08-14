@@ -1,8 +1,9 @@
-baseURL = "/reference/"
+baseURL = "reference"
 languageCode = "en-us"
-title = "My New Hugo Site"
+title = "phase"
 theme = "book"
 publishDir = "../public/reference"
+pygmentsUseClasses = true
 
 [params]
 BookTheme = "auto"

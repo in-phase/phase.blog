@@ -1,6 +1,6 @@
 {
-  "name": "My New Hugo Site",
-  "short_name": "My New Hugo Site",
+  "name": "phase",
+  "short_name": "phase",
   "start_url": "/reference/",
   "scope": "/reference/",
   "display": "standalone",
