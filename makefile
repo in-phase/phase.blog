@@ -12,10 +12,14 @@ api:
 	echo "TODO: API docs"
 	cd api; crystal docs -o ../$(TARGET_DIR)/api
 
-serve:
-	cd $(TARGET_DIR); python -m http.server 8080
-
 clean:
 	rm -rf $(TARGET_DIR)
 
-.PHONY: all main reference api serve
+watch: 
+	find . -not -path '*/\.*' -not -path './docs/*' -type f | entr make
+
+serve:
+	cd $(TARGET_DIR); python -m http.server 8080
+
+
+.PHONY: all main reference api serve watch

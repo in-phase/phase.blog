@@ -94,27 +94,21 @@
         </div>
         {{- $currentPage := . }}
         <ul id="menu">
+            {{- range .Site.Menus.main }}
+            {{- $menu_item_url := (cond (strings.HasSuffix .URL "/") .URL (printf "%s/" .URL) ) | absLangURL }}
+            {{- $page_url:= $currentPage.Permalink | absLangURL }}
+            {{- $is_search := eq ($.Site.GetPage .KeyName).Layout `search` }}
             <li>
-                <a href="/">
-                    <span>
-                        Blog
+                <a href="{{ .URL | absLangURL }}" title="{{ .Title | default .Name }} {{- cond $is_search (" (Alt + /)" | safeHTMLAttr) ("" | safeHTMLAttr ) }}"
+                {{- cond $is_search (" accesskey=/" | safeHTMLAttr) ("" | safeHTMLAttr ) }}>
+                    <span {{- if eq $menu_item_url $page_url }} class="active" {{- end }}>
+                        {{- .Pre }}
+                        {{- .Name -}}
+                        {{ .Post -}}
                     </span>
                 </a>
             </li>
-            <li>
-                <a href="/api">
-                    <span>
-                        API Docs
-                    </span>
-                </a>
-            </li>
-            <li>
-                <a href="/reference">
-                    <span class="active">
-                        Reference
-                    </span>
-                </a>
-            </li>
+            {{- end }}
 
             <li>
                 <span class="logo-switches">

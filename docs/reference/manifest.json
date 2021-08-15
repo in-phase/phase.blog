@@ -1,14 +1,14 @@
 {
   "name": "Phase",
   "short_name": "Phase",
-  "start_url": "/reference/",
-  "scope": "/reference/",
+  "start_url": "/",
+  "scope": "/",
   "display": "standalone",
   "background_color": "#000000",
   "theme_color": "#000000",
   "icons": [
     {
-      "src": "/reference/favicon.svg",
+      "src": "/favicon.svg",
       "sizes": "512x512"
     }
   ]

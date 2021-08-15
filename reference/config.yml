@@ -1,9 +1,11 @@
-baseURL: reference
+baseURL: //localhost:8080/reference
 languageCode: en-us
 title: Phase
 theme: book
 paginate: 3
 pygmentsUseClasses: true
+canonifyURLs: true
+relativeURLs: true
 
 params:
   BookTheme: auto
@@ -16,7 +18,6 @@ menu:
   main:
     - name: API Docs
       url: /api
-      other: hi
     - name: Reference
       url: /reference
     - name: Blog

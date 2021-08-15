@@ -2,52 +2,52 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>reference/docs/example/</loc>
+    <loc>//localhost:8080/reference/docs/example/</loc>
   </url><url>
-    <loc>reference/docs/example/table-of-contents/with-toc/</loc>
+    <loc>//localhost:8080/reference/docs/example/table-of-contents/with-toc/</loc>
   </url><url>
-    <loc>reference/docs/example/table-of-contents/without-toc/</loc>
+    <loc>//localhost:8080/reference/docs/example/table-of-contents/without-toc/</loc>
   </url><url>
-    <loc>reference/docs/example/table-of-contents/</loc>
+    <loc>//localhost:8080/reference/docs/example/table-of-contents/</loc>
   </url><url>
-    <loc>reference/docs/example/collapsed/</loc>
+    <loc>//localhost:8080/reference/docs/example/collapsed/</loc>
   </url><url>
-    <loc>reference/docs/example/collapsed/3rd-level/4th-level/</loc>
+    <loc>//localhost:8080/reference/docs/example/collapsed/3rd-level/4th-level/</loc>
   </url><url>
-    <loc>reference/docs/example/collapsed/3rd-level/</loc>
+    <loc>//localhost:8080/reference/docs/example/collapsed/3rd-level/</loc>
   </url><url>
-    <loc>reference/docs/example/hidden/</loc>
+    <loc>//localhost:8080/reference/docs/example/hidden/</loc>
   </url><url>
-    <loc>reference/docs/shortcodes/</loc>
+    <loc>//localhost:8080/reference/docs/shortcodes/</loc>
   </url><url>
-    <loc>reference/docs/shortcodes/buttons/</loc>
+    <loc>//localhost:8080/reference/docs/shortcodes/buttons/</loc>
   </url><url>
-    <loc>reference/docs/shortcodes/columns/</loc>
+    <loc>//localhost:8080/reference/docs/shortcodes/columns/</loc>
   </url><url>
-    <loc>reference/docs/shortcodes/details/</loc>
+    <loc>//localhost:8080/reference/docs/shortcodes/details/</loc>
   </url><url>
-    <loc>reference/docs/shortcodes/expand/</loc>
+    <loc>//localhost:8080/reference/docs/shortcodes/expand/</loc>
   </url><url>
-    <loc>reference/docs/shortcodes/hints/</loc>
+    <loc>//localhost:8080/reference/docs/shortcodes/hints/</loc>
   </url><url>
-    <loc>reference/docs/shortcodes/katex/</loc>
+    <loc>//localhost:8080/reference/docs/shortcodes/katex/</loc>
   </url><url>
-    <loc>reference/docs/shortcodes/mermaid/</loc>
+    <loc>//localhost:8080/reference/docs/shortcodes/mermaid/</loc>
   </url><url>
-    <loc>reference/docs/shortcodes/section/</loc>
+    <loc>//localhost:8080/reference/docs/shortcodes/section/</loc>
   </url><url>
-    <loc>reference/docs/shortcodes/section/first-page/</loc>
+    <loc>//localhost:8080/reference/docs/shortcodes/section/first-page/</loc>
   </url><url>
-    <loc>reference/docs/shortcodes/section/second-page/</loc>
+    <loc>//localhost:8080/reference/docs/shortcodes/section/second-page/</loc>
   </url><url>
-    <loc>reference/docs/shortcodes/tabs/</loc>
+    <loc>//localhost:8080/reference/docs/shortcodes/tabs/</loc>
   </url><url>
-    <loc>reference/categories/</loc>
+    <loc>//localhost:8080/reference/categories/</loc>
   </url><url>
-    <loc>reference/docs/</loc>
+    <loc>//localhost:8080/reference/docs/</loc>
   </url><url>
-    <loc>reference/</loc>
+    <loc>//localhost:8080/reference/</loc>
   </url><url>
-    <loc>reference/tags/</loc>
+    <loc>//localhost:8080/reference/tags/</loc>
   </url>
 </urlset>
