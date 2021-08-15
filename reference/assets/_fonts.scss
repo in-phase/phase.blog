@@ -4,6 +4,7 @@ body {
   // Adapted from the PaperMod theme (https://adityatelange.github.io/hugo-PaperMod/)
   // because that's what we're using for the main site and I want font consistency
   font-family: -apple-system,BlinkMacSystemFont,segoe ui,Roboto,Oxygen,Ubuntu,Cantarell,open sans,helvetica neue,sans-serif;
+  color: var(--secondary)
 }
 
 code {
@@ -12,4 +13,14 @@ code {
 
 h1, h2, h3, h4, h5, h6 {
   font-family: "Poppins";
+  color: var(--primary);
+}
+
+.book-menu-content li{
+  color: var(--secondary);
+  font-family: "Poppins";
+
+  & .active {
+    color: var(--primary);
+  }
 }

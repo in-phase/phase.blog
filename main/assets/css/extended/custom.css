@@ -46,7 +46,7 @@ h1, h2, h3, h4, h5, h6 {
 
   --hljs-bg: #2e2e33;
   --code-bg: #37383e;
-  --border: #291f3e;
+  --border: var(--entry);
 }
 
 /*.logo {
