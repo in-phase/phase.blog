@@ -6,7 +6,7 @@
   --content-gap: 40px;
   --nav-width: 1250px;
   --main-width: 640px;
-  --header-height: 60px;
+  --header-height: 55px;
   --footer-height: 60px;
   --radius: 8px;
   --brand-gradient: linear-gradient(30deg, #fc9842, #fbb034);
@@ -226,4 +226,17 @@ button {
 .book-menu a:focus, .book-menu input:focus + label a {
   box-shadow: 0 0 5px 5px var(--gray-100);
   background: var(--gray-100);
+}
+
+nav #menu {
+  margin: 0 var(--gap);
+}
+
+button#theme-toggle {
+  padding: 0;
+}
+
+.logo-switches {
+  display: flex;
+  height: 100%;
 }
