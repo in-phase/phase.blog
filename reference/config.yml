@@ -1,4 +1,4 @@
-baseURL: //localhost:8080/reference
+baseURL: https://in-phase.github.io/reference
 languageCode: en-us
 title: Phase
 theme: book

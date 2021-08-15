@@ -2,9 +2,9 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Docs on Phase</title>
-    <link>//localhost:8080/reference/docs/</link>
+    <link>https://in-phase.github.io/reference/docs/</link>
     <description>Recent content in Docs on Phase</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language><atom:link href="//localhost:8080/reference/docs/index.xml" rel="self" type="application/rss+xml" />
+    <language>en-us</language><atom:link href="https://in-phase.github.io/reference/docs/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>
