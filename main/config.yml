@@ -1,0 +1,29 @@
+baseURL: /
+languageCode: en-us
+title: Phase
+theme: PaperMod
+publishDir: ../public
+paginate: 3
+
+menu:
+  main:
+    - name: API Docs
+      url: api/
+    - name: Reference
+      url: reference/
+    - name: All Posts
+      url: archives/
+
+params:
+  defaultTheme: dark
+  homeInfoParams:
+    Title: "Fast, fluent, extensible scientific computing."
+    Content: "Phase is a family of computing libraries and standards that aim to be the heart of a rich scientific computing ecosystem. Elit ipsum vel obcaecati voluptatum quia. Possimus dicta blanditiis nulla quo nulla? Perspiciatis quod eos atque odit placeat quo fugiat Dolores delectus tempore optio veniam tenetur. Autem possimus reiciendis harum"
+  socialIcons:
+    - name: github
+      url: "https://github.com/in-phase/"
+  label:
+    icon: "/phase_logo.svg"
+    iconHeight: 55px
+    text: " "
+  ShowAllPagesInArchive: true

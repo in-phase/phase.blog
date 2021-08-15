@@ -1,5 +1,7 @@
 ---
-title: Second post
+author: "Phase Team"
+title: "Extra cool post"
+date: "2020-08-14"
 ---
 
 This is a post?

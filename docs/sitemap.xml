@@ -2,25 +2,32 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>/categories/</loc>
-  </url><url>
-    <loc>/first/</loc>
+    <loc>/posts/eight/</loc>
+    <lastmod>2020-08-14T00:00:00+00:00</lastmod>
   </url><url>
     <loc>/</loc>
+    <lastmod>2020-08-14T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/eight/</loc>
+    <loc>/posts/</loc>
+    <lastmod>2020-08-14T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/fifth/</loc>
+    <loc>/archives/</loc>
   </url><url>
-    <loc>/fourth/</loc>
+    <loc>/categories/</loc>
   </url><url>
-    <loc>/second/</loc>
+    <loc>/posts/first/</loc>
   </url><url>
-    <loc>/seventh/</loc>
+    <loc>/posts/fifth/</loc>
   </url><url>
-    <loc>/sixth/</loc>
+    <loc>/posts/fourth/</loc>
   </url><url>
-    <loc>/third/</loc>
+    <loc>/posts/second/</loc>
+  </url><url>
+    <loc>/posts/seventh/</loc>
+  </url><url>
+    <loc>/posts/sixth/</loc>
+  </url><url>
+    <loc>/posts/third/</loc>
   </url><url>
     <loc>/tags/</loc>
   </url>

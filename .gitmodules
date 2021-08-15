@@ -1,9 +1,9 @@
-[submodule "main/themes/paper"]
-	path = main/themes/paper
-	url = https://github.com/nanxiaobei/hugo-paper
 [submodule "reference/themes/book"]
 	path = reference/themes/book
 	url = https://github.com/alex-shpak/hugo-book
 [submodule "api"]
 	path = api
 	url = https://github.com/crystal-lang/crystal-db
+[submodule "main/themes/paperMod"]
+	path = main/themes/PaperMod
+	url = https://github.com/adityatelange/hugo-PaperMod.git

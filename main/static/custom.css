@@ -21,8 +21,10 @@
 }
 
 .dark {
-  --theme: #221930;
-  --entry: #291f3e;
+  /*--theme: #221930;
+  --entry: #291f3e;*/
+  --theme: #171021;
+  --entry: #1e1532;
   --primary: #e1daed;
   --secondary: #a18cc7;
   --tertiary: #8f76bb;
