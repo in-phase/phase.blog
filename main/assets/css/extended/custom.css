@@ -21,7 +21,7 @@ h1, h2, h3, h4, h5, h6 {
   --footer-height: 60px;
   --radius: 8px;
 
-  --theme: #ffffff;
+  --theme: #eff5ff;
   --entry: #e3edf6;
   --primary: #10222c;
   --secondary: #31566b;
@@ -52,7 +52,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 body {
-  background: var(--code-bg)
+  background: var(--theme) !important;
 }
 
 .post-content a {
