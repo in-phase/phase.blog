@@ -1,3 +1,6 @@
+@import "./syntax_dark.scss";
+@import "./syntax_light.scss";
+
 :root {
   --gap: 24px;
   --content-gap: 40px;
@@ -11,7 +14,6 @@
   --gray-100: #e3edf6;
   --gray-200: #cce2ed;
   --gray-500: #b1d1e2;
-  --color-link: #84b2ff;
   --color-visited-link: #b88dff;
   --body-background: #eff5ff;
   --body-font-color: #060607;
@@ -25,14 +27,13 @@
   --secondary: #31566b;
   --tertiary: #5e91b1;
   --content: #10222c;
-  --special: #f22576;
+  --color-link: #f22576;
 }
 
 .dark {
   --gray-100: #1e1532;
   --gray-200: #221930;
   --gray-500: #291f3e;
-  --color-link: #84b2ff;
   --color-visited-link: #b88dff;
   --body-background: #171021;
   --body-font-color: #e9ecef;
@@ -46,7 +47,7 @@
   --secondary: #a18cc7;
   --tertiary: #8f76bb;
   --content: #e1daed;
-  --special: #ff5599;
+  --color-link: #ff5599;
 }
 
 .book-brand {
@@ -211,4 +212,18 @@ button {
   &:focus {
     outline: 0;
   }
+}
+
+.markdown pre.chroma {
+  background-color: var(--gray-100);
+}
+
+*:focus {
+  outline: 2px white !important;
+}
+
+// Tabbing through the TOC should show what's focused
+.book-menu a:focus, .book-menu input:focus + label a {
+  box-shadow: 0 0 5px 5px var(--gray-100);
+  background: var(--gray-100);
 }
