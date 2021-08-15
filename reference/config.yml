@@ -1,0 +1,23 @@
+baseURL: reference
+languageCode: en-us
+title: Phase
+theme: book
+paginate: 3
+pygmentsUseClasses: true
+
+params:
+  BookTheme: auto
+  label:
+    icon: "/phase_logo.svg"
+    iconHeight: 55px
+    text: " "
+
+menu:
+  main:
+    - name: API Docs
+      url: /api
+      other: hi
+    - name: Reference
+      url: /reference
+    - name: Blog
+      url: /

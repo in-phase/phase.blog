@@ -1,0 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+
+body {
+  // Adapted from the PaperMod theme (https://adityatelange.github.io/hugo-PaperMod/)
+  // because that's what we're using for the main site and I want font consistency
+  font-family: -apple-system,BlinkMacSystemFont,segoe ui,Roboto,Oxygen,Ubuntu,Cantarell,open sans,helvetica neue,sans-serif;
+}
+
+code {
+  font-family: monospace;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Poppins";
+}

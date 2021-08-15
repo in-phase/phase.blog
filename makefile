@@ -1,6 +1,6 @@
 TARGET_DIR=docs
 
-all: main reference api
+all: clean main reference api
 
 main:
 	cd main; hugo -d ../$(TARGET_DIR)

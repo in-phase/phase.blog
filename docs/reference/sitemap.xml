@@ -8,57 +8,9 @@
   </url><url>
     <loc>reference/docs/example/table-of-contents/without-toc/</loc>
   </url><url>
-    <loc>reference/posts/creating-a-new-theme/</loc>
-    <lastmod>2014-09-28T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>reference/posts/migrate-from-jekyll/</loc>
-    <lastmod>2014-03-10T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>reference/docs/example/table-of-contents/</loc>
   </url><url>
     <loc>reference/docs/example/collapsed/</loc>
-  </url><url>
-    <loc>reference/posts/</loc>
-    <lastmod>2014-09-28T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>reference/</loc>
-    <lastmod>2014-09-28T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>reference/posts/goisforlovers/</loc>
-    <lastmod>2014-04-02T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>reference/categories/</loc>
-    <lastmod>2014-04-02T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>reference/categories/development/</loc>
-    <lastmod>2014-04-02T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>reference/tags/development/</loc>
-    <lastmod>2014-04-02T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>reference/posts/hugoisforlovers/</loc>
-    <lastmod>2014-04-02T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>reference/tags/go/</loc>
-    <lastmod>2014-04-02T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>reference/tags/golang/</loc>
-    <lastmod>2014-04-02T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>reference/categories/golang/</loc>
-    <lastmod>2014-04-02T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>reference/tags/hugo/</loc>
-    <lastmod>2014-04-02T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>reference/tags/</loc>
-    <lastmod>2014-04-02T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>reference/tags/templates/</loc>
-    <lastmod>2014-04-02T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>reference/tags/themes/</loc>
-    <lastmod>2014-04-02T00:00:00+00:00</lastmod>
   </url><url>
     <loc>reference/docs/example/collapsed/3rd-level/4th-level/</loc>
   </url><url>
@@ -90,6 +42,12 @@
   </url><url>
     <loc>reference/docs/shortcodes/tabs/</loc>
   </url><url>
+    <loc>reference/categories/</loc>
+  </url><url>
     <loc>reference/docs/</loc>
+  </url><url>
+    <loc>reference/</loc>
+  </url><url>
+    <loc>reference/tags/</loc>
   </url>
 </urlset>
