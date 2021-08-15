@@ -1,5 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
 
+body {
+  font-family: -apple-system,BlinkMacSystemFont,segoe ui,Roboto,Oxygen,Ubuntu,Cantarell,open sans,helvetica neue,sans-serif;
+}
+
+code {
+  font-family: monospace;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Poppins";
+}
+
 :root {
   --gap: 24px;
   --content-gap: 40px;
