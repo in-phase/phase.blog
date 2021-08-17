@@ -43,24 +43,23 @@ That is technically all we need, and we can now start using our `NumberAccessor`
 ```
 
 # Return Types
----
-Summary: there are several methods that return `NArray`s by default, but may be overriden to return your own type:
-- `#unsafe_fetch_chunk(region : IndexRegion)`
-- `#map(&block)`
-- `#map_with(*args, &block)`
-- `.from(other : MultiIndexable)`
----
 
-# Overriding for Performance
+> **Summary:** there are several methods that return `NArray`s by default, but may be overriden to return your own type:
+> - `#unsafe_fetch_chunk(region : IndexRegion)`
+> - `#map(&block)`
+> - `#map_with(*args, &block)`
+> - `.from(other : MultiIndexable)`
 
----
-Summary: there are several methods designed to work for any `MultiIndexable`, at the possible cost of performance. Some we suggest overriding include:
-- Iterator methods: `#fast`, `#each`
-- Transform methods: `#reshape`, `#permute`, `#reverse`
-- `#unsafe_fetch_chunk`
-- `#size`
 
-`Phase::NArray` may offer some inspiration on how these methods work and how they might be optimized.
----
+# Performance
+
+>**Summary:** there are several methods designed to work for any `MultiIndexable`, at the possible cost of performance. Some we suggest overriding include:
+>- Iterator methods: `#fast`, `#each`
+>- Transform methods: `#reshape`, `#permute`, `#reverse`
+>- `#unsafe_fetch_chunk`
+>- `#size`
+>
+>`Phase::NArray` may offer some inspiration on how these methods work and how they might be optimized.
+
 
 
