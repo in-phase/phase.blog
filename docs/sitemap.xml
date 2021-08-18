@@ -21,8 +21,6 @@
   </url><url>
     <loc>/posts/fourth/</loc>
   </url><url>
-    <loc>/posts/second/</loc>
-  </url><url>
     <loc>/posts/seventh/</loc>
   </url><url>
     <loc>/posts/sixth/</loc>
@@ -30,5 +28,7 @@
     <loc>/posts/third/</loc>
   </url><url>
     <loc>/tags/</loc>
+  </url><url>
+    <loc>/posts/second/</loc>
   </url>
 </urlset>

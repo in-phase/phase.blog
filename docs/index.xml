@@ -50,16 +50,6 @@ Here&amp;rsquo;s a link to the reference material</description>
     
     <item>
       <title>Second post</title>
-      <link>/posts/second/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/posts/second/</guid>
-      <description>This is a post?
-Here&amp;rsquo;s a link to the reference material</description>
-    </item>
-    
-    <item>
-      <title>Second post</title>
       <link>/posts/seventh/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -86,6 +76,16 @@ Here&amp;rsquo;s a link to the reference material</description>
       <guid>/posts/third/</guid>
       <description>This is a post?
 Here&amp;rsquo;s a link to the reference material</description>
+    </item>
+    
+    <item>
+      <title>Tutorial: Make Your Own MultiIndexable</title>
+      <link>/posts/second/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/second/</guid>
+      <description>Basics ph-core offers a standard data type, Phase::NArray that will suffice for most of your multidimensional data storage and manipulation needs. However, storing information linearly in memory isn&amp;rsquo;t always the most effective appraoch, and sometimes isn&amp;rsquo;t possible. Phase::MultiIndexable is an interface defining a common set of rules we expect any multidimensional array to obey; and by implementing this interface, you can treat your own type almost like an NArray.
+Let&amp;rsquo;s say we want to be able to access any 5-digit number, using each place value as a coordinate.</description>
     </item>
     
   </channel>

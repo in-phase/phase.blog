@@ -1,5 +1,5 @@
 ---
-title: Tutorial: Make Your Own MultiIndexable
+title: "Tutorial: Make Your Own MultiIndexable"
 ---
 
 # Basics
