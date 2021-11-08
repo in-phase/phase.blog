@@ -1,6 +1,7 @@
 TARGET_DIR=docs
 
-all: clean main reference api
+all: clean main reference api postprocess
+	rm -rf api_docs_raw
 
 main:
 	cd main; hugo -d ../$(TARGET_DIR)
@@ -9,10 +10,11 @@ reference:
 	cd reference; hugo -d ../$(TARGET_DIR)/reference
 
 api:
-	cd api; crystal docs -o ../$(TARGET_DIR)/api
+	# cd api; crystal docs -o ../$(TARGET_DIR)/api
+	cd api; crystal docs -o ../api_docs_raw
 
 postprocess:
-	echo "not implemented"
+	crystal run postprocess/postprocess.cr
 
 clean:
 	rm -rf $(TARGET_DIR)

@@ -2,10 +2,10 @@ require "file_utils"
 
 PARTIAL = File.read(Path[__DIR__] / "_header.html")
 RAW_API_DOCS = (Path[__DIR__] / "../api_docs_raw").normalize
-OUTPUT_DIR = (Path[__DIR__] / "../api_docs").normalize
+OUTPUT_DIR = (Path[__DIR__] / "../docs/api").normalize
 
 process_all(RAW_API_DOCS, OUTPUT_DIR)
-FileUtils.cp("./phase_logo.svg", OUTPUT_DIR)
+# FileUtils.cp("./phase_logo.svg", OUTPUT_DIR)
 
 def check_directory(dir)
   raise "Directory #{dir.inspect} does not exist." unless Dir.exists?(dir)
@@ -31,7 +31,7 @@ def process_all(input_dir : Path, output_dir : Path)
 
   FileUtils.cp_r(input_dir, output_dir)
 
-  process_all!(input)
+  process_all!(output_dir)
 end
 
 def process_all!(doc_dir : Path)
