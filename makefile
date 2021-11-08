@@ -9,8 +9,10 @@ reference:
 	cd reference; hugo -d ../$(TARGET_DIR)/reference
 
 api:
-	echo "TODO: API docs"
 	cd api; crystal docs -o ../$(TARGET_DIR)/api
+
+postprocess:
+	echo "not implemented"
 
 clean:
 	rm -rf $(TARGET_DIR)
@@ -22,4 +24,4 @@ serve:
 	cd $(TARGET_DIR); python -m http.server 8080
 
 
-.PHONY: all main reference api serve watch
+.PHONY: all main reference api serve watch postprocess
