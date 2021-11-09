@@ -13,8 +13,9 @@ api:
 	# cd api; crystal docs -o ../$(TARGET_DIR)/api
 	cd api; crystal docs -o ../api_docs_raw
 
-postprocess:
-	crystal run postprocess/postprocess.cr
+postprocess: api
+	./postprocess/postprocess
+	# crystal run postprocess/postprocess.cr
 
 clean:
 	rm -rf $(TARGET_DIR)

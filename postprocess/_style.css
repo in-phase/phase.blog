@@ -27,7 +27,7 @@
   --color-link: #f22576;
 }
 
-:root /*.dark*/ {
+.dark {
   --gray-100: #1e1532;
   --gray-200: #221930;
   --gray-500: #291f3e;
@@ -51,17 +51,30 @@
   --fg-1: #e1daed;
 }
 
-.book-brand {
-  display: none;
+body {
+  background: var(--bg-1);
+  color: var(--fg-1);
+  display: grid;
+  grid-template-columns: min-content 1fr;
+  grid-gap: var(--gap);
 }
 
-.book-search {
-  margin-top: 0;
+.header {
+  grid-column: 1/-1;
+  grid-row: 1;
 }
 
-.book-menu .book-menu-content,
-.book-toc .book-toc-content {
-  position: sticky;
+.sidebar {
+  grid-column: 1;
+  grid-row: 2;
+  mask-image: linear-gradient(to bottom, transparent 0%, black 10%);
+  background: unset;
+}
+
+.main-content {
+  grid-column: 2;
+  grid-row: 2;
+  padding: unset;
 }
 
 .nav {
@@ -180,26 +193,27 @@ button#theme-toggle {
 ul#menu {
   font-family: "Poppins";
   font-size: 16px;
-  
-  & a {
-    color: var(--primary);
-  }
 }
+
+ul#menu a {
+  color: var(--primary);
+}
+
 
 button {
   background: 0 0;
   border: 0;
   color: var(--primary);
   cursor: pointer;
+}
 
-  &:focus {
-    outline: 0;
-  }
+button:focus {
+  outline: 0;
 }
 
 *:focus {
   outline: 2px white !important;
-
+}
 
 nav #menu {
   margin: 0 var(--gap);
