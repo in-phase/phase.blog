@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+
 :root {
   --gap: 24px;
   --content-gap: 40px;
@@ -20,7 +22,7 @@
   --hint-color-danger: #f66;
   --theme: #ffffff;
   --entry: #e3edf6;
-  --primary: #10222c;
+  --fg-1: #10222c;
   --secondary: #31566b;
   --tertiary: #5e91b1;
   --content: #10222c;
@@ -40,18 +42,22 @@
   --hint-color-danger: #f66;
   --theme: #171021;
   --entry: #1e1532;
-  --primary: #e1daed;
-  --secondary: #a18cc7;
-  --tertiary: #8f76bb;
   --content: #e1daed;
   --color-link: #ff5599;
   
   --bg-1: #171021;
   --bg-2: #1e1532;
+
   --fg-1: #e1daed;
+  --fg-2: #a18cc7;
+  --fg-3: #8f76bb;
 }
 
+/* Globally applied styling */
 body {
+  /* Adapted from the PaperMod theme (https://adityatelange.github.io/hugo-PaperMod/)
+  because that's what we're using for the main site and I want font consistency */
+  font-family: -apple-system,BlinkMacSystemFont,segoe ui,Roboto,Oxygen,Ubuntu,Cantarell,open sans,helvetica neue,sans-serif;
   background: var(--bg-1);
   color: var(--fg-1);
   display: grid;
@@ -59,22 +65,48 @@ body {
   grid-gap: var(--gap);
 }
 
+::selection {
+  background: #428bab;
+  color: var(--fg-1);
+}
+
+*:focus {
+  outline: 2px white !important;
+}
+
+button {
+  background: 0 0;
+  border: 0;
+  color: var(--fg-1);
+  cursor: pointer;
+}
+
+button:focus {
+  outline: 0;
+}
+
+code {
+  font-family: monospace;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Poppins",-apple-system,BlinkMacSystemFont,segoe ui,Roboto,Oxygen,Ubuntu,Cantarell,open sans,helvetica neue,sans-serif;
+  color: var(--fg-1);
+}
+
+/* Header styling */
 .header {
   grid-column: 1/-1;
   grid-row: 1;
-}
-
-.sidebar {
-  grid-column: 1;
-  grid-row: 2;
-  mask-image: linear-gradient(to bottom, transparent 0%, black 10%);
-  background: unset;
-}
-
-.main-content {
-  grid-column: 2;
-  grid-row: 2;
-  padding: unset;
 }
 
 .nav {
@@ -85,6 +117,7 @@ body {
   margin-inline-start: auto;
   margin-inline-end: auto;
   line-height: var(--header-height);
+  padding-top: var(--gap);
 }
 
 .nav a {
@@ -138,6 +171,8 @@ body:not(.dark) #sun {
   word-break: keep-all;
   overflow-x: auto;
   white-space: nowrap;
+  margin: 0 var(--gap);
+  font-size: 16px;
 }
 
 #menu li + li {
@@ -146,6 +181,7 @@ body:not(.dark) #sun {
 
 #menu a {
   font-size: 16px;
+  color: var(--fg-1);
 }
 
 #menu .active {
@@ -161,21 +197,16 @@ body:not(.dark) #sun {
   background: #4e458a;
 }
 
-::selection {
-  background: #428bab;
-  color: var(--primary);
-}
 
 button#theme-toggle {
   margin: 0;
+  padding: 0;
 }
 
 .logo-switches {
+  display: flex;
+  height: 100%;
   margin: 0;
-}
-
-.nav {
-  padding-top: var(--gap);
 }
 
 .main {
@@ -190,40 +221,38 @@ button#theme-toggle {
   filter: drop-shadow(0px 0px 4px hsla(40, 50%, 50%, 0.6));
 }
 
-ul#menu {
-  font-family: "Poppins";
-  font-size: 16px;
+/* Sidebar styling */
+.sidebar {
+  grid-column: 1;
+  grid-row: 2;
+  mask-image: linear-gradient(to bottom, transparent 0%, black 10%);
+  background: unset;
+  color: inherit;
 }
 
-ul#menu a {
-  color: var(--primary);
+.project-name {
+  color: inherit;
 }
 
-
-button {
-  background: 0 0;
-  border: 0;
-  color: var(--primary);
-  cursor: pointer;
+.sidebar a {
+  color: var(--fg-2);
 }
 
-button:focus {
-  outline: 0;
+.sidebar .current > a,
+.sidebar a:hover {
+  color: var(--fg-1);
 }
 
-*:focus {
-  outline: 2px white !important;
+/* Styling of main content */
+.main-content {
+  grid-column: 2;
+  grid-row: 2;
+  padding: unset;
 }
 
-nav #menu {
-  margin: 0 var(--gap);
+h1.type-name {
+  margin: 13px 0 30px;
+  background: var(--bg-2);
+  border: unset;
 }
 
-button#theme-toggle {
-  padding: 0;
-}
-
-.logo-switches {
-  display: flex;
-  height: 100%;
-}
