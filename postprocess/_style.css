@@ -3,16 +3,16 @@
 :root {
   --gap: 24px;
   --content-gap: 40px;
-  --nav-width: 1250px;
+  --nav-width: unset/*1250px*/;
   --main-width: 640px;
   --header-height: 55px;
   --footer-height: 60px;
   --radius: 8px;
   --brand-gradient: linear-gradient(30deg, #fc9842, #fbb034);
   
-  --gray-100: #e3edf6;
-  --gray-200: #cce2ed;
-  --gray-500: #b1d1e2;
+  --bg-1: #e3edf6;
+  --bg-2: #cce2ed;
+  --bg-3: #b1d1e2;
   --color-visited-link: #b88dff;
   --body-background: #eff5ff;
   --body-font-color: #060607;
@@ -23,8 +23,8 @@
   --theme: #ffffff;
   --entry: #e3edf6;
   --fg-1: #10222c;
-  --secondary: #31566b;
-  --tertiary: #5e91b1;
+  --fg-2: #31566b;
+  --fg-3: #5e91b1;
   --content: #10222c;
   --color-link: #f22576;
 }
@@ -47,6 +47,7 @@
   
   --bg-1: #171021;
   --bg-2: #1e1532;
+  --bg-3: #291f3e;
 
   --fg-1: #e1daed;
   --fg-2: #a18cc7;
@@ -59,7 +60,7 @@ body {
   because that's what we're using for the main site and I want font consistency */
   font-family: -apple-system,BlinkMacSystemFont,segoe ui,Roboto,Oxygen,Ubuntu,Cantarell,open sans,helvetica neue,sans-serif;
   background: var(--bg-1);
-  color: var(--fg-1);
+  color: var(--fg-2);
   display: grid;
   grid-template-columns: min-content 1fr;
   grid-gap: var(--gap);
@@ -225,9 +226,19 @@ button#theme-toggle {
 .sidebar {
   grid-column: 1;
   grid-row: 2;
-  mask-image: linear-gradient(to bottom, transparent 0%, black 10%);
+  mask-image: linear-gradient(to bottom, transparent 0%, black 5%);
   background: unset;
   color: inherit;
+  box-shadow: unset;
+}
+
+.search-input {
+  background: var(--bg-2);
+  color: var(--fg-1);
+}
+
+input.search-input::placeholder {
+  color: var(--fg-3);
 }
 
 .project-name {
@@ -254,5 +265,28 @@ h1.type-name {
   margin: 13px 0 30px;
   background: var(--bg-2);
   border: unset;
+  color: var(--fg-1);
 }
 
+:not(pre) > code {
+  font-size: inherit;
+}
+
+.kind {
+  color: var(--fg-2);
+}
+
+.superclass-hierarchy .superclass a,
+.other-type a,
+.entry-summary .signature {
+  color: var(--fg-1);
+  background: var(--bg-2);
+  border: unset;
+}
+
+.superclass-hierarchy .superclass a:hover,
+.other-type a:hover,
+.entry-summary .signature:hover {
+  color: var(--fg-1);
+  background: var(--bg-3);
+}

@@ -21,7 +21,7 @@ clean:
 	rm -rf $(TARGET_DIR)
 
 watch: 
-	find . -not -path '*/\.*' -not -path './docs/*' -type f | entr make
+	find . -not -path '*/\.*' -not -path './docs/*' -not -path './api_docs_raw/*' -type f | entr make
 
 serve:
 	cd $(TARGET_DIR); python -m http.server 8080
