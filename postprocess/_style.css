@@ -64,6 +64,7 @@ body {
   display: grid;
   grid-template-columns: min-content 1fr;
   grid-gap: var(--gap);
+  font-size: 500;
 }
 
 ::selection {
@@ -101,7 +102,9 @@ a:hover {
 
 h1, h2, h3, h4, h5, h6 {
   font-family: "Poppins",-apple-system,BlinkMacSystemFont,segoe ui,Roboto,Oxygen,Ubuntu,Cantarell,open sans,helvetica neue,sans-serif;
+  font-weight: 500;
   color: var(--fg-1);
+  border-color: var(--bg-3);
 }
 
 /* Header styling */
@@ -137,7 +140,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .logo a {
   font-size: 24px;
-  font-weight: 700;
+  /*font-weight: 700;*/
 }
 
 .logo a img {
@@ -232,9 +235,22 @@ button#theme-toggle {
   box-shadow: unset;
 }
 
-.search-input {
+* {
+  scrollbar-color: var(--fg-3) var(--bg-2);
+}
+
+*::-webkit-scrollbar-track {
+  background-color: var(--bg-2);
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: var(--fg-3);
+}
+
+input.search-input {
   background: var(--bg-2);
   color: var(--fg-1);
+  box-shadow: unset;
 }
 
 input.search-input::placeholder {
@@ -243,6 +259,7 @@ input.search-input::placeholder {
 
 .project-name {
   color: inherit;
+  font-weight: inherit;
 }
 
 .sidebar a {
@@ -251,6 +268,10 @@ input.search-input::placeholder {
 
 .sidebar .current > a,
 .sidebar a:hover {
+  color: var(--fg-1);
+}
+
+.types-list li.parent::before {
   color: var(--fg-1);
 }
 
