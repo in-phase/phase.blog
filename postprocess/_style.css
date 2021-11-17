@@ -9,6 +9,7 @@
   --footer-height: 60px;
   --radius: 8px;
   --brand-gradient: linear-gradient(30deg, #fc9842, #fbb034);
+  --font-fallbacks: -apple-system,BlinkMacSystemFont,segoe ui,Roboto,Oxygen,Ubuntu,Cantarell,open sans,helvetica neue,sans-serif;
   
   --bg-1: #e3edf6;
   --bg-2: #cce2ed;
@@ -27,7 +28,17 @@
   --fg-3: #5e91b1;
   --content: #10222c;
   --color-link: #f22576;
+
+  --syntax-c: #0099ff; /* Comment */
+  --syntax-n: #ff6600; /* Number */
+  --syntax-t: #00aa88; /* Type */
+  --syntax-s: #cc3300; /* String */
+  --syntax-i: #aa0000; /* String interpolation */
+  --syntax-k: #006699; /* Keyword */
+  --syntax-o: #555555; /* Operator */
+  --syntax-m: #cc00ff; /* Method */
 }
+
 
 .dark {
   --gray-100: #1e1532;
@@ -52,13 +63,22 @@
   --fg-1: #e1daed;
   --fg-2: #a18cc7;
   --fg-3: #8f76bb;
+
+  --syntax-c: #6272a4; /* Comment */
+  --syntax-n: #bd93f9; /* Number */
+  --syntax-t: #50fa7b; /* Type */
+  --syntax-s: #f1fa8c; /* String */
+  --syntax-i: #f1fa8c; /* String interpolation */
+  --syntax-k: #ff79c6; /* Keyword */
+  --syntax-o: #ff79c6; /* Operator */
+  --syntax-m: #50fa7b; /* Method */
 }
 
 /* Globally applied styling */
 body {
   /* Adapted from the PaperMod theme (https://adityatelange.github.io/hugo-PaperMod/)
   because that's what we're using for the main site and I want font consistency */
-  font-family: -apple-system,BlinkMacSystemFont,segoe ui,Roboto,Oxygen,Ubuntu,Cantarell,open sans,helvetica neue,sans-serif;
+  font-family: var(--font-fallbacks);
   background: var(--bg-1);
   color: var(--fg-2);
   display: grid;
@@ -101,7 +121,7 @@ a:hover {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: "Poppins",-apple-system,BlinkMacSystemFont,segoe ui,Roboto,Oxygen,Ubuntu,Cantarell,open sans,helvetica neue,sans-serif;
+  font-family: "Poppins", var(--font-fallbacks);
   font-weight: 500;
   color: var(--fg-1);
   border-color: var(--bg-3);
@@ -264,6 +284,7 @@ input.search-input::placeholder {
 
 .sidebar a {
   color: var(--fg-2);
+  font-family: "Poppins"
 }
 
 .sidebar .current > a,
@@ -280,6 +301,8 @@ input.search-input::placeholder {
   grid-column: 2;
   grid-row: 2;
   padding: unset;
+  padding-right: var(--gap);
+  box-sizing: border-box;
 }
 
 h1.type-name {
@@ -310,4 +333,21 @@ h1.type-name {
 .entry-summary .signature:hover {
   color: var(--fg-1);
   background: var(--bg-3);
+}
+
+/* Syntax highlighting */
+.c { color: var(--syntax-c) }
+.n { color: var(--syntax-n) }
+.t { color: var(--syntax-t) }
+.s { color: var(--syntax-s) }
+.i { color: var(--syntax-i) }
+.k { color: var(--syntax-k) }
+.o { color: var(--syntax-o) }
+.m { color: var(--syntax-m) }
+
+pre {
+  color: var(--fg-1);
+  background: var(--bg-2);
+  border: none;
+  border-radius: var(--radius);
 }
