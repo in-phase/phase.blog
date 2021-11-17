@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="generator" content="Crystal Docs 1.1.0">
-<meta name="crystal_docs.project_version" content="main">
+<meta name="generator" content="Crystal Docs 1.2.0">
+<meta name="crystal_docs.project_version" content="HEAD">
 <meta name="crystal_docs.project_name" content="ph-core">
 
 
@@ -13,12 +13,80 @@
 <script type="text/javascript" src="../js/doc.js"></script>
 
   <meta name="repository-name" content="ph-core">
-  <title>Phase::MultiWritable(T) - ph-core main</title>
+  <title>Phase::MultiWritable(T) - ph-core HEAD</title>
   <script type="text/javascript">
     CrystalDocs.base_path = "../";
   </script>
 </head>
-<body>
+<body><script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="./" accesskey="h" title="  (Alt + H)">
+                <img src="/phase_logo.svg" alt="logo" aria-label="logo" height="55px">            </a>
+        </div>
+        <ul id="menu">
+            <li>
+                <a class="active" href="https://phase.blog/api" title="API Docs">
+                    <span>API Docs</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://phase.blog/" title="Blog">
+                    <span>Blog</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://phase.blog/reference" title="Reference">
+                    <span>Reference</span>
+                </a>
+            </li>
+
+            <li>
+                <span class="logo-switches">
+                    <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                        <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                        </svg>
+                        <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="5"></circle>
+                            <line x1="12" y1="1" x2="12" y2="3"></line>
+                            <line x1="12" y1="21" x2="12" y2="23"></line>
+                            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                            <line x1="1" y1="12" x2="3" y2="12"></line>
+                            <line x1="21" y1="12" x2="23" y2="12"></line>
+                            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                        </svg>
+                    </button>
+                </span>
+            </li>
+        </ul>
+    </nav>
+</header>
+
+<script>
+document.getElementById("theme-toggle").addEventListener("click", () => {
+    if (document.body.className.includes("dark")) {
+        document.body.classList.remove('dark');
+        localStorage.setItem("pref-theme", 'light');
+    } else {
+        document.body.classList.add('dark');
+        localStorage.setItem("pref-theme", 'dark');
+    }
+})
+</script>
+
 
 <svg class="hidden">
   <symbol id="octicon-link" viewBox="0 0 16 16">
@@ -39,7 +107,7 @@
       </h1>
 
       <span class="project-version">
-        main
+        HEAD
       </span>
     </div>
   </div>
@@ -408,69 +476,69 @@
   <ul class="list-summary">
     
       <li class="entry-summary">
-        <a href="#[]=(region:Indexable%7CIndexRegion,value)-instance-method" class="signature"><strong>#[]=</strong>(region : Indexable | IndexRegion, value)</a>
+        <a href="#%5B%5D%3D%28region%3AIndexable%7CIndexRegion%2Cvalue%29-instance-method" class="signature"><strong>#[]=</strong>(region : Indexable | IndexRegion, value)</a>
         
-          <div class="summary"><p>See <code><a href="../Phase/MultiWritable.html#set_chunk(region_literal:Indexable,src:MultiIndexable(T))-instance-method">#set_chunk(region : Enumerable, value)</a></code></p></div>
+          <div class="summary"><p>See <code><a href="../Phase/MultiWritable.html#set_chunk%28region_literal%3AIndexable%2Csrc%3AMultiIndexable%28T%29%29-instance-method">#set_chunk(region : Enumerable, value)</a></code></p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#[]=(bool_mask:MultiIndexable(Bool),value)-instance-method" class="signature"><strong>#[]=</strong>(bool_mask : MultiIndexable(Bool), value)</a>
+        <a href="#%5B%5D%3D%28bool_mask%3AMultiIndexable%28Bool%29%2Cvalue%29-instance-method" class="signature"><strong>#[]=</strong>(bool_mask : MultiIndexable(Bool), value)</a>
         
           <div class="summary"><p><span class="flag orange">TODO</span>  consider overriding these in NArray, may benefit from speedup?</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#[]=(*args)-instance-method" class="signature"><strong>#[]=</strong>(*args)</a>
+        <a href="#%5B%5D%3D%28%2Aargs%29-instance-method" class="signature"><strong>#[]=</strong>(*args)</a>
         
           <div class="summary"><p>These two should go last</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#set_available(region:Indexable,value:T)-instance-method" class="signature"><strong>#set_available</strong>(region : Indexable, value : T)</a>
+        <a href="#set_available%28region%3AIndexable%2Cvalue%3AT%29-instance-method" class="signature"><strong>#set_available</strong>(region : Indexable, value : T)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#set_chunk(region_literal:Indexable,src:MultiIndexable(T))-instance-method" class="signature"><strong>#set_chunk</strong>(region_literal : Indexable, src : MultiIndexable(T))</a>
+        <a href="#set_chunk%28region_literal%3AIndexable%2Csrc%3AMultiIndexable%28T%29%29-instance-method" class="signature"><strong>#set_chunk</strong>(region_literal : Indexable, src : MultiIndexable(T))</a>
         
           <div class="summary"><p><span class="flag purple">NOTE</span>  changed name from 'value' to 'src' - approve? Copies the elements from a MultiIndexable <code>src</code> into <code>region</code>.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#set_chunk(region:Indexable%7CIndexRegion,value:T)-instance-method" class="signature"><strong>#set_chunk</strong>(region : Indexable | IndexRegion, value : T)</a>
+        <a href="#set_chunk%28region%3AIndexable%7CIndexRegion%2Cvalue%3AT%29-instance-method" class="signature"><strong>#set_chunk</strong>(region : Indexable | IndexRegion, value : T)</a>
         
           <div class="summary"><p>Sets each element in <code>region</code> to <code>value</code>.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#set_element(coord:Indexable,value:T)-instance-method" class="signature"><strong>#set_element</strong>(coord : Indexable, value : T)</a>
+        <a href="#set_element%28coord%3AIndexable%2Cvalue%3AT%29-instance-method" class="signature"><strong>#set_element</strong>(coord : Indexable, value : T)</a>
         
           <div class="summary"><p>Sets the element specified by <code>coord</code> to <code>value</code>.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#set_mask(bool_mask,src:MultiIndexable(T))-instance-method" class="signature"><strong>#set_mask</strong>(bool_mask, src : MultiIndexable(T))</a>
+        <a href="#set_mask%28bool_mask%2Csrc%3AMultiIndexable%28T%29%29-instance-method" class="signature"><strong>#set_mask</strong>(bool_mask, src : MultiIndexable(T))</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#set_mask(bool_mask,value)-instance-method" class="signature"><strong>#set_mask</strong>(bool_mask, value)</a>
+        <a href="#set_mask%28bool_mask%2Cvalue%29-instance-method" class="signature"><strong>#set_mask</strong>(bool_mask, value)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#set_mask(bool_mask:MultiIndexable(Bool),&)-instance-method" class="signature"><strong>#set_mask</strong>(bool_mask : MultiIndexable(Bool), &)</a>
+        <a href="#set_mask%28bool_mask%3AMultiIndexable%28Bool%29%2C%26%29-instance-method" class="signature"><strong>#set_mask</strong>(bool_mask : MultiIndexable(Bool), &)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#shape:Shape-instance-method" class="signature"><strong>#shape</strong> : Shape</a>
+        <a href="#shape%3AShape-instance-method" class="signature"><strong>#shape</strong> : Shape</a>
         
           <div class="summary"><p>Returns the length of the <code>{{@type}}</code> in each dimension.</p></div>
         
@@ -484,21 +552,21 @@
       </li>
     
       <li class="entry-summary">
-        <a href="#unsafe_set_chunk(region:IndexRegion,src:MultiIndexable(T))-instance-method" class="signature"><strong>#unsafe_set_chunk</strong>(region : IndexRegion, src : MultiIndexable(T))</a>
+        <a href="#unsafe_set_chunk%28region%3AIndexRegion%2Csrc%3AMultiIndexable%28T%29%29-instance-method" class="signature"><strong>#unsafe_set_chunk</strong>(region : IndexRegion, src : MultiIndexable(T))</a>
         
           <div class="summary"><p>Copies the elements from a MultiIndexable <code>src</code> into <code>region</code>, assuming that <code>region</code> is in canonical form and in-bounds for this <code>{{@type}}</code> and the shape of <code>region</code> matches the shape of <code>src</code>.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#unsafe_set_chunk(region:IndexRegion,value:T)-instance-method" class="signature"><strong>#unsafe_set_chunk</strong>(region : IndexRegion, value : T)</a>
+        <a href="#unsafe_set_chunk%28region%3AIndexRegion%2Cvalue%3AT%29-instance-method" class="signature"><strong>#unsafe_set_chunk</strong>(region : IndexRegion, value : T)</a>
         
           <div class="summary"><p>Sets each element in <code>region</code> to <code>value</code>, assuming that <code>region</code> is in canonical form and in-bounds for this <code>{{@type}}</code> For full specification of canonical form see <code>RegionHelpers</code> documentation.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#unsafe_set_element(coord:Coord,value:T)-instance-method" class="signature"><strong>#unsafe_set_element</strong>(coord : Coord, value : T)</a>
+        <a href="#unsafe_set_element%28coord%3ACoord%2Cvalue%3AT%29-instance-method" class="signature"><strong>#unsafe_set_element</strong>(coord : Coord, value : T)</a>
         
           <div class="summary"><p>Given a coordinate representing some location in the {{@type}} and a value, store the value at that coordinate.</p></div>
         
@@ -533,12 +601,12 @@
         
         def <strong>[]=</strong>(region : Indexable | <a href="../Phase/IndexRegion.html">IndexRegion</a>, value)
 
-        <a class="method-permalink" href="#[]=(region:Indexable%7CIndexRegion,value)-instance-method">#</a>
+        <a class="method-permalink" href="#%5B%5D%3D%28region%3AIndexable%7CIndexRegion%2Cvalue%29-instance-method">#</a>
       </div>
       
         <div class="doc">
           
-          <p>See <code><a href="../Phase/MultiWritable.html#set_chunk(region_literal:Indexable,src:MultiIndexable(T))-instance-method">#set_chunk(region : Enumerable, value)</a></code></p>
+          <p>See <code><a href="../Phase/MultiWritable.html#set_chunk%28region_literal%3AIndexable%2Csrc%3AMultiIndexable%28T%29%29-instance-method">#set_chunk(region : Enumerable, value)</a></code></p>
         </div>
       
       <br/>
@@ -554,7 +622,7 @@
         
         def <strong>[]=</strong>(bool_mask : <a href="../Phase/MultiIndexable.html">MultiIndexable</a>(Bool), value)
 
-        <a class="method-permalink" href="#[]=(bool_mask:MultiIndexable(Bool),value)-instance-method">#</a>
+        <a class="method-permalink" href="#%5B%5D%3D%28bool_mask%3AMultiIndexable%28Bool%29%2Cvalue%29-instance-method">#</a>
       </div>
       
         <div class="doc">
@@ -575,7 +643,7 @@
         
         def <strong>[]=</strong>(*args)
 
-        <a class="method-permalink" href="#[]=(*args)-instance-method">#</a>
+        <a class="method-permalink" href="#%5B%5D%3D%28%2Aargs%29-instance-method">#</a>
       </div>
       
         <div class="doc">
@@ -596,7 +664,7 @@
         
         def <strong>set_available</strong>(region : Indexable, value : T)
 
-        <a class="method-permalink" href="#set_available(region:Indexable,value:T)-instance-method">#</a>
+        <a class="method-permalink" href="#set_available%28region%3AIndexable%2Cvalue%3AT%29-instance-method">#</a>
       </div>
       
       <br/>
@@ -612,7 +680,7 @@
         
         def <strong>set_chunk</strong>(region_literal : Indexable, src : <a href="../Phase/MultiIndexable.html">MultiIndexable</a>(T))
 
-        <a class="method-permalink" href="#set_chunk(region_literal:Indexable,src:MultiIndexable(T))-instance-method">#</a>
+        <a class="method-permalink" href="#set_chunk%28region_literal%3AIndexable%2Csrc%3AMultiIndexable%28T%29%29-instance-method">#</a>
       </div>
       
         <div class="doc">
@@ -635,7 +703,7 @@ Raises an error if <code>region</code> is out-of-bounds for this <code>{{@type}}
         
         def <strong>set_chunk</strong>(region : Indexable | <a href="../Phase/IndexRegion.html">IndexRegion</a>, value : T)
 
-        <a class="method-permalink" href="#set_chunk(region:Indexable%7CIndexRegion,value:T)-instance-method">#</a>
+        <a class="method-permalink" href="#set_chunk%28region%3AIndexable%7CIndexRegion%2Cvalue%3AT%29-instance-method">#</a>
       </div>
       
         <div class="doc">
@@ -657,7 +725,7 @@ Raises an error if <code>region</code> is out-of-bounds for this <code>{{@type}}
         
         def <strong>set_element</strong>(coord : Indexable, value : T)
 
-        <a class="method-permalink" href="#set_element(coord:Indexable,value:T)-instance-method">#</a>
+        <a class="method-permalink" href="#set_element%28coord%3AIndexable%2Cvalue%3AT%29-instance-method">#</a>
       </div>
       
         <div class="doc">
@@ -679,7 +747,7 @@ Raises an error if <code>coord</code> is out-of-bounds for this <code>{{@type}}<
         
         def <strong>set_mask</strong>(bool_mask, src : <a href="../Phase/MultiIndexable.html">MultiIndexable</a>(T))
 
-        <a class="method-permalink" href="#set_mask(bool_mask,src:MultiIndexable(T))-instance-method">#</a>
+        <a class="method-permalink" href="#set_mask%28bool_mask%2Csrc%3AMultiIndexable%28T%29%29-instance-method">#</a>
       </div>
       
       <br/>
@@ -695,7 +763,7 @@ Raises an error if <code>coord</code> is out-of-bounds for this <code>{{@type}}<
         
         def <strong>set_mask</strong>(bool_mask, value)
 
-        <a class="method-permalink" href="#set_mask(bool_mask,value)-instance-method">#</a>
+        <a class="method-permalink" href="#set_mask%28bool_mask%2Cvalue%29-instance-method">#</a>
       </div>
       
       <br/>
@@ -711,7 +779,7 @@ Raises an error if <code>coord</code> is out-of-bounds for this <code>{{@type}}<
         
         def <strong>set_mask</strong>(bool_mask : <a href="../Phase/MultiIndexable.html">MultiIndexable</a>(Bool), &)
 
-        <a class="method-permalink" href="#set_mask(bool_mask:MultiIndexable(Bool),&)-instance-method">#</a>
+        <a class="method-permalink" href="#set_mask%28bool_mask%3AMultiIndexable%28Bool%29%2C%26%29-instance-method">#</a>
       </div>
       
       <br/>
@@ -727,7 +795,7 @@ Raises an error if <code>coord</code> is out-of-bounds for this <code>{{@type}}<
         abstract 
         def <strong>shape</strong> : <a href="../Phase/Shape.html">Shape</a>
 
-        <a class="method-permalink" href="#shape:Shape-instance-method">#</a>
+        <a class="method-permalink" href="#shape%3AShape-instance-method">#</a>
       </div>
       
         <div class="doc">
@@ -770,7 +838,7 @@ For a <code>coord</code> to specify an element of the <code>{{@type}}</code> it 
         
         def <strong>unsafe_set_chunk</strong>(region : <a href="../Phase/IndexRegion.html">IndexRegion</a>, src : <a href="../Phase/MultiIndexable.html">MultiIndexable</a>(T))
 
-        <a class="method-permalink" href="#unsafe_set_chunk(region:IndexRegion,src:MultiIndexable(T))-instance-method">#</a>
+        <a class="method-permalink" href="#unsafe_set_chunk%28region%3AIndexRegion%2Csrc%3AMultiIndexable%28T%29%29-instance-method">#</a>
       </div>
       
         <div class="doc">
@@ -793,7 +861,7 @@ For full specification of canonical form see <code>RegionHelpers</code> document
         
         def <strong>unsafe_set_chunk</strong>(region : <a href="../Phase/IndexRegion.html">IndexRegion</a>, value : T)
 
-        <a class="method-permalink" href="#unsafe_set_chunk(region:IndexRegion,value:T)-instance-method">#</a>
+        <a class="method-permalink" href="#unsafe_set_chunk%28region%3AIndexRegion%2Cvalue%3AT%29-instance-method">#</a>
       </div>
       
         <div class="doc">
@@ -815,7 +883,7 @@ For full specification of canonical form see <code>RegionHelpers</code> document
         abstract 
         def <strong>unsafe_set_element</strong>(coord : <a href="../Phase/Coord.html">Coord</a>, value : T)
 
-        <a class="method-permalink" href="#unsafe_set_element(coord:Coord,value:T)-instance-method">#</a>
+        <a class="method-permalink" href="#unsafe_set_element%28coord%3ACoord%2Cvalue%3AT%29-instance-method">#</a>
       </div>
       
         <div class="doc">

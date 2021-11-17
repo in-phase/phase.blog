@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="generator" content="Crystal Docs 1.1.0">
-<meta name="crystal_docs.project_version" content="main">
+<meta name="generator" content="Crystal Docs 1.2.0">
+<meta name="crystal_docs.project_version" content="HEAD">
 <meta name="crystal_docs.project_name" content="ph-core">
 
 
@@ -13,12 +13,80 @@
 <script type="text/javascript" src="../js/doc.js"></script>
 
   <meta name="repository-name" content="ph-core">
-  <title>Phase::CoordUtil - ph-core main</title>
+  <title>Phase::CoordUtil - ph-core HEAD</title>
   <script type="text/javascript">
     CrystalDocs.base_path = "../";
   </script>
 </head>
-<body>
+<body><script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="./" accesskey="h" title="  (Alt + H)">
+                <img src="/phase_logo.svg" alt="logo" aria-label="logo" height="55px">            </a>
+        </div>
+        <ul id="menu">
+            <li>
+                <a class="active" href="https://phase.blog/api" title="API Docs">
+                    <span>API Docs</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://phase.blog/" title="Blog">
+                    <span>Blog</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://phase.blog/reference" title="Reference">
+                    <span>Reference</span>
+                </a>
+            </li>
+
+            <li>
+                <span class="logo-switches">
+                    <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                        <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                        </svg>
+                        <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="5"></circle>
+                            <line x1="12" y1="1" x2="12" y2="3"></line>
+                            <line x1="12" y1="21" x2="12" y2="23"></line>
+                            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                            <line x1="1" y1="12" x2="3" y2="12"></line>
+                            <line x1="21" y1="12" x2="23" y2="12"></line>
+                            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                        </svg>
+                    </button>
+                </span>
+            </li>
+        </ul>
+    </nav>
+</header>
+
+<script>
+document.getElementById("theme-toggle").addEventListener("click", () => {
+    if (document.body.className.includes("dark")) {
+        document.body.classList.remove('dark');
+        localStorage.setItem("pref-theme", 'light');
+    } else {
+        document.body.classList.add('dark');
+        localStorage.setItem("pref-theme", 'dark');
+    }
+})
+</script>
+
 
 <svg class="hidden">
   <symbol id="octicon-link" viewBox="0 0 16 16">
@@ -39,7 +107,7 @@
       </h1>
 
       <span class="project-version">
-        main
+        HEAD
       </span>
     </div>
   </div>
@@ -406,45 +474,45 @@
   <ul class="list-summary">
     
       <li class="entry-summary">
-        <a href="#canonicalize_coord(coord,shape):Coord-instance-method" class="signature"><strong>#canonicalize_coord</strong>(coord, shape) : Coord</a>
+        <a href="#canonicalize_coord%28coord%2Cshape%29%3ACoord-instance-method" class="signature"><strong>#canonicalize_coord</strong>(coord, shape) : Coord</a>
         
           <div class="summary"><p>Converts a <code>coord</code> into canonical form, such that each index in <code>coord</code> is positive.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#canonicalize_index(index,shape,axis)-instance-method" class="signature"><strong>#canonicalize_index</strong>(index, shape, axis)</a>
+        <a href="#canonicalize_index%28index%2Cshape%2Caxis%29-instance-method" class="signature"><strong>#canonicalize_index</strong>(index, shape, axis)</a>
         
           <div class="summary"><p>Returns the canonical (positive) form of <code>index</code> along a particular <code>axis</code> of <code>shape</code>.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#canonicalize_index(index,size)-instance-method" class="signature"><strong>#canonicalize_index</strong>(index, size)</a>
+        <a href="#canonicalize_index%28index%2Csize%29-instance-method" class="signature"><strong>#canonicalize_index</strong>(index, size)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#has_coord?(coord,shape)-instance-method" class="signature"><strong>#has_coord?</strong>(coord, shape)</a>
+        <a href="#has_coord%3F%28coord%2Cshape%29-instance-method" class="signature"><strong>#has_coord?</strong>(coord, shape)</a>
         
           <div class="summary"><p>Checks if <code>coord</code> is a valid coordinate for an array-like object with dimensions specified by <code>shape</code>.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#has_index?(index,shape,axis)-instance-method" class="signature"><strong>#has_index?</strong>(index, shape, axis)</a>
+        <a href="#has_index%3F%28index%2Cshape%2Caxis%29-instance-method" class="signature"><strong>#has_index?</strong>(index, shape, axis)</a>
         
           <div class="summary"><p>Checks if <code>index</code> is a valid index along <code>axis</code> for an array-like object with dimensions specified by <code>shape</code>.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#has_index?(index,size:Int::Unsigned)-instance-method" class="signature"><strong>#has_index?</strong>(index, size : Int::Unsigned)</a>
+        <a href="#has_index%3F%28index%2Csize%3AInt%3A%3AUnsigned%29-instance-method" class="signature"><strong>#has_index?</strong>(index, size : Int::Unsigned)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#has_index?(index,size:Int)-instance-method" class="signature"><strong>#has_index?</strong>(index, size : Int)</a>
+        <a href="#has_index%3F%28index%2Csize%3AInt%29-instance-method" class="signature"><strong>#has_index?</strong>(index, size : Int)</a>
         
       </li>
     
@@ -477,7 +545,7 @@
         
         def <strong>canonicalize_coord</strong>(coord, shape) : <a href="../Phase/Coord.html">Coord</a>
 
-        <a class="method-permalink" href="#canonicalize_coord(coord,shape):Coord-instance-method">#</a>
+        <a class="method-permalink" href="#canonicalize_coord%28coord%2Cshape%29%3ACoord-instance-method">#</a>
       </div>
       
         <div class="doc">
@@ -500,7 +568,7 @@ corresponding axis of <code>shape</code>.</p>
         
         def <strong>canonicalize_index</strong>(index, shape, axis)
 
-        <a class="method-permalink" href="#canonicalize_index(index,shape,axis)-instance-method">#</a>
+        <a class="method-permalink" href="#canonicalize_index%28index%2Cshape%2Caxis%29-instance-method">#</a>
       </div>
       
         <div class="doc">
@@ -522,7 +590,7 @@ Throws an <code>IndexError</code> if <code>index</code> is out of range of <code
         
         def <strong>canonicalize_index</strong>(index, size)
 
-        <a class="method-permalink" href="#canonicalize_index(index,size)-instance-method">#</a>
+        <a class="method-permalink" href="#canonicalize_index%28index%2Csize%29-instance-method">#</a>
       </div>
       
       <br/>
@@ -538,7 +606,7 @@ Throws an <code>IndexError</code> if <code>index</code> is out of range of <code
         
         def <strong>has_coord?</strong>(coord, shape)
 
-        <a class="method-permalink" href="#has_coord?(coord,shape)-instance-method">#</a>
+        <a class="method-permalink" href="#has_coord%3F%28coord%2Cshape%29-instance-method">#</a>
       </div>
       
         <div class="doc">
@@ -560,7 +628,7 @@ A coord is a list (Enumerable) of integers specifying an index along each axis i
         
         def <strong>has_index?</strong>(index, shape, axis)
 
-        <a class="method-permalink" href="#has_index?(index,shape,axis)-instance-method">#</a>
+        <a class="method-permalink" href="#has_index%3F%28index%2Cshape%2Caxis%29-instance-method">#</a>
       </div>
       
         <div class="doc">
@@ -581,7 +649,7 @@ A coord is a list (Enumerable) of integers specifying an index along each axis i
         
         def <strong>has_index?</strong>(index, size : Int::Unsigned)
 
-        <a class="method-permalink" href="#has_index?(index,size:Int::Unsigned)-instance-method">#</a>
+        <a class="method-permalink" href="#has_index%3F%28index%2Csize%3AInt%3A%3AUnsigned%29-instance-method">#</a>
       </div>
       
       <br/>
@@ -597,7 +665,7 @@ A coord is a list (Enumerable) of integers specifying an index along each axis i
         
         def <strong>has_index?</strong>(index, size : Int)
 
-        <a class="method-permalink" href="#has_index?(index,size:Int)-instance-method">#</a>
+        <a class="method-permalink" href="#has_index%3F%28index%2Csize%3AInt%29-instance-method">#</a>
       </div>
       
       <br/>

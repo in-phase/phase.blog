@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="generator" content="Crystal Docs 1.1.0">
-<meta name="crystal_docs.project_version" content="main">
+<meta name="generator" content="Crystal Docs 1.2.0">
+<meta name="crystal_docs.project_version" content="HEAD">
 <meta name="crystal_docs.project_name" content="ph-core">
 
 
@@ -13,12 +13,80 @@
 <script type="text/javascript" src="../../../js/doc.js"></script>
 
   <meta name="repository-name" content="ph-core">
-  <title>Phase::NArray::BufferUtil::BufferedECIterator(T, I) - ph-core main</title>
+  <title>Phase::NArray::BufferUtil::BufferedECIterator(T, I) - ph-core HEAD</title>
   <script type="text/javascript">
     CrystalDocs.base_path = "../../../";
   </script>
 </head>
-<body>
+<body><script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="./" accesskey="h" title="  (Alt + H)">
+                <img src="/phase_logo.svg" alt="logo" aria-label="logo" height="55px">            </a>
+        </div>
+        <ul id="menu">
+            <li>
+                <a class="active" href="https://phase.blog/api" title="API Docs">
+                    <span>API Docs</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://phase.blog/" title="Blog">
+                    <span>Blog</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://phase.blog/reference" title="Reference">
+                    <span>Reference</span>
+                </a>
+            </li>
+
+            <li>
+                <span class="logo-switches">
+                    <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                        <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                        </svg>
+                        <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="5"></circle>
+                            <line x1="12" y1="1" x2="12" y2="3"></line>
+                            <line x1="12" y1="21" x2="12" y2="23"></line>
+                            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                            <line x1="1" y1="12" x2="3" y2="12"></line>
+                            <line x1="21" y1="12" x2="23" y2="12"></line>
+                            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                        </svg>
+                    </button>
+                </span>
+            </li>
+        </ul>
+    </nav>
+</header>
+
+<script>
+document.getElementById("theme-toggle").addEventListener("click", () => {
+    if (document.body.className.includes("dark")) {
+        document.body.classList.remove('dark');
+        localStorage.setItem("pref-theme", 'light');
+    } else {
+        document.body.classList.add('dark');
+        localStorage.setItem("pref-theme", 'dark');
+    }
+})
+</script>
+
 
 <svg class="hidden">
   <symbol id="octicon-link" viewBox="0 0 16 16">
@@ -39,7 +107,7 @@
       </h1>
 
       <span class="project-version">
-        main
+        HEAD
       </span>
     </div>
   </div>
@@ -404,14 +472,14 @@ doesn't actually work for all MultiIndexables</p>
   <ul class="list-summary">
     
       <li class="entry-summary">
-        <a href="#of(src,iter:CoordIterator(I))-class-method" class="signature"><strong>.of</strong>(src, iter : CoordIterator(I))</a>
+        <a href="#of%28src%2Citer%3ACoordIterator%28I%29%29-class-method" class="signature"><strong>.of</strong>(src, iter : CoordIterator(I))</a>
         
           <div class="summary"><p>This is needed here to prevent the method below (def self.of(src, region = nil)) from taking priority</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#of(src,region=nil)-class-method" class="signature"><strong>.of</strong>(src, region = <span class="n">nil</span>)</a>
+        <a href="#of%28src%2Cregion%3Dnil%29-class-method" class="signature"><strong>.of</strong>(src, region = <span class="n">nil</span>)</a>
         
           <div class="summary"><p>Overridden to replace default iterator type</p></div>
         
@@ -432,12 +500,12 @@ doesn't actually work for all MultiIndexables</p>
   <ul class="list-summary">
     
       <li class="entry-summary">
-        <a href="#next_value:T%7CStop-instance-method" class="signature"><strong>#next_value</strong> : T | Stop</a>
+        <a href="#next_value%3AT%7CStop-instance-method" class="signature"><strong>#next_value</strong> : T | Stop</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#unsafe_next_value:T-instance-method" class="signature"><strong>#unsafe_next_value</strong> : T</a>
+        <a href="#unsafe_next_value%3AT-instance-method" class="signature"><strong>#unsafe_next_value</strong> : T</a>
         
       </li>
     
@@ -459,7 +527,7 @@ doesn't actually work for all MultiIndexables</p>
     clone</a>, 
     
   
-    <a href="../../../Phase/ElemAndCoordIterator.html#coord_iter:CoordIterator(I)-instance-method" class="tooltip">
+    <a href="../../../Phase/ElemAndCoordIterator.html#coord_iter%3ACoordIterator%28I%29-instance-method" class="tooltip">
       <span>coord_iter : CoordIterator(I)</span>
     coord_iter</a>, 
     
@@ -469,12 +537,12 @@ doesn't actually work for all MultiIndexables</p>
     next</a>, 
     
   
-    <a href="../../../Phase/ElemAndCoordIterator.html#next_value:E%7CIterator::Stop-instance-method" class="tooltip">
+    <a href="../../../Phase/ElemAndCoordIterator.html#next_value%3AE%7CIterator%3A%3AStop-instance-method" class="tooltip">
       <span>next_value : E | Iterator::Stop</span>
     next_value</a>, 
     
   
-    <a href="../../../Phase/ElemAndCoordIterator.html#reset(*args,**options)-instance-method" class="tooltip">
+    <a href="../../../Phase/ElemAndCoordIterator.html#reset%28%2Aargs%2C%2A%2Aoptions%29-instance-method" class="tooltip">
       <span>reset(*args, **options)<br/>reset(*args, **options, &)</span>
     reset</a>, 
     
@@ -484,12 +552,12 @@ doesn't actually work for all MultiIndexables</p>
     reverse</a>, 
     
   
-    <a href="../../../Phase/ElemAndCoordIterator.html#reverse!(*args,**options)-instance-method" class="tooltip">
+    <a href="../../../Phase/ElemAndCoordIterator.html#reverse%21%28%2Aargs%2C%2A%2Aoptions%29-instance-method" class="tooltip">
       <span>reverse!(*args, **options)<br/>reverse!(*args, **options, &)</span>
     reverse!</a>, 
     
   
-    <a href="../../../Phase/ElemAndCoordIterator.html#unsafe_next_value:E-instance-method" class="tooltip">
+    <a href="../../../Phase/ElemAndCoordIterator.html#unsafe_next_value%3AE-instance-method" class="tooltip">
       <span>unsafe_next_value : E</span>
     unsafe_next_value</a>
     
@@ -501,7 +569,7 @@ doesn't actually work for all MultiIndexables</p>
   <h3>Constructor methods inherited from class <code><a href="../../../Phase/ElemAndCoordIterator.html">Phase::ElemAndCoordIterator(T, I)</a></code></h3>
   
   
-    <a href="../../../Phase/ElemAndCoordIterator.html#new(src:MultiIndexable(E),coord_iter:CoordIterator(I))-class-method" class="tooltip">
+    <a href="../../../Phase/ElemAndCoordIterator.html#new%28src%3AMultiIndexable%28E%29%2Ccoord_iter%3ACoordIterator%28I%29%29-class-method" class="tooltip">
       <span>new(src : MultiIndexable(E), coord_iter : CoordIterator(I))</span>
     new</a>
     
@@ -513,7 +581,7 @@ doesn't actually work for all MultiIndexables</p>
   <h3>Class methods inherited from class <code><a href="../../../Phase/ElemAndCoordIterator.html">Phase::ElemAndCoordIterator(T, I)</a></code></h3>
   
   
-    <a href="../../../Phase/ElemAndCoordIterator.html#of(src,iter:CoordIterator(I))-class-method" class="tooltip">
+    <a href="../../../Phase/ElemAndCoordIterator.html#of%28src%2Citer%3ACoordIterator%28I%29%29-class-method" class="tooltip">
       <span>of(src, iter : CoordIterator(I))<br/>of(src, region = <span class="n">nil</span>)</span>
     of</a>
     
@@ -580,7 +648,7 @@ doesn't actually work for all MultiIndexables</p>
         
         def self.<strong>of</strong>(src, iter : <a href="../../../Phase/CoordIterator.html">CoordIterator</a>(I))
 
-        <a class="method-permalink" href="#of(src,iter:CoordIterator(I))-class-method">#</a>
+        <a class="method-permalink" href="#of%28src%2Citer%3ACoordIterator%28I%29%29-class-method">#</a>
       </div>
       
         <div class="doc">
@@ -601,7 +669,7 @@ doesn't actually work for all MultiIndexables</p>
         
         def self.<strong>of</strong>(src, region = <span class="n">nil</span>)
 
-        <a class="method-permalink" href="#of(src,region=nil)-class-method">#</a>
+        <a class="method-permalink" href="#of%28src%2Cregion%3Dnil%29-class-method">#</a>
       </div>
       
         <div class="doc">
@@ -634,7 +702,7 @@ doesn't actually work for all MultiIndexables</p>
         
         def <strong>next_value</strong> : T | Stop
 
-        <a class="method-permalink" href="#next_value:T%7CStop-instance-method">#</a>
+        <a class="method-permalink" href="#next_value%3AT%7CStop-instance-method">#</a>
       </div>
       
       <br/>
@@ -650,7 +718,7 @@ doesn't actually work for all MultiIndexables</p>
         
         def <strong>unsafe_next_value</strong> : T
 
-        <a class="method-permalink" href="#unsafe_next_value:T-instance-method">#</a>
+        <a class="method-permalink" href="#unsafe_next_value%3AT-instance-method">#</a>
       </div>
       
       <br/>

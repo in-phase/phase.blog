@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="generator" content="Crystal Docs 1.1.0">
-<meta name="crystal_docs.project_version" content="main">
+<meta name="generator" content="Crystal Docs 1.2.0">
+<meta name="crystal_docs.project_version" content="HEAD">
 <meta name="crystal_docs.project_name" content="ph-core">
 
 
@@ -13,12 +13,80 @@
 <script type="text/javascript" src="../js/doc.js"></script>
 
   <meta name="repository-name" content="ph-core">
-  <title>Phase::LexIterator(T) - ph-core main</title>
+  <title>Phase::LexIterator(T) - ph-core HEAD</title>
   <script type="text/javascript">
     CrystalDocs.base_path = "../";
   </script>
 </head>
-<body>
+<body><script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="./" accesskey="h" title="  (Alt + H)">
+                <img src="/phase_logo.svg" alt="logo" aria-label="logo" height="55px">            </a>
+        </div>
+        <ul id="menu">
+            <li>
+                <a class="active" href="https://phase.blog/api" title="API Docs">
+                    <span>API Docs</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://phase.blog/" title="Blog">
+                    <span>Blog</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://phase.blog/reference" title="Reference">
+                    <span>Reference</span>
+                </a>
+            </li>
+
+            <li>
+                <span class="logo-switches">
+                    <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                        <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                        </svg>
+                        <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="5"></circle>
+                            <line x1="12" y1="1" x2="12" y2="3"></line>
+                            <line x1="12" y1="21" x2="12" y2="23"></line>
+                            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                            <line x1="1" y1="12" x2="3" y2="12"></line>
+                            <line x1="21" y1="12" x2="23" y2="12"></line>
+                            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                        </svg>
+                    </button>
+                </span>
+            </li>
+        </ul>
+    </nav>
+</header>
+
+<script>
+document.getElementById("theme-toggle").addEventListener("click", () => {
+    if (document.body.className.includes("dark")) {
+        document.body.classList.remove('dark');
+        localStorage.setItem("pref-theme", 'light');
+    } else {
+        document.body.classList.add('dark');
+        localStorage.setItem("pref-theme", 'dark');
+    }
+})
+</script>
+
 
 <svg class="hidden">
   <symbol id="octicon-link" viewBox="0 0 16 16">
@@ -39,7 +107,7 @@
       </h1>
 
       <span class="project-version">
-        main
+        HEAD
       </span>
     </div>
   </div>
@@ -390,12 +458,12 @@
   <ul class="list-summary">
     
       <li class="entry-summary">
-        <a href="#new(region:IndexRegion(T))-class-method" class="signature"><strong>.new</strong>(region : IndexRegion(T))</a>
+        <a href="#new%28region%3AIndexRegion%28T%29%29-class-method" class="signature"><strong>.new</strong>(region : IndexRegion(T))</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#new(region_literal)-class-method" class="signature"><strong>.new</strong>(region_literal)</a>
+        <a href="#new%28region_literal%29-class-method" class="signature"><strong>.new</strong>(region_literal)</a>
         
       </li>
     
@@ -455,12 +523,12 @@
     reverse</a>, 
     
   
-    <a href="../Phase/CoordIterator.html#reverse!-instance-method" class="tooltip">
+    <a href="../Phase/CoordIterator.html#reverse%21-instance-method" class="tooltip">
       <span>reverse!</span>
     reverse!</a>, 
     
   
-    <a href="../Phase/CoordIterator.html#size:BigInt-instance-method" class="tooltip">
+    <a href="../Phase/CoordIterator.html#size%3ABigInt-instance-method" class="tooltip">
       <span>size : BigInt</span>
     size</a>
     
@@ -475,7 +543,7 @@
   <h3>Class methods inherited from class <code><a href="../Phase/CoordIterator.html">Phase::CoordIterator(T)</a></code></h3>
   
   
-    <a href="../Phase/CoordIterator.html#cover(shape:Shape)-class-method" class="tooltip">
+    <a href="../Phase/CoordIterator.html#cover%28shape%3AShape%29-class-method" class="tooltip">
       <span>cover(shape : Shape)</span>
     cover</a>
     
@@ -493,32 +561,32 @@
     advance_coord</a>, 
     
   
-    <a href="../Phase/GeneralCoordIterator.html#coord:Array(T)-instance-method" class="tooltip">
+    <a href="../Phase/GeneralCoordIterator.html#coord%3AArray%28T%29-instance-method" class="tooltip">
       <span>coord : Array(T)</span>
     coord</a>, 
     
   
-    <a href="../Phase/GeneralCoordIterator.html#next:Array(T)%7CStop-instance-method" class="tooltip">
+    <a href="../Phase/GeneralCoordIterator.html#next%3AArray%28T%29%7CStop-instance-method" class="tooltip">
       <span>next : Array(T) | Stop</span>
     next</a>, 
     
   
-    <a href="../Phase/GeneralCoordIterator.html#reset:self-instance-method" class="tooltip">
+    <a href="../Phase/GeneralCoordIterator.html#reset%3Aself-instance-method" class="tooltip">
       <span>reset : <span class="k">self</span></span>
     reset</a>, 
     
   
-    <a href="../Phase/GeneralCoordIterator.html#to_a:Array(Array(T))-instance-method" class="tooltip">
+    <a href="../Phase/GeneralCoordIterator.html#to_a%3AArray%28Array%28T%29%29-instance-method" class="tooltip">
       <span>to_a : Array(Array(T))</span>
     to_a</a>, 
     
   
-    <a href="../Phase/GeneralCoordIterator.html#unsafe_next:Array(T)-instance-method" class="tooltip">
+    <a href="../Phase/GeneralCoordIterator.html#unsafe_next%3AArray%28T%29-instance-method" class="tooltip">
       <span>unsafe_next : Array(T)</span>
     unsafe_next</a>, 
     
   
-    <a href="../Phase/GeneralCoordIterator.html#unsafe_skip(axis,amount):Nil-instance-method" class="tooltip">
+    <a href="../Phase/GeneralCoordIterator.html#unsafe_skip%28axis%2Camount%29%3ANil-instance-method" class="tooltip">
       <span>unsafe_skip(axis, amount) : Nil</span>
     unsafe_skip</a>
     
@@ -589,7 +657,7 @@
         
         def self.<strong>new</strong>(region : <a href="../Phase/IndexRegion.html">IndexRegion</a>(T))
 
-        <a class="method-permalink" href="#new(region:IndexRegion(T))-class-method">#</a>
+        <a class="method-permalink" href="#new%28region%3AIndexRegion%28T%29%29-class-method">#</a>
       </div>
       
       <br/>
@@ -605,7 +673,7 @@
         
         def self.<strong>new</strong>(region_literal)
 
-        <a class="method-permalink" href="#new(region_literal)-class-method">#</a>
+        <a class="method-permalink" href="#new%28region_literal%29-class-method">#</a>
       </div>
       
       <br/>

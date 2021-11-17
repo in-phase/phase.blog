@@ -29,14 +29,14 @@
   --content: #10222c;
   --color-link: #f22576;
 
-  --syntax-c: #0099ff; /* Comment */
-  --syntax-n: #ff6600; /* Number */
-  --syntax-t: #00aa88; /* Type */
-  --syntax-s: #cc3300; /* String */
-  --syntax-i: #aa0000; /* String interpolation */
+  --syntax-c: #64969b; /* Comment */
+  --syntax-n: #9b5cbf; /* Number */
+  --syntax-t: #b51403; /* Type */
+  --syntax-s: #509709; /* String */
+  --syntax-i: #034d19; /* String interpolation */
   --syntax-k: #006699; /* Keyword */
-  --syntax-o: #555555; /* Operator */
-  --syntax-m: #cc00ff; /* Method */
+  --syntax-o: #006699; /* Operator */
+  --syntax-m: #4761f0; /* Method */
 }
 
 
@@ -60,17 +60,20 @@
   --bg-2: #1e1532;
   --bg-3: #291f3e;
 
-  --fg-1: #e1daed;
-  --fg-2: #a18cc7;
+  /*--fg-1: #e1daed;*/
+  /*--fg-2: #a18cc7; */
+
+  --fg-1: #e3ebff; /* bluer version */
+  --fg-2: #bdadd9; /* lighter version */
   --fg-3: #8f76bb;
 
   --syntax-c: #6272a4; /* Comment */
   --syntax-n: #bd93f9; /* Number */
-  --syntax-t: #50fa7b; /* Type */
+  --syntax-t: #f0b65c; /* Type */
   --syntax-s: #f1fa8c; /* String */
   --syntax-i: #f1fa8c; /* String interpolation */
-  --syntax-k: #ff79c6; /* Keyword */
-  --syntax-o: #ff79c6; /* Operator */
+  --syntax-k: #ff7cb1; /* Keyword */
+  --syntax-o: #ff7cb1; /* Operator */
   --syntax-m: #50fa7b; /* Method */
 }
 
@@ -208,9 +211,13 @@ body:not(.dark) #sun {
   color: var(--fg-1);
 }
 
-#menu .active {
+#menu .active span {
   font-weight: 500;
   border-bottom: 2px solid currentColor;
+}
+
+#menu a.active:hover {
+  text-decoration: none;
 }
 
 .logo-switches {
@@ -284,7 +291,7 @@ input.search-input::placeholder {
 
 .sidebar a {
   color: var(--fg-2);
-  font-family: "Poppins"
+  font-family: "Poppins" var(--font-fallbacks);
 }
 
 .sidebar .current > a,
@@ -335,6 +342,12 @@ h1.type-name {
   background: var(--bg-3);
 }
 
+.entry-detail .signature {
+  background: var(--bg-2);
+  border: none;
+  color: inherit;
+}
+
 /* Syntax highlighting */
 .c { color: var(--syntax-c) }
 .n { color: var(--syntax-n) }
@@ -345,9 +358,25 @@ h1.type-name {
 .o { color: var(--syntax-o) }
 .m { color: var(--syntax-m) }
 
-pre {
+pre, code, code a {
   color: var(--fg-1);
   background: var(--bg-2);
   border: none;
   border-radius: var(--radius);
+}
+
+:not(pre) > code {
+  background: var(--bg-2);
+}
+
+.methods-inherited a {
+  color: var(--fg-2);
+}
+
+.methods-inherited .tooltip>span {
+  background: var(--bg-2);
+}
+
+.methods-inherited .tooltip * {
+  color: var(--fg-1);
 }

@@ -724,3 +724,385 @@ span.flag.lime {
 .main-content h6:hover .anchor .octicon-link {
   visibility: visible
 }
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+
+:root {
+  --gap: 24px;
+  --content-gap: 40px;
+  --nav-width: unset/*1250px*/;
+  --main-width: 640px;
+  --header-height: 55px;
+  --footer-height: 60px;
+  --radius: 8px;
+  --brand-gradient: linear-gradient(30deg, #fc9842, #fbb034);
+  --font-fallbacks: -apple-system,BlinkMacSystemFont,segoe ui,Roboto,Oxygen,Ubuntu,Cantarell,open sans,helvetica neue,sans-serif;
+  
+  --bg-1: #e3edf6;
+  --bg-2: #cce2ed;
+  --bg-3: #b1d1e2;
+  --color-visited-link: #b88dff;
+  --body-background: #eff5ff;
+  --body-font-color: #060607;
+  --icon-filter: brightness(0) invert(1);
+  --hint-color-info: #6bf;
+  --hint-color-warning: #fd6;
+  --hint-color-danger: #f66;
+  --theme: #ffffff;
+  --entry: #e3edf6;
+  --fg-1: #10222c;
+  --fg-2: #31566b;
+  --fg-3: #5e91b1;
+  --content: #10222c;
+  --color-link: #f22576;
+
+  --syntax-c: #64969b; /* Comment */
+  --syntax-n: #9b5cbf; /* Number */
+  --syntax-t: #b51403; /* Type */
+  --syntax-s: #509709; /* String */
+  --syntax-i: #034d19; /* String interpolation */
+  --syntax-k: #006699; /* Keyword */
+  --syntax-o: #006699; /* Operator */
+  --syntax-m: #4761f0; /* Method */
+}
+
+
+.dark {
+  --gray-100: #1e1532;
+  --gray-200: #221930;
+  --gray-500: #291f3e;
+  --color-visited-link: #b88dff;
+  --body-background: #171021;
+  --body-font-color: #e9ecef;
+  --icon-filter: brightness(0) invert(1);
+  --hint-color-info: #6bf;
+  --hint-color-warning: #fd6;
+  --hint-color-danger: #f66;
+  --theme: #171021;
+  --entry: #1e1532;
+  --content: #e1daed;
+  --color-link: #ff5599;
+  
+  --bg-1: #171021;
+  --bg-2: #1e1532;
+  --bg-3: #291f3e;
+
+  /*--fg-1: #e1daed;*/
+  /*--fg-2: #a18cc7; */
+
+  --fg-1: #e3ebff; /* bluer version */
+  --fg-2: #bdadd9; /* lighter version */
+  --fg-3: #8f76bb;
+
+  --syntax-c: #6272a4; /* Comment */
+  --syntax-n: #bd93f9; /* Number */
+  --syntax-t: #f0b65c; /* Type */
+  --syntax-s: #f1fa8c; /* String */
+  --syntax-i: #f1fa8c; /* String interpolation */
+  --syntax-k: #ff7cb1; /* Keyword */
+  --syntax-o: #ff7cb1; /* Operator */
+  --syntax-m: #50fa7b; /* Method */
+}
+
+/* Globally applied styling */
+body {
+  /* Adapted from the PaperMod theme (https://adityatelange.github.io/hugo-PaperMod/)
+  because that's what we're using for the main site and I want font consistency */
+  font-family: var(--font-fallbacks);
+  background: var(--bg-1);
+  color: var(--fg-2);
+  display: grid;
+  grid-template-columns: min-content 1fr;
+  grid-gap: var(--gap);
+  font-size: 500;
+}
+
+::selection {
+  background: #428bab;
+  color: var(--fg-1);
+}
+
+*:focus {
+  outline: 2px white !important;
+}
+
+button {
+  background: 0 0;
+  border: 0;
+  color: var(--fg-1);
+  cursor: pointer;
+}
+
+button:focus {
+  outline: 0;
+}
+
+code {
+  font-family: monospace;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Poppins", var(--font-fallbacks);
+  font-weight: 500;
+  color: var(--fg-1);
+  border-color: var(--bg-3);
+}
+
+/* Header styling */
+.header {
+  grid-column: 1/-1;
+  grid-row: 1;
+}
+
+.nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  max-width: calc(var(--nav-width) + var(--gap) * 2);
+  margin-inline-start: auto;
+  margin-inline-end: auto;
+  line-height: var(--header-height);
+  padding-top: var(--gap);
+}
+
+.nav a {
+  display: block;
+}
+
+.logo,
+#menu {
+  display: flex;
+  margin: auto var(--gap);
+}
+
+.logo {
+  flex-wrap: inherit;
+}
+
+.logo a {
+  font-size: 24px;
+  /*font-weight: 700;*/
+}
+
+.logo a img {
+  display: inline;
+  vertical-align: middle;
+  pointer-events: none;
+  transform: translate(0, -10%);
+  border-radius: 6px;
+  margin-inline-end: 8px;
+}
+
+#theme-toggle svg {
+  height: 18px;
+}
+
+button#theme-toggle {
+  font-size: 26px;
+  margin: auto 4px;
+}
+
+body.dark #moon {
+  vertical-align: middle;
+  display: none;
+}
+
+body:not(.dark) #sun {
+  display: none;
+}
+
+#menu {
+  list-style: none;
+  word-break: keep-all;
+  overflow-x: auto;
+  white-space: nowrap;
+  margin: 0 var(--gap);
+  font-size: 16px;
+}
+
+#menu li + li {
+  margin-inline-start: var(--gap);
+}
+
+#menu a {
+  font-size: 16px;
+  color: var(--fg-1);
+}
+
+#menu .active span {
+  font-weight: 500;
+  border-bottom: 2px solid currentColor;
+}
+
+#menu a.active:hover {
+  text-decoration: none;
+}
+
+.logo-switches {
+  flex-wrap: inherit;
+}
+
+.dark ::selection {
+  background: #4e458a;
+}
+
+
+button#theme-toggle {
+  margin: 0;
+  padding: 0;
+}
+
+.logo-switches {
+  display: flex;
+  height: 100%;
+  margin: 0;
+}
+
+.main {
+  min-height: calc(100vh - var(--header-height) - var(--footer-height) - var(--gap));
+}
+
+.logo a img {
+  transform: none;
+}
+
+.dark .logo a img {
+  filter: drop-shadow(0px 0px 4px hsla(40, 50%, 50%, 0.6));
+}
+
+/* Sidebar styling */
+.sidebar {
+  grid-column: 1;
+  grid-row: 2;
+  mask-image: linear-gradient(to bottom, transparent 0%, black 5%);
+  background: unset;
+  color: inherit;
+  box-shadow: unset;
+}
+
+* {
+  scrollbar-color: var(--fg-3) var(--bg-2);
+}
+
+*::-webkit-scrollbar-track {
+  background-color: var(--bg-2);
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: var(--fg-3);
+}
+
+input.search-input {
+  background: var(--bg-2);
+  color: var(--fg-1);
+  box-shadow: unset;
+}
+
+input.search-input::placeholder {
+  color: var(--fg-3);
+}
+
+.project-name {
+  color: inherit;
+  font-weight: inherit;
+}
+
+.sidebar a {
+  color: var(--fg-2);
+  font-family: "Poppins" var(--font-fallbacks);
+}
+
+.sidebar .current > a,
+.sidebar a:hover {
+  color: var(--fg-1);
+}
+
+.types-list li.parent::before {
+  color: var(--fg-1);
+}
+
+/* Styling of main content */
+.main-content {
+  grid-column: 2;
+  grid-row: 2;
+  padding: unset;
+  padding-right: var(--gap);
+  box-sizing: border-box;
+}
+
+h1.type-name {
+  margin: 13px 0 30px;
+  background: var(--bg-2);
+  border: unset;
+  color: var(--fg-1);
+}
+
+:not(pre) > code {
+  font-size: inherit;
+}
+
+.kind {
+  color: var(--fg-2);
+}
+
+.superclass-hierarchy .superclass a,
+.other-type a,
+.entry-summary .signature {
+  color: var(--fg-1);
+  background: var(--bg-2);
+  border: unset;
+}
+
+.superclass-hierarchy .superclass a:hover,
+.other-type a:hover,
+.entry-summary .signature:hover {
+  color: var(--fg-1);
+  background: var(--bg-3);
+}
+
+.entry-detail .signature {
+  background: var(--bg-2);
+  border: none;
+  color: inherit;
+}
+
+/* Syntax highlighting */
+.c { color: var(--syntax-c) }
+.n { color: var(--syntax-n) }
+.t { color: var(--syntax-t) }
+.s { color: var(--syntax-s) }
+.i { color: var(--syntax-i) }
+.k { color: var(--syntax-k) }
+.o { color: var(--syntax-o) }
+.m { color: var(--syntax-m) }
+
+pre, code, code a {
+  color: var(--fg-1);
+  background: var(--bg-2);
+  border: none;
+  border-radius: var(--radius);
+}
+
+:not(pre) > code {
+  background: var(--bg-2);
+}
+
+.methods-inherited a {
+  color: var(--fg-2);
+}
+
+.methods-inherited .tooltip>span {
+  background: var(--bg-2);
+}
+
+.methods-inherited .tooltip * {
+  color: var(--fg-1);
+}

@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="generator" content="Crystal Docs 1.1.0">
-<meta name="crystal_docs.project_version" content="main">
+<meta name="generator" content="Crystal Docs 1.2.0">
+<meta name="crystal_docs.project_version" content="HEAD">
 <meta name="crystal_docs.project_name" content="ph-core">
 
 
@@ -13,12 +13,80 @@
 <script type="text/javascript" src="../js/doc.js"></script>
 
   <meta name="repository-name" content="ph-core">
-  <title>Phase::GeneralCoordIterator(T) - ph-core main</title>
+  <title>Phase::GeneralCoordIterator(T) - ph-core HEAD</title>
   <script type="text/javascript">
     CrystalDocs.base_path = "../";
   </script>
 </head>
-<body>
+<body><script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="./" accesskey="h" title="  (Alt + H)">
+                <img src="/phase_logo.svg" alt="logo" aria-label="logo" height="55px">            </a>
+        </div>
+        <ul id="menu">
+            <li>
+                <a class="active" href="https://phase.blog/api" title="API Docs">
+                    <span>API Docs</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://phase.blog/" title="Blog">
+                    <span>Blog</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://phase.blog/reference" title="Reference">
+                    <span>Reference</span>
+                </a>
+            </li>
+
+            <li>
+                <span class="logo-switches">
+                    <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                        <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                        </svg>
+                        <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="5"></circle>
+                            <line x1="12" y1="1" x2="12" y2="3"></line>
+                            <line x1="12" y1="21" x2="12" y2="23"></line>
+                            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                            <line x1="1" y1="12" x2="3" y2="12"></line>
+                            <line x1="21" y1="12" x2="23" y2="12"></line>
+                            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                        </svg>
+                    </button>
+                </span>
+            </li>
+        </ul>
+    </nav>
+</header>
+
+<script>
+document.getElementById("theme-toggle").addEventListener("click", () => {
+    if (document.body.className.includes("dark")) {
+        document.body.classList.remove('dark');
+        localStorage.setItem("pref-theme", 'light');
+    } else {
+        document.body.classList.add('dark');
+        localStorage.setItem("pref-theme", 'dark');
+    }
+})
+</script>
+
 
 <svg class="hidden">
   <symbol id="octicon-link" viewBox="0 0 16 16">
@@ -39,7 +107,7 @@
       </h1>
 
       <span class="project-version">
-        main
+        HEAD
       </span>
     </div>
   </div>
@@ -427,38 +495,38 @@
       </li>
     
       <li class="entry-summary">
-        <a href="#coord:Array(T)-instance-method" class="signature"><strong>#coord</strong> : Array(T)</a>
+        <a href="#coord%3AArray%28T%29-instance-method" class="signature"><strong>#coord</strong> : Array(T)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#next:Array(T)%7CStop-instance-method" class="signature"><strong>#next</strong> : Array(T) | Stop</a>
+        <a href="#next%3AArray%28T%29%7CStop-instance-method" class="signature"><strong>#next</strong> : Array(T) | Stop</a>
         
           <div class="summary"><p>Returns the next element in this iterator, or <code>Iterator::Stop::INSTANCE</code> if there are no more elements.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#reset:self-instance-method" class="signature"><strong>#reset</strong> : <span class="k">self</span></a>
+        <a href="#reset%3Aself-instance-method" class="signature"><strong>#reset</strong> : <span class="k">self</span></a>
         
           <div class="summary"><p>Set up any incrementing variables (such as @coord) here prior to iteration.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#to_a:Array(Array(T))-instance-method" class="signature"><strong>#to_a</strong> : Array(Array(T))</a>
+        <a href="#to_a%3AArray%28Array%28T%29%29-instance-method" class="signature"><strong>#to_a</strong> : Array(Array(T))</a>
         
           <div class="summary"><p>Returns an <code>Array</code> with all the elements in the collection.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#unsafe_next:Array(T)-instance-method" class="signature"><strong>#unsafe_next</strong> : Array(T)</a>
+        <a href="#unsafe_next%3AArray%28T%29-instance-method" class="signature"><strong>#unsafe_next</strong> : Array(T)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#unsafe_skip(axis,amount):Nil-instance-method" class="signature"><strong>#unsafe_skip</strong>(axis, amount) : Nil</a>
+        <a href="#unsafe_skip%28axis%2Camount%29%3ANil-instance-method" class="signature"><strong>#unsafe_skip</strong>(axis, amount) : Nil</a>
         
           <div class="summary"><p><span class="flag orange">TODO</span>  constrain, figure out what +1 means and if it should depend on step, generally test heavily</p></div>
         
@@ -549,7 +617,7 @@
         
         def <strong>coord</strong> : Array(T)
 
-        <a class="method-permalink" href="#coord:Array(T)-instance-method">#</a>
+        <a class="method-permalink" href="#coord%3AArray%28T%29-instance-method">#</a>
       </div>
       
       <br/>
@@ -565,7 +633,7 @@
         
         def <strong>next</strong> : Array(T) | Stop
 
-        <a class="method-permalink" href="#next:Array(T)%7CStop-instance-method">#</a>
+        <a class="method-permalink" href="#next%3AArray%28T%29%7CStop-instance-method">#</a>
       </div>
       
         <div class="doc">
@@ -591,7 +659,7 @@ are no more elements.</p>
         
         def <strong>reset</strong> : <span class="k">self</span>
 
-        <a class="method-permalink" href="#reset:self-instance-method">#</a>
+        <a class="method-permalink" href="#reset%3Aself-instance-method">#</a>
       </div>
       
         <div class="doc">
@@ -612,7 +680,7 @@ are no more elements.</p>
         
         def <strong>to_a</strong> : Array(Array(T))
 
-        <a class="method-permalink" href="#to_a:Array(Array(T))-instance-method">#</a>
+        <a class="method-permalink" href="#to_a%3AArray%28Array%28T%29%29-instance-method">#</a>
       </div>
       
         <div class="doc">
@@ -622,7 +690,6 @@ are no more elements.</p>
             </div>
           
           <p>Returns an <code>Array</code> with all the elements in the collection.</p>
-
 <pre><code class="language-crystal">(<span class="n">1</span>..<span class="n">5</span>).to_a <span class="c"># =&gt; [1, 2, 3, 4, 5]</span></code></pre>
         </div>
       
@@ -639,7 +706,7 @@ are no more elements.</p>
         
         def <strong>unsafe_next</strong> : Array(T)
 
-        <a class="method-permalink" href="#unsafe_next:Array(T)-instance-method">#</a>
+        <a class="method-permalink" href="#unsafe_next%3AArray%28T%29-instance-method">#</a>
       </div>
       
       <br/>
@@ -655,7 +722,7 @@ are no more elements.</p>
         
         def <strong>unsafe_skip</strong>(axis, amount) : Nil
 
-        <a class="method-permalink" href="#unsafe_skip(axis,amount):Nil-instance-method">#</a>
+        <a class="method-permalink" href="#unsafe_skip%28axis%2Camount%29%3ANil-instance-method">#</a>
       </div>
       
         <div class="doc">

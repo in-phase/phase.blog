@@ -10,12 +10,10 @@ reference:
 	cd reference; hugo -d ../$(TARGET_DIR)/reference
 
 api:
-	# cd api; crystal docs -o ../$(TARGET_DIR)/api
 	cd api; crystal docs -o ../api_docs_raw
 
 postprocess: api
 	./postprocess/postprocess
-	# crystal run postprocess/postprocess.cr
 
 clean:
 	rm -rf $(TARGET_DIR)

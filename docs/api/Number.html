@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="generator" content="Crystal Docs 1.1.0">
-<meta name="crystal_docs.project_version" content="main">
+<meta name="generator" content="Crystal Docs 1.2.0">
+<meta name="crystal_docs.project_version" content="HEAD">
 <meta name="crystal_docs.project_name" content="ph-core">
 
 
@@ -13,12 +13,80 @@
 <script type="text/javascript" src="js/doc.js"></script>
 
   <meta name="repository-name" content="ph-core">
-  <title>Number - ph-core main</title>
+  <title>Number - ph-core HEAD</title>
   <script type="text/javascript">
     CrystalDocs.base_path = "";
   </script>
 </head>
-<body>
+<body><script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="./" accesskey="h" title="  (Alt + H)">
+                <img src="/phase_logo.svg" alt="logo" aria-label="logo" height="55px">            </a>
+        </div>
+        <ul id="menu">
+            <li>
+                <a class="active" href="https://phase.blog/api" title="API Docs">
+                    <span>API Docs</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://phase.blog/" title="Blog">
+                    <span>Blog</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://phase.blog/reference" title="Reference">
+                    <span>Reference</span>
+                </a>
+            </li>
+
+            <li>
+                <span class="logo-switches">
+                    <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                        <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                        </svg>
+                        <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="5"></circle>
+                            <line x1="12" y1="1" x2="12" y2="3"></line>
+                            <line x1="12" y1="21" x2="12" y2="23"></line>
+                            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                            <line x1="1" y1="12" x2="3" y2="12"></line>
+                            <line x1="21" y1="12" x2="23" y2="12"></line>
+                            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                        </svg>
+                    </button>
+                </span>
+            </li>
+        </ul>
+    </nav>
+</header>
+
+<script>
+document.getElementById("theme-toggle").addEventListener("click", () => {
+    if (document.body.className.includes("dark")) {
+        document.body.classList.remove('dark');
+        localStorage.setItem("pref-theme", 'light');
+    } else {
+        document.body.classList.add('dark');
+        localStorage.setItem("pref-theme", 'dark');
+    }
+})
+</script>
+
 
 <svg class="hidden">
   <symbol id="octicon-link" viewBox="0 0 16 16">
@@ -39,7 +107,7 @@
       </h1>
 
       <span class="project-version">
-        main
+        HEAD
       </span>
     </div>
   </div>
@@ -356,7 +424,7 @@
 
   <p>this patch makes it possible to operate elementwise on a Number and an NArray (in that order)
 e.g.
-<code></code>` 5 + NArray.new([1,2,3]) #=> [6,7,8] <code></code>`</p>
+<code>5 + NArray.new([1,2,3]) #=> [6,7,8]</code></p>
 
 
 
@@ -425,126 +493,126 @@ e.g.
   <ul class="list-summary">
     
       <li class="entry-summary">
-        <a href="#%25(other:MultiIndexable(U))forallU-instance-method" class="signature"><strong>#%</strong>(other : MultiIndexable(U)) forall U</a>
+        <a href="#%25%28other%3AMultiIndexable%28U%29%29forallU-instance-method" class="signature"><strong>#%</strong>(other : MultiIndexable(U)) forall U</a>
         
           <div class="summary"><p>Invokes <code>#%</code> element-wise between <code>self</code> and <em>other</em>, returning an <code>NArray</code> that contains the results.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#&(other:MultiIndexable(U))forallU-instance-method" class="signature"><strong>#&</strong>(other : MultiIndexable(U)) forall U</a>
+        <a href="#%26%28other%3AMultiIndexable%28U%29%29forallU-instance-method" class="signature"><strong>#&</strong>(other : MultiIndexable(U)) forall U</a>
         
-          <div class="summary"><p>Invokes <code><a href="Number.html#&(other:MultiIndexable(U))forallU-instance-method">#&</a></code> element-wise between <code>self</code> and <em>other</em>, returning an <code>NArray</code> that contains the results.</p></div>
-        
-      </li>
-    
-      <li class="entry-summary">
-        <a href="#&**(other:MultiIndexable(U))forallU-instance-method" class="signature"><strong>#&**</strong>(other : MultiIndexable(U)) forall U</a>
-        
-          <div class="summary"><p>Invokes <code><a href="Number.html#&**(other:MultiIndexable(U))forallU-instance-method">#&**</a></code> element-wise between <code>self</code> and <em>other</em>, returning an <code>NArray</code> that contains the results.</p></div>
+          <div class="summary"><p>Invokes <code><a href="Number.html#%26%28other%3AMultiIndexable%28U%29%29forallU-instance-method">#&</a></code> element-wise between <code>self</code> and <em>other</em>, returning an <code>NArray</code> that contains the results.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#&+(other:MultiIndexable(U))forallU-instance-method" class="signature"><strong>#&+</strong>(other : MultiIndexable(U)) forall U</a>
+        <a href="#%26%2A%2A%28other%3AMultiIndexable%28U%29%29forallU-instance-method" class="signature"><strong>#&**</strong>(other : MultiIndexable(U)) forall U</a>
         
-          <div class="summary"><p>Invokes <code><a href="Number.html#&+(other:MultiIndexable(U))forallU-instance-method">#&+</a></code> element-wise between <code>self</code> and <em>other</em>, returning an <code>NArray</code> that contains the results.</p></div>
-        
-      </li>
-    
-      <li class="entry-summary">
-        <a href="#&-(other:MultiIndexable(U))forallU-instance-method" class="signature"><strong>#&-</strong>(other : MultiIndexable(U)) forall U</a>
-        
-          <div class="summary"><p>Invokes <code><a href="Number.html#&-(other:MultiIndexable(U))forallU-instance-method">#&-</a></code> element-wise between <code>self</code> and <em>other</em>, returning an <code>NArray</code> that contains the results.</p></div>
+          <div class="summary"><p>Invokes <code><a href="Number.html#%26%2A%2A%28other%3AMultiIndexable%28U%29%29forallU-instance-method">#&**</a></code> element-wise between <code>self</code> and <em>other</em>, returning an <code>NArray</code> that contains the results.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#*(other:MultiIndexable(U))forallU-instance-method" class="signature"><strong>#*</strong>(other : MultiIndexable(U)) forall U</a>
+        <a href="#%26%2B%28other%3AMultiIndexable%28U%29%29forallU-instance-method" class="signature"><strong>#&+</strong>(other : MultiIndexable(U)) forall U</a>
         
-          <div class="summary"><p>Invokes <code><a href="Number.html#*(other:MultiIndexable(U))forallU-instance-method">#*</a></code> element-wise between <code>self</code> and <em>other</em>, returning an <code>NArray</code> that contains the results.</p></div>
-        
-      </li>
-    
-      <li class="entry-summary">
-        <a href="#**(other:MultiIndexable(U))forallU-instance-method" class="signature"><strong>#**</strong>(other : MultiIndexable(U)) forall U</a>
-        
-          <div class="summary"><p>Invokes <code><a href="Number.html#**(other:MultiIndexable(U))forallU-instance-method">#**</a></code> element-wise between <code>self</code> and <em>other</em>, returning an <code>NArray</code> that contains the results.</p></div>
+          <div class="summary"><p>Invokes <code><a href="Number.html#%26%2B%28other%3AMultiIndexable%28U%29%29forallU-instance-method">#&+</a></code> element-wise between <code>self</code> and <em>other</em>, returning an <code>NArray</code> that contains the results.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#+(other:MultiIndexable(U))forallU-instance-method" class="signature"><strong>#+</strong>(other : MultiIndexable(U)) forall U</a>
+        <a href="#%26-%28other%3AMultiIndexable%28U%29%29forallU-instance-method" class="signature"><strong>#&-</strong>(other : MultiIndexable(U)) forall U</a>
         
-          <div class="summary"><p>Invokes <code><a href="Number.html#+(other:MultiIndexable(U))forallU-instance-method">#+</a></code> element-wise between <code>self</code> and <em>other</em>, returning an <code>NArray</code> that contains the results.</p></div>
-        
-      </li>
-    
-      <li class="entry-summary">
-        <a href="#-(other:MultiIndexable(U))forallU-instance-method" class="signature"><strong>#-</strong>(other : MultiIndexable(U)) forall U</a>
-        
-          <div class="summary"><p>Invokes <code><a href="Number.html#-(other:MultiIndexable(U))forallU-instance-method">#-</a></code> element-wise between <code>self</code> and <em>other</em>, returning an <code>NArray</code> that contains the results.</p></div>
+          <div class="summary"><p>Invokes <code><a href="Number.html#%26-%28other%3AMultiIndexable%28U%29%29forallU-instance-method">#&-</a></code> element-wise between <code>self</code> and <em>other</em>, returning an <code>NArray</code> that contains the results.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#/(other:MultiIndexable(U))forallU-instance-method" class="signature"><strong>#/</strong>(other : MultiIndexable(U)) forall U</a>
+        <a href="#%2A%28other%3AMultiIndexable%28U%29%29forallU-instance-method" class="signature"><strong>#*</strong>(other : MultiIndexable(U)) forall U</a>
         
-          <div class="summary"><p>Invokes <code><a href="Number.html#/(other:MultiIndexable(U))forallU-instance-method">#/</a></code> element-wise between <code>self</code> and <em>other</em>, returning an <code>NArray</code> that contains the results.</p></div>
-        
-      </li>
-    
-      <li class="entry-summary">
-        <a href="#//(other:MultiIndexable(U))forallU-instance-method" class="signature"><strong>#//</strong>(other : MultiIndexable(U)) forall U</a>
-        
-          <div class="summary"><p>Invokes <code><a href="Number.html#//(other:MultiIndexable(U))forallU-instance-method">#//</a></code> element-wise between <code>self</code> and <em>other</em>, returning an <code>NArray</code> that contains the results.</p></div>
+          <div class="summary"><p>Invokes <code><a href="Number.html#%2A%28other%3AMultiIndexable%28U%29%29forallU-instance-method">#*</a></code> element-wise between <code>self</code> and <em>other</em>, returning an <code>NArray</code> that contains the results.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#%3C(other:MultiIndexable(U))forallU-instance-method" class="signature"><strong>#<</strong>(other : MultiIndexable(U)) forall U</a>
+        <a href="#%2A%2A%28other%3AMultiIndexable%28U%29%29forallU-instance-method" class="signature"><strong>#**</strong>(other : MultiIndexable(U)) forall U</a>
         
-          <div class="summary"><p>Invokes <code><a href="Number.html#%3C(other:MultiIndexable(U))forallU-instance-method">#<</a></code> element-wise between <code>self</code> and <em>other</em>, returning an <code>NArray</code> that contains the results.</p></div>
-        
-      </li>
-    
-      <li class="entry-summary">
-        <a href="#%3C=(other:MultiIndexable(U))forallU-instance-method" class="signature"><strong>#<=</strong>(other : MultiIndexable(U)) forall U</a>
-        
-          <div class="summary"><p>Invokes <code><a href="Number.html#%3C=(other:MultiIndexable(U))forallU-instance-method">#<=</a></code> element-wise between <code>self</code> and <em>other</em>, returning an <code>NArray</code> that contains the results.</p></div>
+          <div class="summary"><p>Invokes <code><a href="Number.html#%2A%2A%28other%3AMultiIndexable%28U%29%29forallU-instance-method">#**</a></code> element-wise between <code>self</code> and <em>other</em>, returning an <code>NArray</code> that contains the results.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#%3E(other:MultiIndexable(U))forallU-instance-method" class="signature"><strong>#></strong>(other : MultiIndexable(U)) forall U</a>
+        <a href="#%2B%28other%3AMultiIndexable%28U%29%29forallU-instance-method" class="signature"><strong>#+</strong>(other : MultiIndexable(U)) forall U</a>
         
-          <div class="summary"><p>Invokes <code><a href="Number.html#%3E(other:MultiIndexable(U))forallU-instance-method">#></a></code> element-wise between <code>self</code> and <em>other</em>, returning an <code>NArray</code> that contains the results.</p></div>
-        
-      </li>
-    
-      <li class="entry-summary">
-        <a href="#%3E=(other:MultiIndexable(U))forallU-instance-method" class="signature"><strong>#>=</strong>(other : MultiIndexable(U)) forall U</a>
-        
-          <div class="summary"><p>Invokes <code><a href="Number.html#%3E=(other:MultiIndexable(U))forallU-instance-method">#>=</a></code> element-wise between <code>self</code> and <em>other</em>, returning an <code>NArray</code> that contains the results.</p></div>
+          <div class="summary"><p>Invokes <code><a href="Number.html#%2B%28other%3AMultiIndexable%28U%29%29forallU-instance-method">#+</a></code> element-wise between <code>self</code> and <em>other</em>, returning an <code>NArray</code> that contains the results.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#%5E(other:MultiIndexable(U))forallU-instance-method" class="signature"><strong>#^</strong>(other : MultiIndexable(U)) forall U</a>
+        <a href="#-%28other%3AMultiIndexable%28U%29%29forallU-instance-method" class="signature"><strong>#-</strong>(other : MultiIndexable(U)) forall U</a>
         
-          <div class="summary"><p>Invokes <code><a href="Number.html#%5E(other:MultiIndexable(U))forallU-instance-method">#^</a></code> element-wise between <code>self</code> and <em>other</em>, returning an <code>NArray</code> that contains the results.</p></div>
-        
-      </li>
-    
-      <li class="entry-summary">
-        <a href="#eq(other:MultiIndexable(U)):MultiIndexable(Bool)forallU-instance-method" class="signature"><strong>#eq</strong>(other : MultiIndexable(U)) : MultiIndexable(Bool) forall U</a>
+          <div class="summary"><p>Invokes <code><a href="Number.html#-%28other%3AMultiIndexable%28U%29%29forallU-instance-method">#-</a></code> element-wise between <code>self</code> and <em>other</em>, returning an <code>NArray</code> that contains the results.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#%7C(other:MultiIndexable(U))forallU-instance-method" class="signature"><strong>#|</strong>(other : MultiIndexable(U)) forall U</a>
+        <a href="#/%28other%3AMultiIndexable%28U%29%29forallU-instance-method" class="signature"><strong>#/</strong>(other : MultiIndexable(U)) forall U</a>
         
-          <div class="summary"><p>Invokes <code><a href="Number.html#%7C(other:MultiIndexable(U))forallU-instance-method">#|</a></code> element-wise between <code>self</code> and <em>other</em>, returning an <code>NArray</code> that contains the results.</p></div>
+          <div class="summary"><p>Invokes <code><a href="Number.html#/%28other%3AMultiIndexable%28U%29%29forallU-instance-method">#/</a></code> element-wise between <code>self</code> and <em>other</em>, returning an <code>NArray</code> that contains the results.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#//%28other%3AMultiIndexable%28U%29%29forallU-instance-method" class="signature"><strong>#//</strong>(other : MultiIndexable(U)) forall U</a>
+        
+          <div class="summary"><p>Invokes <code><a href="Number.html#//%28other%3AMultiIndexable%28U%29%29forallU-instance-method">#//</a></code> element-wise between <code>self</code> and <em>other</em>, returning an <code>NArray</code> that contains the results.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#%3C%28other%3AMultiIndexable%28U%29%29forallU-instance-method" class="signature"><strong>#<</strong>(other : MultiIndexable(U)) forall U</a>
+        
+          <div class="summary"><p>Invokes <code><a href="Number.html#%3C%28other%3AMultiIndexable%28U%29%29forallU-instance-method">#<</a></code> element-wise between <code>self</code> and <em>other</em>, returning an <code>NArray</code> that contains the results.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#%3C%3D%28other%3AMultiIndexable%28U%29%29forallU-instance-method" class="signature"><strong>#<=</strong>(other : MultiIndexable(U)) forall U</a>
+        
+          <div class="summary"><p>Invokes <code><a href="Number.html#%3C%3D%28other%3AMultiIndexable%28U%29%29forallU-instance-method">#<=</a></code> element-wise between <code>self</code> and <em>other</em>, returning an <code>NArray</code> that contains the results.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#%3E%28other%3AMultiIndexable%28U%29%29forallU-instance-method" class="signature"><strong>#></strong>(other : MultiIndexable(U)) forall U</a>
+        
+          <div class="summary"><p>Invokes <code><a href="Number.html#%3E%28other%3AMultiIndexable%28U%29%29forallU-instance-method">#></a></code> element-wise between <code>self</code> and <em>other</em>, returning an <code>NArray</code> that contains the results.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#%3E%3D%28other%3AMultiIndexable%28U%29%29forallU-instance-method" class="signature"><strong>#>=</strong>(other : MultiIndexable(U)) forall U</a>
+        
+          <div class="summary"><p>Invokes <code><a href="Number.html#%3E%3D%28other%3AMultiIndexable%28U%29%29forallU-instance-method">#>=</a></code> element-wise between <code>self</code> and <em>other</em>, returning an <code>NArray</code> that contains the results.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#%5E%28other%3AMultiIndexable%28U%29%29forallU-instance-method" class="signature"><strong>#^</strong>(other : MultiIndexable(U)) forall U</a>
+        
+          <div class="summary"><p>Invokes <code><a href="Number.html#%5E%28other%3AMultiIndexable%28U%29%29forallU-instance-method">#^</a></code> element-wise between <code>self</code> and <em>other</em>, returning an <code>NArray</code> that contains the results.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#eq%28other%3AMultiIndexable%28U%29%29%3AMultiIndexable%28Bool%29forallU-instance-method" class="signature"><strong>#eq</strong>(other : MultiIndexable(U)) : MultiIndexable(Bool) forall U</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#%7C%28other%3AMultiIndexable%28U%29%29forallU-instance-method" class="signature"><strong>#|</strong>(other : MultiIndexable(U)) forall U</a>
+        
+          <div class="summary"><p>Invokes <code><a href="Number.html#%7C%28other%3AMultiIndexable%28U%29%29forallU-instance-method">#|</a></code> element-wise between <code>self</code> and <em>other</em>, returning an <code>NArray</code> that contains the results.</p></div>
         
       </li>
     
@@ -627,13 +695,13 @@ e.g.
         
         def <strong>%</strong>(other : MultiIndexable(U)) forall U
 
-        <a class="method-permalink" href="#%25(other:MultiIndexable(U))forallU-instance-method">#</a>
+        <a class="method-permalink" href="#%25%28other%3AMultiIndexable%28U%29%29forallU-instance-method">#</a>
       </div>
       
         <div class="doc">
           
           <p>Invokes <code>#%</code> element-wise between <code>self</code> and <em>other</em>, returning
-an <code>NArray</code> that contains the results.</p>
+an <code>NArray</code> that contains the results.</p>
         </div>
       
       <br/>
@@ -649,13 +717,13 @@ an <code>NArray</code> that contains the results.</p>
         
         def <strong>&</strong>(other : MultiIndexable(U)) forall U
 
-        <a class="method-permalink" href="#&(other:MultiIndexable(U))forallU-instance-method">#</a>
+        <a class="method-permalink" href="#%26%28other%3AMultiIndexable%28U%29%29forallU-instance-method">#</a>
       </div>
       
         <div class="doc">
           
-          <p>Invokes <code><a href="Number.html#&(other:MultiIndexable(U))forallU-instance-method">#&</a></code> element-wise between <code>self</code> and <em>other</em>, returning
-an <code>NArray</code> that contains the results.</p>
+          <p>Invokes <code><a href="Number.html#%26%28other%3AMultiIndexable%28U%29%29forallU-instance-method">#&</a></code> element-wise between <code>self</code> and <em>other</em>, returning
+an <code>NArray</code> that contains the results.</p>
         </div>
       
       <br/>
@@ -671,13 +739,13 @@ an <code>NArray</code> that contains the results.</p>
         
         def <strong>&**</strong>(other : MultiIndexable(U)) forall U
 
-        <a class="method-permalink" href="#&**(other:MultiIndexable(U))forallU-instance-method">#</a>
+        <a class="method-permalink" href="#%26%2A%2A%28other%3AMultiIndexable%28U%29%29forallU-instance-method">#</a>
       </div>
       
         <div class="doc">
           
-          <p>Invokes <code><a href="Number.html#&**(other:MultiIndexable(U))forallU-instance-method">#&**</a></code> element-wise between <code>self</code> and <em>other</em>, returning
-an <code>NArray</code> that contains the results.</p>
+          <p>Invokes <code><a href="Number.html#%26%2A%2A%28other%3AMultiIndexable%28U%29%29forallU-instance-method">#&**</a></code> element-wise between <code>self</code> and <em>other</em>, returning
+an <code>NArray</code> that contains the results.</p>
         </div>
       
       <br/>
@@ -693,13 +761,13 @@ an <code>NArray</code> that contains the results.</p>
         
         def <strong>&+</strong>(other : MultiIndexable(U)) forall U
 
-        <a class="method-permalink" href="#&+(other:MultiIndexable(U))forallU-instance-method">#</a>
+        <a class="method-permalink" href="#%26%2B%28other%3AMultiIndexable%28U%29%29forallU-instance-method">#</a>
       </div>
       
         <div class="doc">
           
-          <p>Invokes <code><a href="Number.html#&+(other:MultiIndexable(U))forallU-instance-method">#&+</a></code> element-wise between <code>self</code> and <em>other</em>, returning
-an <code>NArray</code> that contains the results.</p>
+          <p>Invokes <code><a href="Number.html#%26%2B%28other%3AMultiIndexable%28U%29%29forallU-instance-method">#&+</a></code> element-wise between <code>self</code> and <em>other</em>, returning
+an <code>NArray</code> that contains the results.</p>
         </div>
       
       <br/>
@@ -715,13 +783,13 @@ an <code>NArray</code> that contains the results.</p>
         
         def <strong>&-</strong>(other : MultiIndexable(U)) forall U
 
-        <a class="method-permalink" href="#&-(other:MultiIndexable(U))forallU-instance-method">#</a>
+        <a class="method-permalink" href="#%26-%28other%3AMultiIndexable%28U%29%29forallU-instance-method">#</a>
       </div>
       
         <div class="doc">
           
-          <p>Invokes <code><a href="Number.html#&-(other:MultiIndexable(U))forallU-instance-method">#&-</a></code> element-wise between <code>self</code> and <em>other</em>, returning
-an <code>NArray</code> that contains the results.</p>
+          <p>Invokes <code><a href="Number.html#%26-%28other%3AMultiIndexable%28U%29%29forallU-instance-method">#&-</a></code> element-wise between <code>self</code> and <em>other</em>, returning
+an <code>NArray</code> that contains the results.</p>
         </div>
       
       <br/>
@@ -737,13 +805,13 @@ an <code>NArray</code> that contains the results.</p>
         
         def <strong>*</strong>(other : MultiIndexable(U)) forall U
 
-        <a class="method-permalink" href="#*(other:MultiIndexable(U))forallU-instance-method">#</a>
+        <a class="method-permalink" href="#%2A%28other%3AMultiIndexable%28U%29%29forallU-instance-method">#</a>
       </div>
       
         <div class="doc">
           
-          <p>Invokes <code><a href="Number.html#*(other:MultiIndexable(U))forallU-instance-method">#*</a></code> element-wise between <code>self</code> and <em>other</em>, returning
-an <code>NArray</code> that contains the results.</p>
+          <p>Invokes <code><a href="Number.html#%2A%28other%3AMultiIndexable%28U%29%29forallU-instance-method">#*</a></code> element-wise between <code>self</code> and <em>other</em>, returning
+an <code>NArray</code> that contains the results.</p>
         </div>
       
       <br/>
@@ -759,13 +827,13 @@ an <code>NArray</code> that contains the results.</p>
         
         def <strong>**</strong>(other : MultiIndexable(U)) forall U
 
-        <a class="method-permalink" href="#**(other:MultiIndexable(U))forallU-instance-method">#</a>
+        <a class="method-permalink" href="#%2A%2A%28other%3AMultiIndexable%28U%29%29forallU-instance-method">#</a>
       </div>
       
         <div class="doc">
           
-          <p>Invokes <code><a href="Number.html#**(other:MultiIndexable(U))forallU-instance-method">#**</a></code> element-wise between <code>self</code> and <em>other</em>, returning
-an <code>NArray</code> that contains the results.</p>
+          <p>Invokes <code><a href="Number.html#%2A%2A%28other%3AMultiIndexable%28U%29%29forallU-instance-method">#**</a></code> element-wise between <code>self</code> and <em>other</em>, returning
+an <code>NArray</code> that contains the results.</p>
         </div>
       
       <br/>
@@ -781,13 +849,13 @@ an <code>NArray</code> that contains the results.</p>
         
         def <strong>+</strong>(other : MultiIndexable(U)) forall U
 
-        <a class="method-permalink" href="#+(other:MultiIndexable(U))forallU-instance-method">#</a>
+        <a class="method-permalink" href="#%2B%28other%3AMultiIndexable%28U%29%29forallU-instance-method">#</a>
       </div>
       
         <div class="doc">
           
-          <p>Invokes <code><a href="Number.html#+(other:MultiIndexable(U))forallU-instance-method">#+</a></code> element-wise between <code>self</code> and <em>other</em>, returning
-an <code>NArray</code> that contains the results.</p>
+          <p>Invokes <code><a href="Number.html#%2B%28other%3AMultiIndexable%28U%29%29forallU-instance-method">#+</a></code> element-wise between <code>self</code> and <em>other</em>, returning
+an <code>NArray</code> that contains the results.</p>
         </div>
       
       <br/>
@@ -803,13 +871,13 @@ an <code>NArray</code> that contains the results.</p>
         
         def <strong>-</strong>(other : MultiIndexable(U)) forall U
 
-        <a class="method-permalink" href="#-(other:MultiIndexable(U))forallU-instance-method">#</a>
+        <a class="method-permalink" href="#-%28other%3AMultiIndexable%28U%29%29forallU-instance-method">#</a>
       </div>
       
         <div class="doc">
           
-          <p>Invokes <code><a href="Number.html#-(other:MultiIndexable(U))forallU-instance-method">#-</a></code> element-wise between <code>self</code> and <em>other</em>, returning
-an <code>NArray</code> that contains the results.</p>
+          <p>Invokes <code><a href="Number.html#-%28other%3AMultiIndexable%28U%29%29forallU-instance-method">#-</a></code> element-wise between <code>self</code> and <em>other</em>, returning
+an <code>NArray</code> that contains the results.</p>
         </div>
       
       <br/>
@@ -825,13 +893,13 @@ an <code>NArray</code> that contains the results.</p>
         
         def <strong>/</strong>(other : MultiIndexable(U)) forall U
 
-        <a class="method-permalink" href="#/(other:MultiIndexable(U))forallU-instance-method">#</a>
+        <a class="method-permalink" href="#/%28other%3AMultiIndexable%28U%29%29forallU-instance-method">#</a>
       </div>
       
         <div class="doc">
           
-          <p>Invokes <code><a href="Number.html#/(other:MultiIndexable(U))forallU-instance-method">#/</a></code> element-wise between <code>self</code> and <em>other</em>, returning
-an <code>NArray</code> that contains the results.</p>
+          <p>Invokes <code><a href="Number.html#/%28other%3AMultiIndexable%28U%29%29forallU-instance-method">#/</a></code> element-wise between <code>self</code> and <em>other</em>, returning
+an <code>NArray</code> that contains the results.</p>
         </div>
       
       <br/>
@@ -847,13 +915,13 @@ an <code>NArray</code> that contains the results.</p>
         
         def <strong>//</strong>(other : MultiIndexable(U)) forall U
 
-        <a class="method-permalink" href="#//(other:MultiIndexable(U))forallU-instance-method">#</a>
+        <a class="method-permalink" href="#//%28other%3AMultiIndexable%28U%29%29forallU-instance-method">#</a>
       </div>
       
         <div class="doc">
           
-          <p>Invokes <code><a href="Number.html#//(other:MultiIndexable(U))forallU-instance-method">#//</a></code> element-wise between <code>self</code> and <em>other</em>, returning
-an <code>NArray</code> that contains the results.</p>
+          <p>Invokes <code><a href="Number.html#//%28other%3AMultiIndexable%28U%29%29forallU-instance-method">#//</a></code> element-wise between <code>self</code> and <em>other</em>, returning
+an <code>NArray</code> that contains the results.</p>
         </div>
       
       <br/>
@@ -869,13 +937,13 @@ an <code>NArray</code> that contains the results.</p>
         
         def <strong><</strong>(other : MultiIndexable(U)) forall U
 
-        <a class="method-permalink" href="#%3C(other:MultiIndexable(U))forallU-instance-method">#</a>
+        <a class="method-permalink" href="#%3C%28other%3AMultiIndexable%28U%29%29forallU-instance-method">#</a>
       </div>
       
         <div class="doc">
           
-          <p>Invokes <code><a href="Number.html#%3C(other:MultiIndexable(U))forallU-instance-method">#<</a></code> element-wise between <code>self</code> and <em>other</em>, returning
-an <code>NArray</code> that contains the results.</p>
+          <p>Invokes <code><a href="Number.html#%3C%28other%3AMultiIndexable%28U%29%29forallU-instance-method">#<</a></code> element-wise between <code>self</code> and <em>other</em>, returning
+an <code>NArray</code> that contains the results.</p>
         </div>
       
       <br/>
@@ -891,13 +959,13 @@ an <code>NArray</code> that contains the results.</p>
         
         def <strong><=</strong>(other : MultiIndexable(U)) forall U
 
-        <a class="method-permalink" href="#%3C=(other:MultiIndexable(U))forallU-instance-method">#</a>
+        <a class="method-permalink" href="#%3C%3D%28other%3AMultiIndexable%28U%29%29forallU-instance-method">#</a>
       </div>
       
         <div class="doc">
           
-          <p>Invokes <code><a href="Number.html#%3C=(other:MultiIndexable(U))forallU-instance-method">#<=</a></code> element-wise between <code>self</code> and <em>other</em>, returning
-an <code>NArray</code> that contains the results.</p>
+          <p>Invokes <code><a href="Number.html#%3C%3D%28other%3AMultiIndexable%28U%29%29forallU-instance-method">#<=</a></code> element-wise between <code>self</code> and <em>other</em>, returning
+an <code>NArray</code> that contains the results.</p>
         </div>
       
       <br/>
@@ -913,13 +981,13 @@ an <code>NArray</code> that contains the results.</p>
         
         def <strong>></strong>(other : MultiIndexable(U)) forall U
 
-        <a class="method-permalink" href="#%3E(other:MultiIndexable(U))forallU-instance-method">#</a>
+        <a class="method-permalink" href="#%3E%28other%3AMultiIndexable%28U%29%29forallU-instance-method">#</a>
       </div>
       
         <div class="doc">
           
-          <p>Invokes <code><a href="Number.html#%3E(other:MultiIndexable(U))forallU-instance-method">#></a></code> element-wise between <code>self</code> and <em>other</em>, returning
-an <code>NArray</code> that contains the results.</p>
+          <p>Invokes <code><a href="Number.html#%3E%28other%3AMultiIndexable%28U%29%29forallU-instance-method">#></a></code> element-wise between <code>self</code> and <em>other</em>, returning
+an <code>NArray</code> that contains the results.</p>
         </div>
       
       <br/>
@@ -935,13 +1003,13 @@ an <code>NArray</code> that contains the results.</p>
         
         def <strong>>=</strong>(other : MultiIndexable(U)) forall U
 
-        <a class="method-permalink" href="#%3E=(other:MultiIndexable(U))forallU-instance-method">#</a>
+        <a class="method-permalink" href="#%3E%3D%28other%3AMultiIndexable%28U%29%29forallU-instance-method">#</a>
       </div>
       
         <div class="doc">
           
-          <p>Invokes <code><a href="Number.html#%3E=(other:MultiIndexable(U))forallU-instance-method">#>=</a></code> element-wise between <code>self</code> and <em>other</em>, returning
-an <code>NArray</code> that contains the results.</p>
+          <p>Invokes <code><a href="Number.html#%3E%3D%28other%3AMultiIndexable%28U%29%29forallU-instance-method">#>=</a></code> element-wise between <code>self</code> and <em>other</em>, returning
+an <code>NArray</code> that contains the results.</p>
         </div>
       
       <br/>
@@ -957,13 +1025,13 @@ an <code>NArray</code> that contains the results.</p>
         
         def <strong>^</strong>(other : MultiIndexable(U)) forall U
 
-        <a class="method-permalink" href="#%5E(other:MultiIndexable(U))forallU-instance-method">#</a>
+        <a class="method-permalink" href="#%5E%28other%3AMultiIndexable%28U%29%29forallU-instance-method">#</a>
       </div>
       
         <div class="doc">
           
-          <p>Invokes <code><a href="Number.html#%5E(other:MultiIndexable(U))forallU-instance-method">#^</a></code> element-wise between <code>self</code> and <em>other</em>, returning
-an <code>NArray</code> that contains the results.</p>
+          <p>Invokes <code><a href="Number.html#%5E%28other%3AMultiIndexable%28U%29%29forallU-instance-method">#^</a></code> element-wise between <code>self</code> and <em>other</em>, returning
+an <code>NArray</code> that contains the results.</p>
         </div>
       
       <br/>
@@ -979,7 +1047,7 @@ an <code>NArray</code> that contains the results.</p>
         
         def <strong>eq</strong>(other : MultiIndexable(U)) : MultiIndexable(Bool) forall U
 
-        <a class="method-permalink" href="#eq(other:MultiIndexable(U)):MultiIndexable(Bool)forallU-instance-method">#</a>
+        <a class="method-permalink" href="#eq%28other%3AMultiIndexable%28U%29%29%3AMultiIndexable%28Bool%29forallU-instance-method">#</a>
       </div>
       
       <br/>
@@ -995,13 +1063,13 @@ an <code>NArray</code> that contains the results.</p>
         
         def <strong>|</strong>(other : MultiIndexable(U)) forall U
 
-        <a class="method-permalink" href="#%7C(other:MultiIndexable(U))forallU-instance-method">#</a>
+        <a class="method-permalink" href="#%7C%28other%3AMultiIndexable%28U%29%29forallU-instance-method">#</a>
       </div>
       
         <div class="doc">
           
-          <p>Invokes <code><a href="Number.html#%7C(other:MultiIndexable(U))forallU-instance-method">#|</a></code> element-wise between <code>self</code> and <em>other</em>, returning
-an <code>NArray</code> that contains the results.</p>
+          <p>Invokes <code><a href="Number.html#%7C%28other%3AMultiIndexable%28U%29%29forallU-instance-method">#|</a></code> element-wise between <code>self</code> and <em>other</em>, returning
+an <code>NArray</code> that contains the results.</p>
         </div>
       
       <br/>

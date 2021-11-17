@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="generator" content="Crystal Docs 1.1.0">
-<meta name="crystal_docs.project_version" content="main">
+<meta name="generator" content="Crystal Docs 1.2.0">
+<meta name="crystal_docs.project_version" content="HEAD">
 <meta name="crystal_docs.project_name" content="ph-core">
 
 
@@ -13,12 +13,80 @@
 <script type="text/javascript" src="../js/doc.js"></script>
 
   <meta name="repository-name" content="ph-core">
-  <title>Phase::PermuteTransform - ph-core main</title>
+  <title>Phase::PermuteTransform - ph-core HEAD</title>
   <script type="text/javascript">
     CrystalDocs.base_path = "../";
   </script>
 </head>
-<body>
+<body><script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="./" accesskey="h" title="  (Alt + H)">
+                <img src="/phase_logo.svg" alt="logo" aria-label="logo" height="55px">            </a>
+        </div>
+        <ul id="menu">
+            <li>
+                <a class="active" href="https://phase.blog/api" title="API Docs">
+                    <span>API Docs</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://phase.blog/" title="Blog">
+                    <span>Blog</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://phase.blog/reference" title="Reference">
+                    <span>Reference</span>
+                </a>
+            </li>
+
+            <li>
+                <span class="logo-switches">
+                    <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                        <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                        </svg>
+                        <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="5"></circle>
+                            <line x1="12" y1="1" x2="12" y2="3"></line>
+                            <line x1="12" y1="21" x2="12" y2="23"></line>
+                            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                            <line x1="1" y1="12" x2="3" y2="12"></line>
+                            <line x1="21" y1="12" x2="23" y2="12"></line>
+                            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                        </svg>
+                    </button>
+                </span>
+            </li>
+        </ul>
+    </nav>
+</header>
+
+<script>
+document.getElementById("theme-toggle").addEventListener("click", () => {
+    if (document.body.className.includes("dark")) {
+        document.body.classList.remove('dark');
+        localStorage.setItem("pref-theme", 'light');
+    } else {
+        document.body.classList.add('dark');
+        localStorage.setItem("pref-theme", 'dark');
+    }
+})
+</script>
+
 
 <svg class="hidden">
   <symbol id="octicon-link" viewBox="0 0 16 16">
@@ -39,7 +107,7 @@
       </h1>
 
       <span class="project-version">
-        main
+        HEAD
       </span>
     </div>
   </div>
@@ -390,12 +458,12 @@
   <ul class="list-summary">
     
       <li class="entry-summary">
-        <a href="#new(size:Int32)-class-method" class="signature"><strong>.new</strong>(size : Int32)</a>
+        <a href="#new%28size%3AInt32%29-class-method" class="signature"><strong>.new</strong>(size : Int32)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#new(pattern)-class-method" class="signature"><strong>.new</strong>(pattern)</a>
+        <a href="#new%28pattern%29-class-method" class="signature"><strong>.new</strong>(pattern)</a>
         
       </li>
     
@@ -416,34 +484,34 @@
   <ul class="list-summary">
     
       <li class="entry-summary">
-        <a href="#apply(coord:Array(Int32)):Array(Int32)-instance-method" class="signature"><strong>#apply</strong>(coord : Array(Int32)) : Array(Int32)</a>
+        <a href="#apply%28coord%3AArray%28Int32%29%29%3AArray%28Int32%29-instance-method" class="signature"><strong>#apply</strong>(coord : Array(Int32)) : Array(Int32)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#compose(t:CoordTransform):CoordTransform-instance-method" class="signature"><strong>#compose</strong>(t : CoordTransform) : CoordTransform</a>
+        <a href="#compose%28t%3ACoordTransform%29%3ACoordTransform-instance-method" class="signature"><strong>#compose</strong>(t : CoordTransform) : CoordTransform</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#pattern:Array(Int32)-instance-method" class="signature"><strong>#pattern</strong> : Array(Int32)</a>
+        <a href="#pattern%3AArray%28Int32%29-instance-method" class="signature"><strong>#pattern</strong> : Array(Int32)</a>
         
           <div class="summary"><p>each of these has size = dimensions</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#permute(src_coord)-instance-method" class="signature"><strong>#permute</strong>(src_coord)</a>
+        <a href="#permute%28src_coord%29-instance-method" class="signature"><strong>#permute</strong>(src_coord)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#unpermute(view_coord,src_coord_buffer)-instance-method" class="signature"><strong>#unpermute</strong>(view_coord, src_coord_buffer)</a>
+        <a href="#unpermute%28view_coord%2Csrc_coord_buffer%29-instance-method" class="signature"><strong>#unpermute</strong>(view_coord, src_coord_buffer)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#unpermute(view_coord)-instance-method" class="signature"><strong>#unpermute</strong>(view_coord)</a>
+        <a href="#unpermute%28view_coord%29-instance-method" class="signature"><strong>#unpermute</strong>(view_coord)</a>
         
       </li>
     
@@ -460,17 +528,17 @@
   <h3>Instance methods inherited from struct <code><a href="../Phase/CoordTransform.html">Phase::CoordTransform</a></code></h3>
   
   
-    <a href="../Phase/CoordTransform.html#apply(coord:Array(Int32)):Array(Int32)-instance-method" class="tooltip">
+    <a href="../Phase/CoordTransform.html#apply%28coord%3AArray%28Int32%29%29%3AArray%28Int32%29-instance-method" class="tooltip">
       <span>apply(coord : Array(Int32)) : Array(Int32)</span>
     apply</a>, 
     
   
-    <a href="../Phase/CoordTransform.html#commutes_with?(t:CoordTransform):Bool-instance-method" class="tooltip">
+    <a href="../Phase/CoordTransform.html#commutes_with%3F%28t%3ACoordTransform%29%3ABool-instance-method" class="tooltip">
       <span>commutes_with?(t : CoordTransform) : Bool</span>
     commutes_with?</a>, 
     
   
-    <a href="../Phase/CoordTransform.html#compose(t:CoordTransform):CoordTransform-instance-method" class="tooltip">
+    <a href="../Phase/CoordTransform.html#compose%28t%3ACoordTransform%29%3ACoordTransform-instance-method" class="tooltip">
       <span>compose(t : CoordTransform) : CoordTransform</span>
     compose</a>
     
@@ -540,7 +608,7 @@
         
         def self.<strong>new</strong>(size : Int32)
 
-        <a class="method-permalink" href="#new(size:Int32)-class-method">#</a>
+        <a class="method-permalink" href="#new%28size%3AInt32%29-class-method">#</a>
       </div>
       
       <br/>
@@ -556,7 +624,7 @@
         
         def self.<strong>new</strong>(pattern)
 
-        <a class="method-permalink" href="#new(pattern)-class-method">#</a>
+        <a class="method-permalink" href="#new%28pattern%29-class-method">#</a>
       </div>
       
       <br/>
@@ -586,7 +654,7 @@
         
         def <strong>apply</strong>(coord : Array(Int32)) : Array(Int32)
 
-        <a class="method-permalink" href="#apply(coord:Array(Int32)):Array(Int32)-instance-method">#</a>
+        <a class="method-permalink" href="#apply%28coord%3AArray%28Int32%29%29%3AArray%28Int32%29-instance-method">#</a>
       </div>
       
       <br/>
@@ -602,7 +670,7 @@
         
         def <strong>compose</strong>(t : <a href="../Phase/CoordTransform.html">CoordTransform</a>) : <a href="../Phase/CoordTransform.html">CoordTransform</a>
 
-        <a class="method-permalink" href="#compose(t:CoordTransform):CoordTransform-instance-method">#</a>
+        <a class="method-permalink" href="#compose%28t%3ACoordTransform%29%3ACoordTransform-instance-method">#</a>
       </div>
       
       <br/>
@@ -618,7 +686,7 @@
         
         def <strong>pattern</strong> : Array(Int32)
 
-        <a class="method-permalink" href="#pattern:Array(Int32)-instance-method">#</a>
+        <a class="method-permalink" href="#pattern%3AArray%28Int32%29-instance-method">#</a>
       </div>
       
         <div class="doc">
@@ -639,7 +707,7 @@
         
         def <strong>permute</strong>(src_coord)
 
-        <a class="method-permalink" href="#permute(src_coord)-instance-method">#</a>
+        <a class="method-permalink" href="#permute%28src_coord%29-instance-method">#</a>
       </div>
       
       <br/>
@@ -655,7 +723,7 @@
         
         def <strong>unpermute</strong>(view_coord, src_coord_buffer)
 
-        <a class="method-permalink" href="#unpermute(view_coord,src_coord_buffer)-instance-method">#</a>
+        <a class="method-permalink" href="#unpermute%28view_coord%2Csrc_coord_buffer%29-instance-method">#</a>
       </div>
       
       <br/>
@@ -671,7 +739,7 @@
         
         def <strong>unpermute</strong>(view_coord)
 
-        <a class="method-permalink" href="#unpermute(view_coord)-instance-method">#</a>
+        <a class="method-permalink" href="#unpermute%28view_coord%29-instance-method">#</a>
       </div>
       
       <br/>

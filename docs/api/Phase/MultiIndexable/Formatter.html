@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="generator" content="Crystal Docs 1.1.0">
-<meta name="crystal_docs.project_version" content="main">
+<meta name="generator" content="Crystal Docs 1.2.0">
+<meta name="crystal_docs.project_version" content="HEAD">
 <meta name="crystal_docs.project_name" content="ph-core">
 
 
@@ -13,12 +13,80 @@
 <script type="text/javascript" src="../../js/doc.js"></script>
 
   <meta name="repository-name" content="ph-core">
-  <title>Phase::MultiIndexable::Formatter(E, I) - ph-core main</title>
+  <title>Phase::MultiIndexable::Formatter(E, I) - ph-core HEAD</title>
   <script type="text/javascript">
     CrystalDocs.base_path = "../../";
   </script>
 </head>
-<body>
+<body><script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="./" accesskey="h" title="  (Alt + H)">
+                <img src="/phase_logo.svg" alt="logo" aria-label="logo" height="55px">            </a>
+        </div>
+        <ul id="menu">
+            <li>
+                <a class="active" href="https://phase.blog/api" title="API Docs">
+                    <span>API Docs</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://phase.blog/" title="Blog">
+                    <span>Blog</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://phase.blog/reference" title="Reference">
+                    <span>Reference</span>
+                </a>
+            </li>
+
+            <li>
+                <span class="logo-switches">
+                    <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                        <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                        </svg>
+                        <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="5"></circle>
+                            <line x1="12" y1="1" x2="12" y2="3"></line>
+                            <line x1="12" y1="21" x2="12" y2="23"></line>
+                            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                            <line x1="1" y1="12" x2="3" y2="12"></line>
+                            <line x1="21" y1="12" x2="23" y2="12"></line>
+                            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                        </svg>
+                    </button>
+                </span>
+            </li>
+        </ul>
+    </nav>
+</header>
+
+<script>
+document.getElementById("theme-toggle").addEventListener("click", () => {
+    if (document.body.className.includes("dark")) {
+        document.body.classList.remove('dark');
+        localStorage.setItem("pref-theme", 'light');
+    } else {
+        document.body.classList.add('dark');
+        localStorage.setItem("pref-theme", 'dark');
+    }
+})
+</script>
+
 
 <svg class="hidden">
   <symbol id="octicon-link" viewBox="0 0 16 16">
@@ -39,7 +107,7 @@
       </h1>
 
       <span class="project-version">
-        main
+        HEAD
       </span>
     </div>
   </div>
@@ -355,13 +423,13 @@
   </h2>
 
   <p>Used to print <code><a href="../../Phase/MultiIndexable.html">MultiIndexable</a></code>s in a user-readable fashion. The most
-common usage of <code><a href="../../Phase/MultiIndexable/Formatter.html">Formatter</a></code> is the class method <code><a href="../../Phase/MultiIndexable/Formatter.html#print(narr:MultiIndexable(E),io:IO=STDOUT,settings=nil)-class-method">Formatter.print</a>(narr,
-io, settings)</code>.</p>
-
+common usage of <code><a href="../../Phase/MultiIndexable/Formatter.html">Formatter</a></code> is the class method <code><a href="../../Phase/MultiIndexable/Formatter.html#print%28narr%3AMultiIndexable%28E%29%2Cio%3AIO%3DSTDOUT%2Csettings%3Dnil%29-class-method">Formatter.print(narr, io, settings)</a></code>.</p>
 <p><code><a href="../../Phase/MultiIndexable/Formatter.html">Formatter</a></code> can be configured at multiple different levels:</p>
-
-<ul><li>Per invocation</li><li>Program wide</li><li>System wide</li></ul>
-
+<ul>
+<li>Per invocation</li>
+<li>Program wide</li>
+<li>System wide</li>
+</ul>
 <p>For detailed information about how that all works, see <code><a href="../../Phase/MultiIndexable/Formatter/Settings.html">Formatter::Settings</a></code>.</p>
 
 
@@ -416,7 +484,7 @@ io, settings)</code>.</p>
   <ul class="list-summary">
     
       <li class="entry-summary">
-        <a href="#new(narr:MultiIndexable(E),io,settings)-class-method" class="signature"><strong>.new</strong>(narr : MultiIndexable(E), io, settings)</a>
+        <a href="#new%28narr%3AMultiIndexable%28E%29%2Cio%2Csettings%29-class-method" class="signature"><strong>.new</strong>(narr : MultiIndexable(E), io, settings)</a>
         
       </li>
     
@@ -435,12 +503,12 @@ io, settings)</code>.</p>
   <ul class="list-summary">
     
       <li class="entry-summary">
-        <a href="#print(narr:MultiIndexable(E),io:IO=STDOUT,settings=nil)-class-method" class="signature"><strong>.print</strong>(narr : MultiIndexable(E), io : IO = <span class="t">STDOUT</span>, settings = <span class="n">nil</span>)</a>
+        <a href="#print%28narr%3AMultiIndexable%28E%29%2Cio%3AIO%3DSTDOUT%2Csettings%3Dnil%29-class-method" class="signature"><strong>.print</strong>(narr : MultiIndexable(E), io : IO = <span class="t">STDOUT</span>, settings = <span class="n">nil</span>)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#print_literal(narr:MultiIndexable(E),io=STDOUT)-class-method" class="signature"><strong>.print_literal</strong>(narr : MultiIndexable(E), io = <span class="t">STDOUT</span>)</a>
+        <a href="#print_literal%28narr%3AMultiIndexable%28E%29%2Cio%3DSTDOUT%29-class-method" class="signature"><strong>.print_literal</strong>(narr : MultiIndexable(E), io = <span class="t">STDOUT</span>)</a>
         
       </li>
     
@@ -459,27 +527,27 @@ io, settings)</code>.</p>
   <ul class="list-summary">
     
       <li class="entry-summary">
-        <a href="#close(height,idx)-instance-method" class="signature"><strong>#close</strong>(height, idx)</a>
+        <a href="#close%28height%2Cidx%29-instance-method" class="signature"><strong>#close</strong>(height, idx)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#format_element(el:Int):String-instance-method" class="signature"><strong>#format_element</strong>(el : Int) : String</a>
+        <a href="#format_element%28el%3AInt%29%3AString-instance-method" class="signature"><strong>#format_element</strong>(el : Int) : String</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#format_element(el:Float):String-instance-method" class="signature"><strong>#format_element</strong>(el : Float) : String</a>
+        <a href="#format_element%28el%3AFloat%29%3AString-instance-method" class="signature"><strong>#format_element</strong>(el : Float) : String</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#format_element(el:String):String-instance-method" class="signature"><strong>#format_element</strong>(el : String) : String</a>
+        <a href="#format_element%28el%3AString%29%3AString-instance-method" class="signature"><strong>#format_element</strong>(el : String) : String</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#format_element(el):String-instance-method" class="signature"><strong>#format_element</strong>(el) : String</a>
+        <a href="#format_element%28el%29%3AString-instance-method" class="signature"><strong>#format_element</strong>(el) : String</a>
         
       </li>
     
@@ -491,12 +559,12 @@ io, settings)</code>.</p>
       </li>
     
       <li class="entry-summary">
-        <a href="#newline(indent_change=0)-instance-method" class="signature"><strong>#newline</strong>(indent_change = <span class="n">0</span>)</a>
+        <a href="#newline%28indent_change%3D0%29-instance-method" class="signature"><strong>#newline</strong>(indent_change = <span class="n">0</span>)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#open(height,idx)-instance-method" class="signature"><strong>#open</strong>(height, idx)</a>
+        <a href="#open%28height%2Cidx%29-instance-method" class="signature"><strong>#open</strong>(height, idx)</a>
         
       </li>
     
@@ -555,7 +623,7 @@ io, settings)</code>.</p>
         
         def self.<strong>new</strong>(narr : <a href="../../Phase/MultiIndexable.html">MultiIndexable</a>(E), io, settings)
 
-        <a class="method-permalink" href="#new(narr:MultiIndexable(E),io,settings)-class-method">#</a>
+        <a class="method-permalink" href="#new%28narr%3AMultiIndexable%28E%29%2Cio%2Csettings%29-class-method">#</a>
       </div>
       
       <br/>
@@ -583,7 +651,7 @@ io, settings)</code>.</p>
         
         def self.<strong>print</strong>(narr : <a href="../../Phase/MultiIndexable.html">MultiIndexable</a>(E), io : IO = <span class="t">STDOUT</span>, settings = <span class="n">nil</span>)
 
-        <a class="method-permalink" href="#print(narr:MultiIndexable(E),io:IO=STDOUT,settings=nil)-class-method">#</a>
+        <a class="method-permalink" href="#print%28narr%3AMultiIndexable%28E%29%2Cio%3AIO%3DSTDOUT%2Csettings%3Dnil%29-class-method">#</a>
       </div>
       
       <br/>
@@ -599,7 +667,7 @@ io, settings)</code>.</p>
         
         def self.<strong>print_literal</strong>(narr : <a href="../../Phase/MultiIndexable.html">MultiIndexable</a>(E), io = <span class="t">STDOUT</span>)
 
-        <a class="method-permalink" href="#print_literal(narr:MultiIndexable(E),io=STDOUT)-class-method">#</a>
+        <a class="method-permalink" href="#print_literal%28narr%3AMultiIndexable%28E%29%2Cio%3DSTDOUT%29-class-method">#</a>
       </div>
       
       <br/>
@@ -627,7 +695,7 @@ io, settings)</code>.</p>
         
         def <strong>close</strong>(height, idx)
 
-        <a class="method-permalink" href="#close(height,idx)-instance-method">#</a>
+        <a class="method-permalink" href="#close%28height%2Cidx%29-instance-method">#</a>
       </div>
       
       <br/>
@@ -643,7 +711,7 @@ io, settings)</code>.</p>
         
         def <strong>format_element</strong>(el : Int) : String
 
-        <a class="method-permalink" href="#format_element(el:Int):String-instance-method">#</a>
+        <a class="method-permalink" href="#format_element%28el%3AInt%29%3AString-instance-method">#</a>
       </div>
       
       <br/>
@@ -659,7 +727,7 @@ io, settings)</code>.</p>
         
         def <strong>format_element</strong>(el : Float) : String
 
-        <a class="method-permalink" href="#format_element(el:Float):String-instance-method">#</a>
+        <a class="method-permalink" href="#format_element%28el%3AFloat%29%3AString-instance-method">#</a>
       </div>
       
       <br/>
@@ -675,7 +743,7 @@ io, settings)</code>.</p>
         
         def <strong>format_element</strong>(el : String) : String
 
-        <a class="method-permalink" href="#format_element(el:String):String-instance-method">#</a>
+        <a class="method-permalink" href="#format_element%28el%3AString%29%3AString-instance-method">#</a>
       </div>
       
       <br/>
@@ -691,7 +759,7 @@ io, settings)</code>.</p>
         
         def <strong>format_element</strong>(el) : String
 
-        <a class="method-permalink" href="#format_element(el):String-instance-method">#</a>
+        <a class="method-permalink" href="#format_element%28el%29%3AString-instance-method">#</a>
       </div>
       
       <br/>
@@ -728,7 +796,7 @@ io, settings)</code>.</p>
         
         def <strong>newline</strong>(indent_change = <span class="n">0</span>)
 
-        <a class="method-permalink" href="#newline(indent_change=0)-instance-method">#</a>
+        <a class="method-permalink" href="#newline%28indent_change%3D0%29-instance-method">#</a>
       </div>
       
       <br/>
@@ -744,7 +812,7 @@ io, settings)</code>.</p>
         
         def <strong>open</strong>(height, idx)
 
-        <a class="method-permalink" href="#open(height,idx)-instance-method">#</a>
+        <a class="method-permalink" href="#open%28height%2Cidx%29-instance-method">#</a>
       </div>
       
       <br/>

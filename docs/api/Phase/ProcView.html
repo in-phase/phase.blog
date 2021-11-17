@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="generator" content="Crystal Docs 1.1.0">
-<meta name="crystal_docs.project_version" content="main">
+<meta name="generator" content="Crystal Docs 1.2.0">
+<meta name="crystal_docs.project_version" content="HEAD">
 <meta name="crystal_docs.project_name" content="ph-core">
 
 
@@ -13,12 +13,80 @@
 <script type="text/javascript" src="../js/doc.js"></script>
 
   <meta name="repository-name" content="ph-core">
-  <title>Phase::ProcView(S, T, R) - ph-core main</title>
+  <title>Phase::ProcView(S, T, R) - ph-core HEAD</title>
   <script type="text/javascript">
     CrystalDocs.base_path = "../";
   </script>
 </head>
-<body>
+<body><script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="./" accesskey="h" title="  (Alt + H)">
+                <img src="/phase_logo.svg" alt="logo" aria-label="logo" height="55px">            </a>
+        </div>
+        <ul id="menu">
+            <li>
+                <a class="active" href="https://phase.blog/api" title="API Docs">
+                    <span>API Docs</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://phase.blog/" title="Blog">
+                    <span>Blog</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://phase.blog/reference" title="Reference">
+                    <span>Reference</span>
+                </a>
+            </li>
+
+            <li>
+                <span class="logo-switches">
+                    <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                        <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                        </svg>
+                        <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="5"></circle>
+                            <line x1="12" y1="1" x2="12" y2="3"></line>
+                            <line x1="12" y1="21" x2="12" y2="23"></line>
+                            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                            <line x1="1" y1="12" x2="3" y2="12"></line>
+                            <line x1="21" y1="12" x2="23" y2="12"></line>
+                            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                        </svg>
+                    </button>
+                </span>
+            </li>
+        </ul>
+    </nav>
+</header>
+
+<script>
+document.getElementById("theme-toggle").addEventListener("click", () => {
+    if (document.body.className.includes("dark")) {
+        document.body.classList.remove('dark');
+        localStorage.setItem("pref-theme", 'light');
+    } else {
+        document.body.classList.add('dark');
+        localStorage.setItem("pref-theme", 'dark');
+    }
+})
+</script>
+
 
 <svg class="hidden">
   <symbol id="octicon-link" viewBox="0 0 16 16">
@@ -39,7 +107,7 @@
       </h1>
 
       <span class="project-version">
-        main
+        HEAD
       </span>
     </div>
   </div>
@@ -392,14 +460,14 @@
   <ul class="list-summary">
     
       <li class="entry-summary">
-        <a href="#of(src:S,proc:T-%3ER):ProcView(S,T,R)forallT,R-class-method" class="signature"><strong>.of</strong>(src : S, proc : T -> R) : ProcView(S, T, R) forall T, R</a>
+        <a href="#of%28src%3AS%2Cproc%3AT-%3ER%29%3AProcView%28S%2CT%2CR%29forallT%2CR-class-method" class="signature"><strong>.of</strong>(src : S, proc : T -> R) : ProcView(S, T, R) forall T, R</a>
         
           <div class="summary"><p>DOCUMENT</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#of(src:B,&block:T-%3ER):ProcView(S,T,R)forallT,R-class-method" class="signature"><strong>.of</strong>(src : B, &block : T -> R) : ProcView(S, T, R) forall T, R</a>
+        <a href="#of%28src%3AB%2C%26block%3AT-%3ER%29%3AProcView%28S%2CT%2CR%29forallT%2CR-class-method" class="signature"><strong>.of</strong>(src : B, &block : T -> R) : ProcView(S, T, R) forall T, R</a>
         
       </li>
     
@@ -418,17 +486,17 @@
   <ul class="list-summary">
     
       <li class="entry-summary">
-        <a href="#clone:self-instance-method" class="signature"><strong>#clone</strong> : <span class="k">self</span></a>
+        <a href="#clone%3Aself-instance-method" class="signature"><strong>#clone</strong> : <span class="k">self</span></a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#process(new_proc:R-%3EU):ProcView(S,T,U)forallU-instance-method" class="signature"><strong>#process</strong>(new_proc : R -> U) : ProcView(S, T, U) forall U</a>
+        <a href="#process%28new_proc%3AR-%3EU%29%3AProcView%28S%2CT%2CU%29forallU-instance-method" class="signature"><strong>#process</strong>(new_proc : R -> U) : ProcView(S, T, U) forall U</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#unsafe_fetch_element(coord):R-instance-method" class="signature"><strong>#unsafe_fetch_element</strong>(coord) : R</a>
+        <a href="#unsafe_fetch_element%28coord%29%3AR-instance-method" class="signature"><strong>#unsafe_fetch_element</strong>(coord) : R</a>
         
       </li>
     
@@ -445,67 +513,67 @@
   <h3>Instance methods inherited from class <code><a href="../Phase/ReadonlyView.html">Phase::ReadonlyView(S, R)</a></code></h3>
   
   
-    <a href="../Phase/ReadonlyView.html#clone:self-instance-method" class="tooltip">
+    <a href="../Phase/ReadonlyView.html#clone%3Aself-instance-method" class="tooltip">
       <span>clone : <span class="k">self</span></span>
     clone</a>, 
     
   
-    <a href="../Phase/ReadonlyView.html#permute(order:Enumerable?=nil):self-instance-method" class="tooltip">
+    <a href="../Phase/ReadonlyView.html#permute%28order%3AEnumerable%3F%3Dnil%29%3Aself-instance-method" class="tooltip">
       <span>permute(order : Enumerable? = <span class="n">nil</span>) : <span class="k">self</span></span>
     permute</a>, 
     
   
-    <a href="../Phase/ReadonlyView.html#permute!(order:Enumerable?=nil):self-instance-method" class="tooltip">
+    <a href="../Phase/ReadonlyView.html#permute%21%28order%3AEnumerable%3F%3Dnil%29%3Aself-instance-method" class="tooltip">
       <span>permute!(order : Enumerable? = <span class="n">nil</span>) : <span class="k">self</span></span>
     permute!</a>, 
     
   
-    <a href="../Phase/ReadonlyView.html#process(new_proc:R-%3EU):ProcView(S,R,U)forallU-instance-method" class="tooltip">
+    <a href="../Phase/ReadonlyView.html#process%28new_proc%3AR-%3EU%29%3AProcView%28S%2CR%2CU%29forallU-instance-method" class="tooltip">
       <span>process(new_proc : R -> U) : ProcView(S, R, U) forall U<br/>process(&block : R -> U) : ProcView(S, R, U) forall U</span>
     process</a>, 
     
   
-    <a href="../Phase/ReadonlyView.html#reshape(new_shape):self-instance-method" class="tooltip">
+    <a href="../Phase/ReadonlyView.html#reshape%28new_shape%29%3Aself-instance-method" class="tooltip">
       <span>reshape(new_shape) : <span class="k">self</span></span>
     reshape</a>, 
     
   
-    <a href="../Phase/ReadonlyView.html#reshape!(new_shape):self-instance-method" class="tooltip">
+    <a href="../Phase/ReadonlyView.html#reshape%21%28new_shape%29%3Aself-instance-method" class="tooltip">
       <span>reshape!(new_shape) : <span class="k">self</span></span>
     reshape!</a>, 
     
   
-    <a href="../Phase/ReadonlyView.html#reverse:self-instance-method" class="tooltip">
+    <a href="../Phase/ReadonlyView.html#reverse%3Aself-instance-method" class="tooltip">
       <span>reverse : <span class="k">self</span></span>
     reverse</a>, 
     
   
-    <a href="../Phase/ReadonlyView.html#reverse!:self-instance-method" class="tooltip">
+    <a href="../Phase/ReadonlyView.html#reverse%21%3Aself-instance-method" class="tooltip">
       <span>reverse! : <span class="k">self</span></span>
     reverse!</a>, 
     
   
-    <a href="../Phase/ReadonlyView.html#shape:Array(Int32)-instance-method" class="tooltip">
+    <a href="../Phase/ReadonlyView.html#shape%3AArray%28Int32%29-instance-method" class="tooltip">
       <span>shape : Array(Int32)</span>
     shape</a>, 
     
   
-    <a href="../Phase/ReadonlyView.html#to_narr:NArray-instance-method" class="tooltip">
+    <a href="../Phase/ReadonlyView.html#to_narr%3ANArray-instance-method" class="tooltip">
       <span>to_narr : NArray</span>
     to_narr</a>, 
     
   
-    <a href="../Phase/ReadonlyView.html#unsafe_fetch_chunk(region:IndexRegion,drop:Bool):self-instance-method" class="tooltip">
+    <a href="../Phase/ReadonlyView.html#unsafe_fetch_chunk%28region%3AIndexRegion%2Cdrop%3ABool%29%3Aself-instance-method" class="tooltip">
       <span>unsafe_fetch_chunk(region : IndexRegion, drop : Bool) : <span class="k">self</span></span>
     unsafe_fetch_chunk</a>, 
     
   
-    <a href="../Phase/ReadonlyView.html#unsafe_fetch_element(coord):R-instance-method" class="tooltip">
+    <a href="../Phase/ReadonlyView.html#unsafe_fetch_element%28coord%29%3AR-instance-method" class="tooltip">
       <span>unsafe_fetch_element(coord) : R</span>
     unsafe_fetch_element</a>, 
     
   
-    <a href="../Phase/ReadonlyView.html#view(region=nil):self-instance-method" class="tooltip">
+    <a href="../Phase/ReadonlyView.html#view%28region%3Dnil%29%3Aself-instance-method" class="tooltip">
       <span>view(region = <span class="n">nil</span>) : <span class="k">self</span></span>
     view</a>
     
@@ -517,7 +585,7 @@
   <h3>Constructor methods inherited from class <code><a href="../Phase/ReadonlyView.html">Phase::ReadonlyView(S, R)</a></code></h3>
   
   
-    <a href="../Phase/ReadonlyView.html#of(src:S,region=nil):self-class-method" class="tooltip">
+    <a href="../Phase/ReadonlyView.html#of%28src%3AS%2Cregion%3Dnil%29%3Aself-class-method" class="tooltip">
       <span>of(src : S, region = <span class="n">nil</span>) : <span class="k">self</span></span>
     of</a>
     
@@ -533,157 +601,157 @@
   <h3>Instance methods inherited from module <code><a href="../Phase/MultiIndexable.html">Phase::MultiIndexable(R)</a></code></h3>
   
   
-    <a href="../Phase/MultiIndexable.html#%25(other:MultiIndexable(U))forallU-instance-method" class="tooltip">
+    <a href="../Phase/MultiIndexable.html#%25%28other%3AMultiIndexable%28U%29%29forallU-instance-method" class="tooltip">
       <span>%(other : MultiIndexable(U)) forall U<br/>%(other)</span>
     %</a>, 
     
   
-    <a href="../Phase/MultiIndexable.html#&(other:MultiIndexable(U))forallU-instance-method" class="tooltip">
+    <a href="../Phase/MultiIndexable.html#%26%28other%3AMultiIndexable%28U%29%29forallU-instance-method" class="tooltip">
       <span>&(other : MultiIndexable(U)) forall U<br/>&(other)</span>
     &</a>, 
     
   
-    <a href="../Phase/MultiIndexable.html#&*(other:MultiIndexable(U))forallU-instance-method" class="tooltip">
+    <a href="../Phase/MultiIndexable.html#%26%2A%28other%3AMultiIndexable%28U%29%29forallU-instance-method" class="tooltip">
       <span>&*(other : MultiIndexable(U)) forall U<br/>&*(other)</span>
     &*</a>, 
     
   
-    <a href="../Phase/MultiIndexable.html#&**(other:MultiIndexable(U))forallU-instance-method" class="tooltip">
+    <a href="../Phase/MultiIndexable.html#%26%2A%2A%28other%3AMultiIndexable%28U%29%29forallU-instance-method" class="tooltip">
       <span>&**(other : MultiIndexable(U)) forall U<br/>&**(other)</span>
     &**</a>, 
     
   
-    <a href="../Phase/MultiIndexable.html#&+(other:MultiIndexable(U))forallU-instance-method" class="tooltip">
+    <a href="../Phase/MultiIndexable.html#%26%2B%28other%3AMultiIndexable%28U%29%29forallU-instance-method" class="tooltip">
       <span>&+(other : MultiIndexable(U)) forall U<br/>&+(other)</span>
     &+</a>, 
     
   
-    <a href="../Phase/MultiIndexable.html#&-(other:MultiIndexable(U))forallU-instance-method" class="tooltip">
+    <a href="../Phase/MultiIndexable.html#%26-%28other%3AMultiIndexable%28U%29%29forallU-instance-method" class="tooltip">
       <span>&-(other : MultiIndexable(U)) forall U<br/>&-(other)</span>
     &-</a>, 
     
   
-    <a href="../Phase/MultiIndexable.html#*(other:MultiIndexable(U))forallU-instance-method" class="tooltip">
+    <a href="../Phase/MultiIndexable.html#%2A%28other%3AMultiIndexable%28U%29%29forallU-instance-method" class="tooltip">
       <span>*(other : MultiIndexable(U)) forall U<br/>*(other)</span>
     *</a>, 
     
   
-    <a href="../Phase/MultiIndexable.html#**(other:MultiIndexable(U))forallU-instance-method" class="tooltip">
+    <a href="../Phase/MultiIndexable.html#%2A%2A%28other%3AMultiIndexable%28U%29%29forallU-instance-method" class="tooltip">
       <span>**(other : MultiIndexable(U)) forall U<br/>**(other)</span>
     **</a>, 
     
   
-    <a href="../Phase/MultiIndexable.html#+(other:MultiIndexable(U))forallU-instance-method" class="tooltip">
+    <a href="../Phase/MultiIndexable.html#%2B%28other%3AMultiIndexable%28U%29%29forallU-instance-method" class="tooltip">
       <span>+(other : MultiIndexable(U)) forall U<br/>+(other)<br/>+</span>
     +</a>, 
     
   
-    <a href="../Phase/MultiIndexable.html#-(other:MultiIndexable(U))forallU-instance-method" class="tooltip">
+    <a href="../Phase/MultiIndexable.html#-%28other%3AMultiIndexable%28U%29%29forallU-instance-method" class="tooltip">
       <span>-(other : MultiIndexable(U)) forall U<br/>-(other)<br/>-</span>
     -</a>, 
     
   
-    <a href="../Phase/MultiIndexable.html#/(other:MultiIndexable(U))forallU-instance-method" class="tooltip">
+    <a href="../Phase/MultiIndexable.html#/%28other%3AMultiIndexable%28U%29%29forallU-instance-method" class="tooltip">
       <span>/(other : MultiIndexable(U)) forall U<br/>/(other)</span>
     /</a>, 
     
   
-    <a href="../Phase/MultiIndexable.html#//(other:MultiIndexable(U))forallU-instance-method" class="tooltip">
+    <a href="../Phase/MultiIndexable.html#//%28other%3AMultiIndexable%28U%29%29forallU-instance-method" class="tooltip">
       <span>//(other : MultiIndexable(U)) forall U<br/>//(other)</span>
     //</a>, 
     
   
-    <a href="../Phase/MultiIndexable.html#%3C(other:MultiIndexable(U))forallU-instance-method" class="tooltip">
+    <a href="../Phase/MultiIndexable.html#%3C%28other%3AMultiIndexable%28U%29%29forallU-instance-method" class="tooltip">
       <span><(other : MultiIndexable(U)) forall U<br/><(other)</span>
     <</a>, 
     
   
-    <a href="../Phase/MultiIndexable.html#%3C=(other:MultiIndexable(U))forallU-instance-method" class="tooltip">
+    <a href="../Phase/MultiIndexable.html#%3C%3D%28other%3AMultiIndexable%28U%29%29forallU-instance-method" class="tooltip">
       <span><=(other : MultiIndexable(U)) forall U<br/><=(other)</span>
     <=</a>, 
     
   
-    <a href="../Phase/MultiIndexable.html#%3C=%3E(other:MultiIndexable(U))forallU-instance-method" class="tooltip">
+    <a href="../Phase/MultiIndexable.html#%3C%3D%3E%28other%3AMultiIndexable%28U%29%29forallU-instance-method" class="tooltip">
       <span><=>(other : MultiIndexable(U)) forall U<br/><=>(other)</span>
     <=></a>, 
     
   
-    <a href="../Phase/MultiIndexable.html#==(other:self):Bool-instance-method" class="tooltip">
+    <a href="../Phase/MultiIndexable.html#%3D%3D%28other%3Aself%29%3ABool-instance-method" class="tooltip">
       <span>==(other : <span class="k">self</span>) : Bool</span>
     ==</a>, 
     
   
-    <a href="../Phase/MultiIndexable.html#=~(value):MultiIndexable(Bool)-instance-method" class="tooltip">
+    <a href="../Phase/MultiIndexable.html#%3D~%28value%29%3AMultiIndexable%28Bool%29-instance-method" class="tooltip">
       <span>=~(value) : MultiIndexable(Bool)</span>
     =~</a>, 
     
   
-    <a href="../Phase/MultiIndexable.html#%3E(other:MultiIndexable(U))forallU-instance-method" class="tooltip">
+    <a href="../Phase/MultiIndexable.html#%3E%28other%3AMultiIndexable%28U%29%29forallU-instance-method" class="tooltip">
       <span>>(other : MultiIndexable(U)) forall U<br/>>(other)</span>
     ></a>, 
     
   
-    <a href="../Phase/MultiIndexable.html#%3E=(other:MultiIndexable(U))forallU-instance-method" class="tooltip">
+    <a href="../Phase/MultiIndexable.html#%3E%3D%28other%3AMultiIndexable%28U%29%29forallU-instance-method" class="tooltip">
       <span>>=(other : MultiIndexable(U)) forall U<br/>>=(other)</span>
     >=</a>, 
     
   
-    <a href="../Phase/MultiIndexable.html#[](region_literal:Indexable,drop:Bool=MultiIndexable::DROP_BY_DEFAULT)-instance-method" class="tooltip">
+    <a href="../Phase/MultiIndexable.html#%5B%5D%28region_literal%3AIndexable%2Cdrop%3ABool%3DMultiIndexable%3A%3ADROP_BY_DEFAULT%29-instance-method" class="tooltip">
       <span>[](region_literal : Indexable, drop : Bool = <span class="t">MultiIndexable</span><span class="t">::</span><span class="t">DROP_BY_DEFAULT</span>)<br/>[](region : IndexRegion)<br/>[](*tuple, drop : Bool = <span class="t">MultiIndexable</span><span class="t">::</span><span class="t">DROP_BY_DEFAULT</span>)</span>
     []</a>, 
     
   
-    <a href="../Phase/MultiIndexable.html#[]?(bool_mask:MultiIndexable(Bool)):MultiIndexable(T?)-instance-method" class="tooltip">
+    <a href="../Phase/MultiIndexable.html#%5B%5D%3F%28bool_mask%3AMultiIndexable%28Bool%29%29%3AMultiIndexable%28T%3F%29-instance-method" class="tooltip">
       <span>[]?(bool_mask : MultiIndexable(Bool)) : MultiIndexable(T?)<br/>[]?(region : Indexable, drop : Bool = <span class="t">MultiIndexable</span><span class="t">::</span><span class="t">DROP_BY_DEFAULT</span>) : MultiIndexable(T)?<br/>[]?(region : IndexRegion) : MultiIndexable(T)?<br/>[]?(*tuple, drop : Bool = <span class="t">MultiIndexable</span><span class="t">::</span><span class="t">DROP_BY_DEFAULT</span>)</span>
     []?</a>, 
     
   
-    <a href="../Phase/MultiIndexable.html#%5E(other:MultiIndexable(U))forallU-instance-method" class="tooltip">
+    <a href="../Phase/MultiIndexable.html#%5E%28other%3AMultiIndexable%28U%29%29forallU-instance-method" class="tooltip">
       <span>^(other : MultiIndexable(U)) forall U<br/>^(other)</span>
     ^</a>, 
     
   
-    <a href="../Phase/MultiIndexable.html#apply:ApplyProxy-instance-method" class="tooltip">
+    <a href="../Phase/MultiIndexable.html#apply%3AApplyProxy-instance-method" class="tooltip">
       <span>apply : ApplyProxy</span>
     apply</a>, 
     
   
-    <a href="../Phase/MultiIndexable.html#apply!:InPlaceApplyProxy-instance-method" class="tooltip">
+    <a href="../Phase/MultiIndexable.html#apply%21%3AInPlaceApplyProxy-instance-method" class="tooltip">
       <span>apply! : InPlaceApplyProxy</span>
     apply!</a>, 
     
   
-    <a href="../Phase/MultiIndexable.html#dimensions:Int-instance-method" class="tooltip">
+    <a href="../Phase/MultiIndexable.html#dimensions%3AInt-instance-method" class="tooltip">
       <span>dimensions : Int</span>
     dimensions</a>, 
     
   
-    <a href="../Phase/MultiIndexable.html#each(iter:CoordIterator(I)):Iterator(T)forallI-instance-method" class="tooltip">
+    <a href="../Phase/MultiIndexable.html#each%28iter%3ACoordIterator%28I%29%29%3AIterator%28T%29forallI-instance-method" class="tooltip">
       <span>each(iter : CoordIterator(I)) : Iterator(T) forall I<br/>each : Iterator(T)<br/>each(&) : Nil</span>
     each</a>, 
     
   
-    <a href="../Phase/MultiIndexable.html#each_coord:Iterator-instance-method" class="tooltip">
+    <a href="../Phase/MultiIndexable.html#each_coord%3AIterator-instance-method" class="tooltip">
       <span>each_coord : Iterator<br/>each_coord(&) : Nil</span>
     each_coord</a>, 
     
   
-    <a href="../Phase/MultiIndexable.html#each_slice(axis=0):Iterator-instance-method" class="tooltip">
+    <a href="../Phase/MultiIndexable.html#each_slice%28axis%3D0%29%3AIterator-instance-method" class="tooltip">
       <span>each_slice(axis = <span class="n">0</span>) : Iterator<br/>each_slice(axis = <span class="n">0</span>, &)</span>
     each_slice</a>, 
     
   
-    <a href="../Phase/MultiIndexable.html#each_with(*args,&)-instance-method" class="tooltip">
+    <a href="../Phase/MultiIndexable.html#each_with%28%2Aargs%2C%26%29-instance-method" class="tooltip">
       <span>each_with(*args, &)</span>
     each_with</a>, 
     
   
-    <a href="../Phase/MultiIndexable.html#each_with_coord(iter:CoordIterator(I)):IteratorforallI-instance-method" class="tooltip">
+    <a href="../Phase/MultiIndexable.html#each_with_coord%28iter%3ACoordIterator%28I%29%29%3AIteratorforallI-instance-method" class="tooltip">
       <span>each_with_coord(iter : CoordIterator(I)) : Iterator forall I<br/>each_with_coord : Iterator<br/>each_with_coord(&) : Nil</span>
     each_with_coord</a>, 
     
   
-    <a href="../Phase/MultiIndexable.html#empty?:Bool-instance-method" class="tooltip">
+    <a href="../Phase/MultiIndexable.html#empty%3F%3ABool-instance-method" class="tooltip">
       <span>empty? : Bool</span>
     empty?</a>, 
     
@@ -693,122 +761,122 @@
     ensure_writable</a>, 
     
   
-    <a href="../Phase/MultiIndexable.html#eq(other:MultiIndexable(U)):MultiIndexable(Bool)forallU-instance-method" class="tooltip">
+    <a href="../Phase/MultiIndexable.html#eq%28other%3AMultiIndexable%28U%29%29%3AMultiIndexable%28Bool%29forallU-instance-method" class="tooltip">
       <span>eq(other : MultiIndexable(U)) : MultiIndexable(Bool) forall U<br/>eq(value) : MultiIndexable(Bool)</span>
     eq</a>, 
     
   
-    <a href="../Phase/MultiIndexable.html#equals?(other:MultiIndexable,&):Bool-instance-method" class="tooltip">
+    <a href="../Phase/MultiIndexable.html#equals%3F%28other%3AMultiIndexable%2C%26%29%3ABool-instance-method" class="tooltip">
       <span>equals?(other : MultiIndexable, &) : Bool</span>
     equals?</a>, 
     
   
-    <a href="../Phase/MultiIndexable.html#fast:Iterator(T)-instance-method" class="tooltip">
+    <a href="../Phase/MultiIndexable.html#fast%3AIterator%28T%29-instance-method" class="tooltip">
       <span>fast : Iterator(T)<br/>fast(&) : Nil</span>
     fast</a>, 
     
   
-    <a href="../Phase/MultiIndexable.html#first:T-instance-method" class="tooltip">
+    <a href="../Phase/MultiIndexable.html#first%3AT-instance-method" class="tooltip">
       <span>first : T</span>
     first</a>, 
     
   
-    <a href="../Phase/MultiIndexable.html#get(coord:Indexable):T-instance-method" class="tooltip">
+    <a href="../Phase/MultiIndexable.html#get%28coord%3AIndexable%29%3AT-instance-method" class="tooltip">
       <span>get(coord : Indexable) : T<br/>get(*tuple)</span>
     get</a>, 
     
   
-    <a href="../Phase/MultiIndexable.html#get_available(region_literal:Indexable,drop:Bool=DROP_BY_DEFAULT)-instance-method" class="tooltip">
+    <a href="../Phase/MultiIndexable.html#get_available%28region_literal%3AIndexable%2Cdrop%3ABool%3DDROP_BY_DEFAULT%29-instance-method" class="tooltip">
       <span>get_available(region_literal : Indexable, drop : Bool = <span class="t">DROP_BY_DEFAULT</span>)<br/>get_available(region : IndexRegion, drop : Bool = <span class="t">DROP_BY_DEFAULT</span>)<br/>get_available(*tuple, drop : Bool = <span class="t">MultiIndexable</span><span class="t">::</span><span class="t">DROP_BY_DEFAULT</span>)</span>
     get_available</a>, 
     
   
-    <a href="../Phase/MultiIndexable.html#get_chunk(coord:Indexable,region_shape:Indexable(I))forallI-instance-method" class="tooltip">
+    <a href="../Phase/MultiIndexable.html#get_chunk%28coord%3AIndexable%2Cregion_shape%3AIndexable%28I%29%29forallI-instance-method" class="tooltip">
       <span>get_chunk(coord : Indexable, region_shape : Indexable(I)) forall I<br/>get_chunk(region_literal : Indexable, drop : Bool = <span class="t">DROP_BY_DEFAULT</span>)<br/>get_chunk(region : IndexRegion) : MultiIndexable(T)<br/>get_chunk(*tuple, drop : Bool = <span class="t">MultiIndexable</span><span class="t">::</span><span class="t">DROP_BY_DEFAULT</span>)</span>
     get_chunk</a>, 
     
   
-    <a href="../Phase/MultiIndexable.html#get_element(coord:Indexable):T-instance-method" class="tooltip">
+    <a href="../Phase/MultiIndexable.html#get_element%28coord%3AIndexable%29%3AT-instance-method" class="tooltip">
       <span>get_element(coord : Indexable) : T<br/>get_element(*tuple)</span>
     get_element</a>, 
     
   
-    <a href="../Phase/MultiIndexable.html#has_coord?(coord:Indexable):Bool-instance-method" class="tooltip">
+    <a href="../Phase/MultiIndexable.html#has_coord%3F%28coord%3AIndexable%29%3ABool-instance-method" class="tooltip">
       <span>has_coord?(coord : Indexable) : Bool<br/>has_coord?(*tuple)</span>
     has_coord?</a>, 
     
   
-    <a href="../Phase/MultiIndexable.html#has_region?(region_literal:Indexable):Bool-instance-method" class="tooltip">
+    <a href="../Phase/MultiIndexable.html#has_region%3F%28region_literal%3AIndexable%29%3ABool-instance-method" class="tooltip">
       <span>has_region?(region_literal : Indexable) : Bool<br/>has_region?(region : IndexRegion) : Bool<br/>has_region?(*tuple)</span>
     has_region?</a>, 
     
   
-    <a href="../Phase/MultiIndexable.html#hash(hasher)-instance-method" class="tooltip">
+    <a href="../Phase/MultiIndexable.html#hash%28hasher%29-instance-method" class="tooltip">
       <span>hash(hasher)</span>
     hash</a>, 
     
   
-    <a href="../Phase/MultiIndexable.html#map(&block:T-%3ER):MultiIndexable(R)forallR-instance-method" class="tooltip">
+    <a href="../Phase/MultiIndexable.html#map%28%26block%3AT-%3ER%29%3AMultiIndexable%28R%29forallR-instance-method" class="tooltip">
       <span>map(&block : T -> R) : MultiIndexable(R) forall R</span>
     map</a>, 
     
   
-    <a href="../Phase/MultiIndexable.html#map!(&block:T-%3ET%7CMultiIndexable(T)):MultiIndexable(T)-instance-method" class="tooltip">
+    <a href="../Phase/MultiIndexable.html#map%21%28%26block%3AT-%3ET%7CMultiIndexable%28T%29%29%3AMultiIndexable%28T%29-instance-method" class="tooltip">
       <span>map!(&block : T -> T | MultiIndexable(T)) : MultiIndexable(T)</span>
     map!</a>, 
     
   
-    <a href="../Phase/MultiIndexable.html#map_with(*args:*U,&)forallU-instance-method" class="tooltip">
+    <a href="../Phase/MultiIndexable.html#map_with%28%2Aargs%3A%2AU%2C%26%29forallU-instance-method" class="tooltip">
       <span>map_with(*args : <span class="o">*</span><span class="t">U</span>, &) forall U<br/>map_with(*args, &)</span>
     map_with</a>, 
     
   
-    <a href="../Phase/MultiIndexable.html#map_with!(*args:*U,&)forallU-instance-method" class="tooltip">
+    <a href="../Phase/MultiIndexable.html#map_with%21%28%2Aargs%3A%2AU%2C%26%29forallU-instance-method" class="tooltip">
       <span>map_with!(*args : <span class="o">*</span><span class="t">U</span>, &) forall U</span>
     map_with!</a>, 
     
   
-    <a href="../Phase/MultiIndexable.html#map_with_coord(&)-instance-method" class="tooltip">
+    <a href="../Phase/MultiIndexable.html#map_with_coord%28%26%29-instance-method" class="tooltip">
       <span>map_with_coord(&)</span>
     map_with_coord</a>, 
     
   
-    <a href="../Phase/MultiIndexable.html#map_with_coord!(&block:T-%3EMultiIndexable(T))-instance-method" class="tooltip">
+    <a href="../Phase/MultiIndexable.html#map_with_coord%21%28%26block%3AT-%3EMultiIndexable%28T%29%29-instance-method" class="tooltip">
       <span>map_with_coord!(&block : T -> MultiIndexable(T))</span>
     map_with_coord!</a>, 
     
   
-    <a href="../Phase/MultiIndexable.html#permute(*args):MultiIndexable(T)-instance-method" class="tooltip">
+    <a href="../Phase/MultiIndexable.html#permute%28%2Aargs%29%3AMultiIndexable%28T%29-instance-method" class="tooltip">
       <span>permute(*args) : MultiIndexable(T)</span>
     permute</a>, 
     
   
-    <a href="../Phase/MultiIndexable.html#process(&block:T-%3ER):ProcView(self,T,R)forallR-instance-method" class="tooltip">
+    <a href="../Phase/MultiIndexable.html#process%28%26block%3AT-%3ER%29%3AProcView%28self%2CT%2CR%29forallR-instance-method" class="tooltip">
       <span>process(&block : T -> R) : ProcView(<span class="k">self</span>, T, R) forall R<br/>process(proc : Proc(T, R)) : ProcView(<span class="k">self</span>, T, R) forall R</span>
     process</a>, 
     
   
-    <a href="../Phase/MultiIndexable.html#reshape(*args):MultiIndexable(T)-instance-method" class="tooltip">
+    <a href="../Phase/MultiIndexable.html#reshape%28%2Aargs%29%3AMultiIndexable%28T%29-instance-method" class="tooltip">
       <span>reshape(*args) : MultiIndexable(T)</span>
     reshape</a>, 
     
   
-    <a href="../Phase/MultiIndexable.html#reverse(*args):MultiIndexable(T)-instance-method" class="tooltip">
+    <a href="../Phase/MultiIndexable.html#reverse%28%2Aargs%29%3AMultiIndexable%28T%29-instance-method" class="tooltip">
       <span>reverse(*args) : MultiIndexable(T)</span>
     reverse</a>, 
     
   
-    <a href="../Phase/MultiIndexable.html#sample(n:Int,random=Random::DEFAULT):Enumerable(T)-instance-method" class="tooltip">
+    <a href="../Phase/MultiIndexable.html#sample%28n%3AInt%2Crandom%3DRandom%3A%3ADEFAULT%29%3AEnumerable%28T%29-instance-method" class="tooltip">
       <span>sample(n : Int, random = <span class="t">Random</span><span class="t">::</span><span class="t">DEFAULT</span>) : Enumerable(T)<br/>sample(random = <span class="t">Random</span><span class="t">::</span><span class="t">DEFAULT</span>) : T</span>
     sample</a>, 
     
   
-    <a href="../Phase/MultiIndexable.html#scalar?:Bool-instance-method" class="tooltip">
+    <a href="../Phase/MultiIndexable.html#scalar%3F%3ABool-instance-method" class="tooltip">
       <span>scalar? : Bool</span>
     scalar?</a>, 
     
   
-    <a href="../Phase/MultiIndexable.html#shape:Array-instance-method" class="tooltip">
+    <a href="../Phase/MultiIndexable.html#shape%3AArray-instance-method" class="tooltip">
       <span>shape : Array</span>
     shape</a>, 
     
@@ -818,62 +886,62 @@
     size</a>, 
     
   
-    <a href="../Phase/MultiIndexable.html#slices(axis=0):Indexable-instance-method" class="tooltip">
+    <a href="../Phase/MultiIndexable.html#slices%28axis%3D0%29%3AIndexable-instance-method" class="tooltip">
       <span>slices(axis = <span class="n">0</span>) : Indexable</span>
     slices</a>, 
     
   
-    <a href="../Phase/MultiIndexable.html#tile(counts:Enumerable(Int)):MultiIndexable-instance-method" class="tooltip">
+    <a href="../Phase/MultiIndexable.html#tile%28counts%3AEnumerable%28Int%29%29%3AMultiIndexable-instance-method" class="tooltip">
       <span>tile(counts : Enumerable(Int)) : MultiIndexable<br/>tile(*counts : Int)</span>
     tile</a>, 
     
   
-    <a href="../Phase/MultiIndexable.html#to_f:Float-instance-method" class="tooltip">
+    <a href="../Phase/MultiIndexable.html#to_f%3AFloat-instance-method" class="tooltip">
       <span>to_f : Float</span>
     to_f</a>, 
     
   
-    <a href="../Phase/MultiIndexable.html#to_literal_s(io:IO):Nil-instance-method" class="tooltip">
+    <a href="../Phase/MultiIndexable.html#to_literal_s%28io%3AIO%29%3ANil-instance-method" class="tooltip">
       <span>to_literal_s(io : IO) : Nil</span>
     to_literal_s</a>, 
     
   
-    <a href="../Phase/MultiIndexable.html#to_narr:NArray(T)-instance-method" class="tooltip">
+    <a href="../Phase/MultiIndexable.html#to_narr%3ANArray%28T%29-instance-method" class="tooltip">
       <span>to_narr : NArray(T)</span>
     to_narr</a>, 
     
   
-    <a href="../Phase/MultiIndexable.html#to_s(io:IO,settings=Formatter::Settings.new):Nil-instance-method" class="tooltip">
+    <a href="../Phase/MultiIndexable.html#to_s%28io%3AIO%2Csettings%3DFormatter%3A%3ASettings.new%29%3ANil-instance-method" class="tooltip">
       <span>to_s(io : IO, settings = <span class="t">Formatter</span><span class="t">::</span><span class="t">Settings</span>.<span class="k">new</span>) : Nil<br/>to_s(settings = <span class="t">Formatter</span><span class="t">::</span><span class="t">Settings</span>.<span class="k">new</span>) : String</span>
     to_s</a>, 
     
   
-    <a href="../Phase/MultiIndexable.html#to_scalar:T-instance-method" class="tooltip">
+    <a href="../Phase/MultiIndexable.html#to_scalar%3AT-instance-method" class="tooltip">
       <span>to_scalar : T</span>
     to_scalar</a>, 
     
   
-    <a href="../Phase/MultiIndexable.html#to_scalar?:T?-instance-method" class="tooltip">
+    <a href="../Phase/MultiIndexable.html#to_scalar%3F%3AT%3F-instance-method" class="tooltip">
       <span>to_scalar? : T?</span>
     to_scalar?</a>, 
     
   
-    <a href="../Phase/MultiIndexable.html#unsafe_fetch_chunk(region:IndexRegion):MultiIndexable(T)-instance-method" class="tooltip">
+    <a href="../Phase/MultiIndexable.html#unsafe_fetch_chunk%28region%3AIndexRegion%29%3AMultiIndexable%28T%29-instance-method" class="tooltip">
       <span>unsafe_fetch_chunk(region : IndexRegion) : MultiIndexable(T)</span>
     unsafe_fetch_chunk</a>, 
     
   
-    <a href="../Phase/MultiIndexable.html#unsafe_fetch_element(coord:Coord):T-instance-method" class="tooltip">
+    <a href="../Phase/MultiIndexable.html#unsafe_fetch_element%28coord%3ACoord%29%3AT-instance-method" class="tooltip">
       <span>unsafe_fetch_element(coord : Coord) : T</span>
     unsafe_fetch_element</a>, 
     
   
-    <a href="../Phase/MultiIndexable.html#view(region:Indexable?%7CIndexRegion=nil):View(self,T)-instance-method" class="tooltip">
+    <a href="../Phase/MultiIndexable.html#view%28region%3AIndexable%3F%7CIndexRegion%3Dnil%29%3AView%28self%2CT%29-instance-method" class="tooltip">
       <span>view(region : Indexable? | IndexRegion = <span class="n">nil</span>) : View(<span class="k">self</span>, T)<br/>view(*region) : View(<span class="k">self</span>, T)</span>
     view</a>, 
     
   
-    <a href="../Phase/MultiIndexable.html#%7C(other:MultiIndexable(U))forallU-instance-method" class="tooltip">
+    <a href="../Phase/MultiIndexable.html#%7C%28other%3AMultiIndexable%28U%29%29forallU-instance-method" class="tooltip">
       <span>|(other : MultiIndexable(U)) forall U<br/>|(other)</span>
     |</a>, 
     
@@ -893,7 +961,7 @@
   <h3>Class methods inherited from module <code><a href="../Phase/MultiIndexable.html">Phase::MultiIndexable(R)</a></code></h3>
   
   
-    <a href="../Phase/MultiIndexable.html#each_with(*args:*U,&)forallU-class-method" class="tooltip">
+    <a href="../Phase/MultiIndexable.html#each_with%28%2Aargs%3A%2AU%2C%26%29forallU-class-method" class="tooltip">
       <span>each_with(*args : <span class="o">*</span><span class="t">U</span>, &) forall U</span>
     each_with</a>
     
@@ -950,7 +1018,7 @@
         
         def self.<strong>of</strong>(src : S, proc : T -> R) : <a href="../Phase/ProcView.html">ProcView</a>(S, T, R) forall T, R
 
-        <a class="method-permalink" href="#of(src:S,proc:T-%3ER):ProcView(S,T,R)forallT,R-class-method">#</a>
+        <a class="method-permalink" href="#of%28src%3AS%2Cproc%3AT-%3ER%29%3AProcView%28S%2CT%2CR%29forallT%2CR-class-method">#</a>
       </div>
       
         <div class="doc">
@@ -971,7 +1039,7 @@
         
         def self.<strong>of</strong>(src : B, &block : T -> R) : <a href="../Phase/ProcView.html">ProcView</a>(S, T, R) forall T, R
 
-        <a class="method-permalink" href="#of(src:B,&block:T-%3ER):ProcView(S,T,R)forallT,R-class-method">#</a>
+        <a class="method-permalink" href="#of%28src%3AB%2C%26block%3AT-%3ER%29%3AProcView%28S%2CT%2CR%29forallT%2CR-class-method">#</a>
       </div>
       
       <br/>
@@ -999,7 +1067,7 @@
         
         def <strong>clone</strong> : <span class="k">self</span>
 
-        <a class="method-permalink" href="#clone:self-instance-method">#</a>
+        <a class="method-permalink" href="#clone%3Aself-instance-method">#</a>
       </div>
       
       <br/>
@@ -1015,7 +1083,7 @@
         
         def <strong>process</strong>(new_proc : R -> U) : <a href="../Phase/ProcView.html">ProcView</a>(S, T, U) forall U
 
-        <a class="method-permalink" href="#process(new_proc:R-%3EU):ProcView(S,T,U)forallU-instance-method">#</a>
+        <a class="method-permalink" href="#process%28new_proc%3AR-%3EU%29%3AProcView%28S%2CT%2CU%29forallU-instance-method">#</a>
       </div>
       
       <br/>
@@ -1031,7 +1099,7 @@
         
         def <strong>unsafe_fetch_element</strong>(coord) : R
 
-        <a class="method-permalink" href="#unsafe_fetch_element(coord):R-instance-method">#</a>
+        <a class="method-permalink" href="#unsafe_fetch_element%28coord%29%3AR-instance-method">#</a>
       </div>
       
       <br/>

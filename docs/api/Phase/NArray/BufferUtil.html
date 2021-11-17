@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="generator" content="Crystal Docs 1.1.0">
-<meta name="crystal_docs.project_version" content="main">
+<meta name="generator" content="Crystal Docs 1.2.0">
+<meta name="crystal_docs.project_version" content="HEAD">
 <meta name="crystal_docs.project_name" content="ph-core">
 
 
@@ -13,12 +13,80 @@
 <script type="text/javascript" src="../../js/doc.js"></script>
 
   <meta name="repository-name" content="ph-core">
-  <title>Phase::NArray::BufferUtil - ph-core main</title>
+  <title>Phase::NArray::BufferUtil - ph-core HEAD</title>
   <script type="text/javascript">
     CrystalDocs.base_path = "../../";
   </script>
 </head>
-<body>
+<body><script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="./" accesskey="h" title="  (Alt + H)">
+                <img src="/phase_logo.svg" alt="logo" aria-label="logo" height="55px">            </a>
+        </div>
+        <ul id="menu">
+            <li>
+                <a class="active" href="https://phase.blog/api" title="API Docs">
+                    <span>API Docs</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://phase.blog/" title="Blog">
+                    <span>Blog</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://phase.blog/reference" title="Reference">
+                    <span>Reference</span>
+                </a>
+            </li>
+
+            <li>
+                <span class="logo-switches">
+                    <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                        <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                        </svg>
+                        <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="5"></circle>
+                            <line x1="12" y1="1" x2="12" y2="3"></line>
+                            <line x1="12" y1="21" x2="12" y2="23"></line>
+                            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                            <line x1="1" y1="12" x2="3" y2="12"></line>
+                            <line x1="21" y1="12" x2="23" y2="12"></line>
+                            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                        </svg>
+                    </button>
+                </span>
+            </li>
+        </ul>
+    </nav>
+</header>
+
+<script>
+document.getElementById("theme-toggle").addEventListener("click", () => {
+    if (document.body.className.includes("dark")) {
+        document.body.classList.remove('dark');
+        localStorage.setItem("pref-theme", 'light');
+    } else {
+        document.body.classList.add('dark');
+        localStorage.setItem("pref-theme", 'dark');
+    }
+})
+</script>
+
 
 <svg class="hidden">
   <symbol id="octicon-link" viewBox="0 0 16 16">
@@ -39,7 +107,7 @@
       </h1>
 
       <span class="project-version">
-        main
+        HEAD
       </span>
     </div>
   </div>
@@ -404,28 +472,28 @@
   <ul class="list-summary">
     
       <li class="entry-summary">
-        <a href="#axis_strides(shape)-class-method" class="signature"><strong>.axis_strides</strong>(shape)</a>
+        <a href="#axis_strides%28shape%29-class-method" class="signature"><strong>.axis_strides</strong>(shape)</a>
         
           <div class="summary"><p>Given an array of step sizes in each coordinate axis, returns the offset in the buffer that a step of that size represents.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#coord_to_index(coord,shape):Int-class-method" class="signature"><strong>.coord_to_index</strong>(coord, shape) : Int</a>
+        <a href="#coord_to_index%28coord%2Cshape%29%3AInt-class-method" class="signature"><strong>.coord_to_index</strong>(coord, shape) : Int</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#coord_to_index_fast(coord,shape,axis_strides):Int-class-method" class="signature"><strong>.coord_to_index_fast</strong>(coord, shape, axis_strides) : Int</a>
+        <a href="#coord_to_index_fast%28coord%2Cshape%2Caxis_strides%29%3AInt-class-method" class="signature"><strong>.coord_to_index_fast</strong>(coord, shape, axis_strides) : Int</a>
         
           <div class="summary"><p>Assumes coord is canonical</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#index_to_coord(index,shape):Array-class-method" class="signature"><strong>.index_to_coord</strong>(index, shape) : Array</a>
+        <a href="#index_to_coord%28index%2Cshape%29%3AArray-class-method" class="signature"><strong>.index_to_coord</strong>(index, shape) : Array</a>
         
-          <div class="summary"><p><span class="flag green">OPTIMIZE</span>  This could (maybe) be improved with use of <code><a href="../../Phase/NArray/BufferUtil.html#axis_strides(shape)-class-method">.axis_strides</a></code></p></div>
+          <div class="summary"><p><span class="flag green">OPTIMIZE</span>  This could (maybe) be improved with use of <code><a href="../../Phase/NArray/BufferUtil.html#axis_strides%28shape%29-class-method">.axis_strides</a></code></p></div>
         
       </li>
     
@@ -444,14 +512,14 @@
   <ul class="list-summary">
     
       <li class="entry-summary">
-        <a href="#coord_to_index(coord):Int-instance-method" class="signature"><strong>#coord_to_index</strong>(coord) : Int</a>
+        <a href="#coord_to_index%28coord%29%3AInt-instance-method" class="signature"><strong>#coord_to_index</strong>(coord) : Int</a>
         
           <div class="summary"><p>Convert from n-dimensional indexing to a buffer location.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#index_to_coord(index):Array-instance-method" class="signature"><strong>#index_to_coord</strong>(index) : Array</a>
+        <a href="#index_to_coord%28index%29%3AArray-instance-method" class="signature"><strong>#index_to_coord</strong>(index) : Array</a>
         
           <div class="summary"><p>Convert from a buffer location to an n-dimensional coord</p></div>
         
@@ -484,7 +552,7 @@
         
         def self.<strong>axis_strides</strong>(shape)
 
-        <a class="method-permalink" href="#axis_strides(shape)-class-method">#</a>
+        <a class="method-permalink" href="#axis_strides%28shape%29-class-method">#</a>
       </div>
       
         <div class="doc">
@@ -507,7 +575,7 @@ The buffer index of a multidimensional coordinate, x, is equal to x dotted with 
         
         def self.<strong>coord_to_index</strong>(coord, shape) : Int
 
-        <a class="method-permalink" href="#coord_to_index(coord,shape):Int-class-method">#</a>
+        <a class="method-permalink" href="#coord_to_index%28coord%2Cshape%29%3AInt-class-method">#</a>
       </div>
       
       <br/>
@@ -523,7 +591,7 @@ The buffer index of a multidimensional coordinate, x, is equal to x dotted with 
         
         def self.<strong>coord_to_index_fast</strong>(coord, shape, axis_strides) : Int
 
-        <a class="method-permalink" href="#coord_to_index_fast(coord,shape,axis_strides):Int-class-method">#</a>
+        <a class="method-permalink" href="#coord_to_index_fast%28coord%2Cshape%2Caxis_strides%29%3AInt-class-method">#</a>
       </div>
       
         <div class="doc">
@@ -544,12 +612,12 @@ The buffer index of a multidimensional coordinate, x, is equal to x dotted with 
         
         def self.<strong>index_to_coord</strong>(index, shape) : Array
 
-        <a class="method-permalink" href="#index_to_coord(index,shape):Array-class-method">#</a>
+        <a class="method-permalink" href="#index_to_coord%28index%2Cshape%29%3AArray-class-method">#</a>
       </div>
       
         <div class="doc">
           
-          <p><span class="flag green">OPTIMIZE</span>  This could (maybe) be improved with use of <code><a href="../../Phase/NArray/BufferUtil.html#axis_strides(shape)-class-method">.axis_strides</a></code></p>
+          <p><span class="flag green">OPTIMIZE</span>  This could (maybe) be improved with use of <code><a href="../../Phase/NArray/BufferUtil.html#axis_strides%28shape%29-class-method">.axis_strides</a></code></p>
         </div>
       
       <br/>
@@ -577,7 +645,7 @@ The buffer index of a multidimensional coordinate, x, is equal to x dotted with 
         
         def <strong>coord_to_index</strong>(coord) : Int
 
-        <a class="method-permalink" href="#coord_to_index(coord):Int-instance-method">#</a>
+        <a class="method-permalink" href="#coord_to_index%28coord%29%3AInt-instance-method">#</a>
       </div>
       
         <div class="doc">
@@ -598,7 +666,7 @@ The buffer index of a multidimensional coordinate, x, is equal to x dotted with 
         
         def <strong>index_to_coord</strong>(index) : Array
 
-        <a class="method-permalink" href="#index_to_coord(index):Array-instance-method">#</a>
+        <a class="method-permalink" href="#index_to_coord%28index%29%3AArray-instance-method">#</a>
       </div>
       
         <div class="doc">
