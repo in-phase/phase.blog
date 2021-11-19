@@ -10,7 +10,7 @@ reference:
 	cd reference; hugo -d ../$(TARGET_DIR)/reference
 
 api:
-	cd api; crystal docs -o ../api_docs_raw
+	cd api; crystal docs src/ph-core.cr -o ../api_docs_raw
 
 postprocess: api
 	./postprocess/postprocess

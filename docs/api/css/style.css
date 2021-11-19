@@ -753,7 +753,7 @@ span.flag.lime {
   --fg-2: #31566b;
   --fg-3: #5e91b1;
   --content: #10222c;
-  --color-link: #f22576;
+  --fg-link: #f22576;
 
   --syntax-c: #64969b; /* Comment */
   --syntax-n: #9b5cbf; /* Number */
@@ -780,7 +780,7 @@ span.flag.lime {
   --theme: #171021;
   --entry: #1e1532;
   --content: #e1daed;
-  --color-link: #ff5599;
+  --fg-link: #ff5599;
   
   --bg-1: #171021;
   --bg-2: #1e1532;
@@ -840,9 +840,9 @@ code {
   font-family: monospace;
 }
 
-a {
+a, a:visited {
   text-decoration: none;
-  color: inherit;
+  color: var(--fg-link);
 }
 
 a:hover {
@@ -986,6 +986,7 @@ button#theme-toggle {
   background: unset;
   color: inherit;
   box-shadow: unset;
+  width: 35ch;
 }
 
 * {
@@ -1023,6 +1024,11 @@ input.search-input::placeholder {
 .sidebar .current > a,
 .sidebar a:hover {
   color: var(--fg-1);
+}
+
+.types-list li {
+  box-sizing: border-box;
+  width: fit-content;
 }
 
 .types-list li.parent::before {
@@ -1074,6 +1080,34 @@ h1.type-name {
   color: inherit;
 }
 
+.entry-detail:target .signature {
+  background: var(--bg-3);
+  border: none;
+  //box-shadow: 0 0 10px 10px var(--bg-2);
+  color: var(--fg-1);
+}
+
+.methods-inherited a {
+  color: var(--fg-2);
+}
+
+.methods-inherited .tooltip>span {
+  background: var(--bg-2);
+}
+
+.methods-inherited .tooltip * {
+  color: var(--fg-1);
+}
+
+.entry-detail br + div {
+  color: var(--fg-2);
+}
+
+.entry-detail br + div > a {
+  margin: 0 0.5ch;
+  text-decoration: underline;
+}
+
 /* Syntax highlighting */
 .c { color: var(--syntax-c) }
 .n { color: var(--syntax-n) }
@@ -1095,14 +1129,60 @@ pre, code, code a {
   background: var(--bg-2);
 }
 
-.methods-inherited a {
-  color: var(--fg-2);
+/* Flags */
+span.flag {
+  padding: 2px 4px 1px;
+  border-radius: 3px;
+  margin-right: 3px;
+  font-size: 11px;
+  border: 1px solid transparent;
+  font-family: "Poppins", var(--font-fallback);
+  font-weight: bold;
+  color: black;
 }
 
-.methods-inherited .tooltip>span {
-  background: var(--bg-2);
+span.flag.red {
+  background-color: #ff1260;
+  color: white;
 }
 
-.methods-inherited .tooltip * {
-  color: var(--fg-1);
+span.flag.orange {
+  background: var(--brand-gradient);
+  color: black;
+}
+
+span.flag.yellow {
+  background-color: #f7ff00;
+  border-color: black;
+  color: black;
+}
+
+.dark span.flag.yellow {
+  border-color: transparent;
+}
+
+span.flag.green {
+  background-color: #00ff70;
+  border-color: black;
+  color: black;
+}
+
+.dark span.flag.green {
+  border-color: transparent;
+}
+
+span.flag.lime {
+  background-color: #a3ff00;
+  border-color: black;
+  color: black;
+}
+
+.dark span.flag.lime {
+  border-color: transparent;
+}
+
+span.flag.purple {
+  background-color: #7F0AC1;
+  color: white;
+  color: black;
 }
