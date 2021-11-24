@@ -5,6 +5,7 @@ all: clean main reference api postprocess
 
 main:
 	cd main; hugo -d ../$(TARGET_DIR)
+	echo "phase.blog" > $(TARGET_DIR)/CNAME
 
 reference:
 	cd reference; hugo -d ../$(TARGET_DIR)/reference
