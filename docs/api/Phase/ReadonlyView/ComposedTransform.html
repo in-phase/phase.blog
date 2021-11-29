@@ -1,0 +1,770 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="Crystal Docs 1.2.0">
+<meta name="crystal_docs.project_version" content="main">
+<meta name="crystal_docs.project_name" content="ph-core">
+
+
+
+<link href="../../css/style.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="../../js/doc.js"></script>
+
+  <meta name="repository-name" content="ph-core">
+  <title>Phase::ReadonlyView::ComposedTransform - ph-core main</title>
+  <script type="text/javascript">
+    CrystalDocs.base_path = "../../";
+  </script>
+</head>
+<body><script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="./" accesskey="h" title="  (Alt + H)">
+                <img src="/phase_logo.svg" alt="logo" aria-label="logo" height="55px">            </a>
+        </div>
+        <ul id="menu">
+            <li>
+                <a class="active" href="https://phase.blog/api" title="API Docs">
+                    <span>API Docs</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://phase.blog/" title="Blog">
+                    <span>Blog</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://phase.blog/reference" title="Reference">
+                    <span>Reference</span>
+                </a>
+            </li>
+
+            <li>
+                <span class="logo-switches">
+                    <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                        <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                        </svg>
+                        <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="5"></circle>
+                            <line x1="12" y1="1" x2="12" y2="3"></line>
+                            <line x1="12" y1="21" x2="12" y2="23"></line>
+                            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                            <line x1="1" y1="12" x2="3" y2="12"></line>
+                            <line x1="21" y1="12" x2="23" y2="12"></line>
+                            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                        </svg>
+                    </button>
+                </span>
+            </li>
+        </ul>
+    </nav>
+</header>
+
+<script>
+document.getElementById("theme-toggle").addEventListener("click", () => {
+    if (document.body.className.includes("dark")) {
+        document.body.classList.remove('dark');
+        localStorage.setItem("pref-theme", 'light');
+    } else {
+        document.body.classList.add('dark');
+        localStorage.setItem("pref-theme", 'dark');
+    }
+})
+</script>
+
+
+<svg class="hidden">
+  <symbol id="octicon-link" viewBox="0 0 16 16">
+    <path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path>
+  </symbol>
+</svg>
+<div class="sidebar">
+  <div class="sidebar-header">
+    <div class="search-box">
+      <input type="search" class="search-input" placeholder="Search..." spellcheck="false" aria-label="Search">
+    </div>
+
+    <div class="project-summary">
+      <h1 class="project-name">
+        <a href="../../index.html">
+          ph-core
+        </a>
+      </h1>
+
+      <span class="project-version">
+        main
+      </span>
+    </div>
+  </div>
+
+  <div class="search-results hidden">
+    <ul class="search-list"></ul>
+  </div>
+
+  <div class="types-list">
+    <ul>
+  
+  <li class=" " data-id="ph-core/Complex" data-name="complex">
+      <a href="../../Complex.html">Complex</a>
+      
+    </li>
+  
+  <li class=" " data-id="ph-core/Number" data-name="number">
+      <a href="../../Number.html">Number</a>
+      
+    </li>
+  
+  <li class="parent open current" data-id="ph-core/Phase" data-name="phase">
+      <a href="../../Phase.html">Phase</a>
+      
+        <ul>
+  
+  <li class="parent " data-id="ph-core/Phase/Buffered" data-name="phase::buffered(t)">
+      <a href="../../Phase/Buffered.html">Buffered</a>
+      
+        <ul>
+  
+  <li class="parent " data-id="ph-core/Phase/Buffered/Indexed" data-name="phase::buffered::indexed">
+      <a href="../../Phase/Buffered/Indexed.html">Indexed</a>
+      
+        <ul>
+  
+  <li class=" " data-id="ph-core/Phase/Buffered/Indexed/ColexIterator" data-name="phase::buffered::indexed::colexiterator(i)">
+      <a href="../../Phase/Buffered/Indexed/ColexIterator.html">ColexIterator</a>
+      
+    </li>
+  
+  <li class=" " data-id="ph-core/Phase/Buffered/Indexed/ElemAndCoordIterator" data-name="phase::buffered::indexed::elemandcoorditerator(s, e, i)">
+      <a href="../../Phase/Buffered/Indexed/ElemAndCoordIterator.html">ElemAndCoordIterator</a>
+      
+    </li>
+  
+  <li class=" " data-id="ph-core/Phase/Buffered/Indexed/LexIterator" data-name="phase::buffered::indexed::lexiterator(i)">
+      <a href="../../Phase/Buffered/Indexed/LexIterator.html">LexIterator</a>
+      
+    </li>
+  
+  <li class=" " data-id="ph-core/Phase/Buffered/Indexed/StrideIterator" data-name="phase::buffered::indexed::strideiterator(i)">
+      <a href="../../Phase/Buffered/Indexed/StrideIterator.html">StrideIterator</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class=" " data-id="ph-core/Phase/ColexIterator" data-name="phase::colexiterator(i)">
+      <a href="../../Phase/ColexIterator.html">ColexIterator</a>
+      
+    </li>
+  
+  <li class=" " data-id="ph-core/Phase/Coord" data-name="phase::coord">
+      <a href="../../Phase/Coord.html">Coord</a>
+      
+    </li>
+  
+  <li class=" " data-id="ph-core/Phase/CoordUtil" data-name="phase::coordutil">
+      <a href="../../Phase/CoordUtil.html">CoordUtil</a>
+      
+    </li>
+  
+  <li class=" " data-id="ph-core/Phase/DimensionError" data-name="phase::dimensionerror">
+      <a href="../../Phase/DimensionError.html">DimensionError</a>
+      
+    </li>
+  
+  <li class=" " data-id="ph-core/Phase/IndexRegion" data-name="phase::indexregion(t)">
+      <a href="../../Phase/IndexRegion.html">IndexRegion</a>
+      
+    </li>
+  
+  <li class=" " data-id="ph-core/Phase/LexIterator" data-name="phase::lexiterator(i)">
+      <a href="../../Phase/LexIterator.html">LexIterator</a>
+      
+    </li>
+  
+  <li class="parent " data-id="ph-core/Phase/MultiIndexable" data-name="phase::multiindexable(t)">
+      <a href="../../Phase/MultiIndexable.html">MultiIndexable</a>
+      
+        <ul>
+  
+  <li class=" " data-id="ph-core/Phase/MultiIndexable/ElemAndCoordIterator" data-name="phase::multiindexable::elemandcoorditerator(s, e, i)">
+      <a href="../../Phase/MultiIndexable/ElemAndCoordIterator.html">ElemAndCoordIterator</a>
+      
+    </li>
+  
+  <li class=" " data-id="ph-core/Phase/MultiIndexable/ElemIterator" data-name="phase::multiindexable::elemiterator(s, e, i)">
+      <a href="../../Phase/MultiIndexable/ElemIterator.html">ElemIterator</a>
+      
+    </li>
+  
+  <li class="parent " data-id="ph-core/Phase/MultiIndexable/Formatter" data-name="phase::multiindexable::formatter(s, e, i)">
+      <a href="../../Phase/MultiIndexable/Formatter.html">Formatter</a>
+      
+        <ul>
+  
+  <li class="parent " data-id="ph-core/Phase/MultiIndexable/Formatter/Settings" data-name="phase::multiindexable::formatter::settings">
+      <a href="../../Phase/MultiIndexable/Formatter/Settings.html">Settings</a>
+      
+        <ul>
+  
+  <li class=" " data-id="ph-core/Phase/MultiIndexable/Formatter/Settings/ColorConverter" data-name="phase::multiindexable::formatter::settings::colorconverter">
+      <a href="../../Phase/MultiIndexable/Formatter/Settings/ColorConverter.html">ColorConverter</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class=" " data-id="ph-core/Phase/MultiIndexable/TilingLexIterator" data-name="phase::multiindexable::tilinglexiterator(i)">
+      <a href="../../Phase/MultiIndexable/TilingLexIterator.html">TilingLexIterator</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class=" " data-id="ph-core/Phase/MultiWritable" data-name="phase::multiwritable(t)">
+      <a href="../../Phase/MultiWritable.html">MultiWritable</a>
+      
+    </li>
+  
+  <li class=" " data-id="ph-core/Phase/NArray" data-name="phase::narray(t)">
+      <a href="../../Phase/NArray.html">NArray</a>
+      
+    </li>
+  
+  <li class=" " data-id="ph-core/Phase/ProcView" data-name="phase::procview(s, t, r)">
+      <a href="../../Phase/ProcView.html">ProcView</a>
+      
+    </li>
+  
+  <li class=" " data-id="ph-core/Phase/RangeSyntax" data-name="phase::rangesyntax">
+      <a href="../../Phase/RangeSyntax.html">RangeSyntax</a>
+      
+    </li>
+  
+  <li class="parent open current" data-id="ph-core/Phase/ReadonlyView" data-name="phase::readonlyview(s, r)">
+      <a href="../../Phase/ReadonlyView.html">ReadonlyView</a>
+      
+        <ul>
+  
+  <li class=" current" data-id="ph-core/Phase/ReadonlyView/ComposedTransform" data-name="phase::readonlyview::composedtransform">
+      <a href="../../Phase/ReadonlyView/ComposedTransform.html">ComposedTransform</a>
+      
+    </li>
+  
+  <li class=" " data-id="ph-core/Phase/ReadonlyView/CoordTransform" data-name="phase::readonlyview::coordtransform">
+      <a href="../../Phase/ReadonlyView/CoordTransform.html">CoordTransform</a>
+      
+    </li>
+  
+  <li class=" " data-id="ph-core/Phase/ReadonlyView/IdentityTransform" data-name="phase::readonlyview::identitytransform">
+      <a href="../../Phase/ReadonlyView/IdentityTransform.html">IdentityTransform</a>
+      
+    </li>
+  
+  <li class=" " data-id="ph-core/Phase/ReadonlyView/PermuteTransform" data-name="phase::readonlyview::permutetransform">
+      <a href="../../Phase/ReadonlyView/PermuteTransform.html">PermuteTransform</a>
+      
+    </li>
+  
+  <li class=" " data-id="ph-core/Phase/ReadonlyView/RegionTransform" data-name="phase::readonlyview::regiontransform">
+      <a href="../../Phase/ReadonlyView/RegionTransform.html">RegionTransform</a>
+      
+    </li>
+  
+  <li class=" " data-id="ph-core/Phase/ReadonlyView/ReshapeTransform" data-name="phase::readonlyview::reshapetransform">
+      <a href="../../Phase/ReadonlyView/ReshapeTransform.html">ReshapeTransform</a>
+      
+    </li>
+  
+  <li class=" " data-id="ph-core/Phase/ReadonlyView/ReverseTransform" data-name="phase::readonlyview::reversetransform">
+      <a href="../../Phase/ReadonlyView/ReverseTransform.html">ReverseTransform</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class="parent " data-id="ph-core/Phase/RegionIterator" data-name="phase::regioniterator(i)">
+      <a href="../../Phase/RegionIterator.html">RegionIterator</a>
+      
+        <ul>
+  
+  <li class=" " data-id="ph-core/Phase/RegionIterator/FringeBehaviour" data-name="phase::regioniterator::fringebehaviour">
+      <a href="../../Phase/RegionIterator/FringeBehaviour.html">FringeBehaviour</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class=" " data-id="ph-core/Phase/Shape" data-name="phase::shape">
+      <a href="../../Phase/Shape.html">Shape</a>
+      
+    </li>
+  
+  <li class=" " data-id="ph-core/Phase/ShapeError" data-name="phase::shapeerror">
+      <a href="../../Phase/ShapeError.html">ShapeError</a>
+      
+    </li>
+  
+  <li class=" " data-id="ph-core/Phase/ShapeUtil" data-name="phase::shapeutil">
+      <a href="../../Phase/ShapeUtil.html">ShapeUtil</a>
+      
+    </li>
+  
+  <li class=" " data-id="ph-core/Phase/StrideIterator" data-name="phase::strideiterator(i)">
+      <a href="../../Phase/StrideIterator.html">StrideIterator</a>
+      
+    </li>
+  
+  <li class=" " data-id="ph-core/Phase/View" data-name="phase::view(s, r)">
+      <a href="../../Phase/View.html">View</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+</ul>
+
+  </div>
+</div>
+
+
+<div class="main-content">
+<h1 class="type-name">
+
+  <span class="kind">struct</span> Phase::ReadonlyView::ComposedTransform
+
+</h1>
+
+
+  <ul class="superclass-hierarchy"><li class="superclass"><a href="../../Phase/ReadonlyView/ComposedTransform.html">Phase::ReadonlyView::ComposedTransform</a></li><li class="superclass"><a href="../../Phase/ReadonlyView/CoordTransform.html">Phase::ReadonlyView::CoordTransform</a></li><li class="superclass">Struct</li><li class="superclass">Value</li><li class="superclass">Object</li></ul>
+
+
+
+
+  <h2>
+    <a id="overview" class="anchor" href="#overview">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Overview
+  </h2>
+
+  <p>probably done for now</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <h2>
+    <a id="defined-in" class="anchor" href="#defined-in">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Defined in:
+  </h2>
+  
+    
+      <a href="https://github.com/in-phase/ph-core/blob/f966e5f3328c7030dd044ebbfb995904b0996578/src/view_util/transforms.cr#L27" target="_blank">
+        view_util/transforms.cr
+      </a>
+    
+    <br/>
+  
+
+
+
+
+
+  <h2>
+    <a id="constructors" class="anchor" href="#constructors">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Constructors
+  </h2>
+  <ul class="list-summary">
+    
+      <li class="entry-summary">
+        <a href="#new%28transforms%3D%5B%5DofCoordTransform%29-class-method" class="signature"><strong>.new</strong>(transforms = <span class="o">[]</span> <span class="k">of</span> <span class="t">CoordTransform</span>)</a>
+        
+      </li>
+    
+  </ul>
+
+
+
+  <h2>
+    <a id="class-method-summary" class="anchor" href="#class-method-summary">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Class Method Summary
+  </h2>
+  <ul class="list-summary">
+    
+      <li class="entry-summary">
+        <a href="#%5B%5D%28%2Atransforms%29-class-method" class="signature"><strong>.[]</strong>(*transforms)</a>
+        
+      </li>
+    
+  </ul>
+
+
+
+  <h2>
+    <a id="instance-method-summary" class="anchor" href="#instance-method-summary">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Instance Method Summary
+  </h2>
+  <ul class="list-summary">
+    
+      <li class="entry-summary">
+        <a href="#apply%28coord%3AArray%28Int32%29%29%3AArray%28Int32%29-instance-method" class="signature"><strong>#apply</strong>(coord : Array(Int32)) : Array(Int32)</a>
+        
+          <div class="summary"><p><span class="flag orange">TODO</span>  is this in-place? Should it not be?</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#clone-instance-method" class="signature"><strong>#clone</strong></a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#compose%28t%3ACoordTransform%29%3AComposedTransform-instance-method" class="signature"><strong>#compose</strong>(t : CoordTransform) : ComposedTransform</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#compose%21%28t%3AComposedTransform%29-instance-method" class="signature"><strong>#compose!</strong>(t : ComposedTransform)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#compose%21%28t%3ACoordTransform%29-instance-method" class="signature"><strong>#compose!</strong>(t : CoordTransform)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#transforms-instance-method" class="signature"><strong>#transforms</strong></a>
+        
+          <div class="summary"><p><span class="flag orange">TODO</span>  see clone</p></div>
+        
+      </li>
+    
+  </ul>
+
+
+
+
+
+<div class="methods-inherited">
+  
+    
+
+  <h3>Instance methods inherited from struct <code><a href="../../Phase/ReadonlyView/CoordTransform.html">Phase::ReadonlyView::CoordTransform</a></code></h3>
+  
+  
+    <a href="../../Phase/ReadonlyView/CoordTransform.html#apply%28coord%3AArray%28Int32%29%29%3AArray%28Int32%29-instance-method" class="tooltip">
+      <span>apply(coord : Array(Int32)) : Array(Int32)</span>
+    apply</a>, 
+    
+  
+    <a href="../../Phase/ReadonlyView/CoordTransform.html#commutes_with%3F%28t%3ACoordTransform%29%3ABool-instance-method" class="tooltip">
+      <span>commutes_with?(t : CoordTransform) : Bool</span>
+    commutes_with?</a>, 
+    
+  
+    <a href="../../Phase/ReadonlyView/CoordTransform.html#compose%28t%3ACoordTransform%29%3ACoordTransform-instance-method" class="tooltip">
+      <span>compose(t : CoordTransform) : CoordTransform</span>
+    compose</a>
+    
+  
+
+
+    
+
+  <h3>Constructor methods inherited from struct <code><a href="../../Phase/ReadonlyView/CoordTransform.html">Phase::ReadonlyView::CoordTransform</a></code></h3>
+  
+  
+    <a href="../../Phase/ReadonlyView/CoordTransform.html#new-class-method" class="tooltip">
+      <span>new</span>
+    new</a>
+    
+  
+
+
+    
+
+
+  
+    
+
+
+    
+
+
+    
+
+
+  
+    
+
+
+    
+
+
+    
+
+
+  
+    
+
+
+    
+
+
+    
+
+
+  
+</div>
+
+
+  <h2>
+    <a id="constructor-detail" class="anchor" href="#constructor-detail">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Constructor Detail
+  </h2>
+  
+    <div class="entry-detail" id="new(transforms=[]ofCoordTransform)-class-method">
+      <div class="signature">
+        
+        def self.<strong>new</strong>(transforms = <span class="o">[]</span> <span class="k">of</span> <span class="t">CoordTransform</span>)
+
+        <a class="method-permalink" href="#new%28transforms%3D%5B%5DofCoordTransform%29-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/in-phase/ph-core/blob/f966e5f3328c7030dd044ebbfb995904b0996578/src/view_util/transforms.cr#L30" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+
+
+
+  <h2>
+    <a id="class-method-detail" class="anchor" href="#class-method-detail">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Class Method Detail
+  </h2>
+  
+    <div class="entry-detail" id="[](*transforms)-class-method">
+      <div class="signature">
+        
+        def self.<strong>[]</strong>(*transforms)
+
+        <a class="method-permalink" href="#%5B%5D%28%2Atransforms%29-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/in-phase/ph-core/blob/f966e5f3328c7030dd044ebbfb995904b0996578/src/view_util/transforms.cr#L33" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+
+
+
+  <h2>
+    <a id="instance-method-detail" class="anchor" href="#instance-method-detail">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Instance Method Detail
+  </h2>
+  
+    <div class="entry-detail" id="apply(coord:Array(Int32)):Array(Int32)-instance-method">
+      <div class="signature">
+        
+        def <strong>apply</strong>(coord : Array(Int32)) : Array(Int32)
+
+        <a class="method-permalink" href="#apply%28coord%3AArray%28Int32%29%29%3AArray%28Int32%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p><span class="flag orange">TODO</span>  is this in-place? Should it not be?</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/in-phase/ph-core/blob/f966e5f3328c7030dd044ebbfb995904b0996578/src/view_util/transforms.cr#L74" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="clone-instance-method">
+      <div class="signature">
+        
+        def <strong>clone</strong>
+
+        <a class="method-permalink" href="#clone-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/in-phase/ph-core/blob/f966e5f3328c7030dd044ebbfb995904b0996578/src/view_util/transforms.cr#L37" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="compose(t:CoordTransform):ComposedTransform-instance-method">
+      <div class="signature">
+        
+        def <strong>compose</strong>(t : <a href="../../Phase/ReadonlyView/CoordTransform.html">CoordTransform</a>) : <a href="../../Phase/ReadonlyView/ComposedTransform.html">ComposedTransform</a>
+
+        <a class="method-permalink" href="#compose%28t%3ACoordTransform%29%3AComposedTransform-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/in-phase/ph-core/blob/f966e5f3328c7030dd044ebbfb995904b0996578/src/view_util/transforms.cr#L69" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="compose!(t:ComposedTransform)-instance-method">
+      <div class="signature">
+        
+        def <strong>compose!</strong>(t : <a href="../../Phase/ReadonlyView/ComposedTransform.html">ComposedTransform</a>)
+
+        <a class="method-permalink" href="#compose%21%28t%3AComposedTransform%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/in-phase/ph-core/blob/f966e5f3328c7030dd044ebbfb995904b0996578/src/view_util/transforms.cr#L65" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="compose!(t:CoordTransform)-instance-method">
+      <div class="signature">
+        
+        def <strong>compose!</strong>(t : <a href="../../Phase/ReadonlyView/CoordTransform.html">CoordTransform</a>)
+
+        <a class="method-permalink" href="#compose%21%28t%3ACoordTransform%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/in-phase/ph-core/blob/f966e5f3328c7030dd044ebbfb995904b0996578/src/view_util/transforms.cr#L42" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="transforms-instance-method">
+      <div class="signature">
+        
+        def <strong>transforms</strong>
+
+        <a class="method-permalink" href="#transforms-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p><span class="flag orange">TODO</span>  see clone</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/in-phase/ph-core/blob/f966e5f3328c7030dd044ebbfb995904b0996578/src/view_util/transforms.cr#L80" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+
+
+
+
+</div>
+
+</body>
+</html>
