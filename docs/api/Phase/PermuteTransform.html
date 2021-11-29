@@ -13,7 +13,7 @@
 <script type="text/javascript" src="../js/doc.js"></script>
 
   <meta name="repository-name" content="ph-core">
-  <title>Phase::LexIterator(T) - ph-core HEAD</title>
+  <title>Phase::PermuteTransform - ph-core HEAD</title>
   <script type="text/javascript">
     CrystalDocs.base_path = "../";
   </script>
@@ -224,7 +224,7 @@ document.getElementById("theme-toggle").addEventListener("click", () => {
       
     </li>
   
-  <li class=" current" data-id="ph-core/Phase/LexIterator" data-name="phase::lexiterator(t)">
+  <li class=" " data-id="ph-core/Phase/LexIterator" data-name="phase::lexiterator(t)">
       <a href="../Phase/LexIterator.html">LexIterator</a>
       
     </li>
@@ -309,7 +309,7 @@ document.getElementById("theme-toggle").addEventListener("click", () => {
       
     </li>
   
-  <li class=" " data-id="ph-core/Phase/PermuteTransform" data-name="phase::permutetransform">
+  <li class=" current" data-id="ph-core/Phase/PermuteTransform" data-name="phase::permutetransform">
       <a href="../Phase/PermuteTransform.html">PermuteTransform</a>
       
     </li>
@@ -393,12 +393,12 @@ document.getElementById("theme-toggle").addEventListener("click", () => {
 <div class="main-content">
 <h1 class="type-name">
 
-  <span class="kind">class</span> Phase::LexIterator(T)
+  <span class="kind">struct</span> Phase::PermuteTransform
 
 </h1>
 
 
-  <ul class="superclass-hierarchy"><li class="superclass"><a href="../Phase/LexIterator.html">Phase::LexIterator(T)</a></li><li class="superclass"><a href="../Phase/CoordIterator.html">Phase::CoordIterator(T)</a></li><li class="superclass"><a href="../Phase/GeneralCoordIterator.html">Phase::GeneralCoordIterator(T)</a></li><li class="superclass">Reference</li><li class="superclass">Object</li></ul>
+  <ul class="superclass-hierarchy"><li class="superclass"><a href="../Phase/PermuteTransform.html">Phase::PermuteTransform</a></li><li class="superclass"><a href="../Phase/CoordTransform.html">Phase::CoordTransform</a></li><li class="superclass">Struct</li><li class="superclass">Value</li><li class="superclass">Object</li></ul>
 
 
 
@@ -426,8 +426,8 @@ document.getElementById("theme-toggle").addEventListener("click", () => {
   </h2>
   
     
-      <a href="https://github.com/in-phase/ph-core/blob/3ff5b2cfb6e2da39ceb936d85cdff13127cfffc5/src/iterators/lex_iterator.cr#L4" target="_blank">
-        iterators/lex_iterator.cr
+      <a href="https://github.com/in-phase/ph-core/blob/3ff5b2cfb6e2da39ceb936d85cdff13127cfffc5/src/view_util/transforms.cr#L195" target="_blank">
+        view_util/transforms.cr
       </a>
     
     <br/>
@@ -448,12 +448,12 @@ document.getElementById("theme-toggle").addEventListener("click", () => {
   <ul class="list-summary">
     
       <li class="entry-summary">
-        <a href="#new%28region%3AIndexRegion%28T%29%29-class-method" class="signature"><strong>.new</strong>(region : IndexRegion(T))</a>
+        <a href="#new%28size%3AInt32%29-class-method" class="signature"><strong>.new</strong>(size : Int32)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#new%28region_literal%29-class-method" class="signature"><strong>.new</strong>(region_literal)</a>
+        <a href="#new%28pattern%29-class-method" class="signature"><strong>.new</strong>(pattern)</a>
         
       </li>
     
@@ -474,14 +474,34 @@ document.getElementById("theme-toggle").addEventListener("click", () => {
   <ul class="list-summary">
     
       <li class="entry-summary">
-        <a href="#advance_coord-instance-method" class="signature"><strong>#advance_coord</strong></a>
+        <a href="#apply%28coord%3AArray%28Int32%29%29%3AArray%28Int32%29-instance-method" class="signature"><strong>#apply</strong>(coord : Array(Int32)) : Array(Int32)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#clone-instance-method" class="signature"><strong>#clone</strong></a>
+        <a href="#compose%28t%3ACoordTransform%29%3ACoordTransform-instance-method" class="signature"><strong>#compose</strong>(t : CoordTransform) : CoordTransform</a>
         
-          <div class="summary"><p>Returns a copy of <code>self</code> with all instance variables cloned.</p></div>
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#pattern%3AArray%28Int32%29-instance-method" class="signature"><strong>#pattern</strong> : Array(Int32)</a>
+        
+          <div class="summary"><p>each of these has size = dimensions</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#permute%28src_coord%29-instance-method" class="signature"><strong>#permute</strong>(src_coord)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#unpermute%28view_coord%2Csrc_coord_buffer%29-instance-method" class="signature"><strong>#unpermute</strong>(view_coord, src_coord_buffer)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#unpermute%28view_coord%29-instance-method" class="signature"><strong>#unpermute</strong>(view_coord)</a>
         
       </li>
     
@@ -495,105 +515,36 @@ document.getElementById("theme-toggle").addEventListener("click", () => {
   
     
 
-  <h3>Instance methods inherited from class <code><a href="../Phase/CoordIterator.html">Phase::CoordIterator(T)</a></code></h3>
+  <h3>Instance methods inherited from struct <code><a href="../Phase/CoordTransform.html">Phase::CoordTransform</a></code></h3>
   
   
-    <a href="../Phase/CoordIterator.html#clone-instance-method" class="tooltip">
-      <span>clone</span>
-    clone</a>, 
+    <a href="../Phase/CoordTransform.html#apply%28coord%3AArray%28Int32%29%29%3AArray%28Int32%29-instance-method" class="tooltip">
+      <span>apply(coord : Array(Int32)) : Array(Int32)</span>
+    apply</a>, 
     
   
-    <a href="../Phase/CoordIterator.html#coord-instance-method" class="tooltip">
-      <span>coord</span>
-    coord</a>, 
+    <a href="../Phase/CoordTransform.html#commutes_with%3F%28t%3ACoordTransform%29%3ABool-instance-method" class="tooltip">
+      <span>commutes_with?(t : CoordTransform) : Bool</span>
+    commutes_with?</a>, 
     
   
-    <a href="../Phase/CoordIterator.html#reverse-instance-method" class="tooltip">
-      <span>reverse</span>
-    reverse</a>, 
-    
-  
-    <a href="../Phase/CoordIterator.html#reverse%21-instance-method" class="tooltip">
-      <span>reverse!</span>
-    reverse!</a>, 
-    
-  
-    <a href="../Phase/CoordIterator.html#size%3ABigInt-instance-method" class="tooltip">
-      <span>size : BigInt</span>
-    size</a>
+    <a href="../Phase/CoordTransform.html#compose%28t%3ACoordTransform%29%3ACoordTransform-instance-method" class="tooltip">
+      <span>compose(t : CoordTransform) : CoordTransform</span>
+    compose</a>
     
   
 
 
     
 
-
-    
-
-  <h3>Class methods inherited from class <code><a href="../Phase/CoordIterator.html">Phase::CoordIterator(T)</a></code></h3>
+  <h3>Constructor methods inherited from struct <code><a href="../Phase/CoordTransform.html">Phase::CoordTransform</a></code></h3>
   
   
-    <a href="../Phase/CoordIterator.html#cover%28shape%3AShape%29-class-method" class="tooltip">
-      <span>cover(shape : Shape)</span>
-    cover</a>
+    <a href="../Phase/CoordTransform.html#new-class-method" class="tooltip">
+      <span>new</span>
+    new</a>
     
   
-
-
-  
-    
-
-  <h3>Instance methods inherited from class <code><a href="../Phase/GeneralCoordIterator.html">Phase::GeneralCoordIterator(T)</a></code></h3>
-  
-  
-    <a href="../Phase/GeneralCoordIterator.html#advance_coord-instance-method" class="tooltip">
-      <span>advance_coord</span>
-    advance_coord</a>, 
-    
-  
-    <a href="../Phase/GeneralCoordIterator.html#coord%3AArray%28T%29-instance-method" class="tooltip">
-      <span>coord : Array(T)</span>
-    coord</a>, 
-    
-  
-    <a href="../Phase/GeneralCoordIterator.html#next%3AArray%28T%29%7CStop-instance-method" class="tooltip">
-      <span>next : Array(T) | Stop</span>
-    next</a>, 
-    
-  
-    <a href="../Phase/GeneralCoordIterator.html#reset%3Aself-instance-method" class="tooltip">
-      <span>reset : <span class="k">self</span></span>
-    reset</a>, 
-    
-  
-    <a href="../Phase/GeneralCoordIterator.html#to_a%3AArray%28Array%28T%29%29-instance-method" class="tooltip">
-      <span>to_a : Array(Array(T))</span>
-    to_a</a>, 
-    
-  
-    <a href="../Phase/GeneralCoordIterator.html#unsafe_next%3AArray%28T%29-instance-method" class="tooltip">
-      <span>unsafe_next : Array(T)</span>
-    unsafe_next</a>, 
-    
-  
-    <a href="../Phase/GeneralCoordIterator.html#unsafe_skip%28axis%2Camount%29%3ANil-instance-method" class="tooltip">
-      <span>unsafe_skip(axis, amount) : Nil</span>
-    unsafe_skip</a>
-    
-  
-
-
-    
-
-
-    
-
-
-  
-    
-
-
-    
 
 
     
@@ -642,34 +593,34 @@ document.getElementById("theme-toggle").addEventListener("click", () => {
     Constructor Detail
   </h2>
   
-    <div class="entry-detail" id="new(region:IndexRegion(T))-class-method">
+    <div class="entry-detail" id="new(size:Int32)-class-method">
       <div class="signature">
         
-        def self.<strong>new</strong>(region : <a href="../Phase/IndexRegion.html">IndexRegion</a>(T))
+        def self.<strong>new</strong>(size : Int32)
 
-        <a class="method-permalink" href="#new%28region%3AIndexRegion%28T%29%29-class-method">#</a>
+        <a class="method-permalink" href="#new%28size%3AInt32%29-class-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/in-phase/ph-core/blob/3ff5b2cfb6e2da39ceb936d85cdff13127cfffc5/src/iterators/lex_iterator.cr#L8" target="_blank">View source</a>]
+          [<a href="https://github.com/in-phase/ph-core/blob/3ff5b2cfb6e2da39ceb936d85cdff13127cfffc5/src/view_util/transforms.cr#L204" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="new(region_literal)-class-method">
+    <div class="entry-detail" id="new(pattern)-class-method">
       <div class="signature">
         
-        def self.<strong>new</strong>(region_literal)
+        def self.<strong>new</strong>(pattern)
 
-        <a class="method-permalink" href="#new%28region_literal%29-class-method">#</a>
+        <a class="method-permalink" href="#new%28pattern%29-class-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/in-phase/ph-core/blob/3ff5b2cfb6e2da39ceb936d85cdff13127cfffc5/src/iterators/lex_iterator.cr#L12" target="_blank">View source</a>]
+          [<a href="https://github.com/in-phase/ph-core/blob/3ff5b2cfb6e2da39ceb936d85cdff13127cfffc5/src/view_util/transforms.cr#L200" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -688,39 +639,103 @@ document.getElementById("theme-toggle").addEventListener("click", () => {
     Instance Method Detail
   </h2>
   
-    <div class="entry-detail" id="advance_coord-instance-method">
+    <div class="entry-detail" id="apply(coord:Array(Int32)):Array(Int32)-instance-method">
       <div class="signature">
         
-        def <strong>advance_coord</strong>
+        def <strong>apply</strong>(coord : Array(Int32)) : Array(Int32)
 
-        <a class="method-permalink" href="#advance_coord-instance-method">#</a>
+        <a class="method-permalink" href="#apply%28coord%3AArray%28Int32%29%29%3AArray%28Int32%29-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/in-phase/ph-core/blob/3ff5b2cfb6e2da39ceb936d85cdff13127cfffc5/src/iterators/lex_iterator.cr#L19" target="_blank">View source</a>]
+          [<a href="https://github.com/in-phase/ph-core/blob/3ff5b2cfb6e2da39ceb936d85cdff13127cfffc5/src/view_util/transforms.cr#L236" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="clone-instance-method">
+    <div class="entry-detail" id="compose(t:CoordTransform):CoordTransform-instance-method">
       <div class="signature">
         
-        def <strong>clone</strong>
+        def <strong>compose</strong>(t : <a href="../Phase/CoordTransform.html">CoordTransform</a>) : <a href="../Phase/CoordTransform.html">CoordTransform</a>
 
-        <a class="method-permalink" href="#clone-instance-method">#</a>
+        <a class="method-permalink" href="#compose%28t%3ACoordTransform%29%3ACoordTransform-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/in-phase/ph-core/blob/3ff5b2cfb6e2da39ceb936d85cdff13127cfffc5/src/view_util/transforms.cr#L209" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="pattern:Array(Int32)-instance-method">
+      <div class="signature">
+        
+        def <strong>pattern</strong> : Array(Int32)
+
+        <a class="method-permalink" href="#pattern%3AArray%28Int32%29-instance-method">#</a>
       </div>
       
         <div class="doc">
           
-          <p>Returns a copy of <code>self</code> with all instance variables cloned.</p>
+          <p>each of these has size = dimensions</p>
         </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/in-phase/ph-core/blob/3ff5b2cfb6e2da39ceb936d85cdff13127cfffc5/src/iterators/lex_iterator.cr#L6" target="_blank">View source</a>]
+          [<a href="https://github.com/in-phase/ph-core/blob/3ff5b2cfb6e2da39ceb936d85cdff13127cfffc5/src/view_util/transforms.cr#L197" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="permute(src_coord)-instance-method">
+      <div class="signature">
+        
+        def <strong>permute</strong>(src_coord)
+
+        <a class="method-permalink" href="#permute%28src_coord%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/in-phase/ph-core/blob/3ff5b2cfb6e2da39ceb936d85cdff13127cfffc5/src/view_util/transforms.cr#L218" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="unpermute(view_coord,src_coord_buffer)-instance-method">
+      <div class="signature">
+        
+        def <strong>unpermute</strong>(view_coord, src_coord_buffer)
+
+        <a class="method-permalink" href="#unpermute%28view_coord%2Csrc_coord_buffer%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/in-phase/ph-core/blob/3ff5b2cfb6e2da39ceb936d85cdff13127cfffc5/src/view_util/transforms.cr#L229" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="unpermute(view_coord)-instance-method">
+      <div class="signature">
+        
+        def <strong>unpermute</strong>(view_coord)
+
+        <a class="method-permalink" href="#unpermute%28view_coord%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/in-phase/ph-core/blob/3ff5b2cfb6e2da39ceb936d85cdff13127cfffc5/src/view_util/transforms.cr#L224" target="_blank">View source</a>]
         
       </div>
     </div>

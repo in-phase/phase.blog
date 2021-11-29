@@ -13,7 +13,7 @@
 <script type="text/javascript" src="../js/doc.js"></script>
 
   <meta name="repository-name" content="ph-core">
-  <title>Phase::LexIterator(T) - ph-core HEAD</title>
+  <title>Phase::GeneralCoordIterator(T) - ph-core HEAD</title>
   <script type="text/javascript">
     CrystalDocs.base_path = "../";
   </script>
@@ -209,7 +209,7 @@ document.getElementById("theme-toggle").addEventListener("click", () => {
       
     </li>
   
-  <li class=" " data-id="ph-core/Phase/GeneralCoordIterator" data-name="phase::generalcoorditerator(t)">
+  <li class=" current" data-id="ph-core/Phase/GeneralCoordIterator" data-name="phase::generalcoorditerator(t)">
       <a href="../Phase/GeneralCoordIterator.html">GeneralCoordIterator</a>
       
     </li>
@@ -224,7 +224,7 @@ document.getElementById("theme-toggle").addEventListener("click", () => {
       
     </li>
   
-  <li class=" current" data-id="ph-core/Phase/LexIterator" data-name="phase::lexiterator(t)">
+  <li class=" " data-id="ph-core/Phase/LexIterator" data-name="phase::lexiterator(t)">
       <a href="../Phase/LexIterator.html">LexIterator</a>
       
     </li>
@@ -393,12 +393,12 @@ document.getElementById("theme-toggle").addEventListener("click", () => {
 <div class="main-content">
 <h1 class="type-name">
 
-  <span class="kind">class</span> Phase::LexIterator(T)
+  <span class="kind">abstract class</span> Phase::GeneralCoordIterator(T)
 
 </h1>
 
 
-  <ul class="superclass-hierarchy"><li class="superclass"><a href="../Phase/LexIterator.html">Phase::LexIterator(T)</a></li><li class="superclass"><a href="../Phase/CoordIterator.html">Phase::CoordIterator(T)</a></li><li class="superclass"><a href="../Phase/GeneralCoordIterator.html">Phase::GeneralCoordIterator(T)</a></li><li class="superclass">Reference</li><li class="superclass">Object</li></ul>
+  <ul class="superclass-hierarchy"><li class="superclass"><a href="../Phase/GeneralCoordIterator.html">Phase::GeneralCoordIterator(T)</a></li><li class="superclass">Reference</li><li class="superclass">Object</li></ul>
 
 
 
@@ -407,9 +407,37 @@ document.getElementById("theme-toggle").addEventListener("click", () => {
 
 
 
+  <h2>
+    <a id="included-modules" class="anchor" href="#included-modules">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Included Modules
+  </h2>
+  <ul class="other-types-list">
+    
+      <li class="other-type">Iterator(Array(T))</li>
+    
+  </ul>
 
 
 
+
+
+  <h2>
+    <a id="direct-known-subclasses" class="anchor" href="#direct-known-subclasses">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Direct Known Subclasses
+  </h2>
+  <ul class="other-types-list">
+    
+      <li class="other-type"><a href="../Phase/CoordIterator.html">Phase::CoordIterator(T)</a></li>
+    
+  </ul>
 
 
 
@@ -426,8 +454,8 @@ document.getElementById("theme-toggle").addEventListener("click", () => {
   </h2>
   
     
-      <a href="https://github.com/in-phase/ph-core/blob/3ff5b2cfb6e2da39ceb936d85cdff13127cfffc5/src/iterators/lex_iterator.cr#L4" target="_blank">
-        iterators/lex_iterator.cr
+      <a href="https://github.com/in-phase/ph-core/blob/3ff5b2cfb6e2da39ceb936d85cdff13127cfffc5/src/iterators/general_coord_iterator.cr#L4" target="_blank">
+        iterators/general_coord_iterator.cr
       </a>
     
     <br/>
@@ -436,28 +464,6 @@ document.getElementById("theme-toggle").addEventListener("click", () => {
 
 
 
-
-  <h2>
-    <a id="constructors" class="anchor" href="#constructors">
-  <svg class="octicon-link" aria-hidden="true">
-    <use href="#octicon-link"/>
-  </svg>
-</a>
-    Constructors
-  </h2>
-  <ul class="list-summary">
-    
-      <li class="entry-summary">
-        <a href="#new%28region%3AIndexRegion%28T%29%29-class-method" class="signature"><strong>.new</strong>(region : IndexRegion(T))</a>
-        
-      </li>
-    
-      <li class="entry-summary">
-        <a href="#new%28region_literal%29-class-method" class="signature"><strong>.new</strong>(region_literal)</a>
-        
-      </li>
-    
-  </ul>
 
 
 
@@ -479,9 +485,40 @@ document.getElementById("theme-toggle").addEventListener("click", () => {
       </li>
     
       <li class="entry-summary">
-        <a href="#clone-instance-method" class="signature"><strong>#clone</strong></a>
+        <a href="#coord%3AArray%28T%29-instance-method" class="signature"><strong>#coord</strong> : Array(T)</a>
         
-          <div class="summary"><p>Returns a copy of <code>self</code> with all instance variables cloned.</p></div>
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#next%3AArray%28T%29%7CStop-instance-method" class="signature"><strong>#next</strong> : Array(T) | Stop</a>
+        
+          <div class="summary"><p>Returns the next element in this iterator, or <code>Iterator::Stop::INSTANCE</code> if there are no more elements.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#reset%3Aself-instance-method" class="signature"><strong>#reset</strong> : <span class="k">self</span></a>
+        
+          <div class="summary"><p>Set up any incrementing variables (such as @coord) here prior to iteration.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#to_a%3AArray%28Array%28T%29%29-instance-method" class="signature"><strong>#to_a</strong> : Array(Array(T))</a>
+        
+          <div class="summary"><p>Returns an <code>Array</code> with all the elements in the collection.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#unsafe_next%3AArray%28T%29-instance-method" class="signature"><strong>#unsafe_next</strong> : Array(T)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#unsafe_skip%28axis%2Camount%29%3ANil-instance-method" class="signature"><strong>#unsafe_skip</strong>(axis, amount) : Nil</a>
+        
+          <div class="summary"><p><span class="flag orange">TODO</span>  constrain, figure out what +1 means and if it should depend on step, generally test heavily</p></div>
         
       </li>
     
@@ -492,103 +529,6 @@ document.getElementById("theme-toggle").addEventListener("click", () => {
 
 
 <div class="methods-inherited">
-  
-    
-
-  <h3>Instance methods inherited from class <code><a href="../Phase/CoordIterator.html">Phase::CoordIterator(T)</a></code></h3>
-  
-  
-    <a href="../Phase/CoordIterator.html#clone-instance-method" class="tooltip">
-      <span>clone</span>
-    clone</a>, 
-    
-  
-    <a href="../Phase/CoordIterator.html#coord-instance-method" class="tooltip">
-      <span>coord</span>
-    coord</a>, 
-    
-  
-    <a href="../Phase/CoordIterator.html#reverse-instance-method" class="tooltip">
-      <span>reverse</span>
-    reverse</a>, 
-    
-  
-    <a href="../Phase/CoordIterator.html#reverse%21-instance-method" class="tooltip">
-      <span>reverse!</span>
-    reverse!</a>, 
-    
-  
-    <a href="../Phase/CoordIterator.html#size%3ABigInt-instance-method" class="tooltip">
-      <span>size : BigInt</span>
-    size</a>
-    
-  
-
-
-    
-
-
-    
-
-  <h3>Class methods inherited from class <code><a href="../Phase/CoordIterator.html">Phase::CoordIterator(T)</a></code></h3>
-  
-  
-    <a href="../Phase/CoordIterator.html#cover%28shape%3AShape%29-class-method" class="tooltip">
-      <span>cover(shape : Shape)</span>
-    cover</a>
-    
-  
-
-
-  
-    
-
-  <h3>Instance methods inherited from class <code><a href="../Phase/GeneralCoordIterator.html">Phase::GeneralCoordIterator(T)</a></code></h3>
-  
-  
-    <a href="../Phase/GeneralCoordIterator.html#advance_coord-instance-method" class="tooltip">
-      <span>advance_coord</span>
-    advance_coord</a>, 
-    
-  
-    <a href="../Phase/GeneralCoordIterator.html#coord%3AArray%28T%29-instance-method" class="tooltip">
-      <span>coord : Array(T)</span>
-    coord</a>, 
-    
-  
-    <a href="../Phase/GeneralCoordIterator.html#next%3AArray%28T%29%7CStop-instance-method" class="tooltip">
-      <span>next : Array(T) | Stop</span>
-    next</a>, 
-    
-  
-    <a href="../Phase/GeneralCoordIterator.html#reset%3Aself-instance-method" class="tooltip">
-      <span>reset : <span class="k">self</span></span>
-    reset</a>, 
-    
-  
-    <a href="../Phase/GeneralCoordIterator.html#to_a%3AArray%28Array%28T%29%29-instance-method" class="tooltip">
-      <span>to_a : Array(Array(T))</span>
-    to_a</a>, 
-    
-  
-    <a href="../Phase/GeneralCoordIterator.html#unsafe_next%3AArray%28T%29-instance-method" class="tooltip">
-      <span>unsafe_next : Array(T)</span>
-    unsafe_next</a>, 
-    
-  
-    <a href="../Phase/GeneralCoordIterator.html#unsafe_skip%28axis%2Camount%29%3ANil-instance-method" class="tooltip">
-      <span>unsafe_skip(axis, amount) : Nil</span>
-    unsafe_skip</a>
-    
-  
-
-
-    
-
-
-    
-
-
   
     
 
@@ -633,48 +573,6 @@ document.getElementById("theme-toggle").addEventListener("click", () => {
 </div>
 
 
-  <h2>
-    <a id="constructor-detail" class="anchor" href="#constructor-detail">
-  <svg class="octicon-link" aria-hidden="true">
-    <use href="#octicon-link"/>
-  </svg>
-</a>
-    Constructor Detail
-  </h2>
-  
-    <div class="entry-detail" id="new(region:IndexRegion(T))-class-method">
-      <div class="signature">
-        
-        def self.<strong>new</strong>(region : <a href="../Phase/IndexRegion.html">IndexRegion</a>(T))
-
-        <a class="method-permalink" href="#new%28region%3AIndexRegion%28T%29%29-class-method">#</a>
-      </div>
-      
-      <br/>
-      <div>
-        
-          [<a href="https://github.com/in-phase/ph-core/blob/3ff5b2cfb6e2da39ceb936d85cdff13127cfffc5/src/iterators/lex_iterator.cr#L8" target="_blank">View source</a>]
-        
-      </div>
-    </div>
-  
-    <div class="entry-detail" id="new(region_literal)-class-method">
-      <div class="signature">
-        
-        def self.<strong>new</strong>(region_literal)
-
-        <a class="method-permalink" href="#new%28region_literal%29-class-method">#</a>
-      </div>
-      
-      <br/>
-      <div>
-        
-          [<a href="https://github.com/in-phase/ph-core/blob/3ff5b2cfb6e2da39ceb936d85cdff13127cfffc5/src/iterators/lex_iterator.cr#L12" target="_blank">View source</a>]
-        
-      </div>
-    </div>
-  
-
 
 
 
@@ -690,7 +588,7 @@ document.getElementById("theme-toggle").addEventListener("click", () => {
   
     <div class="entry-detail" id="advance_coord-instance-method">
       <div class="signature">
-        
+        abstract 
         def <strong>advance_coord</strong>
 
         <a class="method-permalink" href="#advance_coord-instance-method">#</a>
@@ -699,28 +597,133 @@ document.getElementById("theme-toggle").addEventListener("click", () => {
       <br/>
       <div>
         
-          [<a href="https://github.com/in-phase/ph-core/blob/3ff5b2cfb6e2da39ceb936d85cdff13127cfffc5/src/iterators/lex_iterator.cr#L19" target="_blank">View source</a>]
+          [<a href="https://github.com/in-phase/ph-core/blob/3ff5b2cfb6e2da39ceb936d85cdff13127cfffc5/src/iterators/general_coord_iterator.cr#L22" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="clone-instance-method">
+    <div class="entry-detail" id="coord:Array(T)-instance-method">
       <div class="signature">
         
-        def <strong>clone</strong>
+        def <strong>coord</strong> : Array(T)
 
-        <a class="method-permalink" href="#clone-instance-method">#</a>
+        <a class="method-permalink" href="#coord%3AArray%28T%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/in-phase/ph-core/blob/3ff5b2cfb6e2da39ceb936d85cdff13127cfffc5/src/iterators/general_coord_iterator.cr#L7" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="next:Array(T)|Stop-instance-method">
+      <div class="signature">
+        
+        def <strong>next</strong> : Array(T) | Stop
+
+        <a class="method-permalink" href="#next%3AArray%28T%29%7CStop-instance-method">#</a>
       </div>
       
         <div class="doc">
           
-          <p>Returns a copy of <code>self</code> with all instance variables cloned.</p>
+            <div class="doc-inherited">
+              Description copied from module Iterator(Array(T))
+            </div>
+          
+          <p>Returns the next element in this iterator, or <code>Iterator::Stop::INSTANCE</code> if there
+are no more elements.</p>
         </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/in-phase/ph-core/blob/3ff5b2cfb6e2da39ceb936d85cdff13127cfffc5/src/iterators/lex_iterator.cr#L6" target="_blank">View source</a>]
+          [<a href="https://github.com/in-phase/ph-core/blob/3ff5b2cfb6e2da39ceb936d85cdff13127cfffc5/src/iterators/general_coord_iterator.cr#L37" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="reset:self-instance-method">
+      <div class="signature">
+        
+        def <strong>reset</strong> : <span class="k">self</span>
+
+        <a class="method-permalink" href="#reset%3Aself-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Set up any incrementing variables (such as @coord) here prior to iteration.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/in-phase/ph-core/blob/3ff5b2cfb6e2da39ceb936d85cdff13127cfffc5/src/iterators/general_coord_iterator.cr#L31" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="to_a:Array(Array(T))-instance-method">
+      <div class="signature">
+        
+        def <strong>to_a</strong> : Array(Array(T))
+
+        <a class="method-permalink" href="#to_a%3AArray%28Array%28T%29%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+            <div class="doc-inherited">
+              Description copied from module Enumerable(Array(T))
+            </div>
+          
+          <p>Returns an <code>Array</code> with all the elements in the collection.</p>
+<pre><code class="language-crystal">(<span class="n">1</span>..<span class="n">5</span>).to_a <span class="c"># =&gt; [1, 2, 3, 4, 5]</span></code></pre>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/in-phase/ph-core/blob/3ff5b2cfb6e2da39ceb936d85cdff13127cfffc5/src/iterators/general_coord_iterator.cr#L56" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="unsafe_next:Array(T)-instance-method">
+      <div class="signature">
+        
+        def <strong>unsafe_next</strong> : Array(T)
+
+        <a class="method-permalink" href="#unsafe_next%3AArray%28T%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/in-phase/ph-core/blob/3ff5b2cfb6e2da39ceb936d85cdff13127cfffc5/src/iterators/general_coord_iterator.cr#L47" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="unsafe_skip(axis,amount):Nil-instance-method">
+      <div class="signature">
+        
+        def <strong>unsafe_skip</strong>(axis, amount) : Nil
+
+        <a class="method-permalink" href="#unsafe_skip%28axis%2Camount%29%3ANil-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p><span class="flag orange">TODO</span>  constrain, figure out what +1 means and if it should depend on step, generally test heavily</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/in-phase/ph-core/blob/3ff5b2cfb6e2da39ceb936d85cdff13127cfffc5/src/iterators/general_coord_iterator.cr#L52" target="_blank">View source</a>]
         
       </div>
     </div>

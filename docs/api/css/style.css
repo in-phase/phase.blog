@@ -737,11 +737,11 @@ span.flag.lime {
   --brand-gradient: linear-gradient(30deg, #fc9842, #fbb034);
   --font-fallbacks: -apple-system,BlinkMacSystemFont,segoe ui,Roboto,Oxygen,Ubuntu,Cantarell,open sans,helvetica neue,sans-serif;
   
-  --bg-1: #e3edf6;
-  --bg-2: #cce2ed;
-  --bg-3: #b1d1e2;
+  --bg-1: #eff5ff;
+  --bg-2: #e3edf6;
+  --bg-3: #cce2ed;
+  --bg-4: #b1d1e2;
   --color-visited-link: #b88dff;
-  --body-background: #eff5ff;
   --body-font-color: #060607;
   --icon-filter: brightness(0) invert(1);
   --hint-color-info: #6bf;
@@ -1007,7 +1007,54 @@ input.search-input {
   box-shadow: unset;
 }
 
+input.search-input:focus {
+  box-shadow: 0 0 5px 2px var(--bg-3);
+}
+
 input.search-input::placeholder {
+  color: var(--fg-3);
+}
+
+.search-result.current {
+  background: var(--bg-3);
+  border-left-color: var(--fg-3);
+}
+
+.search-result.current:hover,
+.search-result.current:focus {
+  border-left-color: var(--fg-2);
+}
+
+.search-result {
+  background: var(--bg-2);
+}
+
+.search-result:not(.current):nth-child(2n) {
+  background: var(--bg-1);
+}
+
+.search-result__title > a > .args {
+  color: var(--fg-1);
+  font-weight: 400;
+}
+
+.search-result:not(.current):hover .search-result__title > a,
+.search-result:not(.current):focus .search-result__title > a,
+.search-result__title > a:focus {
+  color: var(--fg-1);
+}
+
+.search-result:not(.current):hover .args,
+.search-result:not(.current):focus .args {
+  color: var(--fg-1);
+}
+
+.search-result__type {
+  color: var(--fg-2);
+  font-weight: 400;
+}
+
+.search-result__doc {
   color: var(--fg-3);
 }
 
