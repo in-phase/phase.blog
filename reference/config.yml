@@ -9,6 +9,7 @@ relativeURLs: true
 
 params:
   BookTheme: auto
+  BookMenuBundle: /menu
   label:
     icon: "/phase_logo.svg"
     iconHeight: 55px

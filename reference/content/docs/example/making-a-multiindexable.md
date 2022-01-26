@@ -1,7 +1,6 @@
 ---
 title: "multiindexable_tutorial"
 date: 2021-08-17T15:38:22-07:00
-draft: true
 ---
 
 # Tutorial: Make Your Own MultiIndexable
