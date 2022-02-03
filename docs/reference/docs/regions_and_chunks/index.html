@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Regions &amp; Chunks #  Introduction #  At its core, Phase is all about providing an easy to use container for storing large amounts of data. One of the most important parts of that task is providing an easy way for the user to extract a peice of data from the collection - for example, selecting only the first three elements from a vector, or isolating the green channel of an RGB image.">
+<meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="Regions &amp;amp; Chunks" />
+<meta property="og:description" content="Regions &amp; Chunks #  Introduction #  At its core, Phase is all about providing an easy to use container for storing large amounts of data. One of the most important parts of that task is providing an easy way for the user to extract a peice of data from the collection - for example, selecting only the first three elements from a vector, or isolating the green channel of an RGB image." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://phase.blog/reference/docs/regions_and_chunks/" /><meta property="article:section" content="docs" />
+<meta property="article:published_time" content="2022-02-02T23:16:22-07:00" />
+<meta property="article:modified_time" content="2022-02-02T23:16:22-07:00" />
+
+<title>Regions &amp;amp; Chunks | Phase</title>
+<link rel="manifest" href="../../manifest.json">
+<link rel="icon" href="../../favicon.png" type="image/x-icon">
+<link rel="stylesheet" href="../../book.min.e23b092c7afc03ddbbece10ac145d60bbd1ed465c2fb8a738da5ac689bee1a07.css" integrity="sha256-4jsJLHr8A9277OEKwUXWC70e1GXC&#43;4pzjaWsaJvuGgc=" crossorigin="anonymous">
+  <script defer src="../../flexsearch.min.js"></script>
+  <script defer src="../../en.search.min.af50be46341f2750602e0c51f2c763af66abc0e9f8587238b8fbd9f2d10ce3b8.js" integrity="sha256-r1C&#43;RjQfJ1BgLgxR8sdjr2arwOn4WHI4uPvZ8tEM47g=" crossorigin="anonymous"></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+  
+</head>
+<body dir="ltr">
+  
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+<noscript>
+    <style type="text/css">
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: #1d1e20;
+                --entry: #2e2e33;
+                --primary: rgba(255, 255, 255, 0.84);
+                --secondary: rgba(255, 255, 255, 0.56);
+                --tertiary: rgba(255, 255, 255, 0.16);
+                --content: rgba(255, 255, 255, 0.74);
+                --hljs-bg: #2e2e33;
+                --code-bg: #37383e;
+                --border: #333;
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="../../" accesskey="h" title="  (Alt + H)">
+                <img src="../../phase_logo.svg" alt="logo" aria-label="logo"
+                    height="55px"> </a>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://phase.blog/api" title="API Docs">
+                    <span>API Docs</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://phase.blog/" title="Blog">
+                    <span>Blog</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://phase.blog/reference" title="Reference">
+                    <span>Reference</span>
+                </a>
+            </li>
+
+            <li>
+                <span class="logo-switches">
+                    <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                        <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                            fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round">
+                            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                        </svg>
+                        <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                            fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="5"></circle>
+                            <line x1="12" y1="1" x2="12" y2="3"></line>
+                            <line x1="12" y1="21" x2="12" y2="23"></line>
+                            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                            <line x1="1" y1="12" x2="3" y2="12"></line>
+                            <line x1="21" y1="12" x2="23" y2="12"></line>
+                            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                        </svg>
+                    </button>
+                </span>
+            </li>
+        </ul>
+    </nav>
+</header>
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a href="../../"><span>Phase</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+  <p>Light Reading</p>
+<ul>
+<li><a href="../../docs/tutorials/">Getting Started ✘</a>
+<ul>
+<li><a href="../../docs/tutorials/">Installing Phase ✘</a></li>
+<li><a href="../../docs/tutorials/">Next Steps ✘</a></li>
+</ul>
+</li>
+<li><a href="../../docs/tutorials/">Phase vs. NumPy ✘</a></li>
+<li><a href="../../docs/tutorials/">Example Project ✘</a></li>
+<li><a href="../../docs/tutorials/">Compatibility &amp; Ecosystem ✘</a>
+<!-- raw HTML omitted --></li>
+</ul>
+<p>Deeper Understanding</p>
+<ul>
+<li><a href="../../docs/tutorials/">NArray ✘</a></li>
+<li><a href="../../docs/regions_and_chunks/"class=active>Regions &amp; Chunks ✘</a></li>
+<li><a href="../../docs/tutorials/">Iteration ✘</a></li>
+<li><a href="../../docs/tutorials/">Views, Lazy Computation ✘</a></li>
+<li><a href="../../docs/tutorials/">MultiIndexable ✘</a></li>
+<li><a href="../../docs/tutorials/">MultiWritable ✘</a></li>
+<li><a href="../../docs/tutorials/">Tutorials</a>
+<ul>
+<li><a href="../../docs/tutorials/making-a-multiindexable/">Making a MultiIndexable</a>
+<!-- raw HTML omitted --></li>
+</ul>
+</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var a=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(b){localStorage.setItem("menu.scrollTop",a.scrollTop)}),a.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="../../svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>Regions &amp;amp; Chunks</strong>
+
+  <label for="toc-control">
+    
+    <img src="../../svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#introduction">Introduction</a></li>
+    <li><a href="#arrays-in-one-dimension">Arrays in One Dimension</a></li>
+    <li><a href="#adding-dimensions">Adding Dimensions</a></li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown"><h1 id="regions--chunks">
+  Regions &amp; Chunks
+  <a class="anchor" href="#regions--chunks">#</a>
+</h1>
+<h2 id="introduction">
+  Introduction
+  <a class="anchor" href="#introduction">#</a>
+</h2>
+<p>At its core, Phase is all about providing an easy to use container for storing
+large amounts of data. One of the most important parts of that task is
+providing an easy way for the user to extract a peice of data from the
+collection - for example, selecting only the first three elements from a
+vector, or isolating the green channel of an RGB image.</p>
+<p>Although it seems very simple, this topic can get quite confusing. Because
+Phase aims to make scientific computing easier to work with, we&rsquo;re devoting
+a whole section to this one operation of taking an <code>NArray</code> (or, more
+specifically, a <code>MultiIndexable</code>) apart.</p>
+<p>To begin with, we&rsquo;ll review the Array from Crystal&rsquo;s standard library. If
+you&rsquo;re comfortable with slicing Arrays in Crystal already, skip to
+<a href="#adding-dimensions">Adding Dimensions</a>.</p>
+<h2 id="arrays-in-one-dimension">
+  Arrays in One Dimension
+  <a class="anchor" href="#arrays-in-one-dimension">#</a>
+</h2>
+<p>In an Array, each element is represented by a numeric index. There are a couple
+different ways to do this - we can refer to the elements via positive,
+increasing indexes as such:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-crystal" data-lang="crystal"><span class="n">arr</span> <span class="o">=</span> <span class="o">[</span><span class="sc">&#39;P&#39;</span><span class="p">,</span> <span class="sc">&#39;h&#39;</span><span class="p">,</span> <span class="sc">&#39;a&#39;</span><span class="p">,</span> <span class="sc">&#39;s&#39;</span><span class="p">,</span> <span class="sc">&#39;e&#39;</span><span class="o">]</span>
+<span class="c1">#       0    1    2    3    4</span>
+
+<span class="n">arr</span><span class="o">[</span><span class="mi">0</span><span class="o">]</span> <span class="c1"># =&gt; &#39;P&#39;</span>
+<span class="n">arr</span><span class="o">[</span><span class="mi">4</span><span class="o">]</span> <span class="c1"># =&gt; &#39;e&#39;</span>
+</code></pre></div><p>Or, we can start at the other end of the array using negative indexes:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-crystal" data-lang="crystal"><span class="n">arr</span> <span class="o">=</span> <span class="o">[</span><span class="sc">&#39;P&#39;</span><span class="p">,</span> <span class="sc">&#39;h&#39;</span><span class="p">,</span> <span class="sc">&#39;a&#39;</span><span class="p">,</span> <span class="sc">&#39;s&#39;</span><span class="p">,</span> <span class="sc">&#39;e&#39;</span><span class="o">]</span>
+<span class="c1">#      -5   -4   -3   -2   -1</span>
+
+<span class="n">arr</span><span class="o">[-</span><span class="mi">1</span><span class="o">]</span> <span class="c1"># =&gt; &#39;e&#39;</span>
+<span class="n">arr</span><span class="o">[-</span><span class="mi">5</span><span class="o">]</span> <span class="c1"># =&gt; &#39;P&#39;</span>
+</code></pre></div><p>But the real complication arises when we want to select <em>multiple</em> elements
+from one array. In Crystal, this is done with a Range, often created with a
+range literal. A Range describes an ordered collection of indexes by a starting
+and ending index. Let&rsquo;s construct a Range and see what indexes it refers to:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-crystal" data-lang="crystal"><span class="c1"># Create a range that starts at 0, and ends at 3 (including 3)</span>
+<span class="n">range</span> <span class="o">=</span> <span class="nb">Range</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="k">begin</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="k">end</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span> <span class="ss">exclusive</span><span class="p">:</span> <span class="kc">false</span><span class="p">)</span>
+<span class="n">range</span><span class="o">.</span><span class="n">to_a</span> <span class="c1"># =&gt; [0, 1, 2, 3]</span>
+</code></pre></div><p>So, the range we created starts at 0, increments by 1 until it gives us 3,
+and then ends. Note that we specified <code>exclusive: false</code>, in that example.
+It&rsquo;s often useful to exclude the last value (in the example here, 3). Here&rsquo;s
+an example:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-crystal" data-lang="crystal"><span class="c1"># Create a range that starts at 0, and ends at 3 (excluding 3)</span>
+<span class="n">range</span> <span class="o">=</span> <span class="nb">Range</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="k">begin</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="k">end</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span> <span class="ss">exclusive</span><span class="p">:</span> <span class="kc">true</span><span class="p">)</span>
+<span class="n">range</span><span class="o">.</span><span class="n">to_a</span> <span class="c1"># =&gt; [0, 1, 2]</span>
+</code></pre></div><p>Of course, the syntax shown above is very painful to type out. Instead,
+we use range literal syntax to shorten the expressions:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-crystal" data-lang="crystal"><span class="c1"># Inclusive ranges are start..end (two periods are used)</span>
+<span class="n">inclusive_range</span> <span class="o">=</span> <span class="mi">0</span><span class="o">..</span><span class="mi">3</span>
+<span class="n">inclusive_range</span><span class="o">.</span><span class="n">to_a</span> <span class="c1"># =&gt; [0, 1, 2, 3]</span>
+
+<span class="c1"># Exclusive ranges use three periods: 0...3</span>
+<span class="n">exclusive_range</span> <span class="o">=</span> <span class="mi">0</span><span class="o">...</span><span class="mi">3</span>
+<span class="n">exclusive_range</span><span class="o">.</span><span class="n">to_a</span> <span class="c1">#=&gt; [0, 1, 2]</span>
+</code></pre></div><p>Now that we&rsquo;ve seen how a range can refer to multiple indexes, it&rsquo;s easy to
+use them to sample elements from an array:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-crystal" data-lang="crystal"><span class="c1"># Let&#39;s extract [&#39;h&#39;, &#39;a&#39;, &#39;s&#39;] from this array:</span>
+<span class="n">arr</span> <span class="o">=</span> <span class="o">[</span><span class="sc">&#39;P&#39;</span><span class="p">,</span> <span class="sc">&#39;h&#39;</span><span class="p">,</span> <span class="sc">&#39;a&#39;</span><span class="p">,</span> <span class="sc">&#39;s&#39;</span><span class="p">,</span> <span class="sc">&#39;e&#39;</span><span class="o">]</span>
+<span class="c1">#       0    1    2    3    4</span>
+<span class="c1"># The indexes shown above tell us that we want elements</span>
+<span class="c1"># 1, 2, and 3. So, we&#39;ll construct an appropriate range:</span>
+
+<span class="n">selection_range</span> <span class="o">=</span> <span class="mi">1</span><span class="o">..</span><span class="mi">3</span>
+<span class="n">selection_range</span><span class="o">.</span><span class="n">to_a</span> <span class="c1"># =&gt; [1, 2, 3]</span>
+
+<span class="c1"># and use it on the array:</span>
+<span class="n">arr</span><span class="o">[</span><span class="n">selection_range</span><span class="o">]</span> <span class="c1"># =&gt; [&#39;h&#39;, &#39;a&#39;, &#39;s&#39;]</span>
+</code></pre></div><p>This also works with negative indexes, but the end of the range has to be
+positively larger than the starting index:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-crystal" data-lang="crystal"><span class="n">arr</span> <span class="o">=</span> <span class="o">[</span><span class="sc">&#39;P&#39;</span><span class="p">,</span> <span class="sc">&#39;h&#39;</span><span class="p">,</span> <span class="sc">&#39;a&#39;</span><span class="p">,</span> <span class="sc">&#39;s&#39;</span><span class="p">,</span> <span class="sc">&#39;e&#39;</span><span class="o">]</span>
+<span class="c1">#      -5   -4   -3   -2   -1</span>
+
+<span class="c1"># Let&#39;s extract the last two letters:</span>
+<span class="n">selection_range</span> <span class="o">=</span> <span class="o">-</span><span class="mi">2</span><span class="o">..-</span><span class="mi">1</span>
+<span class="n">selection_range</span><span class="o">.</span><span class="n">to_a</span> <span class="c1"># =&gt; [-2, -1]</span>
+<span class="n">arr</span><span class="o">[</span><span class="n">selection_range</span><span class="o">]</span> <span class="c1"># =&gt; [&#39;s&#39;, &#39;e&#39;]</span>
+</code></pre></div><h2 id="adding-dimensions">
+  Adding Dimensions
+  <a class="anchor" href="#adding-dimensions">#</a>
+</h2>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+
+
+</div>
+
+
+
+  <script>(function(){function a(c){const a=window.getSelection(),b=document.createRange();b.selectNodeContents(c),a.removeAllRanges(),a.addRange(b)}document.querySelectorAll("pre code").forEach(b=>{b.addEventListener("click",function(c){a(b.parentElement),navigator.clipboard&&navigator.clipboard.writeText(b.parentElement.textContent)})})})()</script>
+
+
+ 
+        <script>
+document.getElementById("theme-toggle").addEventListener("click", () => {
+    if (document.body.className.includes("dark")) {
+        document.body.classList.remove('dark');
+        localStorage.setItem("pref-theme", 'light');
+    } else {
+        document.body.classList.add('dark');
+        localStorage.setItem("pref-theme", 'dark');
+    }
+})
+</script>
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#introduction">Introduction</a></li>
+    <li><a href="#arrays-in-one-dimension">Arrays in One Dimension</a></li>
+    <li><a href="#adding-dimensions">Adding Dimensions</a></li>
+  </ul>
+</nav>
+
+
+ 
+      </div>
+    </aside>
+    
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

@@ -2,20 +2,22 @@
 headless: true
 ---
 
-- [Table of Contents]({{< relref "/docs/example/making-a-multiindexable" >}})
-  - [With ToC]({{< relref "/docs/example/table-of-contents/with-toc" >}})
-  - [Without ToC]({{< relref "/docs/example/table-of-contents/with-toc" >}})
-- [Collapsed]({{< relref "/docs/example/collapsed" >}})
-  - [3rd]({{< relref "/docs/example/collapsed/3rd-level" >}})
-    - [4th]({{< relref "/docs/example/collapsed/3rd-level/4th-level" >}})
+Light Reading
+- [Getting Started ✘]({{< relref "/docs/tutorials/" >}})
+  - [Installing Phase ✘]({{< relref "/docs/tutorials/" >}})
+  - [Next Steps ✘]({{< relref "/docs/tutorials/" >}})
+- [Phase vs. NumPy ✘]({{< relref "/docs/tutorials/" >}})
+- [Example Project ✘]({{< relref "/docs/tutorials/" >}})
+- [Compatibility & Ecosystem ✘]({{< relref "/docs/tutorials/" >}})
 <br />
 
-- **Shortcodes**
-- [Buttons]({{< relref "/docs/shortcodes/buttons" >}})
-- [Columns]({{< relref "/docs/shortcodes/columns" >}})
-- [Expand]({{< relref "/docs/shortcodes/expand" >}})
-- [Hints]({{< relref "/docs/shortcodes/hints" >}})
-- [Katex]({{< relref "/docs/shortcodes/katex" >}})
-- [Mermaid]({{< relref "/docs/shortcodes/mermaid" >}})
-- [Tabs]({{< relref "/docs/shortcodes/tabs" >}})
+Deeper Understanding
+- [NArray ✘]({{< relref "/docs/tutorials/" >}})
+- [Regions & Chunks ✘]({{< relref "/docs/regions_and_chunks" >}})
+- [Iteration ✘]({{< relref "/docs/tutorials/" >}})
+- [Views, Lazy Computation ✘]({{< relref "/docs/tutorials/" >}})
+- [MultiIndexable ✘]({{< relref "/docs/tutorials/" >}})
+- [MultiWritable ✘]({{< relref "/docs/tutorials/" >}})
+- [Tutorials]({{< relref "/docs/tutorials/" >}})
+  - [Making a MultiIndexable]({{< relref "/docs/tutorials/making-a-multiindexable" >}})
 <br />

@@ -6,6 +6,15 @@
     <description>Recent content in Docs on Phase</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 17 Aug 2021 15:38:22 -0700</lastBuildDate><atom:link href="https://phase.blog/reference/docs/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 02 Feb 2022 23:16:22 -0700</lastBuildDate><atom:link href="https://phase.blog/reference/docs/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Regions &amp;amp; Chunks</title>
+      <link>https://phase.blog/reference/docs/regions_and_chunks/</link>
+      <pubDate>Wed, 02 Feb 2022 23:16:22 -0700</pubDate>
+      
+      <guid>https://phase.blog/reference/docs/regions_and_chunks/</guid>
+      <description>Regions &amp;amp; Chunks #  Introduction #  At its core, Phase is all about providing an easy to use container for storing large amounts of data. One of the most important parts of that task is providing an easy way for the user to extract a peice of data from the collection - for example, selecting only the first three elements from a vector, or isolating the green channel of an RGB image.</description>
+    </item>
+    
   </channel>
 </rss>

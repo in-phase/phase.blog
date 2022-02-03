@@ -2,55 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://phase.blog/reference/docs/example/</loc>
-    <lastmod>2021-08-17T15:38:22-07:00</lastmod>
-  </url><url>
-    <loc>https://phase.blog/reference/docs/example/table-of-contents/with-toc/</loc>
-  </url><url>
-    <loc>https://phase.blog/reference/docs/example/table-of-contents/without-toc/</loc>
-  </url><url>
-    <loc>https://phase.blog/reference/docs/example/table-of-contents/</loc>
-  </url><url>
-    <loc>https://phase.blog/reference/docs/example/collapsed/</loc>
-  </url><url>
     <loc>https://phase.blog/reference/docs/</loc>
-    <lastmod>2021-08-17T15:38:22-07:00</lastmod>
+    <lastmod>2022-02-02T23:16:22-07:00</lastmod>
   </url><url>
     <loc>https://phase.blog/reference/</loc>
+    <lastmod>2022-02-02T23:16:22-07:00</lastmod>
+  </url><url>
+    <loc>https://phase.blog/reference/docs/regions_and_chunks/</loc>
+    <lastmod>2022-02-02T23:16:22-07:00</lastmod>
+  </url><url>
+    <loc>https://phase.blog/reference/docs/tutorials/making-a-multiindexable/</loc>
     <lastmod>2021-08-17T15:38:22-07:00</lastmod>
   </url><url>
-    <loc>https://phase.blog/reference/docs/example/making-a-multiindexable/</loc>
+    <loc>https://phase.blog/reference/docs/tutorials/</loc>
     <lastmod>2021-08-17T15:38:22-07:00</lastmod>
-  </url><url>
-    <loc>https://phase.blog/reference/docs/example/collapsed/3rd-level/4th-level/</loc>
-  </url><url>
-    <loc>https://phase.blog/reference/docs/example/collapsed/3rd-level/</loc>
-  </url><url>
-    <loc>https://phase.blog/reference/docs/example/hidden/</loc>
-  </url><url>
-    <loc>https://phase.blog/reference/docs/shortcodes/</loc>
-  </url><url>
-    <loc>https://phase.blog/reference/docs/shortcodes/buttons/</loc>
-  </url><url>
-    <loc>https://phase.blog/reference/docs/shortcodes/columns/</loc>
-  </url><url>
-    <loc>https://phase.blog/reference/docs/shortcodes/details/</loc>
-  </url><url>
-    <loc>https://phase.blog/reference/docs/shortcodes/expand/</loc>
-  </url><url>
-    <loc>https://phase.blog/reference/docs/shortcodes/hints/</loc>
-  </url><url>
-    <loc>https://phase.blog/reference/docs/shortcodes/katex/</loc>
-  </url><url>
-    <loc>https://phase.blog/reference/docs/shortcodes/mermaid/</loc>
-  </url><url>
-    <loc>https://phase.blog/reference/docs/shortcodes/section/</loc>
-  </url><url>
-    <loc>https://phase.blog/reference/docs/shortcodes/section/first-page/</loc>
-  </url><url>
-    <loc>https://phase.blog/reference/docs/shortcodes/section/second-page/</loc>
-  </url><url>
-    <loc>https://phase.blog/reference/docs/shortcodes/tabs/</loc>
   </url><url>
     <loc>https://phase.blog/reference/categories/</loc>
   </url><url>
