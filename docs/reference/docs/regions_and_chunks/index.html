@@ -16,7 +16,7 @@
 <link rel="icon" href="../../favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="../../book.min.e23b092c7afc03ddbbece10ac145d60bbd1ed465c2fb8a738da5ac689bee1a07.css" integrity="sha256-4jsJLHr8A9277OEKwUXWC70e1GXC&#43;4pzjaWsaJvuGgc=" crossorigin="anonymous">
   <script defer src="../../flexsearch.min.js"></script>
-  <script defer src="../../en.search.min.af50be46341f2750602e0c51f2c763af66abc0e9f8587238b8fbd9f2d10ce3b8.js" integrity="sha256-r1C&#43;RjQfJ1BgLgxR8sdjr2arwOn4WHI4uPvZ8tEM47g=" crossorigin="anonymous"></script>
+  <script defer src="../../en.search.min.125dca24f88957825906a5a5d728b0e10c68461870c7714230c6be623d15bead.js" integrity="sha256-El3KJPiJV4JZBqWl1yiw4QxoRhhwx3FCMMa&#43;Yj0Vvq0=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -325,7 +325,40 @@ positively larger than the starting index:</p>
 <span class="n">selection_range</span> <span class="o">=</span> <span class="o">-</span><span class="mi">2</span><span class="o">..-</span><span class="mi">1</span>
 <span class="n">selection_range</span><span class="o">.</span><span class="n">to_a</span> <span class="c1"># =&gt; [-2, -1]</span>
 <span class="n">arr</span><span class="o">[</span><span class="n">selection_range</span><span class="o">]</span> <span class="c1"># =&gt; [&#39;s&#39;, &#39;e&#39;]</span>
-</code></pre></div><h2 id="adding-dimensions">
+</code></pre></div><p>The final thing to note is that ranges can also have undetermined beginnings
+and ends. For example:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-crystal" data-lang="crystal"><span class="n">range_1</span> <span class="o">=</span> <span class="o">..</span><span class="mi">5</span> <span class="c1"># Every integer from -infinity to 5 is, technically, part of this</span>
+<span class="n">range_2</span> <span class="o">=</span> <span class="mi">10</span><span class="o">...</span> <span class="c1"># 10, 11, 12 (note that the ... and .. would be identical)</span>
+<span class="n">range_3</span> <span class="o">=</span> <span class="o">...</span><span class="mi">3</span> <span class="c1"># Every integer up to but excluding 3</span>
+<span class="n">range_4</span> <span class="o">=</span> <span class="o">..</span> <span class="c1"># All integers</span>
+</code></pre></div><p>You can&rsquo;t call <code>#to_a</code> on any of those ranges, as an infinite array is not
+possible, but they take on a special meaning when used for indexing. The end
+(or ends) that you leave floating will clamp to the start or end of an array
+like this:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-crystal" data-lang="crystal"><span class="n">arr</span> <span class="o">=</span> <span class="o">[</span><span class="sc">&#39;P&#39;</span><span class="p">,</span> <span class="sc">&#39;h&#39;</span><span class="p">,</span> <span class="sc">&#39;a&#39;</span><span class="p">,</span> <span class="sc">&#39;s&#39;</span><span class="p">,</span> <span class="sc">&#39;e&#39;</span><span class="o">]</span>
+
+<span class="n">arr</span><span class="o">[..</span><span class="mi">3</span><span class="o">]</span> <span class="c1"># =&gt; [&#39;P&#39;, &#39;h&#39;, &#39;a&#39;, &#39;s&#39;]</span>
+<span class="n">arr</span><span class="o">[..</span><span class="mi">3</span><span class="o">]</span> <span class="o">==</span> <span class="n">arr</span><span class="o">[</span><span class="mi">0</span><span class="o">..</span><span class="mi">3</span><span class="o">]</span> <span class="c1"># =&gt; true</span>
+
+<span class="n">arr</span><span class="o">[...</span><span class="mi">3</span><span class="o">]</span> <span class="c1"># =&gt; [&#39;P&#39;, &#39;h&#39;, &#39;a&#39;]]</span>
+<span class="n">arr</span><span class="o">[...</span><span class="mi">3</span><span class="o">]</span> <span class="o">==</span> <span class="n">arr</span><span class="o">[</span><span class="mi">0</span><span class="o">...</span><span class="mi">3</span><span class="o">]</span> <span class="c1"># =&gt; true</span>
+
+<span class="n">arr</span><span class="o">[-</span><span class="mi">3</span><span class="o">..]</span> <span class="c1"># =&gt; [&#39;a&#39;, &#39;s&#39;, &#39;e&#39;]</span>
+<span class="n">arr</span><span class="o">[-</span><span class="mi">3</span><span class="o">..]</span> <span class="o">==</span> <span class="n">arr</span><span class="o">[-</span><span class="mi">3</span><span class="o">..-</span><span class="mi">1</span><span class="o">]</span> <span class="c1"># =&gt; true</span>
+
+<span class="n">arr</span><span class="o">[..]</span> <span class="c1"># =&gt; [&#39;P&#39;, &#39;h&#39;, &#39;a&#39;, &#39;s&#39;, &#39;e&#39;]</span>
+<span class="n">arr</span><span class="o">[...]</span> <span class="c1"># =&gt; [&#39;P&#39;, &#39;h&#39;, &#39;a&#39;, &#39;s&#39;, &#39;e&#39;]</span>
+<span class="n">arr</span><span class="o">[..]</span> <span class="o">==</span> <span class="n">arr</span><span class="o">[...]</span> <span class="c1"># =&gt; true</span>
+<span class="n">arr</span><span class="o">[..]</span> <span class="o">==</span> <span class="n">arr</span><span class="o">[</span><span class="mi">0</span><span class="o">..-</span><span class="mi">1</span><span class="o">]</span> <span class="c1"># =&gt; true</span>
+</code></pre></div><p>As you can see, the array is truncating the range to fit within its bounds.
+It will insert a <code>0</code> as the range beginning if one isn&rsquo;t given, and a <code>-1</code>
+as the range end. Note that, on the rightmost bound, exclusivity will be
+ignored if you don&rsquo;t provide a fixed end value, because the final index of
+any array will certainly be less than infinity, and the exclusivity applied to
+<em>infinity</em> in particular, not just the <em>end</em> of the range.</p>
+<p>Note that an inclusive range without a rightmost bound is equal to an exclusive
+one -</p>
+<h2 id="adding-dimensions">
   Adding Dimensions
   <a class="anchor" href="#adding-dimensions">#</a>
 </h2>

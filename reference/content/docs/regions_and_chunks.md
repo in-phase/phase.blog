@@ -109,4 +109,47 @@ selection_range.to_a # => [-2, -1]
 arr[selection_range] # => ['s', 'e']
 ```
 
+The final thing to note is that ranges can also have undetermined beginnings
+and ends. For example:
+
+```crystal
+range_1 = ..5 # Every integer from -infinity to 5 is, technically, part of this
+range_2 = 10... # 10, 11, 12 (note that the ... and .. would be identical)
+range_3 = ...3 # Every integer up to but excluding 3
+range_4 = .. # All integers
+```
+
+You can't call `#to_a` on any of those ranges, as an infinite array is not
+possible, but they take on a special meaning when used for indexing. The end
+(or ends) that you leave floating will clamp to the start or end of an array
+like this:
+
+```crystal
+arr = ['P', 'h', 'a', 's', 'e']
+
+arr[..3] # => ['P', 'h', 'a', 's']
+arr[..3] == arr[0..3] # => true
+
+arr[...3] # => ['P', 'h', 'a']]
+arr[...3] == arr[0...3] # => true
+
+arr[-3..] # => ['a', 's', 'e']
+arr[-3..] == arr[-3..-1] # => true
+
+arr[..] # => ['P', 'h', 'a', 's', 'e']
+arr[...] # => ['P', 'h', 'a', 's', 'e']
+arr[..] == arr[...] # => true
+arr[..] == arr[0..-1] # => true
+```
+
+As you can see, the array is truncating the range to fit within its bounds.
+It will insert a `0` as the range beginning if one isn't given, and a `-1`
+as the range end. Note that, on the rightmost bound, exclusivity will be
+ignored if you don't provide a fixed end value, because the final index of
+any array will certainly be less than infinity, and the exclusivity applied to
+_infinity_ in particular, not just the _end_ of the range.
+
+Note that an inclusive range without a rightmost bound is equal to an exclusive
+one - 
+
 ## Adding Dimensions
