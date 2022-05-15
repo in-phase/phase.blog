@@ -16,8 +16,8 @@ Light Reading
 Deeper Understanding
 - [NArray ✘]({{< relref "/docs/tutorials/" >}})
 - [Regions & Chunks ✘]({{< relref "/docs/regions_and_chunks" >}})
-  - [Crystal's Slicing Mechanisms ✘]({{< relref "/docs/regions_and_chunks/crystal_slicing_mechanisms" >}})
-  - [MultiIndexable Slicing ✘]({{< relref "/docs/regions_and_chunks/multiindexable_slicing" >}})
+  - [Crystal's Slicing Mechanisms]({{< relref "/docs/regions_and_chunks/crystal_slicing_mechanisms" >}})
+  - [MultiIndexable Slicing]({{< relref "/docs/regions_and_chunks/multiindexable_slicing" >}})
   - [The IndexRegion Type ✘]({{< relref "/docs/regions_and_chunks/index_region" >}})
 - [Iteration ✘]({{< relref "/docs/tutorials/" >}})
 - [Views, Lazy Computation ✘]({{< relref "/docs/tutorials/" >}})
