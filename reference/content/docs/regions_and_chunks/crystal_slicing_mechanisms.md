@@ -1,30 +1,14 @@
 ---
-title: Regions &amp; Chunks
+title: Crystal's Slicing Mechanisms
 date: 2022-02-02T23:16:22-07:00
 ---
 
-# Regions & Chunks
+# Crystal's Slicing Mechanisms
 
-## Introduction
-At its core, Phase is all about providing an easy to use container for storing
-large amounts of data. One of the most important parts of that task is
-providing an easy way for the user to extract a peice of data from the
-collection - for example, selecting only the first three elements from a
-vector, or isolating the green channel of an RGB image.
-
-Although it seems very simple, this topic can get quite confusing. Because
-Phase aims to make scientific computing easier to work with, we're devoting
-a whole section to this one operation of taking an `NArray` (or, more
-specifically, a `MultiIndexable`) apart.
-
-To begin with, we'll review the Array from Crystal's standard library. If
-you're comfortable with slicing Arrays in Crystal already, skip to
-[Adding Dimensions](#adding-dimensions).
-
-## Arrays in One Dimension
-In an Array, each element is represented by a numeric index. There are a couple
-different ways to do this - we can refer to the elements via positive,
-increasing indexes as such:
+In an Array (or any
+[`Indexable`](https://crystal-lang.org/api/master/Indexable.html)), each element
+is represented by a numeric index. There are a couple different ways to do this
+- we can refer to the elements via positive, increasing indexes as such:
 
 ```crystal
 arr = ['P', 'h', 'a', 's', 'e']
@@ -149,7 +133,6 @@ ignored if you don't provide a fixed end value, because the final index of
 any array will certainly be less than infinity, and the exclusivity applied to
 _infinity_ in particular, not just the _end_ of the range.
 
-Note that an inclusive range without a rightmost bound is equal to an exclusive
-one - 
-
-## Adding Dimensions
+Note that, if a range has no upper bound, the number of dots in the ellipsis
+does not change the function - `arr[1..]` and `arr[1...]` always return the
+same thing.

@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="The IndexRegion Type #  ">
+<meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="The IndexRegion Type" />
+<meta property="og:description" content="The IndexRegion Type #  " />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://phase.blog/reference/docs/regions_and_chunks/index_region/" /><meta property="article:section" content="docs" />
+
+
+
+<title>The IndexRegion Type | Phase</title>
+<link rel="manifest" href="../../../manifest.json">
+<link rel="icon" href="../../../favicon.png" type="image/x-icon">
+<link rel="stylesheet" href="../../../book.min.13879cd15d33f3f5b91a694468f979edd02dcc55178a90ec8f14f9689fd61e0a.css" integrity="sha256-E4ec0V0z8/W5GmlEaPl57dAtzFUXipDsjxT5aJ/WHgo=" crossorigin="anonymous">
+  <script defer src="../../../flexsearch.min.js"></script>
+  <script defer src="../../../en.search.min.36852c48d7efc10c8ee88bf840c420283d1e0bd253777c775b2d3f71407c77ac.js" integrity="sha256-NoUsSNfvwQyO6Iv4QMQgKD0eC9JTd3x3Wy0/cUB8d6w=" crossorigin="anonymous"></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+  
+</head>
+<body dir="ltr">
+  
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+<noscript>
+    <style type="text/css">
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: #1d1e20;
+                --entry: #2e2e33;
+                --primary: rgba(255, 255, 255, 0.84);
+                --secondary: rgba(255, 255, 255, 0.56);
+                --tertiary: rgba(255, 255, 255, 0.16);
+                --content: rgba(255, 255, 255, 0.74);
+                --hljs-bg: #2e2e33;
+                --code-bg: #37383e;
+                --border: #333;
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://phase.blog/" accesskey="h" title="  (Alt + H)">
+                <img src="../../../phase_logo.svg" alt="logo" aria-label="logo"
+                    height="55px"> </a>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://phase.blog/api" title="API Docs">
+                    <span>API Docs</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://phase.blog/" title="Blog">
+                    <span>Blog</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://phase.blog/reference" title="Reference">
+                    <span>Reference</span>
+                </a>
+            </li>
+
+            <li>
+                <span class="logo-switches">
+                    <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                        <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                            fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round">
+                            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                        </svg>
+                        <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                            fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="5"></circle>
+                            <line x1="12" y1="1" x2="12" y2="3"></line>
+                            <line x1="12" y1="21" x2="12" y2="23"></line>
+                            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                            <line x1="1" y1="12" x2="3" y2="12"></line>
+                            <line x1="21" y1="12" x2="23" y2="12"></line>
+                            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                        </svg>
+                    </button>
+                </span>
+            </li>
+        </ul>
+    </nav>
+</header>
+
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a href="../../../"><span>Phase</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+  <p>Light Reading</p>
+<ul>
+<li><a href="../../../docs/tutorials/">Getting Started ✘</a>
+<ul>
+<li><a href="../../../docs/tutorials/">Installing Phase ✘</a></li>
+<li><a href="../../../docs/tutorials/">Next Steps ✘</a></li>
+</ul>
+</li>
+<li><a href="../../../docs/tutorials/">Phase vs. NumPy ✘</a></li>
+<li><a href="../../../docs/tutorials/">Example Project ✘</a></li>
+<li><a href="../../../docs/tutorials/">Best Practises ✘</a>
+<ul>
+<li><a href="../../../docs/tutorials/">Requiring &amp; Including Phase ✘</a></li>
+</ul>
+</li>
+<li><a href="../../../docs/tutorials/">Compatibility &amp; Ecosystem ✘</a>
+<!-- raw HTML omitted --></li>
+</ul>
+<p>Deeper Understanding</p>
+<ul>
+<li><a href="../../../docs/tutorials/">NArray ✘</a></li>
+<li><a href="../../../docs/regions_and_chunks/">Regions &amp; Chunks ✘</a>
+<ul>
+<li><a href="../../../docs/regions_and_chunks/crystal_slicing_mechanisms/">Crystal&rsquo;s Slicing Mechanisms ✘</a></li>
+<li><a href="../../../docs/regions_and_chunks/multiindexable_slicing/">MultiIndexable Slicing ✘</a></li>
+<li><a href="../../../docs/regions_and_chunks/index_region/"class=active>The IndexRegion Type ✘</a></li>
+</ul>
+</li>
+<li><a href="../../../docs/tutorials/">Iteration ✘</a></li>
+<li><a href="../../../docs/tutorials/">Views, Lazy Computation ✘</a></li>
+<li><a href="../../../docs/tutorials/">MultiIndexable ✘</a></li>
+<li><a href="../../../docs/tutorials/">MultiWritable ✘</a></li>
+<li><a href="../../../docs/tutorials/">Tutorials</a>
+<ul>
+<li><a href="../../../docs/tutorials/making-a-multiindexable/">Making a MultiIndexable</a>
+<!-- raw HTML omitted --></li>
+</ul>
+</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="../../../svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>The IndexRegion Type</strong>
+
+  <label for="toc-control">
+    
+    <img src="../../../svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents"></nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown"><h1 id="the-indexregion-type">
+  The IndexRegion Type
+  <a class="anchor" href="#the-indexregion-type">#</a>
+</h1>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+
+
+</div>
+
+
+
+  <script>(function(){function e(n){const e=window.getSelection(),t=document.createRange();t.selectNodeContents(n),e.removeAllRanges(),e.addRange(t)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script>
+
+
+ 
+        <script>
+document.getElementById("theme-toggle").addEventListener("click", () => {
+    if (document.body.className.includes("dark")) {
+        document.body.classList.remove('dark');
+        localStorage.setItem("pref-theme", 'light');
+    } else {
+        document.body.classList.add('dark');
+        localStorage.setItem("pref-theme", 'dark');
+    }
+})
+</script>
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents"></nav>
+
+
+ 
+      </div>
+    </aside>
+    
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

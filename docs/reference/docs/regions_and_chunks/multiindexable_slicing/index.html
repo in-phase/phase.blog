@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="MultiIndexable Slicing #  In Phase, slicing multidimensional arrays (MultiIndexabless) is designed to be very similar to slicing ordinary arrays. In fact, for single-dimensional MultiIndexables, slicing is almost identical:
+require &#34;phase&#34; include Phase # Vanilla crystal slicing: arr = [&#39;a&#39;, &#39;b&#39;, &#39;c&#39;, &#39;d&#39;] arr[1..] # =&gt; [&#39;b&#39;, &#39;c&#39;, &#39;d&#39;] # 1D MultiIndexable slicing: narr = NArray[&#39;a&#39;, &#39;b&#39;, &#39;c&#39;, &#39;d&#39;] narr[1..] # =&gt; NArray[&#39;b&#39;, &#39;c&#39;, &#39;d&#39;] Basic Example #  When we add another dimension, we must specify two sets of indexes.">
+<meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="MultiIndexable Slicing" />
+<meta property="og:description" content="MultiIndexable Slicing #  In Phase, slicing multidimensional arrays (MultiIndexabless) is designed to be very similar to slicing ordinary arrays. In fact, for single-dimensional MultiIndexables, slicing is almost identical:
+require &#34;phase&#34; include Phase # Vanilla crystal slicing: arr = [&#39;a&#39;, &#39;b&#39;, &#39;c&#39;, &#39;d&#39;] arr[1..] # =&gt; [&#39;b&#39;, &#39;c&#39;, &#39;d&#39;] # 1D MultiIndexable slicing: narr = NArray[&#39;a&#39;, &#39;b&#39;, &#39;c&#39;, &#39;d&#39;] narr[1..] # =&gt; NArray[&#39;b&#39;, &#39;c&#39;, &#39;d&#39;] Basic Example #  When we add another dimension, we must specify two sets of indexes." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://phase.blog/reference/docs/regions_and_chunks/multiindexable_slicing/" /><meta property="article:section" content="docs" />
+
+
+
+<title>MultiIndexable Slicing | Phase</title>
+<link rel="manifest" href="../../../manifest.json">
+<link rel="icon" href="../../../favicon.png" type="image/x-icon">
+<link rel="stylesheet" href="../../../book.min.13879cd15d33f3f5b91a694468f979edd02dcc55178a90ec8f14f9689fd61e0a.css" integrity="sha256-E4ec0V0z8/W5GmlEaPl57dAtzFUXipDsjxT5aJ/WHgo=" crossorigin="anonymous">
+  <script defer src="../../../flexsearch.min.js"></script>
+  <script defer src="../../../en.search.min.36852c48d7efc10c8ee88bf840c420283d1e0bd253777c775b2d3f71407c77ac.js" integrity="sha256-NoUsSNfvwQyO6Iv4QMQgKD0eC9JTd3x3Wy0/cUB8d6w=" crossorigin="anonymous"></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+  
+</head>
+<body dir="ltr">
+  
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+<noscript>
+    <style type="text/css">
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: #1d1e20;
+                --entry: #2e2e33;
+                --primary: rgba(255, 255, 255, 0.84);
+                --secondary: rgba(255, 255, 255, 0.56);
+                --tertiary: rgba(255, 255, 255, 0.16);
+                --content: rgba(255, 255, 255, 0.74);
+                --hljs-bg: #2e2e33;
+                --code-bg: #37383e;
+                --border: #333;
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://phase.blog/" accesskey="h" title="  (Alt + H)">
+                <img src="../../../phase_logo.svg" alt="logo" aria-label="logo"
+                    height="55px"> </a>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://phase.blog/api" title="API Docs">
+                    <span>API Docs</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://phase.blog/" title="Blog">
+                    <span>Blog</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://phase.blog/reference" title="Reference">
+                    <span>Reference</span>
+                </a>
+            </li>
+
+            <li>
+                <span class="logo-switches">
+                    <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                        <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                            fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round">
+                            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                        </svg>
+                        <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                            fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="5"></circle>
+                            <line x1="12" y1="1" x2="12" y2="3"></line>
+                            <line x1="12" y1="21" x2="12" y2="23"></line>
+                            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                            <line x1="1" y1="12" x2="3" y2="12"></line>
+                            <line x1="21" y1="12" x2="23" y2="12"></line>
+                            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                        </svg>
+                    </button>
+                </span>
+            </li>
+        </ul>
+    </nav>
+</header>
+
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a href="../../../"><span>Phase</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+  <p>Light Reading</p>
+<ul>
+<li><a href="../../../docs/tutorials/">Getting Started ✘</a>
+<ul>
+<li><a href="../../../docs/tutorials/">Installing Phase ✘</a></li>
+<li><a href="../../../docs/tutorials/">Next Steps ✘</a></li>
+</ul>
+</li>
+<li><a href="../../../docs/tutorials/">Phase vs. NumPy ✘</a></li>
+<li><a href="../../../docs/tutorials/">Example Project ✘</a></li>
+<li><a href="../../../docs/tutorials/">Best Practises ✘</a>
+<ul>
+<li><a href="../../../docs/tutorials/">Requiring &amp; Including Phase ✘</a></li>
+</ul>
+</li>
+<li><a href="../../../docs/tutorials/">Compatibility &amp; Ecosystem ✘</a>
+<!-- raw HTML omitted --></li>
+</ul>
+<p>Deeper Understanding</p>
+<ul>
+<li><a href="../../../docs/tutorials/">NArray ✘</a></li>
+<li><a href="../../../docs/regions_and_chunks/">Regions &amp; Chunks ✘</a>
+<ul>
+<li><a href="../../../docs/regions_and_chunks/crystal_slicing_mechanisms/">Crystal&rsquo;s Slicing Mechanisms ✘</a></li>
+<li><a href="../../../docs/regions_and_chunks/multiindexable_slicing/"class=active>MultiIndexable Slicing ✘</a></li>
+<li><a href="../../../docs/regions_and_chunks/index_region/">The IndexRegion Type ✘</a></li>
+</ul>
+</li>
+<li><a href="../../../docs/tutorials/">Iteration ✘</a></li>
+<li><a href="../../../docs/tutorials/">Views, Lazy Computation ✘</a></li>
+<li><a href="../../../docs/tutorials/">MultiIndexable ✘</a></li>
+<li><a href="../../../docs/tutorials/">MultiWritable ✘</a></li>
+<li><a href="../../../docs/tutorials/">Tutorials</a>
+<ul>
+<li><a href="../../../docs/tutorials/making-a-multiindexable/">Making a MultiIndexable</a>
+<!-- raw HTML omitted --></li>
+</ul>
+</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="../../../svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>MultiIndexable Slicing</strong>
+
+  <label for="toc-control">
+    
+    <img src="../../../svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#basic-example">Basic Example</a></li>
+    <li><a href="#regions--chunks">Regions &amp; Chunks</a></li>
+    <li><a href="#implicit-syntax">Implicit Syntax</a></li>
+    <li><a href="#dimension-dropping">Dimension Dropping</a></li>
+    <li><a href="#step-size">Step Size</a></li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown"><h1 id="multiindexable-slicing">
+  MultiIndexable Slicing
+  <a class="anchor" href="#multiindexable-slicing">#</a>
+</h1>
+<p>In Phase, slicing multidimensional arrays
+(<a href="https://phase.blog/api/Phase/MultiIndexable.html"><code>MultiIndexables</code></a>s) is
+designed to be very similar to <a href="../../../docs/regions_and_chunks/crystal_slicing_mechanisms/">slicing ordinary arrays</a>. In fact, for single-dimensional
+<code>MultiIndexables</code>, slicing is almost identical:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-crystal" data-lang="crystal"><span class="line"><span class="cl"><span class="k">require</span> <span class="s2">&#34;phase&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">include</span> <span class="n">Phase</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Vanilla crystal slicing:</span>
+</span></span><span class="line"><span class="cl"><span class="n">arr</span> <span class="o">=</span> <span class="o">[</span><span class="sc">&#39;a&#39;</span><span class="p">,</span> <span class="sc">&#39;b&#39;</span><span class="p">,</span> <span class="sc">&#39;c&#39;</span><span class="p">,</span> <span class="sc">&#39;d&#39;</span><span class="o">]</span>
+</span></span><span class="line"><span class="cl"><span class="n">arr</span><span class="o">[</span><span class="mi">1</span><span class="o">..]</span> <span class="c1"># =&gt; [&#39;b&#39;, &#39;c&#39;, &#39;d&#39;]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 1D MultiIndexable slicing:</span>
+</span></span><span class="line"><span class="cl"><span class="n">narr</span> <span class="o">=</span> <span class="n">NArray</span><span class="o">[</span><span class="sc">&#39;a&#39;</span><span class="p">,</span> <span class="sc">&#39;b&#39;</span><span class="p">,</span> <span class="sc">&#39;c&#39;</span><span class="p">,</span> <span class="sc">&#39;d&#39;</span><span class="o">]</span>
+</span></span><span class="line"><span class="cl"><span class="n">narr</span><span class="o">[</span><span class="mi">1</span><span class="o">..]</span> <span class="c1"># =&gt; NArray[&#39;b&#39;, &#39;c&#39;, &#39;d&#39;]</span>
+</span></span></code></pre></div><h2 id="basic-example">
+  Basic Example
+  <a class="anchor" href="#basic-example">#</a>
+</h2>
+<p>When we add another dimension, we must specify two sets of indexes. In
+one dimension, slicing is like cutting a line of elements out of a longer line.
+In 2D, slicing is like cutting a small square of elements out of a larger sheet,
+and so on for n-dimensional volumes. For example:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-crystal" data-lang="crystal"><span class="line"><span class="cl"><span class="k">require</span> <span class="s2">&#34;phase&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">include</span> <span class="n">Phase</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Create a 2D matrix of elements</span>
+</span></span><span class="line"><span class="cl"><span class="n">narr</span> <span class="o">=</span> <span class="n">NArray</span><span class="o">[[</span><span class="ss">:a</span><span class="p">,</span> <span class="ss">:b</span><span class="p">,</span> <span class="ss">:c</span><span class="p">,</span> <span class="ss">:d</span><span class="o">]</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">              <span class="o">[</span> <span class="mi">1</span><span class="p">,</span>  <span class="mi">2</span><span class="p">,</span>  <span class="mi">3</span><span class="p">,</span>  <span class="mi">4</span><span class="o">]</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">              <span class="o">[</span><span class="ss">:e</span><span class="p">,</span> <span class="ss">:f</span><span class="p">,</span> <span class="ss">:g</span><span class="p">,</span> <span class="ss">:h</span><span class="o">]]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Take row 0 and 1, columns 1 and 2:</span>
+</span></span><span class="line"><span class="cl"><span class="n">narr</span><span class="o">[</span><span class="mi">0</span><span class="o">..</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="o">..</span><span class="mi">2</span><span class="o">]</span> <span class="c1"># =&gt; NArray[[:b, :c],</span>
+</span></span><span class="line"><span class="cl">                 <span class="c1">#           [ 2,  3]]</span>
+</span></span></code></pre></div><h2 id="regions--chunks">
+  Regions &amp; Chunks
+  <a class="anchor" href="#regions--chunks">#</a>
+</h2>
+<p>In the familiar array paradigm, an <em>index</em> is a number that points at an <em>element</em>
+of the array. In high level languages like Crystal, we&rsquo;ve seen that this can be
+extended further - a <em>range of indices</em> can point at a <em>list of elements</em>, like
+<code>arr[1..]</code> as seen earlier.</p>
+<p>Although it is possible to describe everything that Phase does using this
+one-dimensional language, it gets tedious pretty quickly. In Phase, we refer to
+a collection of indices as a <em>coordinate</em> and a collection of <em>coordinates</em> as a <em>region</em>.</p>
+<p>Finally, in the same way that an index points to an element - a <em>region</em> points
+to a <em>chunk</em> of elements from the <code>MultiIndexable</code>.</p>
+<p>To connect this to the previous example:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-crystal" data-lang="crystal"><span class="line"><span class="cl"><span class="k">require</span> <span class="s2">&#34;phase&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">include</span> <span class="n">Phase</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># This NArray is made of *elements* located at *coordinates*</span>
+</span></span><span class="line"><span class="cl"><span class="n">narr</span> <span class="o">=</span> <span class="n">NArray</span><span class="o">[[</span><span class="ss">:a</span><span class="p">,</span> <span class="ss">:b</span><span class="p">,</span> <span class="ss">:c</span><span class="p">,</span> <span class="ss">:d</span><span class="o">]</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">              <span class="o">[</span> <span class="mi">1</span><span class="p">,</span>  <span class="mi">2</span><span class="p">,</span>  <span class="mi">3</span><span class="p">,</span>  <span class="mi">4</span><span class="o">]</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">              <span class="o">[</span><span class="ss">:e</span><span class="p">,</span> <span class="ss">:f</span><span class="p">,</span> <span class="ss">:g</span><span class="p">,</span> <span class="ss">:h</span><span class="o">]]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># For example, the :b is located at coordinate [0, 1]:</span>
+</span></span><span class="line"><span class="cl"><span class="n">narr</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span> <span class="c1"># =&gt; :b</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># To take row 0, 1, and columns 1, 2, we want to select the coordinates</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># [0, 1], [0, 2], [1, 1], and [1, 2]. We denote this using the ranges</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># as a shorthand - the collection of coordinates described here describes</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># a *region*</span>
+</span></span><span class="line"><span class="cl"><span class="n">region</span> <span class="o">=</span> <span class="o">[</span><span class="mi">0</span><span class="o">..</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="o">..</span><span class="mi">2</span><span class="o">]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Now, we can use this *region* to get a *chunk*:</span>
+</span></span><span class="line"><span class="cl"><span class="n">narr</span><span class="o">[</span><span class="n">region</span><span class="o">]</span> <span class="c1"># =&gt; NArray[[:b, :c],</span>
+</span></span><span class="line"><span class="cl">             <span class="c1">#           [ 2,  3]]</span>
+</span></span></code></pre></div><h2 id="implicit-syntax">
+  Implicit Syntax
+  <a class="anchor" href="#implicit-syntax">#</a>
+</h2>
+<p>It can get tedious to type out <code>..</code> over and over. Phase will automatically fill out
+a region with <code>..</code> until the correct number of dimensions is reached for a slicing
+operation:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-crystal" data-lang="crystal"><span class="line"><span class="cl"><span class="k">require</span> <span class="s2">&#34;phase&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">include</span> <span class="n">Phase</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">narr</span> <span class="o">=</span> <span class="n">NArray</span><span class="o">[[</span><span class="ss">:a</span><span class="p">,</span> <span class="ss">:b</span><span class="p">,</span> <span class="ss">:c</span><span class="p">,</span> <span class="ss">:d</span><span class="o">]</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">              <span class="o">[</span> <span class="mi">1</span><span class="p">,</span>  <span class="mi">2</span><span class="p">,</span>  <span class="mi">3</span><span class="p">,</span>  <span class="mi">4</span><span class="o">]</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">              <span class="o">[</span><span class="ss">:e</span><span class="p">,</span> <span class="ss">:f</span><span class="p">,</span> <span class="ss">:g</span><span class="p">,</span> <span class="ss">:h</span><span class="o">]]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Select rows 1 and 2 with all columns:</span>
+</span></span><span class="line"><span class="cl"><span class="n">narr</span><span class="o">[</span><span class="mi">0</span><span class="o">..</span><span class="mi">1</span><span class="p">,</span> <span class="o">..]</span> <span class="c1"># =&gt; NArray[[:a, :b, :c, :d], [1, 2, 3, 4]]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Identically, use the implicit syntax:</span>
+</span></span><span class="line"><span class="cl"><span class="n">narr</span><span class="o">[</span><span class="mi">0</span><span class="o">..</span><span class="mi">1</span><span class="o">]</span> <span class="c1"># =&gt; NArray[[:a, :b, :c, :d], [1, 2, 3, 4]]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Phase will add `..` to the right side: [0..1] =&gt; [0..1, ..]</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># This also works for any number of dimensions. In a 5D array,</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># narr[0..3, 2] == narr[0..3, 2, .., .., ..]</span>
+</span></span></code></pre></div><h2 id="dimension-dropping">
+  Dimension Dropping
+  <a class="anchor" href="#dimension-dropping">#</a>
+</h2>
+<p>It is often the case that you&rsquo;ll want to select a simple chunk from a higher-dimensional
+data structure - for example, a single row from a matrix, or a single color channel from
+an image. This is distinct from dimension-preserving cases, because you will specify an
+integer, not a range, in one or more of the ordinates:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-crystal" data-lang="crystal"><span class="line"><span class="cl"><span class="k">require</span> <span class="s2">&#34;phase&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">include</span> <span class="n">Phase</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">narr</span> <span class="o">=</span> <span class="n">NArray</span><span class="o">[[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="o">]</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">              <span class="o">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="o">]]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Here, the 0 is an integer, not a range. Phase will strip a dimension</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># off of the result, as shown - we get a 1D NArray from the 2D matrix `narr`.</span>
+</span></span><span class="line"><span class="cl"><span class="n">first_row</span> <span class="o">=</span> <span class="n">narr</span><span class="o">[</span><span class="mi">0</span><span class="p">,</span> <span class="o">..]</span> <span class="c1"># =&gt; NArray[1, 2]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># By counterexample, we can select the first row *as a matrix* by using a</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># single-index range:</span>
+</span></span><span class="line"><span class="cl"><span class="n">first_row_as_matrix</span> <span class="o">=</span> <span class="n">narr</span><span class="o">[</span><span class="mi">0</span><span class="o">..</span><span class="mi">0</span><span class="p">,</span> <span class="o">..]</span> <span class="c1"># =&gt; NArray[[1, 2]]</span>
+</span></span></code></pre></div><p>This also explains the use of
+<a href="https://phase.blog/api/Phase/MultiIndexable.html#get%28%2Atuple%29-instance-method"><code>MultiIndexable#get</code></a>
+in an earlier example. Slicing can drop dimensions, but it cannot change the
+return type. So, <code>narr[region]</code> will <em>always</em> return an <code>NArray</code>, regardless of
+the region you pass - even if it might seem counterintuitive:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-crystal" data-lang="crystal"><span class="line"><span class="cl"><span class="k">require</span> <span class="s2">&#34;phase&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">include</span> <span class="n">Phase</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">narr</span> <span class="o">=</span> <span class="n">NArray</span><span class="o">[[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="o">]</span><span class="p">,</span> <span class="o">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="o">]]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Let&#39;s extract the top left element:</span>
+</span></span><span class="line"><span class="cl"><span class="n">narr</span><span class="o">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="o">]</span> <span class="c1"># =&gt; NArray[1]</span>
+</span></span></code></pre></div><p>In the example shown, even though we&rsquo;ve removed all the dimensions (we used fully integer coordinates),
+the return type cannot be changed to <code>Int32</code> as you might expect. The <code>#get</code> method has a different
+method signature, and thus can return the element inside directly:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-crystal" data-lang="crystal"><span class="line"><span class="cl"><span class="n">narr</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="c1"># =&gt; 1</span>
+</span></span></code></pre></div><p>Alternatively, you can convert a single-element <code>MultiIndexable</code> to a scalar
+type using
+<a href="https://phase.blog/api/Phase/MultiIndexable.html#to_scalar%3AT-instance-method"><code>#to_scalar</code></a>:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-crystal" data-lang="crystal"><span class="line"><span class="cl"><span class="c1"># This is a worse choice than using #get for many reasons, but it is useful at times.</span>
+</span></span><span class="line"><span class="cl"><span class="n">narr</span><span class="o">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="o">].</span><span class="n">to_scalar</span> <span class="c1"># =&gt; 1</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># This method also allows you to extract the sole element of a multidimensional structure:</span>
+</span></span><span class="line"><span class="cl"><span class="n">deep_scalar</span> <span class="o">=</span> <span class="n">NArray</span><span class="o">[[[[</span><span class="mi">1</span><span class="o">]]]]</span>
+</span></span><span class="line"><span class="cl"><span class="n">deep_scalar</span><span class="o">.</span><span class="n">to_scalar</span> <span class="c1"># =&gt; 1</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># The above is easier than deep_scalar.get(0, 0, 0, 0)</span>
+</span></span></code></pre></div><p>In certain use cases (typically when the region is passed to you by other, unknown code),
+you may want to disable dimension dropping. This can be done with an optional parameter:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-crystal" data-lang="crystal"><span class="line"><span class="cl"><span class="n">rqeuire</span> <span class="s2">&#34;phase&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">include</span> <span class="n">Phase</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">must_return_2d_matrix</span><span class="p">(</span><span class="n">region</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="n">narr</span> <span class="o">=</span> <span class="n">NArray</span><span class="o">[[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="o">]</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                <span class="o">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="o">]]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="k">return</span> <span class="n">narr</span><span class="o">[</span><span class="n">region</span><span class="p">,</span> <span class="ss">drop</span><span class="p">:</span> <span class="kc">false</span><span class="o">]</span>
+</span></span><span class="line"><span class="cl"><span class="k">end</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Even though the region literal we&#39;re passing uses an integer index,</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># `drop: false` ensures that the output is the same number of dimensions</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># as `narr`.</span>
+</span></span><span class="line"><span class="cl"><span class="n">must_return_2d_matrix</span><span class="p">(</span><span class="o">[</span><span class="mi">0</span><span class="p">,</span> <span class="o">..]</span><span class="p">)</span> <span class="c1"># =&gt; NArray[[1, 2]]</span>
+</span></span></code></pre></div><h2 id="step-size">
+  Step Size
+  <a class="anchor" href="#step-size">#</a>
+</h2>
+<p>Unfortunately, Crystal&rsquo;s ranges don&rsquo;t support step sizes in the literal like, for example,
+Python (<code>array[0:5:2]</code>). However, Crystal&rsquo;s flexibility enables a similarly simple syntax:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-crystal" data-lang="crystal"><span class="line"><span class="cl"><span class="k">require</span> <span class="s2">&#34;phase&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">import</span> <span class="n">Phase</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">narr</span> <span class="o">=</span> <span class="n">NArray</span><span class="o">[[</span><span class="ss">:a</span><span class="p">,</span> <span class="ss">:b</span><span class="p">,</span> <span class="ss">:c</span><span class="p">,</span> <span class="ss">:d</span><span class="o">]</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">              <span class="o">[</span> <span class="mi">1</span><span class="p">,</span>  <span class="mi">2</span><span class="p">,</span>  <span class="mi">3</span><span class="p">,</span>  <span class="mi">4</span><span class="o">]</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">              <span class="o">[</span><span class="ss">:e</span><span class="p">,</span> <span class="ss">:f</span><span class="p">,</span> <span class="ss">:g</span><span class="p">,</span> <span class="ss">:h</span><span class="o">]]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Start at row zero, step by two, and select all columns implicitly:</span>
+</span></span><span class="line"><span class="cl"><span class="n">narr</span><span class="o">[</span><span class="mi">0</span><span class="o">..</span><span class="mi">2</span><span class="o">..]</span> <span class="c1"># =&gt; NArray[[:a, :b, :c, :d], [:e, :f, :g, :h]]</span>
+</span></span></code></pre></div><p>Note that, unlike Python&rsquo;s slice syntax, which has the order <code>start:stop:step</code>,
+Phase uses the more natural order <code>start..step..stop</code>.</p>
+<p>You can also use a triple-dot (<code>...</code>) before the final index, rather than a
+<code>..</code>, to make the stop value exclusive:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-crystal" data-lang="crystal"><span class="line"><span class="cl"><span class="n">narr</span><span class="o">[</span><span class="mi">0</span><span class="o">..</span><span class="mi">2</span><span class="o">..</span><span class="mi">2</span><span class="o">]</span> <span class="c1"># =&gt; NArray[[:a, :b, :c, :d], [:e, :f, :g, :h]]</span>
+</span></span><span class="line"><span class="cl"><span class="n">narr</span><span class="o">[</span><span class="mi">0</span><span class="o">..</span><span class="mi">2</span><span class="o">...</span><span class="mi">2</span><span class="o">]</span> <span class="c1"># =&gt; NArray[[:a, :b, :c, :d]]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Note that the ellipsis before the step size is totally ignored.</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># narr[start..step..stop] always equals narr[start...step..stop]</span>
+</span></span></code></pre></div><p>Under the hood, this stepped range syntax is admittedly a little hacky, but
+it&rsquo;s convenient enough that we opted to stick with it. (If you&rsquo;re curious how
+this works, <code>0..2..5</code> is actually equivalent to <code>(0..2)..5</code>, which is the
+literal for an instance of <code>Range(Range(Int, Int), Int)</code>. When Phase dissects
+the region you pass, it notices objects with that type (or the related type,
+<code>Range(Int, Range(Int, Int))</code>), and breaks it down into the start, step, and
+stop indexes.)</p>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+
+
+</div>
+
+
+
+  <script>(function(){function e(n){const e=window.getSelection(),t=document.createRange();t.selectNodeContents(n),e.removeAllRanges(),e.addRange(t)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script>
+
+
+ 
+        <script>
+document.getElementById("theme-toggle").addEventListener("click", () => {
+    if (document.body.className.includes("dark")) {
+        document.body.classList.remove('dark');
+        localStorage.setItem("pref-theme", 'light');
+    } else {
+        document.body.classList.add('dark');
+        localStorage.setItem("pref-theme", 'dark');
+    }
+})
+</script>
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#basic-example">Basic Example</a></li>
+    <li><a href="#regions--chunks">Regions &amp; Chunks</a></li>
+    <li><a href="#implicit-syntax">Implicit Syntax</a></li>
+    <li><a href="#dimension-dropping">Dimension Dropping</a></li>
+    <li><a href="#step-size">Step Size</a></li>
+  </ul>
+</nav>
+
+
+ 
+      </div>
+    </aside>
+    
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Crystal&rsquo;s Slicing Mechanisms #  In an Array (or any Indexable), each element is represented by a numeric index. There are a couple different ways to do this
+ we can refer to the elements via positive, increasing indexes as such:  arr = [&#39;P&#39;, &#39;h&#39;, &#39;a&#39;, &#39;s&#39;, &#39;e&#39;] # 0 1 2 3 4 arr[0] # =&gt; &#39;P&#39; arr[4] # =&gt; &#39;e&#39; Or, we can start at the other end of the array using negative indexes:">
+<meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="Crystal&#39;s Slicing Mechanisms" />
+<meta property="og:description" content="Crystal&rsquo;s Slicing Mechanisms #  In an Array (or any Indexable), each element is represented by a numeric index. There are a couple different ways to do this
+ we can refer to the elements via positive, increasing indexes as such:  arr = [&#39;P&#39;, &#39;h&#39;, &#39;a&#39;, &#39;s&#39;, &#39;e&#39;] # 0 1 2 3 4 arr[0] # =&gt; &#39;P&#39; arr[4] # =&gt; &#39;e&#39; Or, we can start at the other end of the array using negative indexes:" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://phase.blog/reference/docs/regions_and_chunks/crystal_slicing_mechanisms/" /><meta property="article:section" content="docs" />
+<meta property="article:published_time" content="2022-02-02T23:16:22-07:00" />
+<meta property="article:modified_time" content="2022-02-02T23:16:22-07:00" />
+
+<title>Crystal&#39;s Slicing Mechanisms | Phase</title>
+<link rel="manifest" href="../../../manifest.json">
+<link rel="icon" href="../../../favicon.png" type="image/x-icon">
+<link rel="stylesheet" href="../../../book.min.13879cd15d33f3f5b91a694468f979edd02dcc55178a90ec8f14f9689fd61e0a.css" integrity="sha256-E4ec0V0z8/W5GmlEaPl57dAtzFUXipDsjxT5aJ/WHgo=" crossorigin="anonymous">
+  <script defer src="../../../flexsearch.min.js"></script>
+  <script defer src="../../../en.search.min.36852c48d7efc10c8ee88bf840c420283d1e0bd253777c775b2d3f71407c77ac.js" integrity="sha256-NoUsSNfvwQyO6Iv4QMQgKD0eC9JTd3x3Wy0/cUB8d6w=" crossorigin="anonymous"></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+  
+</head>
+<body dir="ltr">
+  
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+<noscript>
+    <style type="text/css">
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: #1d1e20;
+                --entry: #2e2e33;
+                --primary: rgba(255, 255, 255, 0.84);
+                --secondary: rgba(255, 255, 255, 0.56);
+                --tertiary: rgba(255, 255, 255, 0.16);
+                --content: rgba(255, 255, 255, 0.74);
+                --hljs-bg: #2e2e33;
+                --code-bg: #37383e;
+                --border: #333;
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://phase.blog/" accesskey="h" title="  (Alt + H)">
+                <img src="../../../phase_logo.svg" alt="logo" aria-label="logo"
+                    height="55px"> </a>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://phase.blog/api" title="API Docs">
+                    <span>API Docs</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://phase.blog/" title="Blog">
+                    <span>Blog</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://phase.blog/reference" title="Reference">
+                    <span>Reference</span>
+                </a>
+            </li>
+
+            <li>
+                <span class="logo-switches">
+                    <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                        <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                            fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round">
+                            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                        </svg>
+                        <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                            fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="5"></circle>
+                            <line x1="12" y1="1" x2="12" y2="3"></line>
+                            <line x1="12" y1="21" x2="12" y2="23"></line>
+                            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                            <line x1="1" y1="12" x2="3" y2="12"></line>
+                            <line x1="21" y1="12" x2="23" y2="12"></line>
+                            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                        </svg>
+                    </button>
+                </span>
+            </li>
+        </ul>
+    </nav>
+</header>
+
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a href="../../../"><span>Phase</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+  <p>Light Reading</p>
+<ul>
+<li><a href="../../../docs/tutorials/">Getting Started ✘</a>
+<ul>
+<li><a href="../../../docs/tutorials/">Installing Phase ✘</a></li>
+<li><a href="../../../docs/tutorials/">Next Steps ✘</a></li>
+</ul>
+</li>
+<li><a href="../../../docs/tutorials/">Phase vs. NumPy ✘</a></li>
+<li><a href="../../../docs/tutorials/">Example Project ✘</a></li>
+<li><a href="../../../docs/tutorials/">Best Practises ✘</a>
+<ul>
+<li><a href="../../../docs/tutorials/">Requiring &amp; Including Phase ✘</a></li>
+</ul>
+</li>
+<li><a href="../../../docs/tutorials/">Compatibility &amp; Ecosystem ✘</a>
+<!-- raw HTML omitted --></li>
+</ul>
+<p>Deeper Understanding</p>
+<ul>
+<li><a href="../../../docs/tutorials/">NArray ✘</a></li>
+<li><a href="../../../docs/regions_and_chunks/">Regions &amp; Chunks ✘</a>
+<ul>
+<li><a href="../../../docs/regions_and_chunks/crystal_slicing_mechanisms/"class=active>Crystal&rsquo;s Slicing Mechanisms ✘</a></li>
+<li><a href="../../../docs/regions_and_chunks/multiindexable_slicing/">MultiIndexable Slicing ✘</a></li>
+<li><a href="../../../docs/regions_and_chunks/index_region/">The IndexRegion Type ✘</a></li>
+</ul>
+</li>
+<li><a href="../../../docs/tutorials/">Iteration ✘</a></li>
+<li><a href="../../../docs/tutorials/">Views, Lazy Computation ✘</a></li>
+<li><a href="../../../docs/tutorials/">MultiIndexable ✘</a></li>
+<li><a href="../../../docs/tutorials/">MultiWritable ✘</a></li>
+<li><a href="../../../docs/tutorials/">Tutorials</a>
+<ul>
+<li><a href="../../../docs/tutorials/making-a-multiindexable/">Making a MultiIndexable</a>
+<!-- raw HTML omitted --></li>
+</ul>
+</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="../../../svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>Crystal&#39;s Slicing Mechanisms</strong>
+
+  <label for="toc-control">
+    
+    <img src="../../../svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents"></nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown"><h1 id="crystals-slicing-mechanisms">
+  Crystal&rsquo;s Slicing Mechanisms
+  <a class="anchor" href="#crystals-slicing-mechanisms">#</a>
+</h1>
+<p>In an Array (or any
+<a href="https://crystal-lang.org/api/master/Indexable.html"><code>Indexable</code></a>), each element
+is represented by a numeric index. There are a couple different ways to do this</p>
+<ul>
+<li>we can refer to the elements via positive, increasing indexes as such:</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-crystal" data-lang="crystal"><span class="line"><span class="cl"><span class="n">arr</span> <span class="o">=</span> <span class="o">[</span><span class="sc">&#39;P&#39;</span><span class="p">,</span> <span class="sc">&#39;h&#39;</span><span class="p">,</span> <span class="sc">&#39;a&#39;</span><span class="p">,</span> <span class="sc">&#39;s&#39;</span><span class="p">,</span> <span class="sc">&#39;e&#39;</span><span class="o">]</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#       0    1    2    3    4</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">arr</span><span class="o">[</span><span class="mi">0</span><span class="o">]</span> <span class="c1"># =&gt; &#39;P&#39;</span>
+</span></span><span class="line"><span class="cl"><span class="n">arr</span><span class="o">[</span><span class="mi">4</span><span class="o">]</span> <span class="c1"># =&gt; &#39;e&#39;</span>
+</span></span></code></pre></div><p>Or, we can start at the other end of the array using negative indexes:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-crystal" data-lang="crystal"><span class="line"><span class="cl"><span class="n">arr</span> <span class="o">=</span> <span class="o">[</span><span class="sc">&#39;P&#39;</span><span class="p">,</span> <span class="sc">&#39;h&#39;</span><span class="p">,</span> <span class="sc">&#39;a&#39;</span><span class="p">,</span> <span class="sc">&#39;s&#39;</span><span class="p">,</span> <span class="sc">&#39;e&#39;</span><span class="o">]</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#      -5   -4   -3   -2   -1</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">arr</span><span class="o">[-</span><span class="mi">1</span><span class="o">]</span> <span class="c1"># =&gt; &#39;e&#39;</span>
+</span></span><span class="line"><span class="cl"><span class="n">arr</span><span class="o">[-</span><span class="mi">5</span><span class="o">]</span> <span class="c1"># =&gt; &#39;P&#39;</span>
+</span></span></code></pre></div><p>But the real complication arises when we want to select <em>multiple</em> elements
+from one array. In Crystal, this is done with a Range, often created with a
+range literal. A Range describes an ordered collection of indexes by a starting
+and ending index. Let&rsquo;s construct a Range and see what indexes it refers to:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-crystal" data-lang="crystal"><span class="line"><span class="cl"><span class="c1"># Create a range that starts at 0, and ends at 3 (including 3)</span>
+</span></span><span class="line"><span class="cl"><span class="n">range</span> <span class="o">=</span> <span class="nb">Range</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="k">begin</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="k">end</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span> <span class="ss">exclusive</span><span class="p">:</span> <span class="kc">false</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">range</span><span class="o">.</span><span class="n">to_a</span> <span class="c1"># =&gt; [0, 1, 2, 3]</span>
+</span></span></code></pre></div><p>So, the range we created starts at 0, increments by 1 until it gives us 3,
+and then ends. Note that we specified <code>exclusive: false</code>, in that example.
+It&rsquo;s often useful to exclude the last value (in the example here, 3). Here&rsquo;s
+an example:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-crystal" data-lang="crystal"><span class="line"><span class="cl"><span class="c1"># Create a range that starts at 0, and ends at 3 (excluding 3)</span>
+</span></span><span class="line"><span class="cl"><span class="n">range</span> <span class="o">=</span> <span class="nb">Range</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="k">begin</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="k">end</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span> <span class="ss">exclusive</span><span class="p">:</span> <span class="kc">true</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">range</span><span class="o">.</span><span class="n">to_a</span> <span class="c1"># =&gt; [0, 1, 2]</span>
+</span></span></code></pre></div><p>Of course, the syntax shown above is very painful to type out. Instead,
+we use range literal syntax to shorten the expressions:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-crystal" data-lang="crystal"><span class="line"><span class="cl"><span class="c1"># Inclusive ranges are start..end (two periods are used)</span>
+</span></span><span class="line"><span class="cl"><span class="n">inclusive_range</span> <span class="o">=</span> <span class="mi">0</span><span class="o">..</span><span class="mi">3</span>
+</span></span><span class="line"><span class="cl"><span class="n">inclusive_range</span><span class="o">.</span><span class="n">to_a</span> <span class="c1"># =&gt; [0, 1, 2, 3]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Exclusive ranges use three periods: 0...3</span>
+</span></span><span class="line"><span class="cl"><span class="n">exclusive_range</span> <span class="o">=</span> <span class="mi">0</span><span class="o">...</span><span class="mi">3</span>
+</span></span><span class="line"><span class="cl"><span class="n">exclusive_range</span><span class="o">.</span><span class="n">to_a</span> <span class="c1">#=&gt; [0, 1, 2]</span>
+</span></span></code></pre></div><p>Now that we&rsquo;ve seen how a range can refer to multiple indexes, it&rsquo;s easy to
+use them to sample elements from an array:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-crystal" data-lang="crystal"><span class="line"><span class="cl"><span class="c1"># Let&#39;s extract [&#39;h&#39;, &#39;a&#39;, &#39;s&#39;] from this array:</span>
+</span></span><span class="line"><span class="cl"><span class="n">arr</span> <span class="o">=</span> <span class="o">[</span><span class="sc">&#39;P&#39;</span><span class="p">,</span> <span class="sc">&#39;h&#39;</span><span class="p">,</span> <span class="sc">&#39;a&#39;</span><span class="p">,</span> <span class="sc">&#39;s&#39;</span><span class="p">,</span> <span class="sc">&#39;e&#39;</span><span class="o">]</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#       0    1    2    3    4</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># The indexes shown above tell us that we want elements</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 1, 2, and 3. So, we&#39;ll construct an appropriate range:</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">selection_range</span> <span class="o">=</span> <span class="mi">1</span><span class="o">..</span><span class="mi">3</span>
+</span></span><span class="line"><span class="cl"><span class="n">selection_range</span><span class="o">.</span><span class="n">to_a</span> <span class="c1"># =&gt; [1, 2, 3]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># and use it on the array:</span>
+</span></span><span class="line"><span class="cl"><span class="n">arr</span><span class="o">[</span><span class="n">selection_range</span><span class="o">]</span> <span class="c1"># =&gt; [&#39;h&#39;, &#39;a&#39;, &#39;s&#39;]</span>
+</span></span></code></pre></div><p>This also works with negative indexes, but the end of the range has to be
+positively larger than the starting index:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-crystal" data-lang="crystal"><span class="line"><span class="cl"><span class="n">arr</span> <span class="o">=</span> <span class="o">[</span><span class="sc">&#39;P&#39;</span><span class="p">,</span> <span class="sc">&#39;h&#39;</span><span class="p">,</span> <span class="sc">&#39;a&#39;</span><span class="p">,</span> <span class="sc">&#39;s&#39;</span><span class="p">,</span> <span class="sc">&#39;e&#39;</span><span class="o">]</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#      -5   -4   -3   -2   -1</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Let&#39;s extract the last two letters:</span>
+</span></span><span class="line"><span class="cl"><span class="n">selection_range</span> <span class="o">=</span> <span class="o">-</span><span class="mi">2</span><span class="o">..-</span><span class="mi">1</span>
+</span></span><span class="line"><span class="cl"><span class="n">selection_range</span><span class="o">.</span><span class="n">to_a</span> <span class="c1"># =&gt; [-2, -1]</span>
+</span></span><span class="line"><span class="cl"><span class="n">arr</span><span class="o">[</span><span class="n">selection_range</span><span class="o">]</span> <span class="c1"># =&gt; [&#39;s&#39;, &#39;e&#39;]</span>
+</span></span></code></pre></div><p>The final thing to note is that ranges can also have undetermined beginnings
+and ends. For example:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-crystal" data-lang="crystal"><span class="line"><span class="cl"><span class="n">range_1</span> <span class="o">=</span> <span class="o">..</span><span class="mi">5</span> <span class="c1"># Every integer from -infinity to 5 is, technically, part of this</span>
+</span></span><span class="line"><span class="cl"><span class="n">range_2</span> <span class="o">=</span> <span class="mi">10</span><span class="o">...</span> <span class="c1"># 10, 11, 12 (note that the ... and .. would be identical)</span>
+</span></span><span class="line"><span class="cl"><span class="n">range_3</span> <span class="o">=</span> <span class="o">...</span><span class="mi">3</span> <span class="c1"># Every integer up to but excluding 3</span>
+</span></span><span class="line"><span class="cl"><span class="n">range_4</span> <span class="o">=</span> <span class="o">..</span> <span class="c1"># All integers</span>
+</span></span></code></pre></div><p>You can&rsquo;t call <code>#to_a</code> on any of those ranges, as an infinite array is not
+possible, but they take on a special meaning when used for indexing. The end
+(or ends) that you leave floating will clamp to the start or end of an array
+like this:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-crystal" data-lang="crystal"><span class="line"><span class="cl"><span class="n">arr</span> <span class="o">=</span> <span class="o">[</span><span class="sc">&#39;P&#39;</span><span class="p">,</span> <span class="sc">&#39;h&#39;</span><span class="p">,</span> <span class="sc">&#39;a&#39;</span><span class="p">,</span> <span class="sc">&#39;s&#39;</span><span class="p">,</span> <span class="sc">&#39;e&#39;</span><span class="o">]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">arr</span><span class="o">[..</span><span class="mi">3</span><span class="o">]</span> <span class="c1"># =&gt; [&#39;P&#39;, &#39;h&#39;, &#39;a&#39;, &#39;s&#39;]</span>
+</span></span><span class="line"><span class="cl"><span class="n">arr</span><span class="o">[..</span><span class="mi">3</span><span class="o">]</span> <span class="o">==</span> <span class="n">arr</span><span class="o">[</span><span class="mi">0</span><span class="o">..</span><span class="mi">3</span><span class="o">]</span> <span class="c1"># =&gt; true</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">arr</span><span class="o">[...</span><span class="mi">3</span><span class="o">]</span> <span class="c1"># =&gt; [&#39;P&#39;, &#39;h&#39;, &#39;a&#39;]]</span>
+</span></span><span class="line"><span class="cl"><span class="n">arr</span><span class="o">[...</span><span class="mi">3</span><span class="o">]</span> <span class="o">==</span> <span class="n">arr</span><span class="o">[</span><span class="mi">0</span><span class="o">...</span><span class="mi">3</span><span class="o">]</span> <span class="c1"># =&gt; true</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">arr</span><span class="o">[-</span><span class="mi">3</span><span class="o">..]</span> <span class="c1"># =&gt; [&#39;a&#39;, &#39;s&#39;, &#39;e&#39;]</span>
+</span></span><span class="line"><span class="cl"><span class="n">arr</span><span class="o">[-</span><span class="mi">3</span><span class="o">..]</span> <span class="o">==</span> <span class="n">arr</span><span class="o">[-</span><span class="mi">3</span><span class="o">..-</span><span class="mi">1</span><span class="o">]</span> <span class="c1"># =&gt; true</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">arr</span><span class="o">[..]</span> <span class="c1"># =&gt; [&#39;P&#39;, &#39;h&#39;, &#39;a&#39;, &#39;s&#39;, &#39;e&#39;]</span>
+</span></span><span class="line"><span class="cl"><span class="n">arr</span><span class="o">[...]</span> <span class="c1"># =&gt; [&#39;P&#39;, &#39;h&#39;, &#39;a&#39;, &#39;s&#39;, &#39;e&#39;]</span>
+</span></span><span class="line"><span class="cl"><span class="n">arr</span><span class="o">[..]</span> <span class="o">==</span> <span class="n">arr</span><span class="o">[...]</span> <span class="c1"># =&gt; true</span>
+</span></span><span class="line"><span class="cl"><span class="n">arr</span><span class="o">[..]</span> <span class="o">==</span> <span class="n">arr</span><span class="o">[</span><span class="mi">0</span><span class="o">..-</span><span class="mi">1</span><span class="o">]</span> <span class="c1"># =&gt; true</span>
+</span></span></code></pre></div><p>As you can see, the array is truncating the range to fit within its bounds.
+It will insert a <code>0</code> as the range beginning if one isn&rsquo;t given, and a <code>-1</code>
+as the range end. Note that, on the rightmost bound, exclusivity will be
+ignored if you don&rsquo;t provide a fixed end value, because the final index of
+any array will certainly be less than infinity, and the exclusivity applied to
+<em>infinity</em> in particular, not just the <em>end</em> of the range.</p>
+<p>Note that, if a range has no upper bound, the number of dots in the ellipsis
+does not change the function - <code>arr[1..]</code> and <code>arr[1...]</code> always return the
+same thing.</p>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+
+
+</div>
+
+
+
+  <script>(function(){function e(n){const e=window.getSelection(),t=document.createRange();t.selectNodeContents(n),e.removeAllRanges(),e.addRange(t)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script>
+
+
+ 
+        <script>
+document.getElementById("theme-toggle").addEventListener("click", () => {
+    if (document.body.className.includes("dark")) {
+        document.body.classList.remove('dark');
+        localStorage.setItem("pref-theme", 'light');
+    } else {
+        document.body.classList.add('dark');
+        localStorage.setItem("pref-theme", 'dark');
+    }
+})
+</script>
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents"></nav>
+
+
+ 
+      </div>
+    </aside>
+    
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
