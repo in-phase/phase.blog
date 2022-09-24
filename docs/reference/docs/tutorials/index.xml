@@ -13,7 +13,7 @@
       <pubDate>Tue, 17 Aug 2021 15:38:22 -0700</pubDate>
       
       <guid>https://phase.blog/reference/docs/tutorials/making-a-multiindexable/</guid>
-      <description>Tutorial: Make Your Own MultiIndexable #  Basics #  ph-core offers a standard data type, Phase::NArray that will suffice for most of your multidimensional data storage and manipulation needs. However, storing information linearly in memory isn&amp;rsquo;t always the most effective appraoch, and sometimes isn&amp;rsquo;t possible. Phase::MultiIndexable is an interface defining a common set of rules we expect any multidimensional array to obey; and by implementing this interface, you can treat your own type almost like an NArray.</description>
+      <description>Tutorial: Make Your Own MultiIndexable # Basics # ph-core offers a standard data type, Phase::NArray that will suffice for most of your multidimensional data storage and manipulation needs. However, storing information linearly in memory isn&amp;rsquo;t always the most effective appraoch, and sometimes isn&amp;rsquo;t possible. Phase::MultiIndexable is an interface defining a common set of rules we expect any multidimensional array to obey; and by implementing this interface, you can treat your own type almost like an NArray.</description>
     </item>
     
   </channel>

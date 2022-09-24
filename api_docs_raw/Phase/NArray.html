@@ -1,0 +1,2868 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="Crystal Docs 1.5.0">
+<meta name="crystal_docs.project_version" content="main">
+<meta name="crystal_docs.project_name" content="ph-core">
+
+
+
+<link href="../css/style.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="../js/doc.js"></script>
+
+  <meta name="repository-name" content="ph-core">
+  <title>Phase::NArray(T) - ph-core main</title>
+  <script type="text/javascript">
+    CrystalDocs.base_path = "../";
+  </script>
+</head>
+<body>
+
+<svg class="hidden">
+  <symbol id="octicon-link" viewBox="0 0 16 16">
+    <path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path>
+  </symbol>
+</svg>
+<div class="sidebar">
+  <div class="sidebar-header">
+    <div class="search-box">
+      <input type="search" class="search-input" placeholder="Search..." spellcheck="false" aria-label="Search">
+    </div>
+
+    <div class="project-summary">
+      <h1 class="project-name">
+        <a href="../index.html">
+          ph-core
+        </a>
+      </h1>
+
+      <span class="project-version">
+        main
+      </span>
+    </div>
+  </div>
+
+  <div class="search-results hidden">
+    <ul class="search-list"></ul>
+  </div>
+
+  <div class="types-list">
+    <ul>
+  
+  <li class=" " data-id="ph-core/Complex" data-name="complex">
+      <a href="../Complex.html">Complex</a>
+      
+    </li>
+  
+  <li class=" " data-id="ph-core/Number" data-name="number">
+      <a href="../Number.html">Number</a>
+      
+    </li>
+  
+  <li class="parent open current" data-id="ph-core/Phase" data-name="phase">
+      <a href="../Phase.html">Phase</a>
+      
+        <ul>
+  
+  <li class="parent " data-id="ph-core/Phase/Buffered" data-name="phase::buffered(t)">
+      <a href="../Phase/Buffered.html">Buffered</a>
+      
+        <ul>
+  
+  <li class="parent " data-id="ph-core/Phase/Buffered/Indexed" data-name="phase::buffered::indexed">
+      <a href="../Phase/Buffered/Indexed.html">Indexed</a>
+      
+        <ul>
+  
+  <li class=" " data-id="ph-core/Phase/Buffered/Indexed/ColexIterator" data-name="phase::buffered::indexed::colexiterator(i)">
+      <a href="../Phase/Buffered/Indexed/ColexIterator.html">ColexIterator</a>
+      
+    </li>
+  
+  <li class=" " data-id="ph-core/Phase/Buffered/Indexed/ElemAndCoordIterator" data-name="phase::buffered::indexed::elemandcoorditerator(s, e, i)">
+      <a href="../Phase/Buffered/Indexed/ElemAndCoordIterator.html">ElemAndCoordIterator</a>
+      
+    </li>
+  
+  <li class=" " data-id="ph-core/Phase/Buffered/Indexed/LexIterator" data-name="phase::buffered::indexed::lexiterator(i)">
+      <a href="../Phase/Buffered/Indexed/LexIterator.html">LexIterator</a>
+      
+    </li>
+  
+  <li class=" " data-id="ph-core/Phase/Buffered/Indexed/StrideIterator" data-name="phase::buffered::indexed::strideiterator(i)">
+      <a href="../Phase/Buffered/Indexed/StrideIterator.html">StrideIterator</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class=" " data-id="ph-core/Phase/ColexIterator" data-name="phase::colexiterator(i)">
+      <a href="../Phase/ColexIterator.html">ColexIterator</a>
+      
+    </li>
+  
+  <li class=" " data-id="ph-core/Phase/Coord" data-name="phase::coord">
+      <a href="../Phase/Coord.html">Coord</a>
+      
+    </li>
+  
+  <li class=" " data-id="ph-core/Phase/CoordUtil" data-name="phase::coordutil">
+      <a href="../Phase/CoordUtil.html">CoordUtil</a>
+      
+    </li>
+  
+  <li class=" " data-id="ph-core/Phase/DimensionError" data-name="phase::dimensionerror">
+      <a href="../Phase/DimensionError.html">DimensionError</a>
+      
+    </li>
+  
+  <li class=" " data-id="ph-core/Phase/IndexRegion" data-name="phase::indexregion(t)">
+      <a href="../Phase/IndexRegion.html">IndexRegion</a>
+      
+    </li>
+  
+  <li class=" " data-id="ph-core/Phase/InputCoord" data-name="phase::inputcoord">
+      <a href="../Phase/InputCoord.html">InputCoord</a>
+      
+    </li>
+  
+  <li class=" " data-id="ph-core/Phase/LexIterator" data-name="phase::lexiterator(i)">
+      <a href="../Phase/LexIterator.html">LexIterator</a>
+      
+    </li>
+  
+  <li class="parent " data-id="ph-core/Phase/MultiIndexable" data-name="phase::multiindexable(t)">
+      <a href="../Phase/MultiIndexable.html">MultiIndexable</a>
+      
+        <ul>
+  
+  <li class=" " data-id="ph-core/Phase/MultiIndexable/ElemAndCoordIterator" data-name="phase::multiindexable::elemandcoorditerator(s, e, i)">
+      <a href="../Phase/MultiIndexable/ElemAndCoordIterator.html">ElemAndCoordIterator</a>
+      
+    </li>
+  
+  <li class=" " data-id="ph-core/Phase/MultiIndexable/ElemIterator" data-name="phase::multiindexable::elemiterator(s, e, i)">
+      <a href="../Phase/MultiIndexable/ElemIterator.html">ElemIterator</a>
+      
+    </li>
+  
+  <li class="parent " data-id="ph-core/Phase/MultiIndexable/Formatter" data-name="phase::multiindexable::formatter(s, e, i)">
+      <a href="../Phase/MultiIndexable/Formatter.html">Formatter</a>
+      
+        <ul>
+  
+  <li class="parent " data-id="ph-core/Phase/MultiIndexable/Formatter/Settings" data-name="phase::multiindexable::formatter::settings">
+      <a href="../Phase/MultiIndexable/Formatter/Settings.html">Settings</a>
+      
+        <ul>
+  
+  <li class=" " data-id="ph-core/Phase/MultiIndexable/Formatter/Settings/ColorConverter" data-name="phase::multiindexable::formatter::settings::colorconverter">
+      <a href="../Phase/MultiIndexable/Formatter/Settings/ColorConverter.html">ColorConverter</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class=" " data-id="ph-core/Phase/MultiIndexable/TilingLexIterator" data-name="phase::multiindexable::tilinglexiterator(i)">
+      <a href="../Phase/MultiIndexable/TilingLexIterator.html">TilingLexIterator</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class=" " data-id="ph-core/Phase/MultiWritable" data-name="phase::multiwritable(t)">
+      <a href="../Phase/MultiWritable.html">MultiWritable</a>
+      
+    </li>
+  
+  <li class=" current" data-id="ph-core/Phase/NArray" data-name="phase::narray(t)">
+      <a href="../Phase/NArray.html">NArray</a>
+      
+    </li>
+  
+  <li class=" " data-id="ph-core/Phase/OutputCoord" data-name="phase::outputcoord">
+      <a href="../Phase/OutputCoord.html">OutputCoord</a>
+      
+    </li>
+  
+  <li class=" " data-id="ph-core/Phase/ProcView" data-name="phase::procview(s, t, r)">
+      <a href="../Phase/ProcView.html">ProcView</a>
+      
+    </li>
+  
+  <li class=" " data-id="ph-core/Phase/RangeSyntax" data-name="phase::rangesyntax">
+      <a href="../Phase/RangeSyntax.html">RangeSyntax</a>
+      
+    </li>
+  
+  <li class="parent " data-id="ph-core/Phase/ReadonlyView" data-name="phase::readonlyview(s, r)">
+      <a href="../Phase/ReadonlyView.html">ReadonlyView</a>
+      
+        <ul>
+  
+  <li class=" " data-id="ph-core/Phase/ReadonlyView/ComposedTransform" data-name="phase::readonlyview::composedtransform">
+      <a href="../Phase/ReadonlyView/ComposedTransform.html">ComposedTransform</a>
+      
+    </li>
+  
+  <li class=" " data-id="ph-core/Phase/ReadonlyView/CoordTransform" data-name="phase::readonlyview::coordtransform">
+      <a href="../Phase/ReadonlyView/CoordTransform.html">CoordTransform</a>
+      
+    </li>
+  
+  <li class=" " data-id="ph-core/Phase/ReadonlyView/IdentityTransform" data-name="phase::readonlyview::identitytransform">
+      <a href="../Phase/ReadonlyView/IdentityTransform.html">IdentityTransform</a>
+      
+    </li>
+  
+  <li class=" " data-id="ph-core/Phase/ReadonlyView/PermuteTransform" data-name="phase::readonlyview::permutetransform">
+      <a href="../Phase/ReadonlyView/PermuteTransform.html">PermuteTransform</a>
+      
+    </li>
+  
+  <li class=" " data-id="ph-core/Phase/ReadonlyView/RegionTransform" data-name="phase::readonlyview::regiontransform">
+      <a href="../Phase/ReadonlyView/RegionTransform.html">RegionTransform</a>
+      
+    </li>
+  
+  <li class=" " data-id="ph-core/Phase/ReadonlyView/ReshapeTransform" data-name="phase::readonlyview::reshapetransform">
+      <a href="../Phase/ReadonlyView/ReshapeTransform.html">ReshapeTransform</a>
+      
+    </li>
+  
+  <li class=" " data-id="ph-core/Phase/ReadonlyView/ReverseTransform" data-name="phase::readonlyview::reversetransform">
+      <a href="../Phase/ReadonlyView/ReverseTransform.html">ReverseTransform</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class="parent " data-id="ph-core/Phase/RegionIterator" data-name="phase::regioniterator(i)">
+      <a href="../Phase/RegionIterator.html">RegionIterator</a>
+      
+        <ul>
+  
+  <li class=" " data-id="ph-core/Phase/RegionIterator/FringeBehaviour" data-name="phase::regioniterator::fringebehaviour">
+      <a href="../Phase/RegionIterator/FringeBehaviour.html">FringeBehaviour</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class=" " data-id="ph-core/Phase/RegionLiteral" data-name="phase::regionliteral">
+      <a href="../Phase/RegionLiteral.html">RegionLiteral</a>
+      
+    </li>
+  
+  <li class=" " data-id="ph-core/Phase/Shape" data-name="phase::shape">
+      <a href="../Phase/Shape.html">Shape</a>
+      
+    </li>
+  
+  <li class=" " data-id="ph-core/Phase/ShapeError" data-name="phase::shapeerror">
+      <a href="../Phase/ShapeError.html">ShapeError</a>
+      
+    </li>
+  
+  <li class=" " data-id="ph-core/Phase/ShapeUtil" data-name="phase::shapeutil">
+      <a href="../Phase/ShapeUtil.html">ShapeUtil</a>
+      
+    </li>
+  
+  <li class=" " data-id="ph-core/Phase/StrideIterator" data-name="phase::strideiterator(i)">
+      <a href="../Phase/StrideIterator.html">StrideIterator</a>
+      
+    </li>
+  
+  <li class=" " data-id="ph-core/Phase/View" data-name="phase::view(s, r)">
+      <a href="../Phase/View.html">View</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+</ul>
+
+  </div>
+</div>
+
+
+<div class="main-content">
+<h1 class="type-name">
+
+  <span class="kind">class</span> Phase::NArray(T)
+
+</h1>
+
+
+  <ul class="superclass-hierarchy"><li class="superclass"><a href="../Phase/NArray.html">Phase::NArray(T)</a></li><li class="superclass">Reference</li><li class="superclass">Object</li></ul>
+
+
+
+
+  <h2>
+    <a id="overview" class="anchor" href="#overview">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Overview
+  </h2>
+
+  <p>An <code>{{@type}}</code> is a multidimensional array for any arbitrary type.
+It is the most general implementation of Abstract{{@type}}, and as a result
+only implements primitive data operations (construction, data reading,
+data writing, and region sampling / slicing).</p>
+
+
+
+
+
+  <h2>
+    <a id="included-modules" class="anchor" href="#included-modules">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Included Modules
+  </h2>
+  <ul class="other-types-list">
+    
+      <li class="other-type"><a href="../Phase/Buffered.html">Phase::Buffered(T)</a></li>
+    
+      <li class="other-type"><a href="../Phase/MultiIndexable.html">Phase::MultiIndexable(T)</a></li>
+    
+      <li class="other-type"><a href="../Phase/MultiWritable.html">Phase::MultiWritable(T)</a></li>
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+
+  <h2>
+    <a id="defined-in" class="anchor" href="#defined-in">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Defined in:
+  </h2>
+  
+    
+      <a href="https://github.com/in-phase/ph-core/blob/faefb580069f511d51683190c6a7f4a72a11e8f0/src/n_array.cr#L13" target="_blank">
+        n_array.cr
+      </a>
+    
+    <br/>
+  
+
+
+
+
+
+  <h2>
+    <a id="constructors" class="anchor" href="#constructors">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Constructors
+  </h2>
+  <ul class="list-summary">
+    
+      <li class="entry-summary">
+        <a href="#new%28ctx%3AYAML%3A%3AParseContext%2Cnode%3AYAML%3A%3ANodes%3A%3ANode%29-class-method" class="signature"><strong>.new</strong>(ctx : YAML::ParseContext, node : YAML::Nodes::Node)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#new%28data%3AEnumerable%29-class-method" class="signature"><strong>.new</strong>(data : Enumerable)</a>
+        
+          <div class="summary"><p>Creates an <code>{{@type}}</code> from a nested array with uniform dimensions.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#new%28pull%3AJSON%3A%3APullParser%29-class-method" class="signature"><strong>.new</strong>(pull : JSON::PullParser)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#wrap%28%2Aobjects%3AAbstractNArray%28T%29%2Cpad%3Dfalse%29%3ANArray-class-method" class="signature"><strong>.wrap</strong>(*objects : AbstractNArray(T), pad = <span class="n">false</span>) : NArray</a>
+        
+          <div class="summary"><p>Adds a dimension at highest level, where each &quot;row&quot; is an input {{@type}}.</p></div>
+        
+      </li>
+    
+  </ul>
+
+
+
+  <h2>
+    <a id="class-method-summary" class="anchor" href="#class-method-summary">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Class Method Summary
+  </h2>
+  <ul class="list-summary">
+    
+      <li class="entry-summary">
+        <a href="#%5B%5D%28%2Acontents%29-class-method" class="signature"><strong>.[]</strong>(*contents)</a>
+        
+          <div class="summary"><p>NArray[1, 2, 3] == NArray.new([1, 2, 3]) NArray[[1, 2, 3]] == NArray.new([[1, 2, 3]])</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#build%28shape%3AEnumerable%2C%26block%3AReadonlyWrapper%28Array%28Int32%29%2CInt32%29%2CInt32-%3ET%29-class-method" class="signature"><strong>.build</strong>(shape : Enumerable, &block : ReadonlyWrapper(Array(Int32), Int32), Int32 -> T)</a>
+        
+          <div class="summary"><p>Constructs an <code>{{@type}}</code> using a user-provided <em>shape</em> (see <code>shape</code>) and a callback.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#build%28%2Ashape%3AInt%2C%26block%3AReadonlyWrapper%28Array%28Int32%29%2CInt32%29%2CInt32-%3ET%29-class-method" class="signature"><strong>.build</strong>(*shape : Int, &block : ReadonlyWrapper(Array(Int32), Int32), Int32 -> T)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#common_container%28%2Aobjects%29-class-method" class="signature"><strong>.common_container</strong>(*objects)</a>
+        
+          <div class="summary"><p>Given a list of <code>{{@type}}</code>s, returns the smallest shape array in which any one of those <code>{{@type}}s</code> can be contained.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#compatible%3F%28%2Anarrs%3AMultiIndexable%2Caxis%3D-1%29%3ABool-class-method" class="signature"><strong>.compatible?</strong>(*narrs : MultiIndexable, axis = <span class="n">-1</span>) : Bool</a>
+        
+          <div class="summary"><p>Checks that the shape of this and other match in every dimension (except <code>axis</code>, if it is specified)</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#concatenate%28%2Anarrs%3AMultiIndexable%28T%29%2Caxis%3D0%29%3ANArray%28T%29-class-method" class="signature"><strong>.concatenate</strong>(*narrs : MultiIndexable(T), axis = <span class="n">0</span>) : NArray(T)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#fill%28shape%2Cvalue%3AT%29-class-method" class="signature"><strong>.fill</strong>(shape, value : T)</a>
+        
+          <div class="summary"><p>Fills an <code>{{@type}}</code> of given shape with a specified value.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#of_buffer%28shape%3AArray%28Int32%29%2Cbuffer%3ASlice%28T%29%29-class-method" class="signature"><strong>.of_buffer</strong>(shape : Array(Int32), buffer : Slice(T))</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#tile%28narr%3AMultiIndexable%28T%29%2Ccounts%3AEnumerable%29-class-method" class="signature"><strong>.tile</strong>(narr : MultiIndexable(T), counts : Enumerable)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#wrap%28%2Aobjects%29-class-method" class="signature"><strong>.wrap</strong>(*objects)</a>
+        
+          <div class="summary"><p>creates an {{@type}}-type vector from a tuple of scalars.</p></div>
+        
+      </li>
+    
+  </ul>
+
+
+
+  <h2>
+    <a id="instance-method-summary" class="anchor" href="#instance-method-summary">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Instance Method Summary
+  </h2>
+  <ul class="list-summary">
+    
+      <li class="entry-summary">
+        <a href="#%3C%3C%28other%3Aself%29%3Aself-instance-method" class="signature"><strong>#<<</strong>(other : <span class="k">self</span>) : <span class="k">self</span></a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#%3D%3D%28other%3ANArray%29%3ABool-instance-method" class="signature"><strong>#==</strong>(other : NArray) : Bool</a>
+        
+          <div class="summary"><p>Checks for elementwise equality between <code>self</code> and <em>other</em>.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#%5B%5D%3D%28bool_mask%3ANArray%28Bool%29%2Cvalue%3AT%29-instance-method" class="signature"><strong>#[]=</strong>(bool_mask : NArray(Bool), value : T)</a>
+        
+          <div class="summary"><p>replaces all values in a boolean mask with a given value</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#buffer%3ASlice%28T%29-instance-method" class="signature"><strong>#buffer</strong> : Slice(T)</a>
+        
+          <div class="summary"><p>Stores the elements of an <code>{{@type}}</code> in lexicographic (row-major) order.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#clone%3Aself-instance-method" class="signature"><strong>#clone</strong> : <span class="k">self</span></a>
+        
+          <div class="summary"><p>Creates a deep copy of this {{@type}}; Allocates a new buffer of the same shape, and calls #clone on every item in the buffer.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#compatible%3F%28%2Aothers%3AMultiIndexable%2Caxis%3D-1%29%3ABool-instance-method" class="signature"><strong>#compatible?</strong>(*others : MultiIndexable, axis = <span class="n">-1</span>) : Bool</a>
+        
+          <div class="summary"><p>Checks that the shape of this and other match in every dimension (except <code>axis</code>, if it is specified)</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#concatenate%28%2Aothers%2Caxis%3D0%29%3Aself-instance-method" class="signature"><strong>#concatenate</strong>(*others, axis = <span class="n">0</span>) : <span class="k">self</span></a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#concatenate%21%28%2Aothers%2Caxis%3D0%29%3Aself-instance-method" class="signature"><strong>#concatenate!</strong>(*others, axis = <span class="n">0</span>) : <span class="k">self</span></a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#dup%3Aself-instance-method" class="signature"><strong>#dup</strong> : <span class="k">self</span></a>
+        
+          <div class="summary"><p>Creates a shallow copy of this {{@type}}; Allocates a new buffer of the same shape, and duplicates every item in the buffer.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#each-instance-method" class="signature"><strong>#each</strong></a>
+        
+          <div class="summary"><p>The default &quot;each&quot; with no iterator type passed is lexicographic.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#each_coord-instance-method" class="signature"><strong>#each_coord</strong></a>
+        
+          <div class="summary"><p>Returns an iterator that will yield each coordinate of <code>self</code> in lexicographic (row-major) order.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#each_with_coord%28iter%3AIndexedStrideIterator%28I%29%29forallI-instance-method" class="signature"><strong>#each_with_coord</strong>(iter : IndexedStrideIterator(I)) forall I</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#each_with_index%28%26block%3AT%2CInt32-%3E%29-instance-method" class="signature"><strong>#each_with_index</strong>(&block : T, Int32 -> )</a>
+        
+          <div class="summary"><p>Iterates over the collection, yielding both the elements and their index.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#fast_each-instance-method" class="signature"><strong>#fast_each</strong></a>
+        
+          <div class="summary"><p>Returns an Iterator over the elements in this <code><a href="../Phase/MultiIndexable.html">MultiIndexable</a></code> that will iterate in the fastest order possible.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#fit%28new_shape%2C%2A%2Calign%3AHash%28Int32%2CNArray%3A%3AAlignment%7CInt32%29%29-instance-method" class="signature"><strong>#fit</strong>(new_shape, *, align : Hash(Int32, NArray::Alignment | Int32))</a>
+        
+          <div class="summary"><p>This version requires you are only &lt;= on each axis; cannot pad</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#fit%28new_shape%2C%2A%2Calign%3AHash%28Int32%2CNArray%3A%3AAlignment%7CInt32%29%3F%3Dnil%2Cpad_withvalue%3Dnil%29-instance-method" class="signature"><strong>#fit</strong>(new_shape, *, align : Hash(Int32, NArray::Alignment | Int32)? = <span class="n">nil</span>, pad_with value = <span class="n">nil</span>)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#fit%21-instance-method" class="signature"><strong>#fit!</strong></a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#flatten%3Aself-instance-method" class="signature"><strong>#flatten</strong> : <span class="k">self</span></a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#map%28%26block%3AT-%3EU%29forallU-instance-method" class="signature"><strong>#map</strong>(&block : T -> U) forall U</a>
+        
+          <div class="summary"><p>Returns a <code><a href="../Phase/MultiIndexable.html">MultiIndexable</a></code> with the results of running the block against each element of <code>self</code>.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#map%21%28%26block%3AT-%3ET%29%3Aself-instance-method" class="signature"><strong>#map!</strong>(&block : T -> T) : <span class="k">self</span></a>
+        
+          <div class="summary"><p><span class="flag orange">TODO</span>  docs, test</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#map_with_coord%28%26block%3AT%2CIndexable%28Int32%29%2CInt32-%3EU%29forallU-instance-method" class="signature"><strong>#map_with_coord</strong>(&block : T, Indexable(Int32), Int32 -> U) forall U</a>
+        
+          <div class="summary"><p>Returns a <code><a href="../Phase/MultiIndexable.html">MultiIndexable</a></code> with the results of running the block against each element and coordinate comprising <code>self</code>.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#map_with_coord%21%28%26block%3AT%2CIndexable%28Int32%29%2CInt32-%3ET%29%3Aself-instance-method" class="signature"><strong>#map_with_coord!</strong>(&block : T, Indexable(Int32), Int32 -> T) : <span class="k">self</span></a>
+        
+          <div class="summary"><p><span class="flag orange">TODO</span>  docs DISCUSS is this good behaviour?</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#map_with_index%28%26block%3AT%2CInt32-%3EU%29forallU-instance-method" class="signature"><strong>#map_with_index</strong>(&block : T, Int32 -> U) forall U</a>
+        
+          <div class="summary"><p>Like <code><a href="../Phase/NArray.html#map%28%26block%3AT-%3EU%29forallU-instance-method">#map</a></code>, but the block gets passed both the element and its index.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#map_with_index%21%28%26block%3AT%2CInt32-%3ET%29%3Aself-instance-method" class="signature"><strong>#map_with_index!</strong>(&block : T, Int32 -> T) : <span class="k">self</span></a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#pad%28value%2Camounts%3AHash%28Int32%2CTuple%28Int32%2CInt32%29%29%29-instance-method" class="signature"><strong>#pad</strong>(value, amounts : Hash(Int32, Tuple(Int32, Int32)))</a>
+        
+          <div class="summary"><p>core pad(0, {0 =&gt; {2, 2}, 1 =&gt; {3, 4}, -1 =&gt; {0, 5}})</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#pad%21-instance-method" class="signature"><strong>#pad!</strong></a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#push%28%2Aothers%3Aself%2Caxis%3D0%29%3Aself-instance-method" class="signature"><strong>#push</strong>(*others : <span class="k">self</span>, axis = <span class="n">0</span>) : <span class="k">self</span></a>
+        
+          <div class="summary"><p>optimization for pushing other NArrays on axis 0, in-place TODO: axis = 0 should not be a user modifiable parameter and never should have been</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#reshape%28new_shape%3AEnumerable%29-instance-method" class="signature"><strong>#reshape</strong>(new_shape : Enumerable)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#reshape%28%2Asplat%29-instance-method" class="signature"><strong>#reshape</strong>(*splat)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#size%3AInt32-instance-method" class="signature"><strong>#size</strong> : Int32</a>
+        
+          <div class="summary"><p>Returns the total number of elements in this <code><a href="../Phase/MultiIndexable.html">MultiIndexable</a></code>.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#to_json%28json%3AJSON%3A%3ABuilder%29-instance-method" class="signature"><strong>#to_json</strong>(json : JSON::Builder)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#to_yaml%28yaml%3AYAML%3A%3ANodes%3A%3ABuilder%29-instance-method" class="signature"><strong>#to_yaml</strong>(yaml : YAML::Nodes::Builder)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#unsafe_fetch_chunk%28region%3AIndexRegion%29-instance-method" class="signature"><strong>#unsafe_fetch_chunk</strong>(region : IndexRegion)</a>
+        
+          <div class="summary"><p>Copies the elements in <code>region</code> to a new <code>{{@type}}</code>, assuming that <code>region</code> is in canonical form and in-bounds for this <code>{{@type}}</code>.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#unsafe_fetch_element%28coord%29%3AT-instance-method" class="signature"><strong>#unsafe_fetch_element</strong>(coord) : T</a>
+        
+          <div class="summary"><p>Retrieves the element specified by <code>coord</code>, assuming that <code>coord</code> is in canonical form and in-bounds for this <code>{{@type}}</code>.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#unsafe_set_chunk%28region%3AIndexRegion%2Csrc%3AMultiIndexable%28T%29%29-instance-method" class="signature"><strong>#unsafe_set_chunk</strong>(region : IndexRegion, src : MultiIndexable(T))</a>
+        
+          <div class="summary"><p>Copies the elements from a MultiIndexable <code>src</code> into <code>region</code>, assuming that <code>region</code> is in canonical form and in-bounds for this <code>{{type}}</code> and the shape of <code>region</code> matches the shape of <code>src</code>.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#unsafe_set_chunk%28region%3AIndexRegion%2Cvalue%3AT%29-instance-method" class="signature"><strong>#unsafe_set_chunk</strong>(region : IndexRegion, value : T)</a>
+        
+          <div class="summary"><p>Sets each element in <code>region</code> to <code>value</code>, assuming that <code>region</code> is in canonical form and in-bounds for this <code>{{type}}</code></p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#unsafe_set_element%28coord%3AEnumerable%2Cvalue%3AT%29-instance-method" class="signature"><strong>#unsafe_set_element</strong>(coord : Enumerable, value : T)</a>
+        
+      </li>
+    
+  </ul>
+
+
+
+
+
+<div class="methods-inherited">
+  
+    
+
+  <h3>Instance methods inherited from module <code><a href="../Phase/Buffered.html">Phase::Buffered(T)</a></code></h3>
+  
+  
+    <a href="../Phase/Buffered.html#buffer%3AIndexable-instance-method" class="tooltip">
+      <span>buffer : Indexable</span>
+    buffer</a>, 
+    
+  
+    <a href="../Phase/Buffered.html#coord_to_index%28coord%29%3AInt-instance-method" class="tooltip">
+      <span>coord_to_index(coord) : Int</span>
+    coord_to_index</a>, 
+    
+  
+    <a href="../Phase/Buffered.html#index_to_coord%28index%29%3AArray-instance-method" class="tooltip">
+      <span>index_to_coord(index) : Array</span>
+    index_to_coord</a>
+    
+  
+
+
+    
+
+
+    
+
+  <h3>Class methods inherited from module <code><a href="../Phase/Buffered.html">Phase::Buffered(T)</a></code></h3>
+  
+  
+    <a href="../Phase/Buffered.html#axis_strides%28shape%29-class-method" class="tooltip">
+      <span>axis_strides(shape)</span>
+    axis_strides</a>, 
+    
+  
+    <a href="../Phase/Buffered.html#coord_to_index%28coord%2Cshape%29%3AInt-class-method" class="tooltip">
+      <span>coord_to_index(coord, shape) : Int</span>
+    coord_to_index</a>, 
+    
+  
+    <a href="../Phase/Buffered.html#coord_to_index_fast%28coord%2Cshape%2Caxis_strides%29%3AInt-class-method" class="tooltip">
+      <span>coord_to_index_fast(coord, shape, axis_strides) : Int</span>
+    coord_to_index_fast</a>, 
+    
+  
+    <a href="../Phase/Buffered.html#index_to_coord%28index%2Cshape%29%3AArray-class-method" class="tooltip">
+      <span>index_to_coord(index, shape) : Array</span>
+    index_to_coord</a>
+    
+  
+
+
+  
+    
+
+  <h3>Instance methods inherited from module <code><a href="../Phase/MultiIndexable.html">Phase::MultiIndexable(T)</a></code></h3>
+  
+  
+    <a href="../Phase/MultiIndexable.html#%25%28other%3AMultiIndexable%28U%29%29forallU-instance-method" class="tooltip">
+      <span>%(other : MultiIndexable(U)) forall U<br/>%(other)</span>
+    %</a>, 
+    
+  
+    <a href="../Phase/MultiIndexable.html#%26%28other%3AMultiIndexable%28U%29%29forallU-instance-method" class="tooltip">
+      <span>&(other : MultiIndexable(U)) forall U<br/>&(other)</span>
+    &</a>, 
+    
+  
+    <a href="../Phase/MultiIndexable.html#%26%2A%28other%3AMultiIndexable%28U%29%29forallU-instance-method" class="tooltip">
+      <span>&*(other : MultiIndexable(U)) forall U<br/>&*(other)</span>
+    &*</a>, 
+    
+  
+    <a href="../Phase/MultiIndexable.html#%26%2A%2A%28other%3AMultiIndexable%28U%29%29forallU-instance-method" class="tooltip">
+      <span>&**(other : MultiIndexable(U)) forall U<br/>&**(other)</span>
+    &**</a>, 
+    
+  
+    <a href="../Phase/MultiIndexable.html#%26%2B%28other%3AMultiIndexable%28U%29%29forallU-instance-method" class="tooltip">
+      <span>&+(other : MultiIndexable(U)) forall U<br/>&+(other)</span>
+    &+</a>, 
+    
+  
+    <a href="../Phase/MultiIndexable.html#%26-%28other%3AMultiIndexable%28U%29%29forallU-instance-method" class="tooltip">
+      <span>&-(other : MultiIndexable(U)) forall U<br/>&-(other)</span>
+    &-</a>, 
+    
+  
+    <a href="../Phase/MultiIndexable.html#%2A%28other%3AMultiIndexable%28U%29%29forallU-instance-method" class="tooltip">
+      <span>*(other : MultiIndexable(U)) forall U<br/>*(other)</span>
+    *</a>, 
+    
+  
+    <a href="../Phase/MultiIndexable.html#%2A%2A%28other%3AMultiIndexable%28U%29%29forallU-instance-method" class="tooltip">
+      <span>**(other : MultiIndexable(U)) forall U<br/>**(other)</span>
+    **</a>, 
+    
+  
+    <a href="../Phase/MultiIndexable.html#%2B%28other%3AMultiIndexable%28U%29%29forallU-instance-method" class="tooltip">
+      <span>+(other : MultiIndexable(U)) forall U<br/>+(other)<br/>+</span>
+    +</a>, 
+    
+  
+    <a href="../Phase/MultiIndexable.html#-%28other%3AMultiIndexable%28U%29%29forallU-instance-method" class="tooltip">
+      <span>-(other : MultiIndexable(U)) forall U<br/>-(other)<br/>-</span>
+    -</a>, 
+    
+  
+    <a href="../Phase/MultiIndexable.html#/%28other%3AMultiIndexable%28U%29%29forallU-instance-method" class="tooltip">
+      <span>/(other : MultiIndexable(U)) forall U<br/>/(other)</span>
+    /</a>, 
+    
+  
+    <a href="../Phase/MultiIndexable.html#//%28other%3AMultiIndexable%28U%29%29forallU-instance-method" class="tooltip">
+      <span>//(other : MultiIndexable(U)) forall U<br/>//(other)</span>
+    //</a>, 
+    
+  
+    <a href="../Phase/MultiIndexable.html#%3C%28other%3AMultiIndexable%28U%29%29forallU-instance-method" class="tooltip">
+      <span><(other : MultiIndexable(U)) forall U<br/><(other)</span>
+    <</a>, 
+    
+  
+    <a href="../Phase/MultiIndexable.html#%3C%3D%28other%3AMultiIndexable%28U%29%29forallU-instance-method" class="tooltip">
+      <span><=(other : MultiIndexable(U)) forall U<br/><=(other)</span>
+    <=</a>, 
+    
+  
+    <a href="../Phase/MultiIndexable.html#%3C%3D%3E%28other%3AMultiIndexable%28U%29%29forallU-instance-method" class="tooltip">
+      <span><=>(other : MultiIndexable(U)) forall U<br/><=>(other)</span>
+    <=></a>, 
+    
+  
+    <a href="../Phase/MultiIndexable.html#%3D%3D%28other%3Aself%29%3ABool-instance-method" class="tooltip">
+      <span>==(other : <span class="k">self</span>) : Bool</span>
+    ==</a>, 
+    
+  
+    <a href="../Phase/MultiIndexable.html#%3D~%28value%29%3AMultiIndexable%28Bool%29-instance-method" class="tooltip">
+      <span>=~(value) : MultiIndexable(Bool)</span>
+    =~</a>, 
+    
+  
+    <a href="../Phase/MultiIndexable.html#%3E%28other%3AMultiIndexable%28U%29%29forallU-instance-method" class="tooltip">
+      <span>>(other : MultiIndexable(U)) forall U<br/>>(other)</span>
+    ></a>, 
+    
+  
+    <a href="../Phase/MultiIndexable.html#%3E%3D%28other%3AMultiIndexable%28U%29%29forallU-instance-method" class="tooltip">
+      <span>>=(other : MultiIndexable(U)) forall U<br/>>=(other)</span>
+    >=</a>, 
+    
+  
+    <a href="../Phase/MultiIndexable.html#%5B%5D%28region_literal%3AIndexable%2Cdrop%3ABool%3DMultiIndexable%3A%3ADROP_BY_DEFAULT%29-instance-method" class="tooltip">
+      <span>[](region_literal : Indexable, drop : Bool = <span class="t">MultiIndexable</span><span class="t">::</span><span class="t">DROP_BY_DEFAULT</span>)<br/>[](region : IndexRegion)<br/>[](*region_literal, drop : Bool = <span class="t">MultiIndexable</span><span class="t">::</span><span class="t">DROP_BY_DEFAULT</span>)</span>
+    []</a>, 
+    
+  
+    <a href="../Phase/MultiIndexable.html#%5B%5D%3F%28bool_mask%3AMultiIndexable%28Bool%29%29%3AMultiIndexable%28T%3F%29-instance-method" class="tooltip">
+      <span>[]?(bool_mask : MultiIndexable(Bool)) : MultiIndexable(T?)<br/>[]?(region : Indexable, drop : Bool = <span class="t">MultiIndexable</span><span class="t">::</span><span class="t">DROP_BY_DEFAULT</span>) : MultiIndexable(T)?<br/>[]?(region : IndexRegion) : MultiIndexable(T)?<br/>[]?(*region_literal, drop : Bool = <span class="t">MultiIndexable</span><span class="t">::</span><span class="t">DROP_BY_DEFAULT</span>)</span>
+    []?</a>, 
+    
+  
+    <a href="../Phase/MultiIndexable.html#%5E%28other%3AMultiIndexable%28U%29%29forallU-instance-method" class="tooltip">
+      <span>^(other : MultiIndexable(U)) forall U<br/>^(other)</span>
+    ^</a>, 
+    
+  
+    <a href="../Phase/MultiIndexable.html#%7C%28other%3AMultiIndexable%28U%29%29forallU-instance-method" class="tooltip">
+      <span>|(other : MultiIndexable(U)) forall U<br/>|(other)</span>
+    |</a>, 
+    
+  
+    <a href="../Phase/MultiIndexable.html#~-instance-method" class="tooltip">
+      <span>~</span>
+    ~</a>, 
+    
+  
+    <a href="../Phase/MultiIndexable.html#apply%3AApplyProxy-instance-method" class="tooltip">
+      <span>apply : ApplyProxy</span>
+    apply</a>, 
+    
+  
+    <a href="../Phase/MultiIndexable.html#apply%21%3AInPlaceApplyProxy-instance-method" class="tooltip">
+      <span>apply! : InPlaceApplyProxy</span>
+    apply!</a>, 
+    
+  
+    <a href="../Phase/MultiIndexable.html#colex_each%3AElemIterator-instance-method" class="tooltip">
+      <span>colex_each : ElemIterator<br/>colex_each(&) : Nil</span>
+    colex_each</a>, 
+    
+  
+    <a href="../Phase/MultiIndexable.html#colex_each_coord%3AColexIterator-instance-method" class="tooltip">
+      <span>colex_each_coord : ColexIterator<br/>colex_each_coord(&) : Nil</span>
+    colex_each_coord</a>, 
+    
+  
+    <a href="../Phase/MultiIndexable.html#dimensions%3AInt-instance-method" class="tooltip">
+      <span>dimensions : Int</span>
+    dimensions</a>, 
+    
+  
+    <a href="../Phase/MultiIndexable.html#each%3AElemIterator-instance-method" class="tooltip">
+      <span>each : ElemIterator<br/>each(&) : Nil</span>
+    each</a>, 
+    
+  
+    <a href="../Phase/MultiIndexable.html#each_coord%3ALexIterator-instance-method" class="tooltip">
+      <span>each_coord : LexIterator<br/>each_coord(&) : Nil</span>
+    each_coord</a>, 
+    
+  
+    <a href="../Phase/MultiIndexable.html#each_slice%28axis%3D0%29%3AIterator-instance-method" class="tooltip">
+      <span>each_slice(axis = <span class="n">0</span>) : Iterator<br/>each_slice(axis = <span class="n">0</span>, &)</span>
+    each_slice</a>, 
+    
+  
+    <a href="../Phase/MultiIndexable.html#each_with%28%2Aargs%2C%26%29-instance-method" class="tooltip">
+      <span>each_with(*args, &)</span>
+    each_with</a>, 
+    
+  
+    <a href="../Phase/MultiIndexable.html#each_with_coord%3AElemAndCoordIterator-instance-method" class="tooltip">
+      <span>each_with_coord : ElemAndCoordIterator<br/>each_with_coord(&) : Nil</span>
+    each_with_coord</a>, 
+    
+  
+    <a href="../Phase/MultiIndexable.html#empty%3F%3ABool-instance-method" class="tooltip">
+      <span>empty? : Bool</span>
+    empty?</a>, 
+    
+  
+    <a href="../Phase/MultiIndexable.html#ensure_writable-instance-method" class="tooltip">
+      <span>ensure_writable</span>
+    ensure_writable</a>, 
+    
+  
+    <a href="../Phase/MultiIndexable.html#eq%28other%3AMultiIndexable%28U%29%29%3AMultiIndexable%28Bool%29forallU-instance-method" class="tooltip">
+      <span>eq(other : MultiIndexable(U)) : MultiIndexable(Bool) forall U<br/>eq(value) : MultiIndexable(Bool)</span>
+    eq</a>, 
+    
+  
+    <a href="../Phase/MultiIndexable.html#equals%3F%28other%3AMultiIndexable%2C%26%29%3ABool-instance-method" class="tooltip">
+      <span>equals?(other : MultiIndexable, &) : Bool</span>
+    equals?</a>, 
+    
+  
+    <a href="../Phase/MultiIndexable.html#fast_each%3AIterator%28T%29-instance-method" class="tooltip">
+      <span>fast_each : Iterator(T)<br/>fast_each(&) : Nil</span>
+    fast_each</a>, 
+    
+  
+    <a href="../Phase/MultiIndexable.html#first%3AT-instance-method" class="tooltip">
+      <span>first : T</span>
+    first</a>, 
+    
+  
+    <a href="../Phase/MultiIndexable.html#get%28coord%3AIndexable%29%3AT-instance-method" class="tooltip">
+      <span>get(coord : Indexable) : T<br/>get(*coord : Int)</span>
+    get</a>, 
+    
+  
+    <a href="../Phase/MultiIndexable.html#get_available%28region_literal%3AIndexable%2Cdrop%3ABool%3DDROP_BY_DEFAULT%29-instance-method" class="tooltip">
+      <span>get_available(region_literal : Indexable, drop : Bool = <span class="t">DROP_BY_DEFAULT</span>)<br/>get_available(region : IndexRegion, drop : Bool = <span class="t">DROP_BY_DEFAULT</span>)<br/>get_available(*region_literal, drop : Bool = <span class="t">MultiIndexable</span><span class="t">::</span><span class="t">DROP_BY_DEFAULT</span>)</span>
+    get_available</a>, 
+    
+  
+    <a href="../Phase/MultiIndexable.html#get_chunk%28coord%3AIndexable%2Cregion_shape%3AIndexable%28I%29%29forallI-instance-method" class="tooltip">
+      <span>get_chunk(coord : Indexable, region_shape : Indexable(I)) forall I<br/>get_chunk(region_literal : Indexable, drop : Bool = <span class="t">DROP_BY_DEFAULT</span>)<br/>get_chunk(region : IndexRegion) : MultiIndexable(T)<br/>get_chunk(*region_literal, drop : Bool = <span class="t">MultiIndexable</span><span class="t">::</span><span class="t">DROP_BY_DEFAULT</span>)</span>
+    get_chunk</a>, 
+    
+  
+    <a href="../Phase/MultiIndexable.html#get_element%28coord%3AIndexable%29%3AT-instance-method" class="tooltip">
+      <span>get_element(coord : Indexable) : T<br/>get_element(*coord : Int)</span>
+    get_element</a>, 
+    
+  
+    <a href="../Phase/MultiIndexable.html#has_coord%3F%28coord%3AIndexable%29%3ABool-instance-method" class="tooltip">
+      <span>has_coord?(coord : Indexable) : Bool<br/>has_coord?(*coord : Int)</span>
+    has_coord?</a>, 
+    
+  
+    <a href="../Phase/MultiIndexable.html#has_region%3F%28region_literal%3AIndexable%2Cdrop%3ABool%3DDROP_BY_DEFAULT%29%3ABool-instance-method" class="tooltip">
+      <span>has_region?(region_literal : Indexable, drop : Bool = <span class="t">DROP_BY_DEFAULT</span>) : Bool<br/>has_region?(region : IndexRegion) : Bool<br/>has_region?(*region_literal, drop : Bool = <span class="t">MultiIndexable</span><span class="t">::</span><span class="t">DROP_BY_DEFAULT</span>)</span>
+    has_region?</a>, 
+    
+  
+    <a href="../Phase/MultiIndexable.html#hash%28hasher%29-instance-method" class="tooltip">
+      <span>hash(hasher)</span>
+    hash</a>, 
+    
+  
+    <a href="../Phase/MultiIndexable.html#last%3AT-instance-method" class="tooltip">
+      <span>last : T</span>
+    last</a>, 
+    
+  
+    <a href="../Phase/MultiIndexable.html#map%28%26block%3AT-%3ER%29%3AMultiIndexable%28R%29forallR-instance-method" class="tooltip">
+      <span>map(&block : T -> R) : MultiIndexable(R) forall R</span>
+    map</a>, 
+    
+  
+    <a href="../Phase/MultiIndexable.html#map%21%28%26block%3AT-%3ET%7CMultiIndexable%28T%29%29%3AMultiIndexable%28T%29-instance-method" class="tooltip">
+      <span>map!(&block : T -> T | MultiIndexable(T)) : MultiIndexable(T)</span>
+    map!</a>, 
+    
+  
+    <a href="../Phase/MultiIndexable.html#map_with%28%2Aargs%3A%2AU%2C%26%29forallU-instance-method" class="tooltip">
+      <span>map_with(*args : <span class="o">*</span><span class="t">U</span>, &) forall U<br/>map_with(*args, &)</span>
+    map_with</a>, 
+    
+  
+    <a href="../Phase/MultiIndexable.html#map_with%21%28%2Aargs%3A%2AU%2C%26%29forallU-instance-method" class="tooltip">
+      <span>map_with!(*args : <span class="o">*</span><span class="t">U</span>, &) forall U</span>
+    map_with!</a>, 
+    
+  
+    <a href="../Phase/MultiIndexable.html#map_with_coord%28%26%29-instance-method" class="tooltip">
+      <span>map_with_coord(&)</span>
+    map_with_coord</a>, 
+    
+  
+    <a href="../Phase/MultiIndexable.html#map_with_coord%21%28%26block%3AT-%3EMultiIndexable%28T%29%29-instance-method" class="tooltip">
+      <span>map_with_coord!(&block : T -> MultiIndexable(T))</span>
+    map_with_coord!</a>, 
+    
+  
+    <a href="../Phase/MultiIndexable.html#permute%28%2Aargs%29%3AMultiIndexable%28T%29-instance-method" class="tooltip">
+      <span>permute(*args) : MultiIndexable(T)</span>
+    permute</a>, 
+    
+  
+    <a href="../Phase/MultiIndexable.html#process%28%26block%3AT-%3ER%29%3AProcView%28self%2CT%2CR%29forallR-instance-method" class="tooltip">
+      <span>process(&block : T -> R) : ProcView(<span class="k">self</span>, T, R) forall R<br/>process(proc : Proc(T, R)) : ProcView(<span class="k">self</span>, T, R) forall R</span>
+    process</a>, 
+    
+  
+    <a href="../Phase/MultiIndexable.html#reshape%28%2Aargs%29%3AMultiIndexable%28T%29-instance-method" class="tooltip">
+      <span>reshape(*args) : MultiIndexable(T)</span>
+    reshape</a>, 
+    
+  
+    <a href="../Phase/MultiIndexable.html#reverse%28%2Aargs%29%3AMultiIndexable%28T%29-instance-method" class="tooltip">
+      <span>reverse(*args) : MultiIndexable(T)</span>
+    reverse</a>, 
+    
+  
+    <a href="../Phase/MultiIndexable.html#sample%28n%3AInt%2Crandom%3DRandom%3A%3ADEFAULT%29%3AEnumerable%28T%29-instance-method" class="tooltip">
+      <span>sample(n : Int, random = <span class="t">Random</span><span class="t">::</span><span class="t">DEFAULT</span>) : Enumerable(T)<br/>sample(random = <span class="t">Random</span><span class="t">::</span><span class="t">DEFAULT</span>) : T</span>
+    sample</a>, 
+    
+  
+    <a href="../Phase/MultiIndexable.html#scalar%3F%3ABool-instance-method" class="tooltip">
+      <span>scalar? : Bool</span>
+    scalar?</a>, 
+    
+  
+    <a href="../Phase/MultiIndexable.html#shape%3AArray-instance-method" class="tooltip">
+      <span>shape : Array</span>
+    shape</a>, 
+    
+  
+    <a href="../Phase/MultiIndexable.html#size-instance-method" class="tooltip">
+      <span>size</span>
+    size</a>, 
+    
+  
+    <a href="../Phase/MultiIndexable.html#slices%28axis%3D0%29%3AIndexable-instance-method" class="tooltip">
+      <span>slices(axis = <span class="n">0</span>) : Indexable</span>
+    slices</a>, 
+    
+  
+    <a href="../Phase/MultiIndexable.html#tile%28counts%3AEnumerable%28Int%29%29%3AMultiIndexable-instance-method" class="tooltip">
+      <span>tile(counts : Enumerable(Int)) : MultiIndexable<br/>tile(*counts : Int)</span>
+    tile</a>, 
+    
+  
+    <a href="../Phase/MultiIndexable.html#to_f%3AFloat-instance-method" class="tooltip">
+      <span>to_f : Float</span>
+    to_f</a>, 
+    
+  
+    <a href="../Phase/MultiIndexable.html#to_literal_s%28io%3AIO%29%3ANil-instance-method" class="tooltip">
+      <span>to_literal_s(io : IO) : Nil</span>
+    to_literal_s</a>, 
+    
+  
+    <a href="../Phase/MultiIndexable.html#to_narr%3ANArray%28T%29-instance-method" class="tooltip">
+      <span>to_narr : NArray(T)</span>
+    to_narr</a>, 
+    
+  
+    <a href="../Phase/MultiIndexable.html#to_s%28io%3AIO%2Csettings%3DFormatter%3A%3ASettings.new%29%3ANil-instance-method" class="tooltip">
+      <span>to_s(io : IO, settings = <span class="t">Formatter</span><span class="t">::</span><span class="t">Settings</span>.<span class="k">new</span>) : Nil<br/>to_s(settings = <span class="t">Formatter</span><span class="t">::</span><span class="t">Settings</span>.<span class="k">new</span>) : String</span>
+    to_s</a>, 
+    
+  
+    <a href="../Phase/MultiIndexable.html#to_scalar%3AT-instance-method" class="tooltip">
+      <span>to_scalar : T</span>
+    to_scalar</a>, 
+    
+  
+    <a href="../Phase/MultiIndexable.html#to_scalar%3F%3AT%3F-instance-method" class="tooltip">
+      <span>to_scalar? : T?</span>
+    to_scalar?</a>, 
+    
+  
+    <a href="../Phase/MultiIndexable.html#unsafe_fetch_chunk%28region%3AIndexRegion%29%3AMultiIndexable%28T%29-instance-method" class="tooltip">
+      <span>unsafe_fetch_chunk(region : IndexRegion) : MultiIndexable(T)</span>
+    unsafe_fetch_chunk</a>, 
+    
+  
+    <a href="../Phase/MultiIndexable.html#unsafe_fetch_element%28coord%3AIndexable%29%3AT-instance-method" class="tooltip">
+      <span>unsafe_fetch_element(coord : Indexable) : T</span>
+    unsafe_fetch_element</a>, 
+    
+  
+    <a href="../Phase/MultiIndexable.html#view%28region%3AIndexable%3F%7CIndexRegion%3Dnil%29%3AView%28self%2CT%29-instance-method" class="tooltip">
+      <span>view(region : Indexable? | IndexRegion = <span class="n">nil</span>) : View(<span class="k">self</span>, T)<br/>view(*region) : View(<span class="k">self</span>, T)</span>
+    view</a>
+    
+  
+
+
+    
+
+
+    
+
+  <h3>Class methods inherited from module <code><a href="../Phase/MultiIndexable.html">Phase::MultiIndexable(T)</a></code></h3>
+  
+  
+    <a href="../Phase/MultiIndexable.html#each_with%28%2Aargs%3A%2AU%2C%26%29forallU-class-method" class="tooltip">
+      <span>each_with(*args : <span class="o">*</span><span class="t">U</span>, &) forall U</span>
+    each_with</a>
+    
+  
+
+
+  
+    
+
+
+    
+
+
+    
+
+
+  
+    
+
+
+    
+
+
+    
+
+
+  
+    
+
+  <h3>Instance methods inherited from module <code><a href="../Phase/MultiWritable.html">Phase::MultiWritable(T)</a></code></h3>
+  
+  
+    <a href="../Phase/MultiWritable.html#%5B%5D%3D%28region%3AIndexable%7CIndexRegion%2Cvalue%29-instance-method" class="tooltip">
+      <span>[]=(region : Indexable | IndexRegion, value)<br/>[]=(bool_mask : MultiIndexable(Bool), value)<br/>[]=(*args)</span>
+    []=</a>, 
+    
+  
+    <a href="../Phase/MultiWritable.html#set_available%28region%3AIndexable%2Cvalue%3AT%29-instance-method" class="tooltip">
+      <span>set_available(region : Indexable, value : T)</span>
+    set_available</a>, 
+    
+  
+    <a href="../Phase/MultiWritable.html#set_chunk%28region_literal%3AIndexable%2Csrc%3AMultiIndexable%28T%29%29-instance-method" class="tooltip">
+      <span>set_chunk(region_literal : Indexable, src : MultiIndexable(T))<br/>set_chunk(region : Indexable | IndexRegion, value : T)</span>
+    set_chunk</a>, 
+    
+  
+    <a href="../Phase/MultiWritable.html#set_element%28coord%3AIndexable%2Cvalue%3AT%29-instance-method" class="tooltip">
+      <span>set_element(coord : Indexable, value : T)</span>
+    set_element</a>, 
+    
+  
+    <a href="../Phase/MultiWritable.html#set_mask%28bool_mask%2Csrc%3AMultiIndexable%28T%29%29-instance-method" class="tooltip">
+      <span>set_mask(bool_mask, src : MultiIndexable(T))<br/>set_mask(bool_mask, value)<br/>set_mask(bool_mask : MultiIndexable(Bool), &)</span>
+    set_mask</a>, 
+    
+  
+    <a href="../Phase/MultiWritable.html#shape%3AShape-instance-method" class="tooltip">
+      <span>shape : Shape</span>
+    shape</a>, 
+    
+  
+    <a href="../Phase/MultiWritable.html#size-instance-method" class="tooltip">
+      <span>size</span>
+    size</a>, 
+    
+  
+    <a href="../Phase/MultiWritable.html#unsafe_set_chunk%28region%3AIndexRegion%2Csrc%3AMultiIndexable%28T%29%29-instance-method" class="tooltip">
+      <span>unsafe_set_chunk(region : IndexRegion, src : MultiIndexable(T))<br/>unsafe_set_chunk(region : IndexRegion, value : T)</span>
+    unsafe_set_chunk</a>, 
+    
+  
+    <a href="../Phase/MultiWritable.html#unsafe_set_element%28coord%3ACoord%2Cvalue%3AT%29-instance-method" class="tooltip">
+      <span>unsafe_set_element(coord : Coord, value : T)</span>
+    unsafe_set_element</a>
+    
+  
+
+
+    
+
+
+    
+
+
+  
+    
+
+  <h3>Instance methods inherited from module <code><a href="../Phase/MultiIndexable.html">Phase::MultiIndexable(T)</a></code></h3>
+  
+  
+    <a href="../Phase/MultiIndexable.html#%25%28other%3AMultiIndexable%28U%29%29forallU-instance-method" class="tooltip">
+      <span>%(other : MultiIndexable(U)) forall U<br/>%(other)</span>
+    %</a>, 
+    
+  
+    <a href="../Phase/MultiIndexable.html#%26%28other%3AMultiIndexable%28U%29%29forallU-instance-method" class="tooltip">
+      <span>&(other : MultiIndexable(U)) forall U<br/>&(other)</span>
+    &</a>, 
+    
+  
+    <a href="../Phase/MultiIndexable.html#%26%2A%28other%3AMultiIndexable%28U%29%29forallU-instance-method" class="tooltip">
+      <span>&*(other : MultiIndexable(U)) forall U<br/>&*(other)</span>
+    &*</a>, 
+    
+  
+    <a href="../Phase/MultiIndexable.html#%26%2A%2A%28other%3AMultiIndexable%28U%29%29forallU-instance-method" class="tooltip">
+      <span>&**(other : MultiIndexable(U)) forall U<br/>&**(other)</span>
+    &**</a>, 
+    
+  
+    <a href="../Phase/MultiIndexable.html#%26%2B%28other%3AMultiIndexable%28U%29%29forallU-instance-method" class="tooltip">
+      <span>&+(other : MultiIndexable(U)) forall U<br/>&+(other)</span>
+    &+</a>, 
+    
+  
+    <a href="../Phase/MultiIndexable.html#%26-%28other%3AMultiIndexable%28U%29%29forallU-instance-method" class="tooltip">
+      <span>&-(other : MultiIndexable(U)) forall U<br/>&-(other)</span>
+    &-</a>, 
+    
+  
+    <a href="../Phase/MultiIndexable.html#%2A%28other%3AMultiIndexable%28U%29%29forallU-instance-method" class="tooltip">
+      <span>*(other : MultiIndexable(U)) forall U<br/>*(other)</span>
+    *</a>, 
+    
+  
+    <a href="../Phase/MultiIndexable.html#%2A%2A%28other%3AMultiIndexable%28U%29%29forallU-instance-method" class="tooltip">
+      <span>**(other : MultiIndexable(U)) forall U<br/>**(other)</span>
+    **</a>, 
+    
+  
+    <a href="../Phase/MultiIndexable.html#%2B%28other%3AMultiIndexable%28U%29%29forallU-instance-method" class="tooltip">
+      <span>+(other : MultiIndexable(U)) forall U<br/>+(other)<br/>+</span>
+    +</a>, 
+    
+  
+    <a href="../Phase/MultiIndexable.html#-%28other%3AMultiIndexable%28U%29%29forallU-instance-method" class="tooltip">
+      <span>-(other : MultiIndexable(U)) forall U<br/>-(other)<br/>-</span>
+    -</a>, 
+    
+  
+    <a href="../Phase/MultiIndexable.html#/%28other%3AMultiIndexable%28U%29%29forallU-instance-method" class="tooltip">
+      <span>/(other : MultiIndexable(U)) forall U<br/>/(other)</span>
+    /</a>, 
+    
+  
+    <a href="../Phase/MultiIndexable.html#//%28other%3AMultiIndexable%28U%29%29forallU-instance-method" class="tooltip">
+      <span>//(other : MultiIndexable(U)) forall U<br/>//(other)</span>
+    //</a>, 
+    
+  
+    <a href="../Phase/MultiIndexable.html#%3C%28other%3AMultiIndexable%28U%29%29forallU-instance-method" class="tooltip">
+      <span><(other : MultiIndexable(U)) forall U<br/><(other)</span>
+    <</a>, 
+    
+  
+    <a href="../Phase/MultiIndexable.html#%3C%3D%28other%3AMultiIndexable%28U%29%29forallU-instance-method" class="tooltip">
+      <span><=(other : MultiIndexable(U)) forall U<br/><=(other)</span>
+    <=</a>, 
+    
+  
+    <a href="../Phase/MultiIndexable.html#%3C%3D%3E%28other%3AMultiIndexable%28U%29%29forallU-instance-method" class="tooltip">
+      <span><=>(other : MultiIndexable(U)) forall U<br/><=>(other)</span>
+    <=></a>, 
+    
+  
+    <a href="../Phase/MultiIndexable.html#%3D%3D%28other%3Aself%29%3ABool-instance-method" class="tooltip">
+      <span>==(other : <span class="k">self</span>) : Bool</span>
+    ==</a>, 
+    
+  
+    <a href="../Phase/MultiIndexable.html#%3D~%28value%29%3AMultiIndexable%28Bool%29-instance-method" class="tooltip">
+      <span>=~(value) : MultiIndexable(Bool)</span>
+    =~</a>, 
+    
+  
+    <a href="../Phase/MultiIndexable.html#%3E%28other%3AMultiIndexable%28U%29%29forallU-instance-method" class="tooltip">
+      <span>>(other : MultiIndexable(U)) forall U<br/>>(other)</span>
+    ></a>, 
+    
+  
+    <a href="../Phase/MultiIndexable.html#%3E%3D%28other%3AMultiIndexable%28U%29%29forallU-instance-method" class="tooltip">
+      <span>>=(other : MultiIndexable(U)) forall U<br/>>=(other)</span>
+    >=</a>, 
+    
+  
+    <a href="../Phase/MultiIndexable.html#%5B%5D%28region_literal%3AIndexable%2Cdrop%3ABool%3DMultiIndexable%3A%3ADROP_BY_DEFAULT%29-instance-method" class="tooltip">
+      <span>[](region_literal : Indexable, drop : Bool = <span class="t">MultiIndexable</span><span class="t">::</span><span class="t">DROP_BY_DEFAULT</span>)<br/>[](region : IndexRegion)<br/>[](*region_literal, drop : Bool = <span class="t">MultiIndexable</span><span class="t">::</span><span class="t">DROP_BY_DEFAULT</span>)</span>
+    []</a>, 
+    
+  
+    <a href="../Phase/MultiIndexable.html#%5B%5D%3F%28bool_mask%3AMultiIndexable%28Bool%29%29%3AMultiIndexable%28T%3F%29-instance-method" class="tooltip">
+      <span>[]?(bool_mask : MultiIndexable(Bool)) : MultiIndexable(T?)<br/>[]?(region : Indexable, drop : Bool = <span class="t">MultiIndexable</span><span class="t">::</span><span class="t">DROP_BY_DEFAULT</span>) : MultiIndexable(T)?<br/>[]?(region : IndexRegion) : MultiIndexable(T)?<br/>[]?(*region_literal, drop : Bool = <span class="t">MultiIndexable</span><span class="t">::</span><span class="t">DROP_BY_DEFAULT</span>)</span>
+    []?</a>, 
+    
+  
+    <a href="../Phase/MultiIndexable.html#%5E%28other%3AMultiIndexable%28U%29%29forallU-instance-method" class="tooltip">
+      <span>^(other : MultiIndexable(U)) forall U<br/>^(other)</span>
+    ^</a>, 
+    
+  
+    <a href="../Phase/MultiIndexable.html#%7C%28other%3AMultiIndexable%28U%29%29forallU-instance-method" class="tooltip">
+      <span>|(other : MultiIndexable(U)) forall U<br/>|(other)</span>
+    |</a>, 
+    
+  
+    <a href="../Phase/MultiIndexable.html#~-instance-method" class="tooltip">
+      <span>~</span>
+    ~</a>, 
+    
+  
+    <a href="../Phase/MultiIndexable.html#apply%3AApplyProxy-instance-method" class="tooltip">
+      <span>apply : ApplyProxy</span>
+    apply</a>, 
+    
+  
+    <a href="../Phase/MultiIndexable.html#apply%21%3AInPlaceApplyProxy-instance-method" class="tooltip">
+      <span>apply! : InPlaceApplyProxy</span>
+    apply!</a>, 
+    
+  
+    <a href="../Phase/MultiIndexable.html#colex_each%3AElemIterator-instance-method" class="tooltip">
+      <span>colex_each : ElemIterator<br/>colex_each(&) : Nil</span>
+    colex_each</a>, 
+    
+  
+    <a href="../Phase/MultiIndexable.html#colex_each_coord%3AColexIterator-instance-method" class="tooltip">
+      <span>colex_each_coord : ColexIterator<br/>colex_each_coord(&) : Nil</span>
+    colex_each_coord</a>, 
+    
+  
+    <a href="../Phase/MultiIndexable.html#dimensions%3AInt-instance-method" class="tooltip">
+      <span>dimensions : Int</span>
+    dimensions</a>, 
+    
+  
+    <a href="../Phase/MultiIndexable.html#each%3AElemIterator-instance-method" class="tooltip">
+      <span>each : ElemIterator<br/>each(&) : Nil</span>
+    each</a>, 
+    
+  
+    <a href="../Phase/MultiIndexable.html#each_coord%3ALexIterator-instance-method" class="tooltip">
+      <span>each_coord : LexIterator<br/>each_coord(&) : Nil</span>
+    each_coord</a>, 
+    
+  
+    <a href="../Phase/MultiIndexable.html#each_slice%28axis%3D0%29%3AIterator-instance-method" class="tooltip">
+      <span>each_slice(axis = <span class="n">0</span>) : Iterator<br/>each_slice(axis = <span class="n">0</span>, &)</span>
+    each_slice</a>, 
+    
+  
+    <a href="../Phase/MultiIndexable.html#each_with%28%2Aargs%2C%26%29-instance-method" class="tooltip">
+      <span>each_with(*args, &)</span>
+    each_with</a>, 
+    
+  
+    <a href="../Phase/MultiIndexable.html#each_with_coord%3AElemAndCoordIterator-instance-method" class="tooltip">
+      <span>each_with_coord : ElemAndCoordIterator<br/>each_with_coord(&) : Nil</span>
+    each_with_coord</a>, 
+    
+  
+    <a href="../Phase/MultiIndexable.html#empty%3F%3ABool-instance-method" class="tooltip">
+      <span>empty? : Bool</span>
+    empty?</a>, 
+    
+  
+    <a href="../Phase/MultiIndexable.html#ensure_writable-instance-method" class="tooltip">
+      <span>ensure_writable</span>
+    ensure_writable</a>, 
+    
+  
+    <a href="../Phase/MultiIndexable.html#eq%28other%3AMultiIndexable%28U%29%29%3AMultiIndexable%28Bool%29forallU-instance-method" class="tooltip">
+      <span>eq(other : MultiIndexable(U)) : MultiIndexable(Bool) forall U<br/>eq(value) : MultiIndexable(Bool)</span>
+    eq</a>, 
+    
+  
+    <a href="../Phase/MultiIndexable.html#equals%3F%28other%3AMultiIndexable%2C%26%29%3ABool-instance-method" class="tooltip">
+      <span>equals?(other : MultiIndexable, &) : Bool</span>
+    equals?</a>, 
+    
+  
+    <a href="../Phase/MultiIndexable.html#fast_each%3AIterator%28T%29-instance-method" class="tooltip">
+      <span>fast_each : Iterator(T)<br/>fast_each(&) : Nil</span>
+    fast_each</a>, 
+    
+  
+    <a href="../Phase/MultiIndexable.html#first%3AT-instance-method" class="tooltip">
+      <span>first : T</span>
+    first</a>, 
+    
+  
+    <a href="../Phase/MultiIndexable.html#get%28coord%3AIndexable%29%3AT-instance-method" class="tooltip">
+      <span>get(coord : Indexable) : T<br/>get(*coord : Int)</span>
+    get</a>, 
+    
+  
+    <a href="../Phase/MultiIndexable.html#get_available%28region_literal%3AIndexable%2Cdrop%3ABool%3DDROP_BY_DEFAULT%29-instance-method" class="tooltip">
+      <span>get_available(region_literal : Indexable, drop : Bool = <span class="t">DROP_BY_DEFAULT</span>)<br/>get_available(region : IndexRegion, drop : Bool = <span class="t">DROP_BY_DEFAULT</span>)<br/>get_available(*region_literal, drop : Bool = <span class="t">MultiIndexable</span><span class="t">::</span><span class="t">DROP_BY_DEFAULT</span>)</span>
+    get_available</a>, 
+    
+  
+    <a href="../Phase/MultiIndexable.html#get_chunk%28coord%3AIndexable%2Cregion_shape%3AIndexable%28I%29%29forallI-instance-method" class="tooltip">
+      <span>get_chunk(coord : Indexable, region_shape : Indexable(I)) forall I<br/>get_chunk(region_literal : Indexable, drop : Bool = <span class="t">DROP_BY_DEFAULT</span>)<br/>get_chunk(region : IndexRegion) : MultiIndexable(T)<br/>get_chunk(*region_literal, drop : Bool = <span class="t">MultiIndexable</span><span class="t">::</span><span class="t">DROP_BY_DEFAULT</span>)</span>
+    get_chunk</a>, 
+    
+  
+    <a href="../Phase/MultiIndexable.html#get_element%28coord%3AIndexable%29%3AT-instance-method" class="tooltip">
+      <span>get_element(coord : Indexable) : T<br/>get_element(*coord : Int)</span>
+    get_element</a>, 
+    
+  
+    <a href="../Phase/MultiIndexable.html#has_coord%3F%28coord%3AIndexable%29%3ABool-instance-method" class="tooltip">
+      <span>has_coord?(coord : Indexable) : Bool<br/>has_coord?(*coord : Int)</span>
+    has_coord?</a>, 
+    
+  
+    <a href="../Phase/MultiIndexable.html#has_region%3F%28region_literal%3AIndexable%2Cdrop%3ABool%3DDROP_BY_DEFAULT%29%3ABool-instance-method" class="tooltip">
+      <span>has_region?(region_literal : Indexable, drop : Bool = <span class="t">DROP_BY_DEFAULT</span>) : Bool<br/>has_region?(region : IndexRegion) : Bool<br/>has_region?(*region_literal, drop : Bool = <span class="t">MultiIndexable</span><span class="t">::</span><span class="t">DROP_BY_DEFAULT</span>)</span>
+    has_region?</a>, 
+    
+  
+    <a href="../Phase/MultiIndexable.html#hash%28hasher%29-instance-method" class="tooltip">
+      <span>hash(hasher)</span>
+    hash</a>, 
+    
+  
+    <a href="../Phase/MultiIndexable.html#last%3AT-instance-method" class="tooltip">
+      <span>last : T</span>
+    last</a>, 
+    
+  
+    <a href="../Phase/MultiIndexable.html#map%28%26block%3AT-%3ER%29%3AMultiIndexable%28R%29forallR-instance-method" class="tooltip">
+      <span>map(&block : T -> R) : MultiIndexable(R) forall R</span>
+    map</a>, 
+    
+  
+    <a href="../Phase/MultiIndexable.html#map%21%28%26block%3AT-%3ET%7CMultiIndexable%28T%29%29%3AMultiIndexable%28T%29-instance-method" class="tooltip">
+      <span>map!(&block : T -> T | MultiIndexable(T)) : MultiIndexable(T)</span>
+    map!</a>, 
+    
+  
+    <a href="../Phase/MultiIndexable.html#map_with%28%2Aargs%3A%2AU%2C%26%29forallU-instance-method" class="tooltip">
+      <span>map_with(*args : <span class="o">*</span><span class="t">U</span>, &) forall U<br/>map_with(*args, &)</span>
+    map_with</a>, 
+    
+  
+    <a href="../Phase/MultiIndexable.html#map_with%21%28%2Aargs%3A%2AU%2C%26%29forallU-instance-method" class="tooltip">
+      <span>map_with!(*args : <span class="o">*</span><span class="t">U</span>, &) forall U</span>
+    map_with!</a>, 
+    
+  
+    <a href="../Phase/MultiIndexable.html#map_with_coord%28%26%29-instance-method" class="tooltip">
+      <span>map_with_coord(&)</span>
+    map_with_coord</a>, 
+    
+  
+    <a href="../Phase/MultiIndexable.html#map_with_coord%21%28%26block%3AT-%3EMultiIndexable%28T%29%29-instance-method" class="tooltip">
+      <span>map_with_coord!(&block : T -> MultiIndexable(T))</span>
+    map_with_coord!</a>, 
+    
+  
+    <a href="../Phase/MultiIndexable.html#permute%28%2Aargs%29%3AMultiIndexable%28T%29-instance-method" class="tooltip">
+      <span>permute(*args) : MultiIndexable(T)</span>
+    permute</a>, 
+    
+  
+    <a href="../Phase/MultiIndexable.html#process%28%26block%3AT-%3ER%29%3AProcView%28self%2CT%2CR%29forallR-instance-method" class="tooltip">
+      <span>process(&block : T -> R) : ProcView(<span class="k">self</span>, T, R) forall R<br/>process(proc : Proc(T, R)) : ProcView(<span class="k">self</span>, T, R) forall R</span>
+    process</a>, 
+    
+  
+    <a href="../Phase/MultiIndexable.html#reshape%28%2Aargs%29%3AMultiIndexable%28T%29-instance-method" class="tooltip">
+      <span>reshape(*args) : MultiIndexable(T)</span>
+    reshape</a>, 
+    
+  
+    <a href="../Phase/MultiIndexable.html#reverse%28%2Aargs%29%3AMultiIndexable%28T%29-instance-method" class="tooltip">
+      <span>reverse(*args) : MultiIndexable(T)</span>
+    reverse</a>, 
+    
+  
+    <a href="../Phase/MultiIndexable.html#sample%28n%3AInt%2Crandom%3DRandom%3A%3ADEFAULT%29%3AEnumerable%28T%29-instance-method" class="tooltip">
+      <span>sample(n : Int, random = <span class="t">Random</span><span class="t">::</span><span class="t">DEFAULT</span>) : Enumerable(T)<br/>sample(random = <span class="t">Random</span><span class="t">::</span><span class="t">DEFAULT</span>) : T</span>
+    sample</a>, 
+    
+  
+    <a href="../Phase/MultiIndexable.html#scalar%3F%3ABool-instance-method" class="tooltip">
+      <span>scalar? : Bool</span>
+    scalar?</a>, 
+    
+  
+    <a href="../Phase/MultiIndexable.html#shape%3AArray-instance-method" class="tooltip">
+      <span>shape : Array</span>
+    shape</a>, 
+    
+  
+    <a href="../Phase/MultiIndexable.html#size-instance-method" class="tooltip">
+      <span>size</span>
+    size</a>, 
+    
+  
+    <a href="../Phase/MultiIndexable.html#slices%28axis%3D0%29%3AIndexable-instance-method" class="tooltip">
+      <span>slices(axis = <span class="n">0</span>) : Indexable</span>
+    slices</a>, 
+    
+  
+    <a href="../Phase/MultiIndexable.html#tile%28counts%3AEnumerable%28Int%29%29%3AMultiIndexable-instance-method" class="tooltip">
+      <span>tile(counts : Enumerable(Int)) : MultiIndexable<br/>tile(*counts : Int)</span>
+    tile</a>, 
+    
+  
+    <a href="../Phase/MultiIndexable.html#to_f%3AFloat-instance-method" class="tooltip">
+      <span>to_f : Float</span>
+    to_f</a>, 
+    
+  
+    <a href="../Phase/MultiIndexable.html#to_literal_s%28io%3AIO%29%3ANil-instance-method" class="tooltip">
+      <span>to_literal_s(io : IO) : Nil</span>
+    to_literal_s</a>, 
+    
+  
+    <a href="../Phase/MultiIndexable.html#to_narr%3ANArray%28T%29-instance-method" class="tooltip">
+      <span>to_narr : NArray(T)</span>
+    to_narr</a>, 
+    
+  
+    <a href="../Phase/MultiIndexable.html#to_s%28io%3AIO%2Csettings%3DFormatter%3A%3ASettings.new%29%3ANil-instance-method" class="tooltip">
+      <span>to_s(io : IO, settings = <span class="t">Formatter</span><span class="t">::</span><span class="t">Settings</span>.<span class="k">new</span>) : Nil<br/>to_s(settings = <span class="t">Formatter</span><span class="t">::</span><span class="t">Settings</span>.<span class="k">new</span>) : String</span>
+    to_s</a>, 
+    
+  
+    <a href="../Phase/MultiIndexable.html#to_scalar%3AT-instance-method" class="tooltip">
+      <span>to_scalar : T</span>
+    to_scalar</a>, 
+    
+  
+    <a href="../Phase/MultiIndexable.html#to_scalar%3F%3AT%3F-instance-method" class="tooltip">
+      <span>to_scalar? : T?</span>
+    to_scalar?</a>, 
+    
+  
+    <a href="../Phase/MultiIndexable.html#unsafe_fetch_chunk%28region%3AIndexRegion%29%3AMultiIndexable%28T%29-instance-method" class="tooltip">
+      <span>unsafe_fetch_chunk(region : IndexRegion) : MultiIndexable(T)</span>
+    unsafe_fetch_chunk</a>, 
+    
+  
+    <a href="../Phase/MultiIndexable.html#unsafe_fetch_element%28coord%3AIndexable%29%3AT-instance-method" class="tooltip">
+      <span>unsafe_fetch_element(coord : Indexable) : T</span>
+    unsafe_fetch_element</a>, 
+    
+  
+    <a href="../Phase/MultiIndexable.html#view%28region%3AIndexable%3F%7CIndexRegion%3Dnil%29%3AView%28self%2CT%29-instance-method" class="tooltip">
+      <span>view(region : Indexable? | IndexRegion = <span class="n">nil</span>) : View(<span class="k">self</span>, T)<br/>view(*region) : View(<span class="k">self</span>, T)</span>
+    view</a>
+    
+  
+
+
+    
+
+
+    
+
+  <h3>Class methods inherited from module <code><a href="../Phase/MultiIndexable.html">Phase::MultiIndexable(T)</a></code></h3>
+  
+  
+    <a href="../Phase/MultiIndexable.html#each_with%28%2Aargs%3A%2AU%2C%26%29forallU-class-method" class="tooltip">
+      <span>each_with(*args : <span class="o">*</span><span class="t">U</span>, &) forall U</span>
+    each_with</a>
+    
+  
+
+
+  
+    
+
+
+    
+
+
+    
+
+
+  
+    
+
+
+    
+
+
+    
+
+
+  
+    
+
+
+    
+
+
+    
+
+
+  
+    
+
+
+    
+
+
+    
+
+
+  
+</div>
+
+
+  <h2>
+    <a id="constructor-detail" class="anchor" href="#constructor-detail">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Constructor Detail
+  </h2>
+  
+    <div class="entry-detail" id="new(ctx:YAML::ParseContext,node:YAML::Nodes::Node)-class-method">
+      <div class="signature">
+        
+        def self.<strong>new</strong>(ctx : YAML::ParseContext, node : YAML::Nodes::Node)
+
+        <a class="method-permalink" href="#new%28ctx%3AYAML%3A%3AParseContext%2Cnode%3AYAML%3A%3ANodes%3A%3ANode%29-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/in-phase/ph-core/blob/faefb580069f511d51683190c6a7f4a72a11e8f0/src/n_array.cr#L706" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="new(data:Enumerable)-class-method">
+      <div class="signature">
+        
+        def self.<strong>new</strong>(data : Enumerable)
+
+        <a class="method-permalink" href="#new%28data%3AEnumerable%29-class-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Creates an <code>{{@type}}</code> from a nested array with uniform dimensions.
+For example:</p>
+<pre><code class="language-crystal">{{@type}}.<span class="k">new</span>([[<span class="n">1</span>, <span class="n">0</span>, <span class="n">0</span>], [<span class="n">0</span>, <span class="n">1</span>, <span class="n">0</span>], [<span class="n">0</span>, <span class="n">0</span>, <span class="n">1</span>]])</code></pre>
+<p>Would create the 3x3 identity matrix of type <code>{{@type}}(Int32)</code>.</p>
+<p>This constructor will figure out the types of the scalars at the
+bottom of the nested array at compile time, which allows mixing
+datatypes effortlessly.
+For example, to create a matrix with 0.5 on the diagonals:</p>
+<pre><code class="language-crystal">{{@type}}.<span class="k">new</span>([[<span class="n">0.5</span>, <span class="n">0</span>, <span class="n">0</span>], [<span class="n">0</span>, <span class="n">0.5</span>, <span class="n">0</span>], [<span class="n">0</span>, <span class="n">0</span>, <span class="n">0.5</span>]])</code></pre>
+<p>This may seem trivial, but note that the <code>0.5</code>s are implicit
+<code>Float32</code> literals, whereas the <code>0</code>s are implicit <code>Int32</code> literals.
+So, the type returned by that example will actually be an <code>{{@type}}(Float32 | Int32)</code>.
+This also works for more disorganized examples:</p>
+<pre><code class="language-crystal">{{@type}}.<span class="k">new</span>([[<span class="s">&quot;We can mix types&quot;</span>, <span class="n">2</span>, <span class="n">:do</span>], [<span class="s">&quot;C&quot;</span>, <span class="n">0.0</span>, <span class="s">&quot;l stuff.&quot;</span>]])</code></pre>
+<p>The above line will create an <code>{{@type}}(String | Int32 | Symbol | Float32)</code>.</p>
+<p>When a nested array with non-uniform dimensions is passed, this method will
+raise a <code><a href="../Phase/DimensionError.html">DimensionError</a></code>.
+For example:</p>
+<pre><code class="language-crystal">{{@type}}.<span class="k">new</span>([[<span class="n">1</span>], [<span class="n">1</span>, <span class="n">2</span>]]) <span class="c"># =&gt; DimensionError</span></code></pre>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/in-phase/ph-core/blob/faefb580069f511d51683190c6a7f4a72a11e8f0/src/n_array.cr#L143" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="new(pull:JSON::PullParser)-class-method">
+      <div class="signature">
+        
+        def self.<strong>new</strong>(pull : JSON::PullParser)
+
+        <a class="method-permalink" href="#new%28pull%3AJSON%3A%3APullParser%29-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/in-phase/ph-core/blob/faefb580069f511d51683190c6a7f4a72a11e8f0/src/n_array.cr#L655" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="wrap(*objects:AbstractNArray(T),pad=false):NArray-class-method">
+      <div class="signature">
+        
+        def self.<strong>wrap</strong>(*objects : AbstractNArray(T), pad = <span class="n">false</span>) : <a href="../Phase/NArray.html">NArray</a>
+
+        <a class="method-permalink" href="#wrap%28%2Aobjects%3AAbstractNArray%28T%29%2Cpad%3Dfalse%29%3ANArray-class-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Adds a dimension at highest level, where each &quot;row&quot; is an input {{@type}}.
+If pad is false, then throw error if shapes of objects do not match;
+otherwise, pad subarrays along each axis to match whichever is largest in that axis</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/in-phase/ph-core/blob/faefb580069f511d51683190c6a7f4a72a11e8f0/src/n_array.cr#L256" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+
+
+
+  <h2>
+    <a id="class-method-detail" class="anchor" href="#class-method-detail">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Class Method Detail
+  </h2>
+  
+    <div class="entry-detail" id="[](*contents)-class-method">
+      <div class="signature">
+        
+        def self.<strong>[]</strong>(*contents)
+
+        <a class="method-permalink" href="#%5B%5D%28%2Acontents%29-class-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>NArray[1, 2, 3] == NArray.new([1, 2, 3])
+NArray[[1, 2, 3]] == NArray.new([[1, 2, 3]])</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/in-phase/ph-core/blob/faefb580069f511d51683190c6a7f4a72a11e8f0/src/n_array.cr#L157" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="build(shape:Enumerable,&amp;block:ReadonlyWrapper(Array(Int32),Int32),Int32-&gt;T)-class-method">
+      <div class="signature">
+        
+        def self.<strong>build</strong>(shape : Enumerable, &block : ReadonlyWrapper(Array(Int32), Int32), Int32 -> T)
+
+        <a class="method-permalink" href="#build%28shape%3AEnumerable%2C%26block%3AReadonlyWrapper%28Array%28Int32%29%2CInt32%29%2CInt32-%3ET%29-class-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Constructs an <code>{{@type}}</code> using a user-provided <em>shape</em> (see <code>shape</code>) and a callback.
+The provided callback should map a multidimensional index, <em>coord</em>, (and an optional packed
+index) to the value you wish to store at that position.
+For example, to create the 2x2 identity matrix:</p>
+<pre><code class="language-crystal"><span class="t">Phase</span><span class="t">::</span>{{@type}}.build([<span class="n">2</span>, <span class="n">2</span>]) <span class="k">do</span> <span class="o">|</span>coord<span class="o">|</span>
+  <span class="k">if</span> coord[<span class="n">0</span>] <span class="o">==</span> coord[<span class="n">1</span>]
+    <span class="n">1</span>
+  <span class="k">else</span>
+    <span class="n">0</span>
+  <span class="k">end</span>
+<span class="k">end</span></code></pre>
+<p>Which will create:</p>
+<pre><code class="language-text">[[1, 0, 0],
+  0, 1, 0],
+  0, 0, 1]]</code></pre>
+<p>The buffer index allows you to easily index elements in lexicographic order.
+For example:</p>
+<pre><code class="language-crystal">{{@type}}.build([<span class="n">5</span>, <span class="n">1</span>]) { <span class="o">|</span>coord, index<span class="o">|</span> index }</code></pre>
+<p>Will create:</p>
+<pre><code class="language-text">[[0],
+ [1],
+ [2],
+ [3],
+ [4]]</code></pre>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/in-phase/ph-core/blob/faefb580069f511d51683190c6a7f4a72a11e8f0/src/n_array.cr#L103" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="build(*shape:Int,&amp;block:ReadonlyWrapper(Array(Int32),Int32),Int32-&gt;T)-class-method">
+      <div class="signature">
+        
+        def self.<strong>build</strong>(*shape : Int, &block : ReadonlyWrapper(Array(Int32), Int32), Int32 -> T)
+
+        <a class="method-permalink" href="#build%28%2Ashape%3AInt%2C%26block%3AReadonlyWrapper%28Array%28Int32%29%2CInt32%29%2CInt32-%3ET%29-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/in-phase/ph-core/blob/faefb580069f511d51683190c6a7f4a72a11e8f0/src/n_array.cr#L110" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="common_container(*objects)-class-method">
+      <div class="signature">
+        
+        def self.<strong>common_container</strong>(*objects)
+
+        <a class="method-permalink" href="#common_container%28%2Aobjects%29-class-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Given a list of <code>{{@type}}</code>s, returns the smallest shape array in which any one of those <code>{{@type}}s</code> can be contained.</p>
+<p><span class="flag orange">TODO</span>  Example</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/in-phase/ph-core/blob/faefb580069f511d51683190c6a7f4a72a11e8f0/src/n_array.cr#L490" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="compatible?(*narrs:MultiIndexable,axis=-1):Bool-class-method">
+      <div class="signature">
+        
+        def self.<strong>compatible?</strong>(*narrs : <a href="../Phase/MultiIndexable.html">MultiIndexable</a>, axis = <span class="n">-1</span>) : Bool
+
+        <a class="method-permalink" href="#compatible%3F%28%2Anarrs%3AMultiIndexable%2Caxis%3D-1%29%3ABool-class-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Checks that the shape of this and other match in every dimension
+(except <code>axis</code>, if it is specified)</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/in-phase/ph-core/blob/faefb580069f511d51683190c6a7f4a72a11e8f0/src/n_array.cr#L513" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="concatenate(*narrs:MultiIndexable(T),axis=0):NArray(T)-class-method">
+      <div class="signature">
+        
+        def self.<strong>concatenate</strong>(*narrs : <a href="../Phase/MultiIndexable.html">MultiIndexable</a>(T), axis = <span class="n">0</span>) : <a href="../Phase/NArray.html">NArray</a>(T)
+
+        <a class="method-permalink" href="#concatenate%28%2Anarrs%3AMultiIndexable%28T%29%2Caxis%3D0%29%3ANArray%28T%29-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/in-phase/ph-core/blob/faefb580069f511d51683190c6a7f4a72a11e8f0/src/n_array.cr#L558" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="fill(shape,value:T)-class-method">
+      <div class="signature">
+        
+        def self.<strong>fill</strong>(shape, value : T)
+
+        <a class="method-permalink" href="#fill%28shape%2Cvalue%3AT%29-class-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Fills an <code>{{@type}}</code> of given shape with a specified value.
+For example, to create a zero vector:</p>
+<pre><code class="language-crystal">{{@type}}.fill([<span class="n">3</span>, <span class="n">1</span>], <span class="n">0</span>)</code></pre>
+<p>Will produce</p>
+<pre><code class="language-text">[[0],
+ [0],
+ [0]]</code></pre>
+<p>Note that this method makes no effort to duplicate <em>value</em>, so this should only be used
+for <code>Struct</code>s. If you want to populate an {{@type}} with <code>Object</code>s, see <code><a href="../Phase/NArray.html#new%28ctx%3AYAML%3A%3AParseContext%2Cnode%3AYAML%3A%3ANodes%3A%3ANode%29-class-method">.new(shape, &amp;block)</a></code>.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/in-phase/ph-core/blob/faefb580069f511d51683190c6a7f4a72a11e8f0/src/n_array.cr#L174" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="of_buffer(shape:Array(Int32),buffer:Slice(T))-class-method">
+      <div class="signature">
+        
+        def self.<strong>of_buffer</strong>(shape : Array(Int32), buffer : Slice(T))
+
+        <a class="method-permalink" href="#of_buffer%28shape%3AArray%28Int32%29%2Cbuffer%3ASlice%28T%29%29-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/in-phase/ph-core/blob/faefb580069f511d51683190c6a7f4a72a11e8f0/src/n_array.cr#L66" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="tile(narr:MultiIndexable(T),counts:Enumerable)-class-method">
+      <div class="signature">
+        
+        def self.<strong>tile</strong>(narr : <a href="../Phase/MultiIndexable.html">MultiIndexable</a>(T), counts : Enumerable)
+
+        <a class="method-permalink" href="#tile%28narr%3AMultiIndexable%28T%29%2Ccounts%3AEnumerable%29-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/in-phase/ph-core/blob/faefb580069f511d51683190c6a7f4a72a11e8f0/src/n_array.cr#L179" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="wrap(*objects)-class-method">
+      <div class="signature">
+        
+        def self.<strong>wrap</strong>(*objects)
+
+        <a class="method-permalink" href="#wrap%28%2Aobjects%29-class-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>creates an {{@type}}-type vector from a tuple of scalars.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/in-phase/ph-core/blob/faefb580069f511d51683190c6a7f4a72a11e8f0/src/n_array.cr#L278" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+
+
+
+  <h2>
+    <a id="instance-method-detail" class="anchor" href="#instance-method-detail">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Instance Method Detail
+  </h2>
+  
+    <div class="entry-detail" id="&lt;&lt;(other:self):self-instance-method">
+      <div class="signature">
+        
+        def <strong><<</strong>(other : <span class="k">self</span>) : <span class="k">self</span>
+
+        <a class="method-permalink" href="#%3C%3C%28other%3Aself%29%3Aself-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/in-phase/ph-core/blob/faefb580069f511d51683190c6a7f4a72a11e8f0/src/n_array.cr#L518" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="==(other:NArray):Bool-instance-method">
+      <div class="signature">
+        
+        def <strong>==</strong>(other : <a href="../Phase/NArray.html">NArray</a>) : Bool
+
+        <a class="method-permalink" href="#%3D%3D%28other%3ANArray%29%3ABool-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Checks for elementwise equality between <code>self</code> and <em>other</em>.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/in-phase/ph-core/blob/faefb580069f511d51683190c6a7f4a72a11e8f0/src/n_array.cr#L339" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="[]=(bool_mask:NArray(Bool),value:T)-instance-method">
+      <div class="signature">
+        
+        def <strong>[]=</strong>(bool_mask : <a href="../Phase/NArray.html">NArray</a>(Bool), value : T)
+
+        <a class="method-permalink" href="#%5B%5D%3D%28bool_mask%3ANArray%28Bool%29%2Cvalue%3AT%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>replaces all values in a boolean mask with a given value</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/in-phase/ph-core/blob/faefb580069f511d51683190c6a7f4a72a11e8f0/src/n_array.cr#L409" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="buffer:Slice(T)-instance-method">
+      <div class="signature">
+        
+        def <strong>buffer</strong> : Slice(T)
+
+        <a class="method-permalink" href="#buffer%3ASlice%28T%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Stores the elements of an <code>{{@type}}</code> in lexicographic (row-major) order.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/in-phase/ph-core/blob/faefb580069f511d51683190c6a7f4a72a11e8f0/src/n_array.cr#L19" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="clone:self-instance-method">
+      <div class="signature">
+        
+        def <strong>clone</strong> : <span class="k">self</span>
+
+        <a class="method-permalink" href="#clone%3Aself-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Creates a deep copy of this {{@type}};
+Allocates a new buffer of the same shape, and calls #clone on every item in the buffer.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/in-phase/ph-core/blob/faefb580069f511d51683190c6a7f4a72a11e8f0/src/n_array.cr#L292" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="compatible?(*others:MultiIndexable,axis=-1):Bool-instance-method">
+      <div class="signature">
+        
+        def <strong>compatible?</strong>(*others : <a href="../Phase/MultiIndexable.html">MultiIndexable</a>, axis = <span class="n">-1</span>) : Bool
+
+        <a class="method-permalink" href="#compatible%3F%28%2Aothers%3AMultiIndexable%2Caxis%3D-1%29%3ABool-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Checks that the shape of this and other match in every dimension
+(except <code>axis</code>, if it is specified)</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/in-phase/ph-core/blob/faefb580069f511d51683190c6a7f4a72a11e8f0/src/n_array.cr#L502" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="concatenate(*others,axis=0):self-instance-method">
+      <div class="signature">
+        
+        def <strong>concatenate</strong>(*others, axis = <span class="n">0</span>) : <span class="k">self</span>
+
+        <a class="method-permalink" href="#concatenate%28%2Aothers%2Caxis%3D0%29%3Aself-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/in-phase/ph-core/blob/faefb580069f511d51683190c6a7f4a72a11e8f0/src/n_array.cr#L548" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="concatenate!(*others,axis=0):self-instance-method">
+      <div class="signature">
+        
+        def <strong>concatenate!</strong>(*others, axis = <span class="n">0</span>) : <span class="k">self</span>
+
+        <a class="method-permalink" href="#concatenate%21%28%2Aothers%2Caxis%3D0%29%3Aself-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/in-phase/ph-core/blob/faefb580069f511d51683190c6a7f4a72a11e8f0/src/n_array.cr#L552" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="dup:self-instance-method">
+      <div class="signature">
+        
+        def <strong>dup</strong> : <span class="k">self</span>
+
+        <a class="method-permalink" href="#dup%3Aself-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Creates a shallow copy of this {{@type}};
+Allocates a new buffer of the same shape, and duplicates every item in the buffer.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/in-phase/ph-core/blob/faefb580069f511d51683190c6a7f4a72a11e8f0/src/n_array.cr#L298" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="each-instance-method">
+      <div class="signature">
+        
+        def <strong>each</strong>
+
+        <a class="method-permalink" href="#each-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>The default &quot;each&quot; with no iterator type passed is lexicographic.
+For other orders, default to MultiIndexable's implementation.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/in-phase/ph-core/blob/faefb580069f511d51683190c6a7f4a72a11e8f0/src/n_array.cr#L425" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="each_coord-instance-method">
+      <div class="signature">
+        
+        def <strong>each_coord</strong>
+
+        <a class="method-permalink" href="#each_coord-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+            <div class="doc-inherited">
+              Description copied from module <a href="../Phase/MultiIndexable.html">Phase::MultiIndexable(T)</a>
+            </div>
+          
+          <p>Returns an iterator that will yield each coordinate of <code>self</code> in lexicographic (row-major) order.</p>
+<pre><code class="language-crystal">narr <span class="o">=</span> <span class="t">NArray</span>[[<span class="n">1</span>, <span class="n">2</span>, <span class="n">3</span>], [<span class="n">4</span>, <span class="n">5</span>, <span class="n">6</span>]]
+iter <span class="o">=</span> narr.each_coord
+iter.<span class="k">next</span> <span class="c"># =&gt; [0, 0]</span>
+iter.<span class="k">next</span> <span class="c"># =&gt; [0, 1]</span>
+iter.<span class="k">next</span> <span class="c"># =&gt; [0, 2]</span>
+iter.<span class="k">next</span> <span class="c"># =&gt; [1, 0]</span>
+iter.<span class="k">next</span> <span class="c"># =&gt; [1, 1]</span>
+iter.<span class="k">next</span> <span class="c"># =&gt; [1, 2]</span>
+iter.<span class="k">next</span> <span class="c"># =&gt; Iterator::Stop</span></code></pre>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/in-phase/ph-core/blob/faefb580069f511d51683190c6a7f4a72a11e8f0/src/n_array.cr#L433" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="each_with_coord(iter:IndexedStrideIterator(I))forallI-instance-method">
+      <div class="signature">
+        
+        def <strong>each_with_coord</strong>(iter : IndexedStrideIterator(I)) forall I
+
+        <a class="method-permalink" href="#each_with_coord%28iter%3AIndexedStrideIterator%28I%29%29forallI-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/in-phase/ph-core/blob/faefb580069f511d51683190c6a7f4a72a11e8f0/src/n_array.cr#L437" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="each_with_index(&amp;block:T,Int32-&gt;)-instance-method">
+      <div class="signature">
+        
+        def <strong>each_with_index</strong>(&block : T, Int32 -> )
+
+        <a class="method-permalink" href="#each_with_index%28%26block%3AT%2CInt32-%3E%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+            <div class="doc-inherited">
+              Description copied from module Enumerable(T)
+            </div>
+          
+          <p>Iterates over the collection, yielding both the elements and their index.</p>
+<pre><code class="language-crystal">[<span class="s">&quot;Alice&quot;</span>, <span class="s">&quot;Bob&quot;</span>].each_with_index <span class="k">do</span> <span class="o">|</span>user, i<span class="o">|</span>
+  puts <span class="s">&quot;User #</span><span class="i">#{</span>i<span class="i">}</span><span class="s">: </span><span class="i">#{</span>user<span class="i">}</span><span class="s">&quot;</span>
+<span class="k">end</span></code></pre>
+<p>Prints:</p>
+<pre><code class="language-text">User # 0: Alice
+User # 1: Bob</code></pre>
+<p>Accepts an optional <em>offset</em> parameter, which tells it to start counting
+from there. So, a more human friendly version of the previous snippet would be:</p>
+<pre><code class="language-crystal">[<span class="s">&quot;Alice&quot;</span>, <span class="s">&quot;Bob&quot;</span>].each_with_index(<span class="n">1</span>) <span class="k">do</span> <span class="o">|</span>user, i<span class="o">|</span>
+  puts <span class="s">&quot;User #</span><span class="i">#{</span>i<span class="i">}</span><span class="s">: </span><span class="i">#{</span>user<span class="i">}</span><span class="s">&quot;</span>
+<span class="k">end</span></code></pre>
+<p>Which would print:</p>
+<pre><code class="language-text">User # 1: Alice
+User # 2: Bob</code></pre>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/in-phase/ph-core/blob/faefb580069f511d51683190c6a7f4a72a11e8f0/src/n_array.cr#L441" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="fast_each-instance-method">
+      <div class="signature">
+        
+        def <strong>fast_each</strong>
+
+        <a class="method-permalink" href="#fast_each-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+            <div class="doc-inherited">
+              Description copied from module <a href="../Phase/MultiIndexable.html">Phase::MultiIndexable(T)</a>
+            </div>
+          
+          <p>Returns an Iterator over the elements in this <code><a href="../Phase/MultiIndexable.html">MultiIndexable</a></code> that will iterate in the fastest order possible.
+For most implementations, it is very likely that <code><a href="../Phase/NArray.html#each-instance-method">#each</a></code> will be just as fast.
+However, certain implementations of <code><a href="../Phase/MultiIndexable.html">MultiIndexable</a></code> may have substantial
+performance differences. As a rule of thumb, this method is only worth using
+if the <code><a href="../Phase/MultiIndexable.html">MultiIndexable</a></code> you call it on explicitly mentions that you should.</p>
+<pre><code class="language-crystal"><span class="t">NArray</span>[<span class="n">1</span>, <span class="n">2</span>, <span class="n">3</span>].fast_each.each <span class="k">do</span> <span class="o">|</span>el<span class="o">|</span>
+  <span class="c"># ...</span>
+<span class="k">end</span></code></pre>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/in-phase/ph-core/blob/faefb580069f511d51683190c6a7f4a72a11e8f0/src/n_array.cr#L429" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="fit(new_shape,*,align:Hash(Int32,NArray::Alignment|Int32))-instance-method">
+      <div class="signature">
+        
+        def <strong>fit</strong>(new_shape, *, align : Hash(Int32, NArray::Alignment | Int32))
+
+        <a class="method-permalink" href="#fit%28new_shape%2C%2A%2Calign%3AHash%28Int32%2CNArray%3A%3AAlignment%7CInt32%29%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>This version requires you are only &lt;= on each axis; cannot pad</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/in-phase/ph-core/blob/faefb580069f511d51683190c6a7f4a72a11e8f0/src/n_array.cr#L205" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="fit(new_shape,*,align:Hash(Int32,NArray::Alignment|Int32)?=nil,pad_withvalue=nil)-instance-method">
+      <div class="signature">
+        
+        def <strong>fit</strong>(new_shape, *, align : Hash(Int32, NArray::Alignment | Int32)? = <span class="n">nil</span>, pad_with value = <span class="n">nil</span>)
+
+        <a class="method-permalink" href="#fit%28new_shape%2C%2A%2Calign%3AHash%28Int32%2CNArray%3A%3AAlignment%7CInt32%29%3F%3Dnil%2Cpad_withvalue%3Dnil%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/in-phase/ph-core/blob/faefb580069f511d51683190c6a7f4a72a11e8f0/src/n_array.cr#L222" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="fit!-instance-method">
+      <div class="signature">
+        
+        def <strong>fit!</strong>
+
+        <a class="method-permalink" href="#fit%21-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/in-phase/ph-core/blob/faefb580069f511d51683190c6a7f4a72a11e8f0/src/n_array.cr#L232" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="flatten:self-instance-method">
+      <div class="signature">
+        
+        def <strong>flatten</strong> : <span class="k">self</span>
+
+        <a class="method-permalink" href="#flatten%3Aself-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/in-phase/ph-core/blob/faefb580069f511d51683190c6a7f4a72a11e8f0/src/n_array.cr#L324" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="map(&amp;block:T-&gt;U)forallU-instance-method">
+      <div class="signature">
+        
+        def <strong>map</strong>(&block : T -> U) forall U
+
+        <a class="method-permalink" href="#map%28%26block%3AT-%3EU%29forallU-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+            <div class="doc-inherited">
+              Description copied from module <a href="../Phase/MultiIndexable.html">Phase::MultiIndexable(T)</a>
+            </div>
+          
+          <p>Returns a <code><a href="../Phase/MultiIndexable.html">MultiIndexable</a></code> with the results of running the block against each element of <code>self</code>.</p>
+<pre><code class="language-crystal">narr <span class="o">=</span> <span class="t">NArray</span>[[<span class="n">1</span>, <span class="n">2</span>, <span class="n">3</span>], [<span class="n">4</span>, <span class="n">5</span>, <span class="n">6</span>]]
+res <span class="o">=</span> narr.map { <span class="o">|</span>el<span class="o">|</span> el.to_s } <span class="c"># =&gt; NArray[[&quot;1&quot;, &quot;2&quot;, &quot;3&quot;], [&quot;4&quot;, &quot;5&quot;, &quot;6&quot;]]</span></code></pre>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/in-phase/ph-core/blob/faefb580069f511d51683190c6a7f4a72a11e8f0/src/n_array.cr#L447" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="map!(&amp;block:T-&gt;T):self-instance-method">
+      <div class="signature">
+        
+        def <strong>map!</strong>(&block : T -> T) : <span class="k">self</span>
+
+        <a class="method-permalink" href="#map%21%28%26block%3AT-%3ET%29%3Aself-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+            <div class="doc-inherited">
+              Description copied from module <a href="../Phase/MultiIndexable.html">Phase::MultiIndexable(T)</a>
+            </div>
+          
+          <p><span class="flag orange">TODO</span>  docs, test</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/in-phase/ph-core/blob/faefb580069f511d51683190c6a7f4a72a11e8f0/src/n_array.cr#L466" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="map_with_coord(&amp;block:T,Indexable(Int32),Int32-&gt;U)forallU-instance-method">
+      <div class="signature">
+        
+        def <strong>map_with_coord</strong>(&block : T, Indexable(Int32), Int32 -> U) forall U
+
+        <a class="method-permalink" href="#map_with_coord%28%26block%3AT%2CIndexable%28Int32%29%2CInt32-%3EU%29forallU-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+            <div class="doc-inherited">
+              Description copied from module <a href="../Phase/MultiIndexable.html">Phase::MultiIndexable(T)</a>
+            </div>
+          
+          <p>Returns a <code><a href="../Phase/MultiIndexable.html">MultiIndexable</a></code> with the results of running the block against each element and coordinate comprising <code>self</code>.</p>
+<pre><code class="language-crystal">narr <span class="o">=</span> <span class="t">NArray</span>[[<span class="n">1</span>, <span class="n">2</span>, <span class="n">3</span>], [<span class="n">4</span>, <span class="n">5</span>, <span class="n">6</span>]]
+narr.map_with_coord <span class="k">do</span> <span class="o">|</span>el, coord<span class="o">|</span>
+  el <span class="o">+</span> coord.sum
+<span class="k">end</span> <span class="c"># =&gt; NArray[[1, 3, 5], [5, 7, 9]]</span></code></pre>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/in-phase/ph-core/blob/faefb580069f511d51683190c6a7f4a72a11e8f0/src/n_array.cr#L460" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="map_with_coord!(&amp;block:T,Indexable(Int32),Int32-&gt;T):self-instance-method">
+      <div class="signature">
+        
+        def <strong>map_with_coord!</strong>(&block : T, Indexable(Int32), Int32 -> T) : <span class="k">self</span>
+
+        <a class="method-permalink" href="#map_with_coord%21%28%26block%3AT%2CIndexable%28Int32%29%2CInt32-%3ET%29%3Aself-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+            <div class="doc-inherited">
+              Description copied from module <a href="../Phase/MultiIndexable.html">Phase::MultiIndexable(T)</a>
+            </div>
+          
+          <p><span class="flag orange">TODO</span>  docs
+DISCUSS is this good behaviour?</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/in-phase/ph-core/blob/faefb580069f511d51683190c6a7f4a72a11e8f0/src/n_array.cr#L480" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="map_with_index(&amp;block:T,Int32-&gt;U)forallU-instance-method">
+      <div class="signature">
+        
+        def <strong>map_with_index</strong>(&block : T, Int32 -> U) forall U
+
+        <a class="method-permalink" href="#map_with_index%28%26block%3AT%2CInt32-%3EU%29forallU-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+            <div class="doc-inherited">
+              Description copied from module Enumerable(T)
+            </div>
+          
+          <p>Like <code><a href="../Phase/NArray.html#map%28%26block%3AT-%3EU%29forallU-instance-method">#map</a></code>, but the block gets passed both the element and its index.</p>
+<pre><code class="language-crystal">[<span class="s">&quot;Alice&quot;</span>, <span class="s">&quot;Bob&quot;</span>].map_with_index { <span class="o">|</span>name, i<span class="o">|</span> <span class="s">&quot;User #</span><span class="i">#{</span>i<span class="i">}</span><span class="s">: </span><span class="i">#{</span>name<span class="i">}</span><span class="s">&quot;</span> }
+<span class="c"># =&gt; [&quot;User #0: Alice&quot;, &quot;User #1: Bob&quot;]</span></code></pre>
+<p>Accepts an optional <em>offset</em> parameter, which tells it to start counting
+from there.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/in-phase/ph-core/blob/faefb580069f511d51683190c6a7f4a72a11e8f0/src/n_array.cr#L453" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="map_with_index!(&amp;block:T,Int32-&gt;T):self-instance-method">
+      <div class="signature">
+        
+        def <strong>map_with_index!</strong>(&block : T, Int32 -> T) : <span class="k">self</span>
+
+        <a class="method-permalink" href="#map_with_index%21%28%26block%3AT%2CInt32-%3ET%29%3Aself-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/in-phase/ph-core/blob/faefb580069f511d51683190c6a7f4a72a11e8f0/src/n_array.cr#L473" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="pad(value,amounts:Hash(Int32,Tuple(Int32,Int32)))-instance-method">
+      <div class="signature">
+        
+        def <strong>pad</strong>(value, amounts : Hash(Int32, Tuple(Int32, Int32)))
+
+        <a class="method-permalink" href="#pad%28value%2Camounts%3AHash%28Int32%2CTuple%28Int32%2CInt32%29%29%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>core
+pad(0, {0 =&gt; {2, 2}, 1 =&gt; {3, 4}, -1 =&gt; {0, 5}})</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/in-phase/ph-core/blob/faefb580069f511d51683190c6a7f4a72a11e8f0/src/n_array.cr#L196" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="pad!-instance-method">
+      <div class="signature">
+        
+        def <strong>pad!</strong>
+
+        <a class="method-permalink" href="#pad%21-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/in-phase/ph-core/blob/faefb580069f511d51683190c6a7f4a72a11e8f0/src/n_array.cr#L229" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="push(*others:self,axis=0):self-instance-method">
+      <div class="signature">
+        
+        def <strong>push</strong>(*others : <span class="k">self</span>, axis = <span class="n">0</span>) : <span class="k">self</span>
+
+        <a class="method-permalink" href="#push%28%2Aothers%3Aself%2Caxis%3D0%29%3Aself-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>optimization for pushing other NArrays on axis 0, in-place</p>
+<p><span class="flag orange">TODO</span>  axis = 0 should not be a user modifiable parameter and never should have been</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/in-phase/ph-core/blob/faefb580069f511d51683190c6a7f4a72a11e8f0/src/n_array.cr#L524" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="reshape(new_shape:Enumerable)-instance-method">
+      <div class="signature">
+        
+        def <strong>reshape</strong>(new_shape : Enumerable)
+
+        <a class="method-permalink" href="#reshape%28new_shape%3AEnumerable%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/in-phase/ph-core/blob/faefb580069f511d51683190c6a7f4a72a11e8f0/src/n_array.cr#L328" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="reshape(*splat)-instance-method">
+      <div class="signature">
+        
+        def <strong>reshape</strong>(*splat)
+
+        <a class="method-permalink" href="#reshape%28%2Asplat%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/in-phase/ph-core/blob/faefb580069f511d51683190c6a7f4a72a11e8f0/src/n_array.cr#L334" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="size:Int32-instance-method">
+      <div class="signature">
+        
+        def <strong>size</strong> : Int32
+
+        <a class="method-permalink" href="#size%3AInt32-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+            <div class="doc-inherited">
+              Description copied from module <a href="../Phase/MultiIndexable.html">Phase::MultiIndexable(T)</a>
+            </div>
+          
+          <p>Returns the total number of elements in this <code><a href="../Phase/MultiIndexable.html">MultiIndexable</a></code>.
+This quantity is always equal to <code>shape.product</code>. However, this method is
+almost always more performant than computing the product directly.</p>
+<pre><code class="language-crystal"><span class="t">NArray</span>.<span class="k">new</span>([<span class="s">&#39;a&#39;</span>, <span class="s">&#39;b&#39;</span>, <span class="s">&#39;c&#39;</span>]).size <span class="c"># =&gt; 3</span>
+<span class="t">NArray</span>.<span class="k">new</span>([[<span class="n">0</span>, <span class="n">1</span>], [<span class="n">1</span>, <span class="n">0</span>]]).size <span class="c"># =&gt; 4</span></code></pre>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/in-phase/ph-core/blob/faefb580069f511d51683190c6a7f4a72a11e8f0/src/n_array.cr#L286" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="to_json(json:JSON::Builder)-instance-method">
+      <div class="signature">
+        
+        def <strong>to_json</strong>(json : JSON::Builder)
+
+        <a class="method-permalink" href="#to_json%28json%3AJSON%3A%3ABuilder%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/in-phase/ph-core/blob/faefb580069f511d51683190c6a7f4a72a11e8f0/src/n_array.cr#L643" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="to_yaml(yaml:YAML::Nodes::Builder)-instance-method">
+      <div class="signature">
+        
+        def <strong>to_yaml</strong>(yaml : YAML::Nodes::Builder)
+
+        <a class="method-permalink" href="#to_yaml%28yaml%3AYAML%3A%3ANodes%3A%3ABuilder%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/in-phase/ph-core/blob/faefb580069f511d51683190c6a7f4a72a11e8f0/src/n_array.cr#L691" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="unsafe_fetch_chunk(region:IndexRegion)-instance-method">
+      <div class="signature">
+        
+        def <strong>unsafe_fetch_chunk</strong>(region : <a href="../Phase/IndexRegion.html">IndexRegion</a>)
+
+        <a class="method-permalink" href="#unsafe_fetch_chunk%28region%3AIndexRegion%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Copies the elements in <code>region</code> to a new <code>{{@type}}</code>, assuming that <code>region</code> is in canonical form and in-bounds for this <code>{{@type}}</code>.
+For full specification of canonical form see <code><a href="../Phase/IndexRegion.html">IndexRegion</a></code> documentation.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/in-phase/ph-core/blob/faefb580069f511d51683190c6a7f4a72a11e8f0/src/n_array.cr#L350" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="unsafe_fetch_element(coord):T-instance-method">
+      <div class="signature">
+        
+        def <strong>unsafe_fetch_element</strong>(coord) : T
+
+        <a class="method-permalink" href="#unsafe_fetch_element%28coord%29%3AT-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Retrieves the element specified by <code>coord</code>, assuming that <code>coord</code> is in canonical form and in-bounds for this <code>{{@type}}</code>.
+For full specification of canonical form see <code><a href="../Phase/IndexRegion.html">IndexRegion</a></code> documentation.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/in-phase/ph-core/blob/faefb580069f511d51683190c6a7f4a72a11e8f0/src/n_array.cr#L357" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="unsafe_set_chunk(region:IndexRegion,src:MultiIndexable(T))-instance-method">
+      <div class="signature">
+        
+        def <strong>unsafe_set_chunk</strong>(region : <a href="../Phase/IndexRegion.html">IndexRegion</a>, src : <a href="../Phase/MultiIndexable.html">MultiIndexable</a>(T))
+
+        <a class="method-permalink" href="#unsafe_set_chunk%28region%3AIndexRegion%2Csrc%3AMultiIndexable%28T%29%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Copies the elements from a MultiIndexable <code>src</code> into <code>region</code>, assuming that <code>region</code> is in canonical form and in-bounds for this <code>{{type}}</code>
+and the shape of <code>region</code> matches the shape of <code>src</code>.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/in-phase/ph-core/blob/faefb580069f511d51683190c6a7f4a72a11e8f0/src/n_array.cr#L386" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="unsafe_set_chunk(region:IndexRegion,value:T)-instance-method">
+      <div class="signature">
+        
+        def <strong>unsafe_set_chunk</strong>(region : <a href="../Phase/IndexRegion.html">IndexRegion</a>, value : T)
+
+        <a class="method-permalink" href="#unsafe_set_chunk%28region%3AIndexRegion%2Cvalue%3AT%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Sets each element in <code>region</code> to <code>value</code>, assuming that <code>region</code> is in canonical form and in-bounds for this <code>{{type}}</code></p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/in-phase/ph-core/blob/faefb580069f511d51683190c6a7f4a72a11e8f0/src/n_array.cr#L397" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="unsafe_set_element(coord:Enumerable,value:T)-instance-method">
+      <div class="signature">
+        
+        def <strong>unsafe_set_element</strong>(coord : Enumerable, value : T)
+
+        <a class="method-permalink" href="#unsafe_set_element%28coord%3AEnumerable%2Cvalue%3AT%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/in-phase/ph-core/blob/faefb580069f511d51683190c6a7f4a72a11e8f0/src/n_array.cr#L404" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+
+
+
+
+</div>
+
+</body>
+</html>

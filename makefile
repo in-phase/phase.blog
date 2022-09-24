@@ -1,7 +1,7 @@
 TARGET_DIR=docs
 
 all: clean main reference api postprocess
-	rm -rf api_docs_raw
+#	rm -rf api_docs_raw
 
 main:
 	cd main; hugo -d ../$(TARGET_DIR)

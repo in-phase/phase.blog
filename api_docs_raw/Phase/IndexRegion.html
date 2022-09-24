@@ -1,0 +1,2084 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="Crystal Docs 1.5.0">
+<meta name="crystal_docs.project_version" content="main">
+<meta name="crystal_docs.project_name" content="ph-core">
+
+
+
+<link href="../css/style.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="../js/doc.js"></script>
+
+  <meta name="repository-name" content="ph-core">
+  <title>Phase::IndexRegion(T) - ph-core main</title>
+  <script type="text/javascript">
+    CrystalDocs.base_path = "../";
+  </script>
+</head>
+<body>
+
+<svg class="hidden">
+  <symbol id="octicon-link" viewBox="0 0 16 16">
+    <path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path>
+  </symbol>
+</svg>
+<div class="sidebar">
+  <div class="sidebar-header">
+    <div class="search-box">
+      <input type="search" class="search-input" placeholder="Search..." spellcheck="false" aria-label="Search">
+    </div>
+
+    <div class="project-summary">
+      <h1 class="project-name">
+        <a href="../index.html">
+          ph-core
+        </a>
+      </h1>
+
+      <span class="project-version">
+        main
+      </span>
+    </div>
+  </div>
+
+  <div class="search-results hidden">
+    <ul class="search-list"></ul>
+  </div>
+
+  <div class="types-list">
+    <ul>
+  
+  <li class=" " data-id="ph-core/Complex" data-name="complex">
+      <a href="../Complex.html">Complex</a>
+      
+    </li>
+  
+  <li class=" " data-id="ph-core/Number" data-name="number">
+      <a href="../Number.html">Number</a>
+      
+    </li>
+  
+  <li class="parent open current" data-id="ph-core/Phase" data-name="phase">
+      <a href="../Phase.html">Phase</a>
+      
+        <ul>
+  
+  <li class="parent " data-id="ph-core/Phase/Buffered" data-name="phase::buffered(t)">
+      <a href="../Phase/Buffered.html">Buffered</a>
+      
+        <ul>
+  
+  <li class="parent " data-id="ph-core/Phase/Buffered/Indexed" data-name="phase::buffered::indexed">
+      <a href="../Phase/Buffered/Indexed.html">Indexed</a>
+      
+        <ul>
+  
+  <li class=" " data-id="ph-core/Phase/Buffered/Indexed/ColexIterator" data-name="phase::buffered::indexed::colexiterator(i)">
+      <a href="../Phase/Buffered/Indexed/ColexIterator.html">ColexIterator</a>
+      
+    </li>
+  
+  <li class=" " data-id="ph-core/Phase/Buffered/Indexed/ElemAndCoordIterator" data-name="phase::buffered::indexed::elemandcoorditerator(s, e, i)">
+      <a href="../Phase/Buffered/Indexed/ElemAndCoordIterator.html">ElemAndCoordIterator</a>
+      
+    </li>
+  
+  <li class=" " data-id="ph-core/Phase/Buffered/Indexed/LexIterator" data-name="phase::buffered::indexed::lexiterator(i)">
+      <a href="../Phase/Buffered/Indexed/LexIterator.html">LexIterator</a>
+      
+    </li>
+  
+  <li class=" " data-id="ph-core/Phase/Buffered/Indexed/StrideIterator" data-name="phase::buffered::indexed::strideiterator(i)">
+      <a href="../Phase/Buffered/Indexed/StrideIterator.html">StrideIterator</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class=" " data-id="ph-core/Phase/ColexIterator" data-name="phase::colexiterator(i)">
+      <a href="../Phase/ColexIterator.html">ColexIterator</a>
+      
+    </li>
+  
+  <li class=" " data-id="ph-core/Phase/Coord" data-name="phase::coord">
+      <a href="../Phase/Coord.html">Coord</a>
+      
+    </li>
+  
+  <li class=" " data-id="ph-core/Phase/CoordUtil" data-name="phase::coordutil">
+      <a href="../Phase/CoordUtil.html">CoordUtil</a>
+      
+    </li>
+  
+  <li class=" " data-id="ph-core/Phase/DimensionError" data-name="phase::dimensionerror">
+      <a href="../Phase/DimensionError.html">DimensionError</a>
+      
+    </li>
+  
+  <li class=" current" data-id="ph-core/Phase/IndexRegion" data-name="phase::indexregion(t)">
+      <a href="../Phase/IndexRegion.html">IndexRegion</a>
+      
+    </li>
+  
+  <li class=" " data-id="ph-core/Phase/InputCoord" data-name="phase::inputcoord">
+      <a href="../Phase/InputCoord.html">InputCoord</a>
+      
+    </li>
+  
+  <li class=" " data-id="ph-core/Phase/LexIterator" data-name="phase::lexiterator(i)">
+      <a href="../Phase/LexIterator.html">LexIterator</a>
+      
+    </li>
+  
+  <li class="parent " data-id="ph-core/Phase/MultiIndexable" data-name="phase::multiindexable(t)">
+      <a href="../Phase/MultiIndexable.html">MultiIndexable</a>
+      
+        <ul>
+  
+  <li class=" " data-id="ph-core/Phase/MultiIndexable/ElemAndCoordIterator" data-name="phase::multiindexable::elemandcoorditerator(s, e, i)">
+      <a href="../Phase/MultiIndexable/ElemAndCoordIterator.html">ElemAndCoordIterator</a>
+      
+    </li>
+  
+  <li class=" " data-id="ph-core/Phase/MultiIndexable/ElemIterator" data-name="phase::multiindexable::elemiterator(s, e, i)">
+      <a href="../Phase/MultiIndexable/ElemIterator.html">ElemIterator</a>
+      
+    </li>
+  
+  <li class="parent " data-id="ph-core/Phase/MultiIndexable/Formatter" data-name="phase::multiindexable::formatter(s, e, i)">
+      <a href="../Phase/MultiIndexable/Formatter.html">Formatter</a>
+      
+        <ul>
+  
+  <li class="parent " data-id="ph-core/Phase/MultiIndexable/Formatter/Settings" data-name="phase::multiindexable::formatter::settings">
+      <a href="../Phase/MultiIndexable/Formatter/Settings.html">Settings</a>
+      
+        <ul>
+  
+  <li class=" " data-id="ph-core/Phase/MultiIndexable/Formatter/Settings/ColorConverter" data-name="phase::multiindexable::formatter::settings::colorconverter">
+      <a href="../Phase/MultiIndexable/Formatter/Settings/ColorConverter.html">ColorConverter</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class=" " data-id="ph-core/Phase/MultiIndexable/TilingLexIterator" data-name="phase::multiindexable::tilinglexiterator(i)">
+      <a href="../Phase/MultiIndexable/TilingLexIterator.html">TilingLexIterator</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class=" " data-id="ph-core/Phase/MultiWritable" data-name="phase::multiwritable(t)">
+      <a href="../Phase/MultiWritable.html">MultiWritable</a>
+      
+    </li>
+  
+  <li class=" " data-id="ph-core/Phase/NArray" data-name="phase::narray(t)">
+      <a href="../Phase/NArray.html">NArray</a>
+      
+    </li>
+  
+  <li class=" " data-id="ph-core/Phase/OutputCoord" data-name="phase::outputcoord">
+      <a href="../Phase/OutputCoord.html">OutputCoord</a>
+      
+    </li>
+  
+  <li class=" " data-id="ph-core/Phase/ProcView" data-name="phase::procview(s, t, r)">
+      <a href="../Phase/ProcView.html">ProcView</a>
+      
+    </li>
+  
+  <li class=" " data-id="ph-core/Phase/RangeSyntax" data-name="phase::rangesyntax">
+      <a href="../Phase/RangeSyntax.html">RangeSyntax</a>
+      
+    </li>
+  
+  <li class="parent " data-id="ph-core/Phase/ReadonlyView" data-name="phase::readonlyview(s, r)">
+      <a href="../Phase/ReadonlyView.html">ReadonlyView</a>
+      
+        <ul>
+  
+  <li class=" " data-id="ph-core/Phase/ReadonlyView/ComposedTransform" data-name="phase::readonlyview::composedtransform">
+      <a href="../Phase/ReadonlyView/ComposedTransform.html">ComposedTransform</a>
+      
+    </li>
+  
+  <li class=" " data-id="ph-core/Phase/ReadonlyView/CoordTransform" data-name="phase::readonlyview::coordtransform">
+      <a href="../Phase/ReadonlyView/CoordTransform.html">CoordTransform</a>
+      
+    </li>
+  
+  <li class=" " data-id="ph-core/Phase/ReadonlyView/IdentityTransform" data-name="phase::readonlyview::identitytransform">
+      <a href="../Phase/ReadonlyView/IdentityTransform.html">IdentityTransform</a>
+      
+    </li>
+  
+  <li class=" " data-id="ph-core/Phase/ReadonlyView/PermuteTransform" data-name="phase::readonlyview::permutetransform">
+      <a href="../Phase/ReadonlyView/PermuteTransform.html">PermuteTransform</a>
+      
+    </li>
+  
+  <li class=" " data-id="ph-core/Phase/ReadonlyView/RegionTransform" data-name="phase::readonlyview::regiontransform">
+      <a href="../Phase/ReadonlyView/RegionTransform.html">RegionTransform</a>
+      
+    </li>
+  
+  <li class=" " data-id="ph-core/Phase/ReadonlyView/ReshapeTransform" data-name="phase::readonlyview::reshapetransform">
+      <a href="../Phase/ReadonlyView/ReshapeTransform.html">ReshapeTransform</a>
+      
+    </li>
+  
+  <li class=" " data-id="ph-core/Phase/ReadonlyView/ReverseTransform" data-name="phase::readonlyview::reversetransform">
+      <a href="../Phase/ReadonlyView/ReverseTransform.html">ReverseTransform</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class="parent " data-id="ph-core/Phase/RegionIterator" data-name="phase::regioniterator(i)">
+      <a href="../Phase/RegionIterator.html">RegionIterator</a>
+      
+        <ul>
+  
+  <li class=" " data-id="ph-core/Phase/RegionIterator/FringeBehaviour" data-name="phase::regioniterator::fringebehaviour">
+      <a href="../Phase/RegionIterator/FringeBehaviour.html">FringeBehaviour</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class=" " data-id="ph-core/Phase/RegionLiteral" data-name="phase::regionliteral">
+      <a href="../Phase/RegionLiteral.html">RegionLiteral</a>
+      
+    </li>
+  
+  <li class=" " data-id="ph-core/Phase/Shape" data-name="phase::shape">
+      <a href="../Phase/Shape.html">Shape</a>
+      
+    </li>
+  
+  <li class=" " data-id="ph-core/Phase/ShapeError" data-name="phase::shapeerror">
+      <a href="../Phase/ShapeError.html">ShapeError</a>
+      
+    </li>
+  
+  <li class=" " data-id="ph-core/Phase/ShapeUtil" data-name="phase::shapeutil">
+      <a href="../Phase/ShapeUtil.html">ShapeUtil</a>
+      
+    </li>
+  
+  <li class=" " data-id="ph-core/Phase/StrideIterator" data-name="phase::strideiterator(i)">
+      <a href="../Phase/StrideIterator.html">StrideIterator</a>
+      
+    </li>
+  
+  <li class=" " data-id="ph-core/Phase/View" data-name="phase::view(s, r)">
+      <a href="../Phase/View.html">View</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+</ul>
+
+  </div>
+</div>
+
+
+<div class="main-content">
+<h1 class="type-name">
+
+  <span class="kind">struct</span> Phase::IndexRegion(T)
+
+</h1>
+
+
+  <ul class="superclass-hierarchy"><li class="superclass"><a href="../Phase/IndexRegion.html">Phase::IndexRegion(T)</a></li><li class="superclass">Struct</li><li class="superclass">Value</li><li class="superclass">Object</li></ul>
+
+
+
+
+  <h2>
+    <a id="overview" class="anchor" href="#overview">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Overview
+  </h2>
+
+  <p>An <code><a href="../Phase/IndexRegion.html">IndexRegion</a></code> represents the relationship between the coordinates in a source <code><a href="../Phase/MultiIndexable.html">MultiIndexable</a></code> and
+the coordinates of its slicing. For example:</p>
+<pre><code class="language-crystal"><span class="c"># This is the &quot;source MultiIndexable&quot; referred to above</span>
+narr <span class="o">=</span> <span class="t">NArray</span>[[<span class="s">&#39;a&#39;</span>, <span class="s">&#39;b&#39;</span>, <span class="s">&#39;c&#39;</span>],
+              [<span class="s">&#39;d&#39;</span>, <span class="s">&#39;e&#39;</span>, <span class="s">&#39;f&#39;</span>],
+              [<span class="s">&#39;g&#39;</span>, <span class="s">&#39;h&#39;</span>, <span class="s">&#39;i&#39;</span>]]
+
+<span class="c"># And this is a possible slicing of it:</span>
+sliced <span class="o">=</span> narr[<span class="n">0</span>..<span class="n">2</span>.., <span class="n">1</span>..]
+puts sliced <span class="c"># =&gt; [[&#39;b&#39;, &#39;c&#39;],</span>
+            <span class="c">#     [&#39;h&#39;, &#39;i&#39;]]</span>
+
+<span class="c"># An `IndexRegion` is a function from a coordinate in the context of `sliced`</span>
+<span class="c"># to a coordinate in the original `NArray`. We can see this by creating an</span>
+<span class="c"># `IndexRegion` via the source shape and the slicing operation:</span>
+mapping <span class="o">=</span> <span class="t">IndexRegion</span>.<span class="k">new</span>(region_literal: [<span class="n">0</span>..<span class="n">2</span>.., <span class="n">1</span>..], bound_shape: narr.shape)
+
+<span class="c"># sliced[0, 0] has the same element as narr[0, 1]</span>
+puts mapping.get(<span class="n">0</span>, <span class="n">0</span>) <span class="c"># =&gt; [0, 1]</span>
+
+<span class="c"># sliced[1, 1] has the same element as narr[2, 2]</span>
+puts mapping.get(<span class="n">1</span>, <span class="n">1</span>) <span class="c"># =&gt; [2, 2]</span>
+
+<span class="c"># We can even print the whole `IndexRegion` to see where</span>
+<span class="c"># each element of sliced is coming from:</span>
+puts mapping.to_narr
+<span class="c"># 2x2 Phase::NArray(Array(Int32))</span>
+<span class="c"># [[[0, 1], [0, 2]],</span>
+<span class="c">#  [[2, 1], [2, 2]]]</span>
+
+<span class="c"># Phase uses this internally to compute slicing!</span>
+narr[mapping] <span class="o">==</span> sliced <span class="c"># =&gt; true</span></code></pre>
+
+
+
+
+
+  <h2>
+    <a id="included-modules" class="anchor" href="#included-modules">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Included Modules
+  </h2>
+  <ul class="other-types-list">
+    
+      <li class="other-type"><a href="../Phase/MultiIndexable.html">Phase::MultiIndexable(Array(T))</a></li>
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+
+  <h2>
+    <a id="defined-in" class="anchor" href="#defined-in">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Defined in:
+  </h2>
+  
+    
+      <a href="https://github.com/in-phase/ph-core/blob/faefb580069f511d51683190c6a7f4a72a11e8f0/src/index_region.cr#L40" target="_blank">
+        index_region.cr
+      </a>
+    
+    <br/>
+  
+
+
+
+  
+    <h2>
+      <a id="constant-summary" class="anchor" href="#constant-summary">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+      Constant Summary
+    </h2>
+  
+  <dl>
+    
+      <dt class="entry-const" id="DROP_BY_DEFAULT">
+        <strong>DROP_BY_DEFAULT</strong> = <code><span class="t">MultiIndexable</span><span class="t">::</span><span class="t">DROP_BY_DEFAULT</span></code>
+      </dt>
+      
+      <dd class="entry-const-doc">
+        <p>See <code>MultiIndexable::DROP_BY_DEFAULT</code></p>
+      </dd>
+      
+    
+  </dl>
+
+
+
+  <h2>
+    <a id="constructors" class="anchor" href="#constructors">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Constructors
+  </h2>
+  <ul class="list-summary">
+    
+      <li class="entry-summary">
+        <a href="#new%28region%3AIndexRegion%2Cbound_shape%3AShape%29-class-method" class="signature"><strong>.new</strong>(region : IndexRegion, bound_shape : Shape)</a>
+        
+          <div class="summary"><p>Copy constructor that throws a <code><a href="../Phase/ShapeError.html">ShapeError</a></code> if <em>region</em> doesn't fit inside of <em>bound_shape</em>.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#new%28region_literal%3AEnumerable%2Cbound_shape%3AIndexable%28T%29%2Cdrop%3ABool%3DDROP_BY_DEFAULT%29%3AIndexRegion%28T%29-class-method" class="signature"><strong>.new</strong>(region_literal : Enumerable, bound_shape : Indexable(T), drop : Bool = <span class="t">DROP_BY_DEFAULT</span>) : IndexRegion(T)</a>
+        
+          <div class="summary"><p>Creates an <code><a href="../Phase/IndexRegion.html">IndexRegion</a></code> from a <em>region_literal</em>, using <em>bound_shape</em> for relative index handling.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#new%28region_literal%3ARegionLiteral%2Cdrop%3ABool%3DDROP_BY_DEFAULT%29-class-method" class="signature"><strong>.new</strong>(region_literal : RegionLiteral, drop : Bool = <span class="t">DROP_BY_DEFAULT</span>)</a>
+        
+          <div class="summary"><p>Creates an <code><a href="../Phase/IndexRegion.html">IndexRegion</a></code> from an absolute (positive, bounded) <em>region_literal</em>.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#new%28region_literal%3AEnumerable%2Cbound_shape%3AIndexable%3F%3Dnil%2Cdrop%3ABool%3DDROP_BY_DEFAULT%2C%2A%2Ctrim_to%3AShape%28T%29%29-class-method" class="signature"><strong>.new</strong>(region_literal : Enumerable, bound_shape : Indexable? = <span class="n">nil</span>, drop : Bool = <span class="t">DROP_BY_DEFAULT</span>, *, trim_to : Shape(T))</a>
+        
+          <div class="summary"><p>Creates an <code><a href="../Phase/IndexRegion.html">IndexRegion</a></code> by clipping the <em>region_literal</em> to fit inside of the shape <em>trim_to</em>.</p></div>
+        
+      </li>
+    
+  </ul>
+
+
+
+  <h2>
+    <a id="class-method-summary" class="anchor" href="#class-method-summary">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Class Method Summary
+  </h2>
+  <ul class="list-summary">
+    
+      <li class="entry-summary">
+        <a href="#cover%28bound_shape%3AShape%28T%29%2C%2A%2Cdrop%3ABool%3DDROP_BY_DEFAULT%2Cdegeneracy%3AArray%28Bool%29%3F%3Dnil%29-class-method" class="signature"><strong>.cover</strong>(bound_shape : Shape(T), *, drop : Bool = <span class="t">DROP_BY_DEFAULT</span>, degeneracy : Array(Bool)? = <span class="n">nil</span>)</a>
+        
+          <div class="summary"><p>Creates an <code><a href="../Phase/IndexRegion.html">IndexRegion</a></code> whose coordinates fully cover the given <em>bound_shape</em>.</p></div>
+        
+      </li>
+    
+  </ul>
+
+
+
+  <h2>
+    <a id="instance-method-summary" class="anchor" href="#instance-method-summary">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Instance Method Summary
+  </h2>
+  <ul class="list-summary">
+    
+      <li class="entry-summary">
+        <a href="#%3D%3D%28other%3Aself%29-instance-method" class="signature"><strong>#==</strong>(other : <span class="k">self</span>)</a>
+        
+          <div class="summary"><p>Returns true if both the shape and elements of <code>self</code> and <em>other</em> are equal.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#absolute_to_local%28coord%29-instance-method" class="signature"><strong>#absolute_to_local</strong>(coord)</a>
+        
+          <div class="summary"><p>Maps an absolute (output) coordinate to its corresponding local (input) coordinate.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#absolute_to_local_unsafe%28coord%29-instance-method" class="signature"><strong>#absolute_to_local_unsafe</strong>(coord)</a>
+        
+          <div class="summary"><p>Unsafe version of <code><a href="../Phase/IndexRegion.html#absolute_to_local%28coord%29-instance-method">#absolute_to_local</a></code> that does not check if <em>coord</em> is in bounds for this <code><a href="../Phase/IndexRegion.html">IndexRegion</a></code>.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#clone-instance-method" class="signature"><strong>#clone</strong></a>
+        
+          <div class="summary"><p>Returns a copy of <code>self</code> with all instance variables cloned.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#degeneracy%3AArray%28Bool%29-instance-method" class="signature"><strong>#degeneracy</strong> : Array(Bool)</a>
+        
+          <div class="summary"><p>Stores the user-hinted dimension dropping information from the region literal.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#degeneracy%3D%28degeneracy%3AArray%28Bool%29%29-instance-method" class="signature"><strong>#degeneracy=</strong>(degeneracy : Array(Bool))</a>
+        
+          <div class="summary"><p>Stores the user-hinted dimension dropping information from the region literal.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#drop%3ABool-instance-method" class="signature"><strong>#drop</strong> : Bool</a>
+        
+          <div class="summary"><p>Whether or not dimensions should be dropped.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#each%3ALexIterator%28T%29-instance-method" class="signature"><strong>#each</strong> : LexIterator(T)</a>
+        
+          <div class="summary"><p>Unsafe version of <code><a href="../Phase/IndexRegion.html#absolute_to_local%28coord%29-instance-method">#absolute_to_local</a></code> that does not check if <em>coord</em> is in bounds for this <code><a href="../Phase/IndexRegion.html">IndexRegion</a></code>.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#first-instance-method" class="signature"><strong>#first</strong></a>
+        
+          <div class="summary"><p>Returns a copy of the coordinate of the first &quot;corner&quot; in this <code><a href="../Phase/IndexRegion.html">IndexRegion</a></code>.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#fits_in%3F%28bound_shape%3AShape%29%3ABool-instance-method" class="signature"><strong>#fits_in?</strong>(bound_shape : Shape) : Bool</a>
+        
+          <div class="summary"><p>Returns true if this <code><a href="../Phase/IndexRegion.html">IndexRegion</a></code> contains coordinates that all fit inside of the given <em>bound_shape</em>.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#hash%28hasher%29-instance-method" class="signature"><strong>#hash</strong>(hasher)</a>
+        
+          <div class="summary"><p>See <code>Object#hash(hasher)</code></p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#includes%3F%28coord%3AInputCoord%29-instance-method" class="signature"><strong>#includes?</strong>(coord : InputCoord)</a>
+        
+          <div class="summary"><p>Returns true if this <code><a href="../Phase/IndexRegion.html">IndexRegion</a></code> points to the provided <em>coord</em>.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#last-instance-method" class="signature"><strong>#last</strong></a>
+        
+          <div class="summary"><p>Similar to <code><a href="../Phase/IndexRegion.html#first-instance-method">IndexRegion#first</a></code>.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#local_to_absolute%28coord%29-instance-method" class="signature"><strong>#local_to_absolute</strong>(coord)</a>
+        
+          <div class="summary"><p>Maps a local (input) coordinate to its corresponding absolute (output) coordinate.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#local_to_absolute_unsafe%28coord%3ACoord%29%3AArray%28T%29-instance-method" class="signature"><strong>#local_to_absolute_unsafe</strong>(coord : Coord) : Array(T)</a>
+        
+          <div class="summary"><p>Unsafe version of <code><a href="../Phase/IndexRegion.html#local_to_absolute%28coord%29-instance-method">#local_to_absolute</a></code> that does not check if <em>coord</em> is in bounds for this <code><a href="../Phase/IndexRegion.html">IndexRegion</a></code>.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#proper_dimensions%3AInt32-instance-method" class="signature"><strong>#proper_dimensions</strong> : Int32</a>
+        
+          <div class="summary"><p>Returns the number of dimensions of the space that this <code><a href="../Phase/IndexRegion.html">IndexRegion</a></code> maps into.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#reverse%3Aself-instance-method" class="signature"><strong>#reverse</strong> : <span class="k">self</span></a>
+        
+          <div class="summary"><p>Returns a reversed copy of this <code><a href="../Phase/IndexRegion.html">IndexRegion</a></code>.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#reverse%21%3AIndexRegion%28T%29-instance-method" class="signature"><strong>#reverse!</strong> : IndexRegion(T)</a>
+        
+          <div class="summary"><p>Reverses the ordering of an <code><a href="../Phase/IndexRegion.html">IndexRegion</a></code> in place.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#shape_internal%28drop%3DMultiIndexable%3A%3ADROP_BY_DEFAULT%29%3AArray%28T%29-instance-method" class="signature"><strong>#shape_internal</strong>(drop = <span class="t">MultiIndexable</span><span class="t">::</span><span class="t">DROP_BY_DEFAULT</span>) : Array(T)</a>
+        
+          <div class="summary"><p>============= Methods required by MultiIndexable =========================== TODO: <em>drop</em> isn't being used here, why is it included?</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#stride-instance-method" class="signature"><strong>#stride</strong></a>
+        
+          <div class="summary"><p>Returns the spacing between elements along each axis.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#to_s%28io%3AIO%29-instance-method" class="signature"><strong>#to_s</strong>(io : IO)</a>
+        
+          <div class="summary"><p>Returns a translated copy of this <code><a href="../Phase/IndexRegion.html">IndexRegion</a></code>.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#translate%28offset%3AEnumerable%29%3Aself-instance-method" class="signature"><strong>#translate</strong>(offset : Enumerable) : <span class="k">self</span></a>
+        
+          <div class="summary"><p>Returns a translated copy of this <code><a href="../Phase/IndexRegion.html">IndexRegion</a></code>.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#translate%21%28offset%3AEnumerable%29%3Aself-instance-method" class="signature"><strong>#translate!</strong>(offset : Enumerable) : <span class="k">self</span></a>
+        
+          <div class="summary"><p>Translates this <code><a href="../Phase/IndexRegion.html">IndexRegion</a></code> in place by adding an <em>offset</em> to each output coordinate.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#trim%28bound_shape%29%3Aself-instance-method" class="signature"><strong>#trim</strong>(bound_shape) : <span class="k">self</span></a>
+        
+          <div class="summary"><p>Returns a trimmed copy of this <code><a href="../Phase/IndexRegion.html">IndexRegion</a></code>.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#trim%21%28bound_shape%3AShape%29%3Aself-instance-method" class="signature"><strong>#trim!</strong>(bound_shape : Shape) : <span class="k">self</span></a>
+        
+          <div class="summary"><p>Clips this <code><a href="../Phase/IndexRegion.html">IndexRegion</a></code> in-place to fit the <em>bound_shape</em> provided.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#unsafe_fetch_chunk%28region%3AIndexRegion%2Cdrop%3ABool%29%3AIndexRegion%28T%29-instance-method" class="signature"><strong>#unsafe_fetch_chunk</strong>(region : IndexRegion, drop : Bool) : IndexRegion(T)</a>
+        
+          <div class="summary"><p>Returns the number of dimensions of the space that this <code><a href="../Phase/IndexRegion.html">IndexRegion</a></code> maps into.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#unsafe_fetch_element%28coord%3ACoord%29%3AArray%28T%29-instance-method" class="signature"><strong>#unsafe_fetch_element</strong>(coord : Coord) : Array(T)</a>
+        
+          <div class="summary"><p>Returns the number of dimensions of the space that this <code><a href="../Phase/IndexRegion.html">IndexRegion</a></code> maps into.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#unsafe_translate%21%28offset%3AEnumerable%29%3Aself-instance-method" class="signature"><strong>#unsafe_translate!</strong>(offset : Enumerable) : <span class="k">self</span></a>
+        
+          <div class="summary"><p>Translates an <code><a href="../Phase/IndexRegion.html">IndexRegion</a></code> in place, without checking that the result is valid.</p></div>
+        
+      </li>
+    
+  </ul>
+
+
+
+
+
+<div class="methods-inherited">
+  
+    
+
+  <h3>Instance methods inherited from module <code><a href="../Phase/MultiIndexable.html">Phase::MultiIndexable(Array(T))</a></code></h3>
+  
+  
+    <a href="../Phase/MultiIndexable.html#%25%28other%3AMultiIndexable%28U%29%29forallU-instance-method" class="tooltip">
+      <span>%(other : MultiIndexable(U)) forall U<br/>%(other)</span>
+    %</a>, 
+    
+  
+    <a href="../Phase/MultiIndexable.html#%26%28other%3AMultiIndexable%28U%29%29forallU-instance-method" class="tooltip">
+      <span>&(other : MultiIndexable(U)) forall U<br/>&(other)</span>
+    &</a>, 
+    
+  
+    <a href="../Phase/MultiIndexable.html#%26%2A%28other%3AMultiIndexable%28U%29%29forallU-instance-method" class="tooltip">
+      <span>&*(other : MultiIndexable(U)) forall U<br/>&*(other)</span>
+    &*</a>, 
+    
+  
+    <a href="../Phase/MultiIndexable.html#%26%2A%2A%28other%3AMultiIndexable%28U%29%29forallU-instance-method" class="tooltip">
+      <span>&**(other : MultiIndexable(U)) forall U<br/>&**(other)</span>
+    &**</a>, 
+    
+  
+    <a href="../Phase/MultiIndexable.html#%26%2B%28other%3AMultiIndexable%28U%29%29forallU-instance-method" class="tooltip">
+      <span>&+(other : MultiIndexable(U)) forall U<br/>&+(other)</span>
+    &+</a>, 
+    
+  
+    <a href="../Phase/MultiIndexable.html#%26-%28other%3AMultiIndexable%28U%29%29forallU-instance-method" class="tooltip">
+      <span>&-(other : MultiIndexable(U)) forall U<br/>&-(other)</span>
+    &-</a>, 
+    
+  
+    <a href="../Phase/MultiIndexable.html#%2A%28other%3AMultiIndexable%28U%29%29forallU-instance-method" class="tooltip">
+      <span>*(other : MultiIndexable(U)) forall U<br/>*(other)</span>
+    *</a>, 
+    
+  
+    <a href="../Phase/MultiIndexable.html#%2A%2A%28other%3AMultiIndexable%28U%29%29forallU-instance-method" class="tooltip">
+      <span>**(other : MultiIndexable(U)) forall U<br/>**(other)</span>
+    **</a>, 
+    
+  
+    <a href="../Phase/MultiIndexable.html#%2B%28other%3AMultiIndexable%28U%29%29forallU-instance-method" class="tooltip">
+      <span>+(other : MultiIndexable(U)) forall U<br/>+(other)<br/>+</span>
+    +</a>, 
+    
+  
+    <a href="../Phase/MultiIndexable.html#-%28other%3AMultiIndexable%28U%29%29forallU-instance-method" class="tooltip">
+      <span>-(other : MultiIndexable(U)) forall U<br/>-(other)<br/>-</span>
+    -</a>, 
+    
+  
+    <a href="../Phase/MultiIndexable.html#/%28other%3AMultiIndexable%28U%29%29forallU-instance-method" class="tooltip">
+      <span>/(other : MultiIndexable(U)) forall U<br/>/(other)</span>
+    /</a>, 
+    
+  
+    <a href="../Phase/MultiIndexable.html#//%28other%3AMultiIndexable%28U%29%29forallU-instance-method" class="tooltip">
+      <span>//(other : MultiIndexable(U)) forall U<br/>//(other)</span>
+    //</a>, 
+    
+  
+    <a href="../Phase/MultiIndexable.html#%3C%28other%3AMultiIndexable%28U%29%29forallU-instance-method" class="tooltip">
+      <span><(other : MultiIndexable(U)) forall U<br/><(other)</span>
+    <</a>, 
+    
+  
+    <a href="../Phase/MultiIndexable.html#%3C%3D%28other%3AMultiIndexable%28U%29%29forallU-instance-method" class="tooltip">
+      <span><=(other : MultiIndexable(U)) forall U<br/><=(other)</span>
+    <=</a>, 
+    
+  
+    <a href="../Phase/MultiIndexable.html#%3C%3D%3E%28other%3AMultiIndexable%28U%29%29forallU-instance-method" class="tooltip">
+      <span><=>(other : MultiIndexable(U)) forall U<br/><=>(other)</span>
+    <=></a>, 
+    
+  
+    <a href="../Phase/MultiIndexable.html#%3D%3D%28other%3Aself%29%3ABool-instance-method" class="tooltip">
+      <span>==(other : <span class="k">self</span>) : Bool</span>
+    ==</a>, 
+    
+  
+    <a href="../Phase/MultiIndexable.html#%3D~%28value%29%3AMultiIndexable%28Bool%29-instance-method" class="tooltip">
+      <span>=~(value) : MultiIndexable(Bool)</span>
+    =~</a>, 
+    
+  
+    <a href="../Phase/MultiIndexable.html#%3E%28other%3AMultiIndexable%28U%29%29forallU-instance-method" class="tooltip">
+      <span>>(other : MultiIndexable(U)) forall U<br/>>(other)</span>
+    ></a>, 
+    
+  
+    <a href="../Phase/MultiIndexable.html#%3E%3D%28other%3AMultiIndexable%28U%29%29forallU-instance-method" class="tooltip">
+      <span>>=(other : MultiIndexable(U)) forall U<br/>>=(other)</span>
+    >=</a>, 
+    
+  
+    <a href="../Phase/MultiIndexable.html#%5B%5D%28region_literal%3AIndexable%2Cdrop%3ABool%3DMultiIndexable%3A%3ADROP_BY_DEFAULT%29-instance-method" class="tooltip">
+      <span>[](region_literal : Indexable, drop : Bool = <span class="t">MultiIndexable</span><span class="t">::</span><span class="t">DROP_BY_DEFAULT</span>)<br/>[](region : IndexRegion)<br/>[](*region_literal, drop : Bool = <span class="t">MultiIndexable</span><span class="t">::</span><span class="t">DROP_BY_DEFAULT</span>)</span>
+    []</a>, 
+    
+  
+    <a href="../Phase/MultiIndexable.html#%5B%5D%3F%28bool_mask%3AMultiIndexable%28Bool%29%29%3AMultiIndexable%28T%28T%29%3F%29-instance-method" class="tooltip">
+      <span>[]?(bool_mask : MultiIndexable(Bool)) : MultiIndexable(T(T)?)<br/>[]?(region : Indexable, drop : Bool = <span class="t">MultiIndexable</span><span class="t">::</span><span class="t">DROP_BY_DEFAULT</span>) : MultiIndexable(T(T))?<br/>[]?(region : IndexRegion) : MultiIndexable(T(T))?<br/>[]?(*region_literal, drop : Bool = <span class="t">MultiIndexable</span><span class="t">::</span><span class="t">DROP_BY_DEFAULT</span>)</span>
+    []?</a>, 
+    
+  
+    <a href="../Phase/MultiIndexable.html#%5E%28other%3AMultiIndexable%28U%29%29forallU-instance-method" class="tooltip">
+      <span>^(other : MultiIndexable(U)) forall U<br/>^(other)</span>
+    ^</a>, 
+    
+  
+    <a href="../Phase/MultiIndexable.html#%7C%28other%3AMultiIndexable%28U%29%29forallU-instance-method" class="tooltip">
+      <span>|(other : MultiIndexable(U)) forall U<br/>|(other)</span>
+    |</a>, 
+    
+  
+    <a href="../Phase/MultiIndexable.html#~-instance-method" class="tooltip">
+      <span>~</span>
+    ~</a>, 
+    
+  
+    <a href="../Phase/MultiIndexable.html#apply%3AApplyProxy-instance-method" class="tooltip">
+      <span>apply : ApplyProxy</span>
+    apply</a>, 
+    
+  
+    <a href="../Phase/MultiIndexable.html#apply%21%3AInPlaceApplyProxy-instance-method" class="tooltip">
+      <span>apply! : InPlaceApplyProxy</span>
+    apply!</a>, 
+    
+  
+    <a href="../Phase/MultiIndexable.html#colex_each%3AElemIterator-instance-method" class="tooltip">
+      <span>colex_each : ElemIterator<br/>colex_each(&) : Nil</span>
+    colex_each</a>, 
+    
+  
+    <a href="../Phase/MultiIndexable.html#colex_each_coord%3AColexIterator-instance-method" class="tooltip">
+      <span>colex_each_coord : ColexIterator<br/>colex_each_coord(&) : Nil</span>
+    colex_each_coord</a>, 
+    
+  
+    <a href="../Phase/MultiIndexable.html#dimensions%3AInt-instance-method" class="tooltip">
+      <span>dimensions : Int</span>
+    dimensions</a>, 
+    
+  
+    <a href="../Phase/MultiIndexable.html#each%3AElemIterator-instance-method" class="tooltip">
+      <span>each : ElemIterator<br/>each(&) : Nil</span>
+    each</a>, 
+    
+  
+    <a href="../Phase/MultiIndexable.html#each_coord%3ALexIterator-instance-method" class="tooltip">
+      <span>each_coord : LexIterator<br/>each_coord(&) : Nil</span>
+    each_coord</a>, 
+    
+  
+    <a href="../Phase/MultiIndexable.html#each_slice%28axis%3D0%29%3AIterator-instance-method" class="tooltip">
+      <span>each_slice(axis = <span class="n">0</span>) : Iterator<br/>each_slice(axis = <span class="n">0</span>, &)</span>
+    each_slice</a>, 
+    
+  
+    <a href="../Phase/MultiIndexable.html#each_with%28%2Aargs%2C%26%29-instance-method" class="tooltip">
+      <span>each_with(*args, &)</span>
+    each_with</a>, 
+    
+  
+    <a href="../Phase/MultiIndexable.html#each_with_coord%3AElemAndCoordIterator-instance-method" class="tooltip">
+      <span>each_with_coord : ElemAndCoordIterator<br/>each_with_coord(&) : Nil</span>
+    each_with_coord</a>, 
+    
+  
+    <a href="../Phase/MultiIndexable.html#empty%3F%3ABool-instance-method" class="tooltip">
+      <span>empty? : Bool</span>
+    empty?</a>, 
+    
+  
+    <a href="../Phase/MultiIndexable.html#ensure_writable-instance-method" class="tooltip">
+      <span>ensure_writable</span>
+    ensure_writable</a>, 
+    
+  
+    <a href="../Phase/MultiIndexable.html#eq%28other%3AMultiIndexable%28U%29%29%3AMultiIndexable%28Bool%29forallU-instance-method" class="tooltip">
+      <span>eq(other : MultiIndexable(U)) : MultiIndexable(Bool) forall U<br/>eq(value) : MultiIndexable(Bool)</span>
+    eq</a>, 
+    
+  
+    <a href="../Phase/MultiIndexable.html#equals%3F%28other%3AMultiIndexable%2C%26%29%3ABool-instance-method" class="tooltip">
+      <span>equals?(other : MultiIndexable, &) : Bool</span>
+    equals?</a>, 
+    
+  
+    <a href="../Phase/MultiIndexable.html#fast_each%3AIterator%28T%28T%29%29-instance-method" class="tooltip">
+      <span>fast_each : Iterator(T(T))<br/>fast_each(&) : Nil</span>
+    fast_each</a>, 
+    
+  
+    <a href="../Phase/MultiIndexable.html#first%3AT%28T%29-instance-method" class="tooltip">
+      <span>first : T(T)</span>
+    first</a>, 
+    
+  
+    <a href="../Phase/MultiIndexable.html#get%28coord%3AIndexable%29%3AT%28T%29-instance-method" class="tooltip">
+      <span>get(coord : Indexable) : T(T)<br/>get(*coord : Int)</span>
+    get</a>, 
+    
+  
+    <a href="../Phase/MultiIndexable.html#get_available%28region_literal%3AIndexable%2Cdrop%3ABool%3DDROP_BY_DEFAULT%29-instance-method" class="tooltip">
+      <span>get_available(region_literal : Indexable, drop : Bool = <span class="t">DROP_BY_DEFAULT</span>)<br/>get_available(region : IndexRegion, drop : Bool = <span class="t">DROP_BY_DEFAULT</span>)<br/>get_available(*region_literal, drop : Bool = <span class="t">MultiIndexable</span><span class="t">::</span><span class="t">DROP_BY_DEFAULT</span>)</span>
+    get_available</a>, 
+    
+  
+    <a href="../Phase/MultiIndexable.html#get_chunk%28coord%3AIndexable%2Cregion_shape%3AIndexable%28I%29%29forallI-instance-method" class="tooltip">
+      <span>get_chunk(coord : Indexable, region_shape : Indexable(I)) forall I<br/>get_chunk(region_literal : Indexable, drop : Bool = <span class="t">DROP_BY_DEFAULT</span>)<br/>get_chunk(region : IndexRegion) : MultiIndexable(T(T))<br/>get_chunk(*region_literal, drop : Bool = <span class="t">MultiIndexable</span><span class="t">::</span><span class="t">DROP_BY_DEFAULT</span>)</span>
+    get_chunk</a>, 
+    
+  
+    <a href="../Phase/MultiIndexable.html#get_element%28coord%3AIndexable%29%3AT%28T%29-instance-method" class="tooltip">
+      <span>get_element(coord : Indexable) : T(T)<br/>get_element(*coord : Int)</span>
+    get_element</a>, 
+    
+  
+    <a href="../Phase/MultiIndexable.html#has_coord%3F%28coord%3AIndexable%29%3ABool-instance-method" class="tooltip">
+      <span>has_coord?(coord : Indexable) : Bool<br/>has_coord?(*coord : Int)</span>
+    has_coord?</a>, 
+    
+  
+    <a href="../Phase/MultiIndexable.html#has_region%3F%28region_literal%3AIndexable%2Cdrop%3ABool%3DDROP_BY_DEFAULT%29%3ABool-instance-method" class="tooltip">
+      <span>has_region?(region_literal : Indexable, drop : Bool = <span class="t">DROP_BY_DEFAULT</span>) : Bool<br/>has_region?(region : IndexRegion) : Bool<br/>has_region?(*region_literal, drop : Bool = <span class="t">MultiIndexable</span><span class="t">::</span><span class="t">DROP_BY_DEFAULT</span>)</span>
+    has_region?</a>, 
+    
+  
+    <a href="../Phase/MultiIndexable.html#hash%28hasher%29-instance-method" class="tooltip">
+      <span>hash(hasher)</span>
+    hash</a>, 
+    
+  
+    <a href="../Phase/MultiIndexable.html#last%3AT%28T%29-instance-method" class="tooltip">
+      <span>last : T(T)</span>
+    last</a>, 
+    
+  
+    <a href="../Phase/MultiIndexable.html#map%28%26block%3AT%28T%29-%3ER%29%3AMultiIndexable%28R%29forallR-instance-method" class="tooltip">
+      <span>map(&block : T(T) -> R) : MultiIndexable(R) forall R</span>
+    map</a>, 
+    
+  
+    <a href="../Phase/MultiIndexable.html#map%21%28%26block%3AT%28T%29-%3ET%28T%29%7CMultiIndexable%28T%28T%29%29%29%3AMultiIndexable%28T%28T%29%29-instance-method" class="tooltip">
+      <span>map!(&block : T(T) -> T(T) | MultiIndexable(T(T))) : MultiIndexable(T(T))</span>
+    map!</a>, 
+    
+  
+    <a href="../Phase/MultiIndexable.html#map_with%28%2Aargs%3A%2AU%2C%26%29forallU-instance-method" class="tooltip">
+      <span>map_with(*args : <span class="o">*</span><span class="t">U</span>, &) forall U<br/>map_with(*args, &)</span>
+    map_with</a>, 
+    
+  
+    <a href="../Phase/MultiIndexable.html#map_with%21%28%2Aargs%3A%2AU%2C%26%29forallU-instance-method" class="tooltip">
+      <span>map_with!(*args : <span class="o">*</span><span class="t">U</span>, &) forall U</span>
+    map_with!</a>, 
+    
+  
+    <a href="../Phase/MultiIndexable.html#map_with_coord%28%26%29-instance-method" class="tooltip">
+      <span>map_with_coord(&)</span>
+    map_with_coord</a>, 
+    
+  
+    <a href="../Phase/MultiIndexable.html#map_with_coord%21%28%26block%3AT%28T%29-%3EMultiIndexable%28T%28T%29%29%29-instance-method" class="tooltip">
+      <span>map_with_coord!(&block : T(T) -> MultiIndexable(T(T)))</span>
+    map_with_coord!</a>, 
+    
+  
+    <a href="../Phase/MultiIndexable.html#permute%28%2Aargs%29%3AMultiIndexable%28T%28T%29%29-instance-method" class="tooltip">
+      <span>permute(*args) : MultiIndexable(T(T))</span>
+    permute</a>, 
+    
+  
+    <a href="../Phase/MultiIndexable.html#process%28%26block%3AT%28T%29-%3ER%29%3AProcView%28self%2CT%28T%29%2CR%29forallR-instance-method" class="tooltip">
+      <span>process(&block : T(T) -> R) : ProcView(<span class="k">self</span>, T(T), R) forall R<br/>process(proc : Proc(T(T), R)) : ProcView(<span class="k">self</span>, T(T), R) forall R</span>
+    process</a>, 
+    
+  
+    <a href="../Phase/MultiIndexable.html#reshape%28%2Aargs%29%3AMultiIndexable%28T%28T%29%29-instance-method" class="tooltip">
+      <span>reshape(*args) : MultiIndexable(T(T))</span>
+    reshape</a>, 
+    
+  
+    <a href="../Phase/MultiIndexable.html#reverse%28%2Aargs%29%3AMultiIndexable%28T%28T%29%29-instance-method" class="tooltip">
+      <span>reverse(*args) : MultiIndexable(T(T))</span>
+    reverse</a>, 
+    
+  
+    <a href="../Phase/MultiIndexable.html#sample%28n%3AInt%2Crandom%3DRandom%3A%3ADEFAULT%29%3AEnumerable%28T%28T%29%29-instance-method" class="tooltip">
+      <span>sample(n : Int, random = <span class="t">Random</span><span class="t">::</span><span class="t">DEFAULT</span>) : Enumerable(T(T))<br/>sample(random = <span class="t">Random</span><span class="t">::</span><span class="t">DEFAULT</span>) : T(T)</span>
+    sample</a>, 
+    
+  
+    <a href="../Phase/MultiIndexable.html#scalar%3F%3ABool-instance-method" class="tooltip">
+      <span>scalar? : Bool</span>
+    scalar?</a>, 
+    
+  
+    <a href="../Phase/MultiIndexable.html#shape%3AArray-instance-method" class="tooltip">
+      <span>shape : Array</span>
+    shape</a>, 
+    
+  
+    <a href="../Phase/MultiIndexable.html#size-instance-method" class="tooltip">
+      <span>size</span>
+    size</a>, 
+    
+  
+    <a href="../Phase/MultiIndexable.html#slices%28axis%3D0%29%3AIndexable-instance-method" class="tooltip">
+      <span>slices(axis = <span class="n">0</span>) : Indexable</span>
+    slices</a>, 
+    
+  
+    <a href="../Phase/MultiIndexable.html#tile%28counts%3AEnumerable%28Int%29%29%3AMultiIndexable-instance-method" class="tooltip">
+      <span>tile(counts : Enumerable(Int)) : MultiIndexable<br/>tile(*counts : Int)</span>
+    tile</a>, 
+    
+  
+    <a href="../Phase/MultiIndexable.html#to_f%3AFloat-instance-method" class="tooltip">
+      <span>to_f : Float</span>
+    to_f</a>, 
+    
+  
+    <a href="../Phase/MultiIndexable.html#to_literal_s%28io%3AIO%29%3ANil-instance-method" class="tooltip">
+      <span>to_literal_s(io : IO) : Nil</span>
+    to_literal_s</a>, 
+    
+  
+    <a href="../Phase/MultiIndexable.html#to_narr%3ANArray%28T%28T%29%29-instance-method" class="tooltip">
+      <span>to_narr : NArray(T(T))</span>
+    to_narr</a>, 
+    
+  
+    <a href="../Phase/MultiIndexable.html#to_s%28io%3AIO%2Csettings%3DFormatter%3A%3ASettings.new%29%3ANil-instance-method" class="tooltip">
+      <span>to_s(io : IO, settings = <span class="t">Formatter</span><span class="t">::</span><span class="t">Settings</span>.<span class="k">new</span>) : Nil<br/>to_s(settings = <span class="t">Formatter</span><span class="t">::</span><span class="t">Settings</span>.<span class="k">new</span>) : String</span>
+    to_s</a>, 
+    
+  
+    <a href="../Phase/MultiIndexable.html#to_scalar%3AT%28T%29-instance-method" class="tooltip">
+      <span>to_scalar : T(T)</span>
+    to_scalar</a>, 
+    
+  
+    <a href="../Phase/MultiIndexable.html#to_scalar%3F%3AT%28T%29%3F-instance-method" class="tooltip">
+      <span>to_scalar? : T(T)?</span>
+    to_scalar?</a>, 
+    
+  
+    <a href="../Phase/MultiIndexable.html#unsafe_fetch_chunk%28region%3AIndexRegion%29%3AMultiIndexable%28T%28T%29%29-instance-method" class="tooltip">
+      <span>unsafe_fetch_chunk(region : IndexRegion) : MultiIndexable(T(T))</span>
+    unsafe_fetch_chunk</a>, 
+    
+  
+    <a href="../Phase/MultiIndexable.html#unsafe_fetch_element%28coord%3AIndexable%29%3AT%28T%29-instance-method" class="tooltip">
+      <span>unsafe_fetch_element(coord : Indexable) : T(T)</span>
+    unsafe_fetch_element</a>, 
+    
+  
+    <a href="../Phase/MultiIndexable.html#view%28region%3AIndexable%3F%7CIndexRegion%3Dnil%29%3AView%28self%2CT%28T%29%29-instance-method" class="tooltip">
+      <span>view(region : Indexable? | IndexRegion = <span class="n">nil</span>) : View(<span class="k">self</span>, T(T))<br/>view(*region) : View(<span class="k">self</span>, T(T))</span>
+    view</a>
+    
+  
+
+
+    
+
+
+    
+
+  <h3>Class methods inherited from module <code><a href="../Phase/MultiIndexable.html">Phase::MultiIndexable(Array(T))</a></code></h3>
+  
+  
+    <a href="../Phase/MultiIndexable.html#each_with%28%2Aargs%3A%2AU%2C%26%29forallU-class-method" class="tooltip">
+      <span>each_with(*args : <span class="o">*</span><span class="t">U</span>, &) forall U</span>
+    each_with</a>
+    
+  
+
+
+  
+    
+
+
+    
+
+
+    
+
+
+  
+    
+
+
+    
+
+
+    
+
+
+  
+    
+
+
+    
+
+
+    
+
+
+  
+    
+
+
+    
+
+
+    
+
+
+  
+    
+
+
+    
+
+
+    
+
+
+  
+</div>
+
+
+  <h2>
+    <a id="constructor-detail" class="anchor" href="#constructor-detail">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Constructor Detail
+  </h2>
+  
+    <div class="entry-detail" id="new(region:IndexRegion,bound_shape:Shape)-class-method">
+      <div class="signature">
+        
+        def self.<strong>new</strong>(region : <a href="../Phase/IndexRegion.html">IndexRegion</a>, bound_shape : <a href="../Phase/Shape.html">Shape</a>)
+
+        <a class="method-permalink" href="#new%28region%3AIndexRegion%2Cbound_shape%3AShape%29-class-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Copy constructor that throws a <code><a href="../Phase/ShapeError.html">ShapeError</a></code> if <em>region</em> doesn't fit inside of <em>bound_shape</em>.
+(see <code><a href="../Phase/IndexRegion.html#fits_in%3F%28bound_shape%3AShape%29%3ABool-instance-method">IndexRegion#fits_in?</a></code>)</p>
+<pre><code class="language-crystal">src <span class="o">=</span> <span class="t">IndexRegion</span>.cover([<span class="n">3</span>, <span class="n">4</span>]) <span class="c"># =&gt; IndexRegion[0..2, 0..3]</span>
+<span class="t">IndexRegion</span>.<span class="k">new</span>(src, [<span class="n">4</span>, <span class="n">4</span>]) <span class="c"># =&gt; IndexRegion[0..2, 0..3]</span>
+<span class="t">IndexRegion</span>.<span class="k">new</span>(src, [<span class="n">2</span>, <span class="n">2</span>]) <span class="c"># =&gt; ShapeError</span></code></pre>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/in-phase/ph-core/blob/faefb580069f511d51683190c6a7f4a72a11e8f0/src/index_region.cr#L109" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="new(region_literal:Enumerable,bound_shape:Indexable(T),drop:Bool=DROP_BY_DEFAULT):IndexRegion(T)-class-method">
+      <div class="signature">
+        
+        def self.<strong>new</strong>(region_literal : Enumerable, bound_shape : Indexable(T), drop : Bool = <span class="t">DROP_BY_DEFAULT</span>) : <a href="../Phase/IndexRegion.html">IndexRegion</a>(T)
+
+        <a class="method-permalink" href="#new%28region_literal%3AEnumerable%2Cbound_shape%3AIndexable%28T%29%2Cdrop%3ABool%3DDROP_BY_DEFAULT%29%3AIndexRegion%28T%29-class-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Creates an <code><a href="../Phase/IndexRegion.html">IndexRegion</a></code> from a <em>region_literal</em>, using <em>bound_shape</em> for relative index handling.
+This is the most commonly used <code><a href="../Phase/IndexRegion.html">IndexRegion</a></code> constructor. If the region literal
+has fewer dimensions than <em>bound_shape</em>, then the latter axes will be inferred as <code>..</code>.</p>
+<pre><code class="language-crystal"><span class="c"># Normal usage</span>
+<span class="t">IndexRegion</span>.<span class="k">new</span>([<span class="n">1</span>...<span class="n">5</span>, ..<span class="n">-3</span>], [<span class="n">5</span>, <span class="n">5</span>]) <span class="c"># =&gt; IndexRegion[1..4, 0..2]</span>
+
+<span class="c"># If the region literal is shorter than the bound shape, it</span>
+<span class="c"># is filled with trailing &quot;..&quot;s</span>
+<span class="t">IndexRegion</span>.<span class="k">new</span>([<span class="n">1</span>], [<span class="n">2</span>, <span class="n">3</span>])     <span class="c"># =&gt; IndexRegion[1, 0..2]</span>
+<span class="t">IndexRegion</span>.<span class="k">new</span>([<span class="n">1</span>, ..], [<span class="n">2</span>, <span class="n">3</span>]) <span class="c"># =&gt; IndexRegion[1, 0..2]</span>
+
+<span class="c"># If the region literal is longer than the bound shape, a</span>
+<span class="c"># DimensionError is raised</span>
+<span class="t">IndexRegion</span>.<span class="k">new</span>([.., <span class="n">3</span>], [<span class="n">3</span>]) <span class="c"># =&gt; DimensionError</span>
+
+<span class="c"># If the region literal is out of bounds, an IndexError</span>
+<span class="c"># is raised</span>
+<span class="t">IndexRegion</span>.<span class="k">new</span>([<span class="n">5</span>..<span class="n">10</span>], [<span class="n">2</span>]) <span class="c"># =&gt; IndexError</span>
+<span class="t">IndexRegion</span>.<span class="k">new</span>([<span class="n">5</span>..<span class="n">10</span>], [<span class="n">-2</span>]) <span class="c"># =&gt; IndexError</span></code></pre>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/in-phase/ph-core/blob/faefb580069f511d51683190c6a7f4a72a11e8f0/src/index_region.cr#L192" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="new(region_literal:RegionLiteral,drop:Bool=DROP_BY_DEFAULT)-class-method">
+      <div class="signature">
+        
+        def self.<strong>new</strong>(region_literal : <a href="../Phase/RegionLiteral.html">RegionLiteral</a>, drop : Bool = <span class="t">DROP_BY_DEFAULT</span>)
+
+        <a class="method-permalink" href="#new%28region_literal%3ARegionLiteral%2Cdrop%3ABool%3DDROP_BY_DEFAULT%29-class-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Creates an <code><a href="../Phase/IndexRegion.html">IndexRegion</a></code> from an absolute (positive, bounded) <em>region_literal</em>.
+This allows you to bypass the usual requirement of passing a <em>bound_shape</em>, which
+is usually needed in order to process negative or nil indexes.</p>
+<pre><code class="language-crystal"><span class="t">IndexRegion</span>.<span class="k">new</span>([<span class="n">1</span>, <span class="n">2</span>...<span class="n">5</span>]) <span class="c"># =&gt; IndexRegion[1, 2..4]</span>
+<span class="t">IndexRegion</span>.<span class="k">new</span>([..]) <span class="c"># =&gt; Exception (TODO: pick a better exception)</span>
+<span class="t">IndexRegion</span>.<span class="k">new</span>([<span class="n">-1</span>]) <span class="c"># =&gt; Exception (TODO: pick a better exception)</span></code></pre>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/in-phase/ph-core/blob/faefb580069f511d51683190c6a7f4a72a11e8f0/src/index_region.cr#L248" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="new(region_literal:Enumerable,bound_shape:Indexable?=nil,drop:Bool=DROP_BY_DEFAULT,*,trim_to:Shape(T))-class-method">
+      <div class="signature">
+        
+        def self.<strong>new</strong>(region_literal : Enumerable, bound_shape : Indexable? = <span class="n">nil</span>, drop : Bool = <span class="t">DROP_BY_DEFAULT</span>, *, trim_to : <a href="../Phase/Shape.html">Shape</a>(T))
+
+        <a class="method-permalink" href="#new%28region_literal%3AEnumerable%2Cbound_shape%3AIndexable%3F%3Dnil%2Cdrop%3ABool%3DDROP_BY_DEFAULT%2C%2A%2Ctrim_to%3AShape%28T%29%29-class-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Creates an <code><a href="../Phase/IndexRegion.html">IndexRegion</a></code> by clipping the <em>region_literal</em> to fit inside of the shape <em>trim_to</em>.
+By default, only absolute (positive) ordinates can be used in the region
+literal - however, if a <em>bound_shape</em> is passed, relative (negative / unbounded)
+indexing can be used, and will refer to it.</p>
+<pre><code class="language-crystal"><span class="c"># Using *trim_to* allows you to clip a region to a shape</span>
+<span class="t">IndexRegion</span>.<span class="k">new</span>([<span class="n">0</span>..<span class="n">5</span>, <span class="n">1</span>..<span class="n">2</span>], trim_to: [<span class="n">2</span>, <span class="n">2</span>]) <span class="c"># =&gt; IndexRegion[0..1, 1..1]</span>
+
+<span class="c"># A *bound_shape* lets you use relative indexes</span>
+<span class="t">IndexRegion</span>.<span class="k">new</span>([.., <span class="n">2</span>..<span class="n">-2</span>], bound_shape: [<span class="n">3</span>, <span class="n">5</span>], trim_to: [<span class="n">2</span>, <span class="n">3</span>]) <span class="c"># =&gt; IndexRegion[0..1, 2..2]</span>
+
+<span class="c"># This method won&#39;t throw, but it *will* return an empty</span>
+<span class="c"># IndexRegion if the *region_literal* doesn&#39;t fit in *trim_to*.</span>
+<span class="t">IndexRegion</span>.<span class="k">new</span>([<span class="n">5</span>..<span class="n">8</span>], trim_to: [<span class="n">3</span>]) <span class="c"># =&gt; IndexRegion[0..0..0]</span></code></pre>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/in-phase/ph-core/blob/faefb580069f511d51683190c6a7f4a72a11e8f0/src/index_region.cr#L133" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+
+
+
+  <h2>
+    <a id="class-method-detail" class="anchor" href="#class-method-detail">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Class Method Detail
+  </h2>
+  
+    <div class="entry-detail" id="cover(bound_shape:Shape(T),*,drop:Bool=DROP_BY_DEFAULT,degeneracy:Array(Bool)?=nil)-class-method">
+      <div class="signature">
+        
+        def self.<strong>cover</strong>(bound_shape : <a href="../Phase/Shape.html">Shape</a>(T), *, drop : Bool = <span class="t">DROP_BY_DEFAULT</span>, degeneracy : Array(Bool)? = <span class="n">nil</span>)
+
+        <a class="method-permalink" href="#cover%28bound_shape%3AShape%28T%29%2C%2A%2Cdrop%3ABool%3DDROP_BY_DEFAULT%2Cdegeneracy%3AArray%28Bool%29%3F%3Dnil%29-class-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Creates an <code><a href="../Phase/IndexRegion.html">IndexRegion</a></code> whose coordinates fully cover the given <em>bound_shape</em>.</p>
+<pre><code class="language-crystal"><span class="t">IndexRegion</span>.cover([<span class="n">2</span>, <span class="n">3</span>]).to_narr <span class="c"># =&gt; 2x3 Phase::NArray(Array(Int32))</span>
+                                  <span class="c">#    [[[0, 0], [0, 1], [0, 2]],</span>
+                                  <span class="c">#     [[1, 0], [1, 1], [1, 2]]]</span></code></pre>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/in-phase/ph-core/blob/faefb580069f511d51683190c6a7f4a72a11e8f0/src/index_region.cr#L232" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+
+
+
+  <h2>
+    <a id="instance-method-detail" class="anchor" href="#instance-method-detail">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Instance Method Detail
+  </h2>
+  
+    <div class="entry-detail" id="==(other:self)-instance-method">
+      <div class="signature">
+        
+        def <strong>==</strong>(other : <span class="k">self</span>)
+
+        <a class="method-permalink" href="#%3D%3D%28other%3Aself%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+            <div class="doc-inherited">
+              Description copied from module <a href="../Phase/MultiIndexable.html">Phase::MultiIndexable(Array(T))</a>
+            </div>
+          
+          <p>Returns true if both the shape and elements of <code>self</code> and <em>other</em> are equal.</p>
+<pre><code class="language-crystal"><span class="t">NArray</span>.<span class="k">new</span>([<span class="n">1</span>, <span class="n">2</span>]) <span class="o">==</span> <span class="t">NArray</span>.<span class="k">new</span>([<span class="n">1</span>, <span class="n">2</span>]) <span class="c"># =&gt; true</span>
+<span class="t">NArray</span>.<span class="k">new</span>([[<span class="n">1</span>], [<span class="n">2</span>]]) <span class="o">==</span> <span class="t">NArray</span>.<span class="k">new</span>([<span class="n">1</span>, <span class="n">2</span>]) <span class="c"># =&gt; false</span>
+<span class="t">NArray</span>.<span class="k">new</span>([<span class="n">8</span>, <span class="n">2</span>]) <span class="o">==</span> <span class="t">NArray</span>.<span class="k">new</span>([<span class="n">1</span>, <span class="n">2</span>]) <span class="c"># =&gt; false</span></code></pre>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="absolute_to_local(coord)-instance-method">
+      <div class="signature">
+        
+        def <strong>absolute_to_local</strong>(coord)
+
+        <a class="method-permalink" href="#absolute_to_local%28coord%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Maps an absolute (output) coordinate to its corresponding local (input) coordinate.</p>
+<pre><code class="language-crystal">idx_r <span class="o">=</span> <span class="t">IndexRegion</span>(<span class="t">Int32</span>).<span class="k">new</span>([<span class="n">3</span>..<span class="n">5</span>, <span class="n">2</span>..<span class="n">1</span>])
+idx_r.absolute_to_local([<span class="n">3</span>, <span class="n">2</span>]) <span class="c"># =&gt; [0, 0]</span>
+idx_r.absolute_to_local([<span class="n">4</span>, <span class="n">2</span>]) <span class="c"># =&gt; [1, 0]</span>
+idx_r.absolute_to_local([<span class="n">5</span>, <span class="n">1</span>]) <span class="c"># =&gt; [2, 1]</span></code></pre>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/in-phase/ph-core/blob/faefb580069f511d51683190c6a7f4a72a11e8f0/src/index_region.cr#L646" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="absolute_to_local_unsafe(coord)-instance-method">
+      <div class="signature">
+        
+        def <strong>absolute_to_local_unsafe</strong>(coord)
+
+        <a class="method-permalink" href="#absolute_to_local_unsafe%28coord%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Unsafe version of <code><a href="../Phase/IndexRegion.html#absolute_to_local%28coord%29-instance-method">#absolute_to_local</a></code> that does not check if <em>coord</em> is in bounds for this <code><a href="../Phase/IndexRegion.html">IndexRegion</a></code>.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/in-phase/ph-core/blob/faefb580069f511d51683190c6a7f4a72a11e8f0/src/index_region.cr#L654" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="clone-instance-method">
+      <div class="signature">
+        
+        def <strong>clone</strong>
+
+        <a class="method-permalink" href="#clone-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Returns a copy of <code>self</code> with all instance variables cloned.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/in-phase/ph-core/blob/faefb580069f511d51683190c6a7f4a72a11e8f0/src/index_region.cr#L97" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="degeneracy:Array(Bool)-instance-method">
+      <div class="signature">
+        
+        def <strong>degeneracy</strong> : Array(Bool)
+
+        <a class="method-permalink" href="#degeneracy%3AArray%28Bool%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Stores the user-hinted dimension dropping information from the region
+literal. For example: <code><a href="../Phase/IndexRegion.html">IndexRegion</a>(Int32)<a href="../Phase/IndexRegion.html#new%28region_literal%3AEnumerable%2Cbound_shape%3AIndexable%28T%29%2Cdrop%3ABool%3DDROP_BY_DEFAULT%29%3AIndexRegion%28T%29-class-method">.new(1, 1..1, 1..2)</a></code> has
+<code>@degeneracy == [true, false, false]</code> because axis 0 was an integer
+(droppable) whereas axis 1 and 2 were both ranges (and thus aren't
+reliably droppable). This array will be populated regardless of if
+dimension dropping is enabled. If this <code><a href="../Phase/IndexRegion.html">IndexRegion</a></code> does not correspond
+to a region literal (e.g. <code>IndexRegion.cover(shape)</code>), @degeneracy should
+be populated with <code>false</code>.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/in-phase/ph-core/blob/faefb580069f511d51683190c6a7f4a72a11e8f0/src/index_region.cr#L91" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="degeneracy=(degeneracy:Array(Bool))-instance-method">
+      <div class="signature">
+        
+        def <strong>degeneracy=</strong>(degeneracy : Array(Bool))
+
+        <a class="method-permalink" href="#degeneracy%3D%28degeneracy%3AArray%28Bool%29%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Stores the user-hinted dimension dropping information from the region
+literal. For example: <code><a href="../Phase/IndexRegion.html">IndexRegion</a>(Int32)<a href="../Phase/IndexRegion.html#new%28region_literal%3AEnumerable%2Cbound_shape%3AIndexable%28T%29%2Cdrop%3ABool%3DDROP_BY_DEFAULT%29%3AIndexRegion%28T%29-class-method">.new(1, 1..1, 1..2)</a></code> has
+<code>@degeneracy == [true, false, false]</code> because axis 0 was an integer
+(droppable) whereas axis 1 and 2 were both ranges (and thus aren't
+reliably droppable). This array will be populated regardless of if
+dimension dropping is enabled. If this <code><a href="../Phase/IndexRegion.html">IndexRegion</a></code> does not correspond
+to a region literal (e.g. <code>IndexRegion.cover(shape)</code>), @degeneracy should
+be populated with <code>false</code>.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/in-phase/ph-core/blob/faefb580069f511d51683190c6a7f4a72a11e8f0/src/index_region.cr#L91" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="drop:Bool-instance-method">
+      <div class="signature">
+        
+        def <strong>drop</strong> : Bool
+
+        <a class="method-permalink" href="#drop%3ABool-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Whether or not dimensions should be dropped.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/in-phase/ph-core/blob/faefb580069f511d51683190c6a7f4a72a11e8f0/src/index_region.cr#L94" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="each:LexIterator(T)-instance-method">
+      <div class="signature">
+        
+        def <strong>each</strong> : <a href="../Phase/LexIterator.html">LexIterator</a>(T)
+
+        <a class="method-permalink" href="#each%3ALexIterator%28T%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Unsafe version of <code><a href="../Phase/IndexRegion.html#absolute_to_local%28coord%29-instance-method">#absolute_to_local</a></code> that does not check if <em>coord</em> is in bounds for this <code><a href="../Phase/IndexRegion.html">IndexRegion</a></code>.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/in-phase/ph-core/blob/faefb580069f511d51683190c6a7f4a72a11e8f0/src/index_region.cr#L667" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="first-instance-method">
+      <div class="signature">
+        
+        def <strong>first</strong>
+
+        <a class="method-permalink" href="#first-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Returns a copy of the coordinate of the first &quot;corner&quot; in this <code><a href="../Phase/IndexRegion.html">IndexRegion</a></code>.
+For example, if the region literal is <code>[1..3, 5..-2..1]</code>, the &quot;first
+corner&quot; is <code>[1, 5]</code> - the first ordinate on the axis 0 range is 1, and
+the first ordinate on axis 1 is 5.
+Similarly, the <code><a href="../Phase/IndexRegion.html#last-instance-method">#last</a></code> coordinate is <code>[3, 1]</code>.
+Note that if and only if <code>@step[i] == 0</code>, then <code>@first[i]</code> and <code>@last[i]</code> will be
+meaningless, as an empty set of coordinates has no corners. See <code>@step</code>.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/in-phase/ph-core/blob/faefb580069f511d51683190c6a7f4a72a11e8f0/src/index_region.cr#L394" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="fits_in?(bound_shape:Shape):Bool-instance-method">
+      <div class="signature">
+        
+        def <strong>fits_in?</strong>(bound_shape : <a href="../Phase/Shape.html">Shape</a>) : Bool
+
+        <a class="method-permalink" href="#fits_in%3F%28bound_shape%3AShape%29%3ABool-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Returns true if this <code><a href="../Phase/IndexRegion.html">IndexRegion</a></code> contains coordinates that all fit inside of
+the given <em>bound_shape</em>. For example:</p>
+<pre><code class="language-crystal">idx_r <span class="o">=</span> <span class="t">IndexRegion</span>.<span class="k">new</span>(region_literal: [<span class="n">1</span>..<span class="n">2</span>..], bound_shape: [<span class="n">5</span>])
+idx_r.to_narr <span class="c"># =&gt; [[1], [3]]</span>
+
+idx_r.fits_in?([<span class="n">3</span>]) <span class="c"># =&gt; false</span>
+idx_r.fits_in?([<span class="n">4</span>]) <span class="c"># =&gt; true</span>
+idx_r.fits_in?([<span class="n">4</span>, <span class="n">4</span>]) <span class="c"># =&gt; DimensionError</span></code></pre>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/in-phase/ph-core/blob/faefb580069f511d51683190c6a7f4a72a11e8f0/src/index_region.cr#L468" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="hash(hasher)-instance-method">
+      <div class="signature">
+        
+        def <strong>hash</strong>(hasher)
+
+        <a class="method-permalink" href="#hash%28hasher%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+            <div class="doc-inherited">
+              Description copied from struct Struct
+            </div>
+          
+          <p>See <code>Object#hash(hasher)</code></p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="includes?(coord:InputCoord)-instance-method">
+      <div class="signature">
+        
+        def <strong>includes?</strong>(coord : <a href="../Phase/InputCoord.html">InputCoord</a>)
+
+        <a class="method-permalink" href="#includes%3F%28coord%3AInputCoord%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Returns true if this <code><a href="../Phase/IndexRegion.html">IndexRegion</a></code> points to the provided <em>coord</em>.
+For example:</p>
+<pre><code class="language-crystal">
+idx_r <span class="o">=</span> <span class="t">IndexRegion</span>(<span class="t">Int32</span>).<span class="k">new</span>([<span class="n">0</span>..<span class="n">3</span>, <span class="n">5</span>..<span class="n">7</span>])
+
+<span class="c"># This IndexRegion maps the input coordinate [0, 0] to [0, 5]</span>
+idx_r.get(<span class="n">0</span>, <span class="n">0</span>) <span class="c"># =&gt; [0, 5]</span>
+
+<span class="c"># And thus it includes [0, 5]</span>
+idx_r.includes? [<span class="n">0</span>, <span class="n">5</span>] <span class="c"># =&gt; true</span>
+
+<span class="c"># On the other hand, no input coordinate will map to [10, 10]</span>
+idx_r.includes? [<span class="n">10</span>, <span class="n">10</span>] <span class="c"># =&gt; false</span>
+
+<span class="c"># Don&#39;t confuse input and output coordinates, here! Like all</span>
+<span class="c"># `MultiIndexable`s, idx_r implements `#has_coord?`. `#includes?`</span>
+<span class="c"># refers to the values (output coordinates) of the `IndexRegion`,</span>
+<span class="c"># whereas `#has_coord?` refers to the input coordinates.</span>
+idx_r.includes? [<span class="n">0</span>, <span class="n">0</span>] <span class="c"># =&gt; false</span>
+idx_r.has_coord? [<span class="n">0</span>, <span class="n">0</span>] <span class="c"># =&gt; true</span></code></pre>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/in-phase/ph-core/blob/faefb580069f511d51683190c6a7f4a72a11e8f0/src/index_region.cr#L443" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="last-instance-method">
+      <div class="signature">
+        
+        def <strong>last</strong>
+
+        <a class="method-permalink" href="#last-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Similar to <code><a href="../Phase/IndexRegion.html#first-instance-method">IndexRegion#first</a></code>.
+For example, if the region literal is <code>[1..3, 5..-2..1]</code>, the &quot;last
+corner&quot; is <code>[3, 1]</code> - the last ordinate on the axis 0 range is 3, and
+the last ordinate on axis 1 is 1.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/in-phase/ph-core/blob/faefb580069f511d51683190c6a7f4a72a11e8f0/src/index_region.cr#L402" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="local_to_absolute(coord)-instance-method">
+      <div class="signature">
+        
+        def <strong>local_to_absolute</strong>(coord)
+
+        <a class="method-permalink" href="#local_to_absolute%28coord%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Maps a local (input) coordinate to its corresponding absolute (output) coordinate.
+This is equivalent to using <code>IndexRegion#[](coord)</code>, but it is aliased
+here in order to make <code><a href="../Phase/IndexRegion.html">IndexRegion</a></code> code easier to reason
+about.
+For example:</p>
+<pre><code class="language-crystal">idx_r <span class="o">=</span> <span class="t">IndexRegion</span>(<span class="t">Int32</span>).<span class="k">new</span>([<span class="n">3</span>..<span class="n">5</span>, <span class="n">2</span>..<span class="n">1</span>])
+idx_r.local_to_absolute([<span class="n">0</span>, <span class="n">0</span>]) <span class="c"># =&gt; [3, 2]</span>
+idx_r[<span class="n">0</span>, <span class="n">0</span>] <span class="c"># =&gt; [3, 2]</span></code></pre>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/in-phase/ph-core/blob/faefb580069f511d51683190c6a7f4a72a11e8f0/src/index_region.cr#L616" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="local_to_absolute_unsafe(coord:Coord):Array(T)-instance-method">
+      <div class="signature">
+        
+        def <strong>local_to_absolute_unsafe</strong>(coord : <a href="../Phase/Coord.html">Coord</a>) : Array(T)
+
+        <a class="method-permalink" href="#local_to_absolute_unsafe%28coord%3ACoord%29%3AArray%28T%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Unsafe version of <code><a href="../Phase/IndexRegion.html#local_to_absolute%28coord%29-instance-method">#local_to_absolute</a></code> that does not check if <em>coord</em> is in bounds for this <code><a href="../Phase/IndexRegion.html">IndexRegion</a></code>.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/in-phase/ph-core/blob/faefb580069f511d51683190c6a7f4a72a11e8f0/src/index_region.cr#L621" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="proper_dimensions:Int32-instance-method">
+      <div class="signature">
+        
+        def <strong>proper_dimensions</strong> : Int32
+
+        <a class="method-permalink" href="#proper_dimensions%3AInt32-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Returns the number of dimensions of the space that this <code><a href="../Phase/IndexRegion.html">IndexRegion</a></code> maps into.
+For example:</p>
+<pre><code class="language-crystal"><span class="c">#                          region   proper shape</span>
+idx_r <span class="o">=</span> <span class="t">IndexRegion</span>.<span class="k">new</span>([<span class="n">1</span>, .., ..], [<span class="n">5</span>, <span class="n">5</span>, <span class="n">5</span>])
+
+<span class="c"># The IndexRegion above describes a 2D region (a matrix)</span>
+puts idx_r.dimensions <span class="c"># =&gt; 2</span>
+
+<span class="c"># But the matrix draws out of a 3D MultiIndexable:</span>
+puts idx_r.proper_dimensions <span class="c"># =&gt; 3</span></code></pre>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/in-phase/ph-core/blob/faefb580069f511d51683190c6a7f4a72a11e8f0/src/index_region.cr#L355" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="reverse:self-instance-method">
+      <div class="signature">
+        
+        def <strong>reverse</strong> : <span class="k">self</span>
+
+        <a class="method-permalink" href="#reverse%3Aself-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Returns a reversed copy of this <code><a href="../Phase/IndexRegion.html">IndexRegion</a></code>. See <code><a href="../Phase/IndexRegion.html#reverse%21%3AIndexRegion%28T%29-instance-method">#reverse!</a></code>.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/in-phase/ph-core/blob/faefb580069f511d51683190c6a7f4a72a11e8f0/src/index_region.cr#L540" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="reverse!:IndexRegion(T)-instance-method">
+      <div class="signature">
+        
+        def <strong>reverse!</strong> : <a href="../Phase/IndexRegion.html">IndexRegion</a>(T)
+
+        <a class="method-permalink" href="#reverse%21%3AIndexRegion%28T%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Reverses the ordering of an <code><a href="../Phase/IndexRegion.html">IndexRegion</a></code> in place.
+For example:</p>
+<pre><code class="language-crystal">idx_r <span class="o">=</span> <span class="t">IndexRegion</span>(<span class="t">Int32</span>).<span class="k">new</span>([<span class="n">0</span>..<span class="n">2</span>..<span class="n">2</span>])
+narr <span class="o">=</span> <span class="t">NArray</span>[<span class="s">&#39;a&#39;</span>, <span class="s">&#39;b&#39;</span>, <span class="s">&#39;c&#39;</span>]
+
+idx_r.each { <span class="o">|</span>coord<span class="o">|</span> puts coord } <span class="c"># =&gt; [0], [2]</span>
+narr[idx_r] <span class="c"># =&gt; NArray[&#39;a&#39;, &#39;c&#39;]</span>
+
+idx_r.reverse!
+idx_r.each { <span class="o">|</span>coord<span class="o">|</span> puts coord } <span class="c"># =&gt; [2], [0]</span>
+narr[idx_r] <span class="c"># =&gt; NArray[&#39;c&#39;, &#39;a&#39;]</span></code></pre>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/in-phase/ph-core/blob/faefb580069f511d51683190c6a7f4a72a11e8f0/src/index_region.cr#L533" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="shape_internal(drop=MultiIndexable::DROP_BY_DEFAULT):Array(T)-instance-method">
+      <div class="signature">
+        
+        def <strong>shape_internal</strong>(drop = <span class="t">MultiIndexable</span><span class="t">::</span><span class="t">DROP_BY_DEFAULT</span>) : Array(T)
+
+        <a class="method-permalink" href="#shape_internal%28drop%3DMultiIndexable%3A%3ADROP_BY_DEFAULT%29%3AArray%28T%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>============= Methods required by MultiIndexable ===========================</p>
+<p><span class="flag orange">TODO</span>  <em>drop</em> isn't being used here, why is it included?</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/in-phase/ph-core/blob/faefb580069f511d51683190c6a7f4a72a11e8f0/src/index_region.cr#L339" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="stride-instance-method">
+      <div class="signature">
+        
+        def <strong>stride</strong>
+
+        <a class="method-permalink" href="#stride-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Returns the spacing between elements along each axis.
+For example, if the region literal is <code>[1..3, 5..-2..1]</code>, the
+stride on axis 0 is <code>1</code> (by default), and the stride on axis 1 is
+<code>-2</code> (as written in the region literal). Thus, calling <code><a href="../Phase/IndexRegion.html#stride-instance-method">#stride</a></code> on
+the corresponding <code><a href="../Phase/IndexRegion.html">IndexRegion</a></code> would yield <code>[1, -2]</code>.</p>
+<pre><code class="language-crystal">idx_r <span class="o">=</span> <span class="t">IndexRegion</span>(<span class="t">Int32</span>).<span class="k">new</span>([<span class="n">1</span>..<span class="n">3</span>, <span class="n">5</span>..<span class="n">-2</span>..<span class="n">1</span>])
+puts idx_r.stride <span class="c"># =&gt; [1, -2]</span></code></pre>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/in-phase/ph-core/blob/faefb580069f511d51683190c6a7f4a72a11e8f0/src/index_region.cr#L417" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="to_s(io:IO)-instance-method">
+      <div class="signature">
+        
+        def <strong>to_s</strong>(io : IO)
+
+        <a class="method-permalink" href="#to_s%28io%3AIO%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Returns a translated copy of this <code><a href="../Phase/IndexRegion.html">IndexRegion</a></code>. See <code><a href="../Phase/IndexRegion.html#translate%21%28offset%3AEnumerable%29%3Aself-instance-method">#translate!</a></code>.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/in-phase/ph-core/blob/faefb580069f511d51683190c6a7f4a72a11e8f0/src/index_region.cr#L593" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="translate(offset:Enumerable):self-instance-method">
+      <div class="signature">
+        
+        def <strong>translate</strong>(offset : Enumerable) : <span class="k">self</span>
+
+        <a class="method-permalink" href="#translate%28offset%3AEnumerable%29%3Aself-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Returns a translated copy of this <code><a href="../Phase/IndexRegion.html">IndexRegion</a></code>. See <code><a href="../Phase/IndexRegion.html#translate%21%28offset%3AEnumerable%29%3Aself-instance-method">#translate!</a></code>.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/in-phase/ph-core/blob/faefb580069f511d51683190c6a7f4a72a11e8f0/src/index_region.cr#L588" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="translate!(offset:Enumerable):self-instance-method">
+      <div class="signature">
+        
+        def <strong>translate!</strong>(offset : Enumerable) : <span class="k">self</span>
+
+        <a class="method-permalink" href="#translate%21%28offset%3AEnumerable%29%3Aself-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Translates this <code><a href="../Phase/IndexRegion.html">IndexRegion</a></code> in place by adding an <em>offset</em> to each output coordinate.
+For example:</p>
+<pre><code class="language-crystal">idx_r <span class="o">=</span> <span class="t">IndexRegion</span>(<span class="t">Int32</span>).<span class="k">new</span>([<span class="n">0</span>, <span class="n">5</span>..<span class="n">-2</span>..<span class="n">0</span>])
+puts idx_r <span class="c"># =&gt; IndexRegion[0, 5..-2..1]</span>
+
+idx_r.translate!([<span class="n">1</span>, <span class="n">-1</span>])
+puts idx_r <span class="c"># =&gt; IndexRegion[1, 4..-2..0]</span>
+
+<span class="t">IndexRegions</span> only output canonical coordinates. <span class="t">This</span>
+translation would produce negative ordinates <span class="k">in</span> the output coords,
+which is illegal.
+idx_r.translate!([<span class="n">-10</span>, <span class="n">-10</span>]) <span class="c"># =&gt; IndexError</span></code></pre>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/in-phase/ph-core/blob/faefb580069f511d51683190c6a7f4a72a11e8f0/src/index_region.cr#L577" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="trim(bound_shape):self-instance-method">
+      <div class="signature">
+        
+        def <strong>trim</strong>(bound_shape) : <span class="k">self</span>
+
+        <a class="method-permalink" href="#trim%28bound_shape%29%3Aself-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Returns a trimmed copy of this <code><a href="../Phase/IndexRegion.html">IndexRegion</a></code>. See <code><a href="../Phase/IndexRegion.html#trim%21%28bound_shape%3AShape%29%3Aself-instance-method">#trim!</a></code>.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/in-phase/ph-core/blob/faefb580069f511d51683190c6a7f4a72a11e8f0/src/index_region.cr#L545" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="trim!(bound_shape:Shape):self-instance-method">
+      <div class="signature">
+        
+        def <strong>trim!</strong>(bound_shape : <a href="../Phase/Shape.html">Shape</a>) : <span class="k">self</span>
+
+        <a class="method-permalink" href="#trim%21%28bound_shape%3AShape%29%3Aself-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Clips this <code><a href="../Phase/IndexRegion.html">IndexRegion</a></code> in-place to fit the <em>bound_shape</em> provided.</p>
+<pre><code class="language-crystal">a <span class="o">=</span> <span class="t">IndexRegion</span>(<span class="t">Int32</span>).<span class="k">new</span>([<span class="n">1</span>..<span class="n">3</span>, <span class="n">10</span>..<span class="n">-2</span>..<span class="n">0</span>])
+puts a <span class="c"># =&gt; IndexRegion[1..3, 10..-2..0]</span>
+
+<span class="c"># Trimming to a shape that `a` fits in has no effect:</span>
+a.trim!([<span class="n">100</span>, <span class="n">100</span>])
+puts a <span class="c"># =&gt; IndexRegion[1..3, 10..-2..0]</span>
+
+a.trim!([<span class="n">2</span>, <span class="n">3</span>])
+puts a <span class="c"># =&gt; IndexRegion[1..1, 2..-2..0]</span>
+
+<span class="c"># It&#39;s possible to recieve an empty result after trimming</span>
+b <span class="o">=</span> <span class="t">IndexRegion</span>(<span class="t">Int32</span>).<span class="k">new</span>([<span class="n">5</span>..<span class="n">6</span>])
+b.trim!([<span class="n">0</span>])
+puts b <span class="c"># =&gt; IndexRegion[0..0..0] (no elements)</span>
+
+<span class="c"># When using the wrong number of dimensions, a DimensionError is raised</span>
+c <span class="o">=</span> <span class="t">IndexRegion</span>(<span class="t">Int32</span>).<span class="k">new</span>([<span class="n">5</span>..<span class="n">4</span>])
+c.trim!([<span class="n">4</span>, <span class="n">3</span>]) <span class="c"># =&gt; DimensionError</span></code></pre>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/in-phase/ph-core/blob/faefb580069f511d51683190c6a7f4a72a11e8f0/src/index_region.cr#L502" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="unsafe_fetch_chunk(region:IndexRegion,drop:Bool):IndexRegion(T)-instance-method">
+      <div class="signature">
+        
+        def <strong>unsafe_fetch_chunk</strong>(region : <a href="../Phase/IndexRegion.html">IndexRegion</a>, drop : Bool) : <a href="../Phase/IndexRegion.html">IndexRegion</a>(T)
+
+        <a class="method-permalink" href="#unsafe_fetch_chunk%28region%3AIndexRegion%2Cdrop%3ABool%29%3AIndexRegion%28T%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Returns the number of dimensions of the space that this <code><a href="../Phase/IndexRegion.html">IndexRegion</a></code> maps into.
+For example:</p>
+<pre><code class="language-crystal"><span class="c">#                          region   proper shape</span>
+idx_r <span class="o">=</span> <span class="t">IndexRegion</span>.<span class="k">new</span>([<span class="n">1</span>, .., ..], [<span class="n">5</span>, <span class="n">5</span>, <span class="n">5</span>])
+
+<span class="c"># The IndexRegion above describes a 2D region (a matrix)</span>
+puts idx_r.dimensions <span class="c"># =&gt; 2</span>
+
+<span class="c"># But the matrix draws out of a 3D MultiIndexable:</span>
+puts idx_r.proper_dimensions <span class="c"># =&gt; 3</span></code></pre>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/in-phase/ph-core/blob/faefb580069f511d51683190c6a7f4a72a11e8f0/src/index_region.cr#L360" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="unsafe_fetch_element(coord:Coord):Array(T)-instance-method">
+      <div class="signature">
+        
+        def <strong>unsafe_fetch_element</strong>(coord : <a href="../Phase/Coord.html">Coord</a>) : Array(T)
+
+        <a class="method-permalink" href="#unsafe_fetch_element%28coord%3ACoord%29%3AArray%28T%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Returns the number of dimensions of the space that this <code><a href="../Phase/IndexRegion.html">IndexRegion</a></code> maps into.
+For example:</p>
+<pre><code class="language-crystal"><span class="c">#                          region   proper shape</span>
+idx_r <span class="o">=</span> <span class="t">IndexRegion</span>.<span class="k">new</span>([<span class="n">1</span>, .., ..], [<span class="n">5</span>, <span class="n">5</span>, <span class="n">5</span>])
+
+<span class="c"># The IndexRegion above describes a 2D region (a matrix)</span>
+puts idx_r.dimensions <span class="c"># =&gt; 2</span>
+
+<span class="c"># But the matrix draws out of a 3D MultiIndexable:</span>
+puts idx_r.proper_dimensions <span class="c"># =&gt; 3</span></code></pre>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/in-phase/ph-core/blob/faefb580069f511d51683190c6a7f4a72a11e8f0/src/index_region.cr#L383" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="unsafe_translate!(offset:Enumerable):self-instance-method">
+      <div class="signature">
+        
+        def <strong>unsafe_translate!</strong>(offset : Enumerable) : <span class="k">self</span>
+
+        <a class="method-permalink" href="#unsafe_translate%21%28offset%3AEnumerable%29%3Aself-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Translates an <code><a href="../Phase/IndexRegion.html">IndexRegion</a></code> in place, without checking that the result is valid.
+See <code><a href="../Phase/IndexRegion.html#translate%21%28offset%3AEnumerable%29%3Aself-instance-method">#translate!</a></code>.</p>
+<p><span class="flag yellow">WARNING</span>  this allows for the creation of IndexRegions with negative ordinates,
+which may cause undocumented behaviour elsewhere in the code. The burden
+is on the user to ensure that negative ordinates are not created, or that
+they are appropriately handled.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/in-phase/ph-core/blob/faefb580069f511d51683190c6a7f4a72a11e8f0/src/index_region.cr#L555" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+
+
+
+
+</div>
+
+</body>
+</html>
