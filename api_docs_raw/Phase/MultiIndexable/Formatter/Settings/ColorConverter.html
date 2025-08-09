@@ -3,8 +3,9 @@
 <head>
   <meta charset="utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="generator" content="Crystal Docs 1.5.0">
-<meta name="crystal_docs.project_version" content="main">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Crystal Docs 1.10.1">
+<meta name="crystal_docs.project_version" content="HEAD">
 <meta name="crystal_docs.project_name" content="ph-core">
 
 
@@ -13,7 +14,7 @@
 <script type="text/javascript" src="../../../../js/doc.js"></script>
 
   <meta name="repository-name" content="ph-core">
-  <title>Phase::MultiIndexable::Formatter::Settings::ColorConverter - ph-core main</title>
+  <title>Phase::MultiIndexable::Formatter::Settings::ColorConverter - ph-core HEAD</title>
   <script type="text/javascript">
     CrystalDocs.base_path = "../../../../";
   </script>
@@ -22,9 +23,14 @@
 
 <svg class="hidden">
   <symbol id="octicon-link" viewBox="0 0 16 16">
-    <path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path>
+    <path fill="currentColor" fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path>
   </symbol>
 </svg>
+<input type="checkbox" id="sidebar-btn">
+<label for="sidebar-btn" id="sidebar-btn-label">
+  <svg class="open" xmlns="http://www.w3.org/2000/svg" height="2em" width="2em" viewBox="0 0 512 512"><title>Open Sidebar</title><path fill="currentColor" d="M80 96v64h352V96H80zm0 112v64h352v-64H80zm0 112v64h352v-64H80z"></path></svg>
+  <svg class="close" xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" viewBox="0 0 512 512"><title>Close Sidebar</title><path fill="currentColor" d="m118.6 73.4-45.2 45.2L210.7 256 73.4 393.4l45.2 45.2L256 301.3l137.4 137.3 45.2-45.2L301.3 256l137.3-137.4-45.2-45.2L256 210.7Z"></path></svg>
+</label>
 <div class="sidebar">
   <div class="sidebar-header">
     <div class="search-box">
@@ -39,7 +45,7 @@
       </h1>
 
       <span class="project-version">
-        main
+        HEAD
       </span>
     </div>
   </div>
@@ -320,12 +326,16 @@
 <div class="main-content">
 <h1 class="type-name">
 
-  <span class="kind">class</span> Phase::MultiIndexable::Formatter::Settings::ColorConverter
+  <span class="kind">
+    class
+  </span> Phase::<wbr>MultiIndexable::<wbr>Formatter::<wbr>Settings::<wbr>ColorConverter
 
 </h1>
 
 
   <ul class="superclass-hierarchy"><li class="superclass"><a href="../../../../Phase/MultiIndexable/Formatter/Settings/ColorConverter.html">Phase::MultiIndexable::Formatter::Settings::ColorConverter</a></li><li class="superclass">Reference</li><li class="superclass">Object</li></ul>
+
+
 
 
 
@@ -375,7 +385,7 @@
   <dl>
     
       <dt class="entry-const" id="COLOR_MAP">
-        <strong>COLOR_MAP</strong> = <code>{<span class="s">&quot;default&quot;</span> =&gt; <span class="n">:default</span>, <span class="s">&quot;black&quot;</span> =&gt; <span class="n">:black</span>, <span class="s">&quot;red&quot;</span> =&gt; <span class="n">:red</span>, <span class="s">&quot;green&quot;</span> =&gt; <span class="n">:green</span>, <span class="s">&quot;yellow&quot;</span> =&gt; <span class="n">:yellow</span>, <span class="s">&quot;blue&quot;</span> =&gt; <span class="n">:blue</span>, <span class="s">&quot;magenta&quot;</span> =&gt; <span class="n">:magenta</span>, <span class="s">&quot;cyan&quot;</span> =&gt; <span class="n">:cyan</span>, <span class="s">&quot;light_gray&quot;</span> =&gt; <span class="n">:light_gray</span>, <span class="s">&quot;dark_gray&quot;</span> =&gt; <span class="n">:dark_gray</span>, <span class="s">&quot;light_red&quot;</span> =&gt; <span class="n">:light_red</span>, <span class="s">&quot;light_green&quot;</span> =&gt; <span class="n">:light_green</span>, <span class="s">&quot;light_yellow&quot;</span> =&gt; <span class="n">:light_yellow</span>, <span class="s">&quot;light_blue&quot;</span> =&gt; <span class="n">:light_blue</span>, <span class="s">&quot;light_magenta&quot;</span> =&gt; <span class="n">:light_magenta</span>, <span class="s">&quot;light_cyan&quot;</span> =&gt; <span class="n">:light_cyan</span>, <span class="s">&quot;white&quot;</span> =&gt; <span class="n">:white</span>}</code>
+        <strong>COLOR_MAP</strong> = <code>{<span class="s">&quot;default&quot;</span> <span class="o">=&gt;</span> <span class="n">:default</span>, <span class="s">&quot;black&quot;</span> <span class="o">=&gt;</span> <span class="n">:black</span>, <span class="s">&quot;red&quot;</span> <span class="o">=&gt;</span> <span class="n">:red</span>, <span class="s">&quot;green&quot;</span> <span class="o">=&gt;</span> <span class="n">:green</span>, <span class="s">&quot;yellow&quot;</span> <span class="o">=&gt;</span> <span class="n">:yellow</span>, <span class="s">&quot;blue&quot;</span> <span class="o">=&gt;</span> <span class="n">:blue</span>, <span class="s">&quot;magenta&quot;</span> <span class="o">=&gt;</span> <span class="n">:magenta</span>, <span class="s">&quot;cyan&quot;</span> <span class="o">=&gt;</span> <span class="n">:cyan</span>, <span class="s">&quot;light_gray&quot;</span> <span class="o">=&gt;</span> <span class="n">:light_gray</span>, <span class="s">&quot;dark_gray&quot;</span> <span class="o">=&gt;</span> <span class="n">:dark_gray</span>, <span class="s">&quot;light_red&quot;</span> <span class="o">=&gt;</span> <span class="n">:light_red</span>, <span class="s">&quot;light_green&quot;</span> <span class="o">=&gt;</span> <span class="n">:light_green</span>, <span class="s">&quot;light_yellow&quot;</span> <span class="o">=&gt;</span> <span class="n">:light_yellow</span>, <span class="s">&quot;light_blue&quot;</span> <span class="o">=&gt;</span> <span class="n">:light_blue</span>, <span class="s">&quot;light_magenta&quot;</span> <span class="o">=&gt;</span> <span class="n">:light_magenta</span>, <span class="s">&quot;light_cyan&quot;</span> <span class="o">=&gt;</span> <span class="n">:light_cyan</span>, <span class="s">&quot;white&quot;</span> <span class="o">=&gt;</span> <span class="n">:white</span>}</code>
       </dt>
       
       <dd class="entry-const-doc">
@@ -388,8 +398,9 @@ as effective as just hardcoding it.</p>
 
 
 
+  
 
-
+  
   <h2>
     <a id="class-method-summary" class="anchor" href="#class-method-summary">
   <svg class="octicon-link" aria-hidden="true">
@@ -418,38 +429,44 @@ as effective as just hardcoding it.</p>
   </ul>
 
 
-
-
-
-
-
-<div class="methods-inherited">
   
-    
-
-
-    
-
-
-    
-
 
   
+
+
+  <div class="methods-inherited">
     
+      
+
+
+      
+
+
+      
+
+
+      
 
 
     
+      
+
+
+      
+
+
+      
+
+
+      
 
 
     
-
+  </div>
 
   
-</div>
 
-
-
-
+  
   <h2>
     <a id="class-method-detail" class="anchor" href="#class-method-detail">
   <svg class="octicon-link" aria-hidden="true">
@@ -509,8 +526,9 @@ as effective as just hardcoding it.</p>
   
 
 
+  
 
-
+  
 
 
 </div>

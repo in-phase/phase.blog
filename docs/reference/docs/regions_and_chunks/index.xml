@@ -6,35 +6,28 @@
     <description>Recent content in Regions &amp; Chunks on Phase</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 02 Feb 2022 23:16:22 -0700</lastBuildDate><atom:link href="https://phase.blog/reference/docs/regions_and_chunks/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 02 Feb 2022 23:16:22 -0700</lastBuildDate>
+    <atom:link href="https://phase.blog/reference/docs/regions_and_chunks/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Crystal&#39;s Slicing Mechanisms</title>
       <link>https://phase.blog/reference/docs/regions_and_chunks/crystal_slicing_mechanisms/</link>
       <pubDate>Wed, 02 Feb 2022 23:16:22 -0700</pubDate>
-      
       <guid>https://phase.blog/reference/docs/regions_and_chunks/crystal_slicing_mechanisms/</guid>
-      <description>Crystal&amp;rsquo;s Slicing Mechanisms # In an Array (or any Indexable), each element is represented by a numeric index. There are a couple different ways to do this
-we can refer to the elements via positive, increasing indexes as such: arr = [&amp;#39;P&amp;#39;, &amp;#39;h&amp;#39;, &amp;#39;a&amp;#39;, &amp;#39;s&amp;#39;, &amp;#39;e&amp;#39;] # 0 1 2 3 4 arr[0] # =&amp;gt; &amp;#39;P&amp;#39; arr[4] # =&amp;gt; &amp;#39;e&amp;#39; Or, we can start at the other end of the array using negative indexes:</description>
+      <description>Crystal&amp;rsquo;s Slicing Mechanisms # In an Array (or any Indexable), each element is represented by a numeric index. There are a couple different ways to do this&#xA;we can refer to the elements via positive, increasing indexes as such: arr = [&amp;#39;P&amp;#39;, &amp;#39;h&amp;#39;, &amp;#39;a&amp;#39;, &amp;#39;s&amp;#39;, &amp;#39;e&amp;#39;] # 0 1 2 3 4 arr[0] # =&amp;gt; &amp;#39;P&amp;#39; arr[4] # =&amp;gt; &amp;#39;e&amp;#39; Or, we can start at the other end of the array using negative indexes:</description>
     </item>
-    
     <item>
       <title>MultiIndexable Slicing</title>
       <link>https://phase.blog/reference/docs/regions_and_chunks/multiindexable_slicing/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://phase.blog/reference/docs/regions_and_chunks/multiindexable_slicing/</guid>
-      <description>MultiIndexable Slicing # In Phase, slicing multidimensional arrays (MultiIndexabless) is designed to be very similar to slicing ordinary arrays. In fact, for single-dimensional MultiIndexables, slicing is almost identical:
-require &amp;#34;phase&amp;#34; include Phase # Vanilla crystal slicing: arr = [&amp;#39;a&amp;#39;, &amp;#39;b&amp;#39;, &amp;#39;c&amp;#39;, &amp;#39;d&amp;#39;] arr[1..] # =&amp;gt; [&amp;#39;b&amp;#39;, &amp;#39;c&amp;#39;, &amp;#39;d&amp;#39;] # 1D MultiIndexable slicing: narr = NArray[&amp;#39;a&amp;#39;, &amp;#39;b&amp;#39;, &amp;#39;c&amp;#39;, &amp;#39;d&amp;#39;] narr[1..] # =&amp;gt; NArray[&amp;#39;b&amp;#39;, &amp;#39;c&amp;#39;, &amp;#39;d&amp;#39;] Basic Example # When we add another dimension, we must specify two sets of indexes.</description>
+      <description>MultiIndexable Slicing # In Phase, slicing multidimensional arrays (MultiIndexabless) is designed to be very similar to slicing ordinary arrays. In fact, for single-dimensional MultiIndexables, slicing is almost identical:&#xA;require &amp;#34;phase&amp;#34; include Phase # Vanilla crystal slicing: arr = [&amp;#39;a&amp;#39;, &amp;#39;b&amp;#39;, &amp;#39;c&amp;#39;, &amp;#39;d&amp;#39;] arr[1..] # =&amp;gt; [&amp;#39;b&amp;#39;, &amp;#39;c&amp;#39;, &amp;#39;d&amp;#39;] # 1D MultiIndexable slicing: narr = NArray[&amp;#39;a&amp;#39;, &amp;#39;b&amp;#39;, &amp;#39;c&amp;#39;, &amp;#39;d&amp;#39;] narr[1..] # =&amp;gt; NArray[&amp;#39;b&amp;#39;, &amp;#39;c&amp;#39;, &amp;#39;d&amp;#39;] Basic Example # When we add another dimension, we must specify two sets of indexes.</description>
     </item>
-    
     <item>
       <title>The IndexRegion Type</title>
       <link>https://phase.blog/reference/docs/regions_and_chunks/index_region/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://phase.blog/reference/docs/regions_and_chunks/index_region/</guid>
       <description> The IndexRegion Type # </description>
     </item>
-    
   </channel>
 </rss>

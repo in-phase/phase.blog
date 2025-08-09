@@ -3,8 +3,9 @@
 <head>
   <meta charset="utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="generator" content="Crystal Docs 1.5.0">
-<meta name="crystal_docs.project_version" content="main">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Crystal Docs 1.10.1">
+<meta name="crystal_docs.project_version" content="HEAD">
 <meta name="crystal_docs.project_name" content="ph-core">
 
 
@@ -13,7 +14,7 @@
 <script type="text/javascript" src="../js/doc.js"></script>
 
   <meta name="repository-name" content="ph-core">
-  <title>Phase::MultiIndexable(T) - ph-core main</title>
+  <title>Phase::MultiIndexable(T) - ph-core HEAD</title>
   <script type="text/javascript">
     CrystalDocs.base_path = "../";
   </script>
@@ -90,9 +91,14 @@ document.getElementById("theme-toggle").addEventListener("click", () => {
 
 <svg class="hidden">
   <symbol id="octicon-link" viewBox="0 0 16 16">
-    <path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path>
+    <path fill="currentColor" fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path>
   </symbol>
 </svg>
+<input type="checkbox" id="sidebar-btn">
+<label for="sidebar-btn" id="sidebar-btn-label">
+  <svg class="open" xmlns="http://www.w3.org/2000/svg" height="2em" width="2em" viewBox="0 0 512 512"><title>Open Sidebar</title><path fill="currentColor" d="M80 96v64h352V96H80zm0 112v64h352v-64H80zm0 112v64h352v-64H80z"></path></svg>
+  <svg class="close" xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" viewBox="0 0 512 512"><title>Close Sidebar</title><path fill="currentColor" d="m118.6 73.4-45.2 45.2L210.7 256 73.4 393.4l45.2 45.2L256 301.3l137.4 137.3 45.2-45.2L301.3 256l137.3-137.4-45.2-45.2L256 210.7Z"></path></svg>
+</label>
 <div class="sidebar">
   <div class="sidebar-header">
     <div class="search-box">
@@ -107,7 +113,7 @@ document.getElementById("theme-toggle").addEventListener("click", () => {
       </h1>
 
       <span class="project-version">
-        main
+        HEAD
       </span>
     </div>
   </div>
@@ -388,7 +394,9 @@ document.getElementById("theme-toggle").addEventListener("click", () => {
 <div class="main-content">
 <h1 class="type-name">
 
-  <span class="kind">module</span> Phase::MultiIndexable(T)
+  <span class="kind">
+    module
+  </span> Phase::<wbr>MultiIndexable(T)
 
 </h1>
 
@@ -418,6 +426,8 @@ corpus of methods for one-dimensional collections.</p>
 performant implementation, you should consider overriding
 <code><a href="../Phase/MultiIndexable.html#unsafe_fetch_chunk%28region%3AIndexRegion%29%3AMultiIndexable%28T%29-instance-method">#unsafe_fetch_chunk</a></code>, <code><a href="../Phase/MultiIndexable.html#fast_each%3AIterator%28T%29-instance-method">#fast_each</a></code>, and <code><a href="../Phase/MultiIndexable.html#size-instance-method">#size</a></code> in that order of importance
 (and more as you see fit).</p>
+
+
 
 
 
@@ -538,8 +548,9 @@ performant implementation, you should consider overriding
 
 
 
+  
 
-
+  
   <h2>
     <a id="class-method-summary" class="anchor" href="#class-method-summary">
   <svg class="octicon-link" aria-hidden="true">
@@ -558,7 +569,43 @@ performant implementation, you should consider overriding
   </ul>
 
 
+  
+  <h2>
+    <a id="macro-summary" class="anchor" href="#macro-summary">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Macro Summary
+  </h2>
+  <ul class="list-summary">
+    
+      <li class="entry-summary">
+        <a href="#coord_splat_overload%28name%29-macro" class="signature"><strong>coord_splat_overload</strong>(name)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#def_elementwise_binary%28name%29-macro" class="signature"><strong>def_elementwise_binary</strong>(name)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#def_elementwise_unary%28name%29-macro" class="signature"><strong>def_elementwise_unary</strong>(name)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#region_splat_overload%28name%29-macro" class="signature"><strong>region_splat_overload</strong>(name)</a>
+        
+          <div class="summary"><p><span class="flag orange">TODO</span>  rename these? These primarily exist for user clarity (could easily have all these methods forward all their args to a single funciton to handle tuple-packaging, but would leave a rather opaque method signature behind)</p></div>
+        
+      </li>
+    
+  </ul>
 
+
+  
   <h2>
     <a id="instance-method-summary" class="anchor" href="#instance-method-summary">
   <svg class="octicon-link" aria-hidden="true">
@@ -853,30 +900,30 @@ performant implementation, you should consider overriding
       </li>
     
       <li class="entry-summary">
-        <a href="#%5B%5D%3F%28bool_mask%3AMultiIndexable%28Bool%29%29%3AMultiIndexable%28T%3F%29-instance-method" class="signature"><strong>#[]?</strong>(bool_mask : MultiIndexable(Bool)) : MultiIndexable(T?)</a>
+        <a href="#%5B%5D%3F%28bool_mask%3AMultiIndexable%28Bool%29%29%3AMultiIndexable%28T%7CNil%29-instance-method" class="signature"><strong>#[]?</strong>(bool_mask : MultiIndexable(Bool)) : MultiIndexable(T | Nil)</a>
         
           <div class="summary"><p>Returns a <code><a href="../Phase/MultiIndexable.html">MultiIndexable</a></code> that draws from <code>self</code> where <em>bool_mask</em> is true, but contains <code>nil</code> where <em>bool_mask</em> is false.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#%5B%5D%3F%28region%3AIndexable%2Cdrop%3ABool%3DMultiIndexable%3A%3ADROP_BY_DEFAULT%29%3AMultiIndexable%28T%29%3F-instance-method" class="signature"><strong>#[]?</strong>(region : Indexable, drop : Bool = <span class="t">MultiIndexable</span><span class="t">::</span><span class="t">DROP_BY_DEFAULT</span>) : MultiIndexable(T)?</a>
+        <a href="#%5B%5D%3F%28region%3AIndexable%2Cdrop%3ABool%3DMultiIndexable%3A%3ADROP_BY_DEFAULT%29%3AMultiIndexable%28T%29%7CNil-instance-method" class="signature"><strong>#[]?</strong>(region : Indexable, drop : Bool = <span class="t">MultiIndexable</span><span class="t">::</span><span class="t">DROP_BY_DEFAULT</span>) : MultiIndexable(T) | Nil</a>
         
           <div class="summary"><p>Copies the elements in <em>region</em> to a new <code><a href="../Phase/MultiIndexable.html">MultiIndexable</a></code> if <code><a href="../Phase/MultiIndexable.html#has_region%3F%28region%3AIndexRegion%29%3ABool-instance-method">#has_region?(region)</a></code> is true, and returns <code>nil</code> otherwise.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#%5B%5D%3F%28region%3AIndexRegion%29%3AMultiIndexable%28T%29%3F-instance-method" class="signature"><strong>#[]?</strong>(region : IndexRegion) : MultiIndexable(T)?</a>
+        <a href="#%5B%5D%3F%28region%3AIndexRegion%29%3AMultiIndexable%28T%29%7CNil-instance-method" class="signature"><strong>#[]?</strong>(region : IndexRegion) : MultiIndexable(T) | Nil</a>
         
-          <div class="summary"><p><code><a href="../Phase/IndexRegion.html">IndexRegion</a></code> accepting overload of <code><a href="../Phase/MultiIndexable.html#%5B%5D%3F%28region%3AIndexable%2Cdrop%3ABool%3DMultiIndexable%3A%3ADROP_BY_DEFAULT%29%3AMultiIndexable%28T%29%3F-instance-method">#[]?(region : Indexable, drop : Bool)</a></code>.</p></div>
+          <div class="summary"><p><code><a href="../Phase/IndexRegion.html">IndexRegion</a></code> accepting overload of <code><a href="../Phase/MultiIndexable.html#%5B%5D%3F%28region%3AIndexable%2Cdrop%3ABool%3DMultiIndexable%3A%3ADROP_BY_DEFAULT%29%3AMultiIndexable%28T%29%7CNil-instance-method">#[]?(region : Indexable, drop : Bool)</a></code>.</p></div>
         
       </li>
     
       <li class="entry-summary">
         <a href="#%5B%5D%3F%28%2Aregion_literal%2Cdrop%3ABool%3DMultiIndexable%3A%3ADROP_BY_DEFAULT%29-instance-method" class="signature"><strong>#[]?</strong>(*region_literal, drop : Bool = <span class="t">MultiIndexable</span><span class="t">::</span><span class="t">DROP_BY_DEFAULT</span>)</a>
         
-          <div class="summary"><p>Tuple-accepting overload of <code><a href="../Phase/MultiIndexable.html#%5B%5D%3F%28region%3AIndexable%2Cdrop%3ABool%3DMultiIndexable%3A%3ADROP_BY_DEFAULT%29%3AMultiIndexable%28T%29%3F-instance-method">#[]?(region_literal : Indexable, drop : Bool)</a></code>.</p></div>
+          <div class="summary"><p>Tuple-accepting overload of <code><a href="../Phase/MultiIndexable.html#%5B%5D%3F%28region%3AIndexable%2Cdrop%3ABool%3DMultiIndexable%3A%3ADROP_BY_DEFAULT%29%3AMultiIndexable%28T%29%7CNil-instance-method">#[]?(region_literal : Indexable, drop : Bool)</a></code>.</p></div>
         
       </li>
     
@@ -1343,14 +1390,14 @@ performant implementation, you should consider overriding
       </li>
     
       <li class="entry-summary">
-        <a href="#to_s%28io%3AIO%2Csettings%3DFormatter%3A%3ASettings.new%29%3ANil-instance-method" class="signature"><strong>#to_s</strong>(io : IO, settings = <span class="t">Formatter</span><span class="t">::</span><span class="t">Settings</span>.<span class="k">new</span>) : Nil</a>
+        <a href="#to_s%28io%3AIO%2Csettings%3DFormatter%3A%3ASettings.new%29%3ANil-instance-method" class="signature"><strong>#to_s</strong>(io : IO, settings = <span class="t">Formatter</span><span class="t">::</span><span class="t">Settings</span>.new) : Nil</a>
         
           <div class="summary"><p><span class="flag yellow">FIXME</span>  NArrayFormatter depends on buffer indices.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#to_s%28settings%3DFormatter%3A%3ASettings.new%29%3AString-instance-method" class="signature"><strong>#to_s</strong>(settings = <span class="t">Formatter</span><span class="t">::</span><span class="t">Settings</span>.<span class="k">new</span>) : String</a>
+        <a href="#to_s%28settings%3DFormatter%3A%3ASettings.new%29%3AString-instance-method" class="signature"><strong>#to_s</strong>(settings = <span class="t">Formatter</span><span class="t">::</span><span class="t">Settings</span>.new) : String</a>
         
           <div class="summary"><p><span class="flag yellow">FIXME</span>  NArrayFormatter depends on buffer indices.</p></div>
         
@@ -1364,7 +1411,7 @@ performant implementation, you should consider overriding
       </li>
     
       <li class="entry-summary">
-        <a href="#to_scalar%3F%3AT%3F-instance-method" class="signature"><strong>#to_scalar?</strong> : T?</a>
+        <a href="#to_scalar%3F%3AT%7CNil-instance-method" class="signature"><strong>#to_scalar?</strong> : T | Nil</a>
         
           <div class="summary"><p>Identical to <code><a href="../Phase/MultiIndexable.html#to_scalar%3AT-instance-method">#to_scalar</a></code>, but returns <code>nil</code> in case of an error.</p></div>
         
@@ -1385,7 +1432,7 @@ performant implementation, you should consider overriding
       </li>
     
       <li class="entry-summary">
-        <a href="#view%28region%3AIndexable%3F%7CIndexRegion%3Dnil%29%3AView%28self%2CT%29-instance-method" class="signature"><strong>#view</strong>(region : Indexable? | IndexRegion = <span class="n">nil</span>) : View(<span class="k">self</span>, T)</a>
+        <a href="#view%28region%3AIndexable%7CNil%7CIndexRegion%3Dnil%29%3AView%28self%2CT%29-instance-method" class="signature"><strong>#view</strong>(region : Indexable | Nil | IndexRegion = <span class="n">nil</span>) : View(<span class="k">self</span>, T)</a>
         
       </li>
     
@@ -1398,69 +1445,39 @@ performant implementation, you should consider overriding
 
 
 
-  <h2>
-    <a id="macro-summary" class="anchor" href="#macro-summary">
-  <svg class="octicon-link" aria-hidden="true">
-    <use href="#octicon-link"/>
-  </svg>
-</a>
-    Macro Summary
-  </h2>
-  <ul class="list-summary">
+  <div class="methods-inherited">
     
-      <li class="entry-summary">
-        <a href="#coord_splat_overload%28name%29-macro" class="signature"><strong>coord_splat_overload</strong>(name)</a>
-        
-      </li>
-    
-      <li class="entry-summary">
-        <a href="#def_elementwise_binary%28name%29-macro" class="signature"><strong>def_elementwise_binary</strong>(name)</a>
-        
-      </li>
-    
-      <li class="entry-summary">
-        <a href="#def_elementwise_unary%28name%29-macro" class="signature"><strong>def_elementwise_unary</strong>(name)</a>
-        
-      </li>
-    
-      <li class="entry-summary">
-        <a href="#region_splat_overload%28name%29-macro" class="signature"><strong>region_splat_overload</strong>(name)</a>
-        
-          <div class="summary"><p><span class="flag orange">TODO</span>  rename these? These primarily exist for user clarity (could easily have all these methods forward all their args to a single funciton to handle tuple-packaging, but would leave a rather opaque method signature behind)</p></div>
-        
-      </li>
-    
-  </ul>
+      
 
 
+      
 
-<div class="methods-inherited">
-  
-    
+
+      
+
+
+      
 
 
     
+      
+
+
+      
+
+
+      
+
+
+      
 
 
     
-
+  </div>
 
   
-    
-
-
-    
-
-
-    
-
 
   
-</div>
-
-
-
-
   <h2>
     <a id="class-method-detail" class="anchor" href="#class-method-detail">
   <svg class="octicon-link" aria-hidden="true">
@@ -1488,7 +1505,91 @@ performant implementation, you should consider overriding
   
 
 
+  
+  <h2>
+    <a id="macro-detail" class="anchor" href="#macro-detail">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Macro Detail
+  </h2>
+  
+    <div class="entry-detail" id="coord_splat_overload(name)-macro">
+      <div class="signature">
+        
+        macro <strong>coord_splat_overload</strong>(name)
 
+        <a class="method-permalink" href="#coord_splat_overload%28name%29-macro">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/in-phase/ph-core/blob/faefb580069f511d51683190c6a7f4a72a11e8f0/src/multi_indexable.cr#L610" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="def_elementwise_binary(name)-macro">
+      <div class="signature">
+        
+        macro <strong>def_elementwise_binary</strong>(name)
+
+        <a class="method-permalink" href="#def_elementwise_binary%28name%29-macro">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/in-phase/ph-core/blob/faefb580069f511d51683190c6a7f4a72a11e8f0/src/multi_indexable.cr#L975" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="def_elementwise_unary(name)-macro">
+      <div class="signature">
+        
+        macro <strong>def_elementwise_unary</strong>(name)
+
+        <a class="method-permalink" href="#def_elementwise_unary%28name%29-macro">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/in-phase/ph-core/blob/faefb580069f511d51683190c6a7f4a72a11e8f0/src/multi_indexable.cr#L998" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="region_splat_overload(name)-macro">
+      <div class="signature">
+        
+        macro <strong>region_splat_overload</strong>(name)
+
+        <a class="method-permalink" href="#region_splat_overload%28name%29-macro">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p><span class="flag orange">TODO</span>  rename these?
+These primarily exist for user clarity (could easily have all these methods
+forward all their args to a single funciton to handle tuple-packaging, but
+would leave a rather opaque method signature behind)</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/in-phase/ph-core/blob/faefb580069f511d51683190c6a7f4a72a11e8f0/src/multi_indexable.cr#L603" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+
+
+  
   <h2>
     <a id="instance-method-detail" class="anchor" href="#instance-method-detail">
   <svg class="octicon-link" aria-hidden="true">
@@ -2201,9 +2302,9 @@ an <code><a href="../Phase/NArray.html">NArray</a></code> that contains the resu
         <div class="doc">
           
           <p>Returns true if both the shape and elements of <code>self</code> and <em>other</em> are equal.</p>
-<pre><code class="language-crystal"><span class="t">NArray</span>.<span class="k">new</span>([<span class="n">1</span>, <span class="n">2</span>]) <span class="o">==</span> <span class="t">NArray</span>.<span class="k">new</span>([<span class="n">1</span>, <span class="n">2</span>]) <span class="c"># =&gt; true</span>
-<span class="t">NArray</span>.<span class="k">new</span>([[<span class="n">1</span>], [<span class="n">2</span>]]) <span class="o">==</span> <span class="t">NArray</span>.<span class="k">new</span>([<span class="n">1</span>, <span class="n">2</span>]) <span class="c"># =&gt; false</span>
-<span class="t">NArray</span>.<span class="k">new</span>([<span class="n">8</span>, <span class="n">2</span>]) <span class="o">==</span> <span class="t">NArray</span>.<span class="k">new</span>([<span class="n">1</span>, <span class="n">2</span>]) <span class="c"># =&gt; false</span></code></pre>
+<pre><code class="language-crystal"><span class="t">NArray</span>.new([<span class="n">1</span>, <span class="n">2</span>]) <span class="o">==</span> <span class="t">NArray</span>.new([<span class="n">1</span>, <span class="n">2</span>]) <span class="c"># =&gt; true</span>
+<span class="t">NArray</span>.new([[<span class="n">1</span>], [<span class="n">2</span>]]) <span class="o">==</span> <span class="t">NArray</span>.new([<span class="n">1</span>, <span class="n">2</span>]) <span class="c"># =&gt; false</span>
+<span class="t">NArray</span>.new([<span class="n">8</span>, <span class="n">2</span>]) <span class="o">==</span> <span class="t">NArray</span>.new([<span class="n">1</span>, <span class="n">2</span>]) <span class="c"># =&gt; false</span></code></pre>
         </div>
       
       <br/>
@@ -2342,7 +2443,7 @@ for this MultiIndexable's shape.</p>
 <p>Note: this method has a tuple accepting overload, as well, which makes
 the syntax much more intuitive. The following example contains both
 versions, but please note the difference.</p>
-<pre><code class="language-crystal">narr <span class="o">=</span> <span class="t">NArray</span>.<span class="k">new</span>([[<span class="n">1</span>, <span class="n">2</span>, <span class="n">3</span>], [<span class="n">4</span>, <span class="n">5</span>, <span class="n">6</span>], [<span class="n">7</span>, <span class="n">8</span>, <span class="n">9</span>]])
+<pre><code class="language-crystal">narr <span class="o">=</span> <span class="t">NArray</span>.new([[<span class="n">1</span>, <span class="n">2</span>, <span class="n">3</span>], [<span class="n">4</span>, <span class="n">5</span>, <span class="n">6</span>], [<span class="n">7</span>, <span class="n">8</span>, <span class="n">9</span>]])
 
 <span class="c"># Select only the first row:</span>
 narr[[<span class="n">0</span>], drop: <span class="n">true</span>] <span class="c"># =&gt; NArray[1, 2, 3]</span>
@@ -2422,12 +2523,12 @@ Note that <em>region</em> is what controls the dimension dropping behaviour, her
       </div>
     </div>
   
-    <div class="entry-detail" id="[]?(bool_mask:MultiIndexable(Bool)):MultiIndexable(T?)-instance-method">
+    <div class="entry-detail" id="[]?(bool_mask:MultiIndexable(Bool)):MultiIndexable(T|Nil)-instance-method">
       <div class="signature">
         
-        def <strong>[]?</strong>(bool_mask : <a href="../Phase/MultiIndexable.html">MultiIndexable</a>(Bool)) : <a href="../Phase/MultiIndexable.html">MultiIndexable</a>(T?)
+        def <strong>[]?</strong>(bool_mask : <a href="../Phase/MultiIndexable.html">MultiIndexable</a>(Bool)) : <a href="../Phase/MultiIndexable.html">MultiIndexable</a>(T | Nil)
 
-        <a class="method-permalink" href="#%5B%5D%3F%28bool_mask%3AMultiIndexable%28Bool%29%29%3AMultiIndexable%28T%3F%29-instance-method">#</a>
+        <a class="method-permalink" href="#%5B%5D%3F%28bool_mask%3AMultiIndexable%28Bool%29%29%3AMultiIndexable%28T%7CNil%29-instance-method">#</a>
       </div>
       
         <div class="doc">
@@ -2451,12 +2552,12 @@ narr[oversized_mask]? <span class="c"># =&gt; ShapeError</span></code></pre>
       </div>
     </div>
   
-    <div class="entry-detail" id="[]?(region:Indexable,drop:Bool=MultiIndexable::DROP_BY_DEFAULT):MultiIndexable(T)?-instance-method">
+    <div class="entry-detail" id="[]?(region:Indexable,drop:Bool=MultiIndexable::DROP_BY_DEFAULT):MultiIndexable(T)|Nil-instance-method">
       <div class="signature">
         
-        def <strong>[]?</strong>(region : Indexable, drop : Bool = <span class="t">MultiIndexable</span><span class="t">::</span><span class="t">DROP_BY_DEFAULT</span>) : <a href="../Phase/MultiIndexable.html">MultiIndexable</a>(T)?
+        def <strong>[]?</strong>(region : Indexable, drop : Bool = <span class="t">MultiIndexable</span><span class="t">::</span><span class="t">DROP_BY_DEFAULT</span>) : <a href="../Phase/MultiIndexable.html">MultiIndexable</a>(T) | Nil
 
-        <a class="method-permalink" href="#%5B%5D%3F%28region%3AIndexable%2Cdrop%3ABool%3DMultiIndexable%3A%3ADROP_BY_DEFAULT%29%3AMultiIndexable%28T%29%3F-instance-method">#</a>
+        <a class="method-permalink" href="#%5B%5D%3F%28region%3AIndexable%2Cdrop%3ABool%3DMultiIndexable%3A%3ADROP_BY_DEFAULT%29%3AMultiIndexable%28T%29%7CNil-instance-method">#</a>
       </div>
       
         <div class="doc">
@@ -2475,17 +2576,17 @@ narr[<span class="n">0</span>.., <span class="n">1</span>..<span class="n">2</sp
       </div>
     </div>
   
-    <div class="entry-detail" id="[]?(region:IndexRegion):MultiIndexable(T)?-instance-method">
+    <div class="entry-detail" id="[]?(region:IndexRegion):MultiIndexable(T)|Nil-instance-method">
       <div class="signature">
         
-        def <strong>[]?</strong>(region : <a href="../Phase/IndexRegion.html">IndexRegion</a>) : <a href="../Phase/MultiIndexable.html">MultiIndexable</a>(T)?
+        def <strong>[]?</strong>(region : <a href="../Phase/IndexRegion.html">IndexRegion</a>) : <a href="../Phase/MultiIndexable.html">MultiIndexable</a>(T) | Nil
 
-        <a class="method-permalink" href="#%5B%5D%3F%28region%3AIndexRegion%29%3AMultiIndexable%28T%29%3F-instance-method">#</a>
+        <a class="method-permalink" href="#%5B%5D%3F%28region%3AIndexRegion%29%3AMultiIndexable%28T%29%7CNil-instance-method">#</a>
       </div>
       
         <div class="doc">
           
-          <p><code><a href="../Phase/IndexRegion.html">IndexRegion</a></code> accepting overload of <code><a href="../Phase/MultiIndexable.html#%5B%5D%3F%28region%3AIndexable%2Cdrop%3ABool%3DMultiIndexable%3A%3ADROP_BY_DEFAULT%29%3AMultiIndexable%28T%29%3F-instance-method">#[]?(region : Indexable, drop : Bool)</a></code>.</p>
+          <p><code><a href="../Phase/IndexRegion.html">IndexRegion</a></code> accepting overload of <code><a href="../Phase/MultiIndexable.html#%5B%5D%3F%28region%3AIndexable%2Cdrop%3ABool%3DMultiIndexable%3A%3ADROP_BY_DEFAULT%29%3AMultiIndexable%28T%29%7CNil-instance-method">#[]?(region : Indexable, drop : Bool)</a></code>.</p>
         </div>
       
       <br/>
@@ -2506,7 +2607,7 @@ narr[<span class="n">0</span>.., <span class="n">1</span>..<span class="n">2</sp
       
         <div class="doc">
           
-          <p>Tuple-accepting overload of <code><a href="../Phase/MultiIndexable.html#%5B%5D%3F%28region%3AIndexable%2Cdrop%3ABool%3DMultiIndexable%3A%3ADROP_BY_DEFAULT%29%3AMultiIndexable%28T%29%3F-instance-method">#[]?(region_literal : Indexable, drop : Bool)</a></code>.</p>
+          <p>Tuple-accepting overload of <code><a href="../Phase/MultiIndexable.html#%5B%5D%3F%28region%3AIndexable%2Cdrop%3ABool%3DMultiIndexable%3A%3ADROP_BY_DEFAULT%29%3AMultiIndexable%28T%29%7CNil-instance-method">#[]?(region_literal : Indexable, drop : Bool)</a></code>.</p>
         </div>
       
       <br/>
@@ -2771,9 +2872,9 @@ iter.<span class="k">next</span> <span class="c"># =&gt; Iterator::Stop</span></
 This can equally be seen by the number of indices required to uniquely
 specify a coordinate into this <code><a href="../Phase/MultiIndexable.html">MultiIndexable</a></code>, and is always equal to
 <code>shape.size</code></p>
-<pre><code class="language-crystal"><span class="t">NArray</span>.<span class="k">new</span>([<span class="n">1</span>, <span class="n">2</span>]).dimensions <span class="c"># =&gt; 1</span>
-<span class="t">NArray</span>.<span class="k">new</span>([[<span class="n">1</span>, <span class="n">2</span>], [<span class="n">3</span>, <span class="n">4</span>]]).dimensions <span class="c"># =&gt; 2</span>
-<span class="t">NArray</span>.<span class="k">new</span>([[[<span class="n">1</span>]]]).dimensions <span class="c"># =&gt; 3</span></code></pre>
+<pre><code class="language-crystal"><span class="t">NArray</span>.new([<span class="n">1</span>, <span class="n">2</span>]).dimensions <span class="c"># =&gt; 1</span>
+<span class="t">NArray</span>.new([[<span class="n">1</span>, <span class="n">2</span>], [<span class="n">3</span>, <span class="n">4</span>]]).dimensions <span class="c"># =&gt; 2</span>
+<span class="t">NArray</span>.new([[[<span class="n">1</span>]]]).dimensions <span class="c"># =&gt; 3</span></code></pre>
         </div>
       
       <br/>
@@ -3061,8 +3162,8 @@ If you're looking for a colexicographic version, use <code><a href="../Phase/Mul
         <div class="doc">
           
           <p>Returns <code>true</code> if and only if this <code><a href="../Phase/MultiIndexable.html">MultiIndexable</a></code> spans no elements.</p>
-<pre><code class="language-crystal"><span class="t">NArray</span>.<span class="k">new</span>([<span class="n">1</span>, <span class="n">2</span>, <span class="n">3</span>]).empty? <span class="c"># =&gt; false</span>
-<span class="t">NArray</span>.<span class="k">new</span>(<span class="o">[]</span>).empty? <span class="c"># =&gt; true</span></code></pre>
+<pre><code class="language-crystal"><span class="t">NArray</span>.new([<span class="n">1</span>, <span class="n">2</span>, <span class="n">3</span>]).empty? <span class="c"># =&gt; false</span>
+<span class="t">NArray</span>.new(<span class="o">[]</span>).empty? <span class="c"># =&gt; true</span></code></pre>
         </div>
       
       <br/>
@@ -3221,7 +3322,7 @@ For example:</p>
 <pre><code class="language-crystal"><span class="c"># create the following matrix:</span>
 <span class="c"># [5 2]</span>
 <span class="c"># [8 3]</span>
-narr <span class="o">=</span> <span class="t">NArray</span>.<span class="k">new</span>([[<span class="n">5</span>, <span class="n">2</span>], [<span class="n">8</span>, <span class="n">3</span>]])
+narr <span class="o">=</span> <span class="t">NArray</span>.new([[<span class="n">5</span>, <span class="n">2</span>], [<span class="n">8</span>, <span class="n">3</span>]])
 
 <span class="c"># extract the top-left element (coordinate [0, 0])</span>
 narr.first <span class="c"># =&gt; 5</span></code></pre>
@@ -3291,7 +3392,7 @@ narr.first <span class="c"># =&gt; 5</span></code></pre>
           <p>Returns a <code><a href="../Phase/MultiIndexable.html">MultiIndexable</a></code> containing elements whose coordinates belong both to <code><a href="../Phase/MultiIndexable.html#shape%3AArray-instance-method">#shape</a></code> and <em>region_literal</em>.
 This method is very similar to <code><a href="../Phase/MultiIndexable.html#get_chunk%28coord%3AIndexable%2Cregion_shape%3AIndexable%28I%29%29forallI-instance-method">#get_chunk(region_literal : Indexable, drop : Bool)</a></code>,
 except that it trims the <em>region_literal</em> down to a valid size automatically.</p>
-<pre><code class="language-crystal">narr <span class="o">=</span> <span class="t">NArray</span>.<span class="k">new</span>([[<span class="n">1</span>, <span class="n">2</span>, <span class="n">3</span>], [<span class="n">4</span>, <span class="n">5</span>, <span class="n">6</span>]])
+<pre><code class="language-crystal">narr <span class="o">=</span> <span class="t">NArray</span>.new([[<span class="n">1</span>, <span class="n">2</span>, <span class="n">3</span>], [<span class="n">4</span>, <span class="n">5</span>, <span class="n">6</span>]])
 
 narr.get_chunk(<span class="n">1</span>..<span class="n">5</span>, <span class="n">1</span>) <span class="c"># =&gt; ShapeError (this chunk is not contained in a 2x3 MultiIndexable</span>
 narr.get_available(<span class="n">1</span>..<span class="n">5</span>, <span class="n">1</span>) <span class="c"># =&gt; NArray[5]</span></code></pre>
@@ -3359,7 +3460,7 @@ narr.get_available(<span class="n">1</span>..<span class="n">5</span>, <span cla
           
           <p>TEST
 Extracts a chunk given a shape (<em>region_shape</em>) and the <em>coord</em> in that region with the smallest value in each axis.</p>
-<pre><code class="language-crystal">narr <span class="o">=</span> <span class="t">NArray</span>.<span class="k">new</span>([[<span class="n">1</span>, <span class="n">2</span>, <span class="n">3</span>], [<span class="n">4</span>, <span class="n">5</span>, <span class="n">6</span>], [<span class="n">7</span>, <span class="n">8</span>, <span class="n">9</span>]])
+<pre><code class="language-crystal">narr <span class="o">=</span> <span class="t">NArray</span>.new([[<span class="n">1</span>, <span class="n">2</span>, <span class="n">3</span>], [<span class="n">4</span>, <span class="n">5</span>, <span class="n">6</span>], [<span class="n">7</span>, <span class="n">8</span>, <span class="n">9</span>]])
 
 narr.get_chunk([<span class="n">1</span>, <span class="n">1</span>], [<span class="n">2</span>, <span class="n">2</span>]) <span class="c"># =&gt; NArray[[5, 6], [8, 9]]</span>
 narr.get_chunk([<span class="n">1</span>, <span class="n">0</span>], [<span class="n">1</span>, <span class="n">3</span>]) <span class="c"># =&gt; NArray[[4, 5, 6]]</span>
@@ -3574,7 +3675,7 @@ valid <span class="o">=</span> [<span class="n">2</span>..<span class="n">4</spa
 narr.has_region?(valid) <span class="c"># =&gt; true</span>
 
 <span class="c"># now, we can use that IndexRegion safely.</span>
-<span class="t">LexIterator</span>(<span class="t">Int32</span>).<span class="k">new</span>(valid).each <span class="k">do</span> <span class="o">|</span>coord<span class="o">|</span>
+<span class="t">LexIterator</span>(<span class="t">Int32</span>).new(valid).each <span class="k">do</span> <span class="o">|</span>coord<span class="o">|</span>
   narr.unsafe_fetch_element(coord) <span class="c"># this is definitely defined!</span>
 <span class="k">end</span>
 
@@ -3667,7 +3768,7 @@ For example:</p>
 <pre><code class="language-crystal"><span class="c"># create the following matrix:</span>
 <span class="c"># [5 2]</span>
 <span class="c"># [8 3]</span>
-narr <span class="o">=</span> <span class="t">NArray</span>.<span class="k">new</span>([[<span class="n">5</span>, <span class="n">2</span>, <span class="n">1</span>], [<span class="n">8</span>, <span class="n">3</span>, <span class="n">4</span>]])
+narr <span class="o">=</span> <span class="t">NArray</span>.new([[<span class="n">5</span>, <span class="n">2</span>, <span class="n">1</span>], [<span class="n">8</span>, <span class="n">3</span>, <span class="n">4</span>]])
 
 <span class="c"># extract the bottom-right element (coordinate [1, 2])</span>
 narr.last <span class="c"># =&gt; 4</span></code></pre>
@@ -3919,10 +4020,10 @@ DISCUSS is this good behaviour?</p>
 MultiIndexable.  This method works by randomly generating coordinates and
 returning the elements at those coordinates. There is no guarantee that
 the coordinates generated will be distinct from one another.</p>
-<pre><code class="language-crystal"><span class="t">NArray</span>.<span class="k">new</span>([[<span class="n">1</span>, <span class="n">2</span>], [<span class="n">3</span>, <span class="n">4</span>]]).sample(<span class="n">5</span>) <span class="c"># =&gt; Enumerable(Int32)</span>
-<span class="t">NArray</span>.<span class="k">new</span>([[<span class="n">1</span>, <span class="n">2</span>], [<span class="n">3</span>, <span class="n">4</span>]]).sample(<span class="n">5</span>).to_a <span class="c"># =&gt; [4, 2, 4, 3, 2]</span>
-<span class="t">NArray</span>.<span class="k">new</span>([[<span class="n">1</span>, <span class="n">2</span>], [<span class="n">3</span>, <span class="n">4</span>]]).sample(<span class="n">5</span>).to_a <span class="c"># =&gt; [1, 3, 2, 4, 1]</span>
-<span class="t">NArray</span>.<span class="k">new</span>([[<span class="n">1</span>, <span class="n">2</span>], [<span class="n">3</span>, <span class="n">4</span>]]).sample(<span class="n">5</span>).to_a <span class="c"># =&gt; [2, 3, 1, 1, 3]</span></code></pre>
+<pre><code class="language-crystal"><span class="t">NArray</span>.new([[<span class="n">1</span>, <span class="n">2</span>], [<span class="n">3</span>, <span class="n">4</span>]]).sample(<span class="n">5</span>) <span class="c"># =&gt; Enumerable(Int32)</span>
+<span class="t">NArray</span>.new([[<span class="n">1</span>, <span class="n">2</span>], [<span class="n">3</span>, <span class="n">4</span>]]).sample(<span class="n">5</span>).to_a <span class="c"># =&gt; [4, 2, 4, 3, 2]</span>
+<span class="t">NArray</span>.new([[<span class="n">1</span>, <span class="n">2</span>], [<span class="n">3</span>, <span class="n">4</span>]]).sample(<span class="n">5</span>).to_a <span class="c"># =&gt; [1, 3, 2, 4, 1]</span>
+<span class="t">NArray</span>.new([[<span class="n">1</span>, <span class="n">2</span>], [<span class="n">3</span>, <span class="n">4</span>]]).sample(<span class="n">5</span>).to_a <span class="c"># =&gt; [2, 3, 1, 1, 3]</span></code></pre>
         </div>
       
       <br/>
@@ -3944,9 +4045,9 @@ the coordinates generated will be distinct from one another.</p>
         <div class="doc">
           
           <p>Returns an element picked at random from this <code><a href="../Phase/MultiIndexable.html">MultiIndexable</a></code>.</p>
-<pre><code class="language-crystal"><span class="t">NArray</span>.<span class="k">new</span>([[<span class="n">1</span>, <span class="n">2</span>], [<span class="n">3</span>, <span class="n">4</span>]]).sample <span class="c"># =&gt; 3</span>
-<span class="t">NArray</span>.<span class="k">new</span>([[<span class="n">1</span>, <span class="n">2</span>], [<span class="n">3</span>, <span class="n">4</span>]]).sample <span class="c"># =&gt; 1</span>
-<span class="t">NArray</span>.<span class="k">new</span>([[<span class="n">1</span>, <span class="n">2</span>], [<span class="n">3</span>, <span class="n">4</span>]]).sample <span class="c"># =&gt; 2</span></code></pre>
+<pre><code class="language-crystal"><span class="t">NArray</span>.new([[<span class="n">1</span>, <span class="n">2</span>], [<span class="n">3</span>, <span class="n">4</span>]]).sample <span class="c"># =&gt; 3</span>
+<span class="t">NArray</span>.new([[<span class="n">1</span>, <span class="n">2</span>], [<span class="n">3</span>, <span class="n">4</span>]]).sample <span class="c"># =&gt; 1</span>
+<span class="t">NArray</span>.new([[<span class="n">1</span>, <span class="n">2</span>], [<span class="n">3</span>, <span class="n">4</span>]]).sample <span class="c"># =&gt; 2</span></code></pre>
         </div>
       
       <br/>
@@ -3968,10 +4069,10 @@ the coordinates generated will be distinct from one another.</p>
         <div class="doc">
           
           <p>Returns <code>true</code> if this <code><a href="../Phase/MultiIndexable.html">MultiIndexable</a></code> contains only a single element.</p>
-<pre><code class="language-crystal"><span class="t">NArray</span>.<span class="k">new</span>([<span class="n">1</span>]).scalar? <span class="c"># =&gt; true</span>
-<span class="t">NArray</span>.<span class="k">new</span>([<span class="n">1</span>, <span class="n">2</span>]).scalar? <span class="c"># =&gt; false</span>
-<span class="t">NArray</span>.<span class="k">new</span>([[<span class="n">1</span>]]).scalar? <span class="c"># =&gt; true</span>
-<span class="t">NArray</span>.<span class="k">new</span>(<span class="o">[]</span>).scalar? <span class="c"># =&gt; false</span></code></pre>
+<pre><code class="language-crystal"><span class="t">NArray</span>.new([<span class="n">1</span>]).scalar? <span class="c"># =&gt; true</span>
+<span class="t">NArray</span>.new([<span class="n">1</span>, <span class="n">2</span>]).scalar? <span class="c"># =&gt; false</span>
+<span class="t">NArray</span>.new([[<span class="n">1</span>]]).scalar? <span class="c"># =&gt; true</span>
+<span class="t">NArray</span>.new(<span class="o">[]</span>).scalar? <span class="c"># =&gt; false</span></code></pre>
         </div>
       
       <br/>
@@ -4019,8 +4120,8 @@ safe to mutate without affecting the MultiIndexable.</p>
           <p>Returns the total number of elements in this <code><a href="../Phase/MultiIndexable.html">MultiIndexable</a></code>.
 This quantity is always equal to <code>shape.product</code>. However, this method is
 almost always more performant than computing the product directly.</p>
-<pre><code class="language-crystal"><span class="t">NArray</span>.<span class="k">new</span>([<span class="s">&#39;a&#39;</span>, <span class="s">&#39;b&#39;</span>, <span class="s">&#39;c&#39;</span>]).size <span class="c"># =&gt; 3</span>
-<span class="t">NArray</span>.<span class="k">new</span>([[<span class="n">0</span>, <span class="n">1</span>], [<span class="n">1</span>, <span class="n">0</span>]]).size <span class="c"># =&gt; 4</span></code></pre>
+<pre><code class="language-crystal"><span class="t">NArray</span>.new([<span class="s">&#39;a&#39;</span>, <span class="s">&#39;b&#39;</span>, <span class="s">&#39;c&#39;</span>]).size <span class="c"># =&gt; 3</span>
+<span class="t">NArray</span>.new([[<span class="n">0</span>, <span class="n">1</span>], [<span class="n">1</span>, <span class="n">0</span>]]).size <span class="c"># =&gt; 4</span></code></pre>
         </div>
       
       <br/>
@@ -4125,9 +4226,9 @@ puts unit.tile(<span class="n">2</span>, <span class="n">3</span>)
 Returns <code>to_scalar.to_f</code>.
 This method allows single-element MultiIndexables to be treated like
 numerics in many cases.</p>
-<pre><code class="language-crystal"><span class="t">NArray</span>.<span class="k">new</span>([[<span class="n">0.5f32</span>]]).to_f <span class="c"># =&gt; 0.5</span>
-<span class="t">NArray</span>.<span class="k">new</span>([[<span class="n">1</span>], [<span class="n">2</span>]]).to_f <span class="c"># raises ShapeError</span>
-<span class="t">NArray</span>.<span class="k">new</span>([<span class="s">&quot;test&quot;</span>]).to_f <span class="c"># will not compile, as String has no #to_f method.</span></code></pre>
+<pre><code class="language-crystal"><span class="t">NArray</span>.new([[<span class="n">0.5f32</span>]]).to_f <span class="c"># =&gt; 0.5</span>
+<span class="t">NArray</span>.new([[<span class="n">1</span>], [<span class="n">2</span>]]).to_f <span class="c"># raises ShapeError</span>
+<span class="t">NArray</span>.new([<span class="s">&quot;test&quot;</span>]).to_f <span class="c"># will not compile, as String has no #to_f method.</span></code></pre>
         </div>
       
       <br/>
@@ -4181,7 +4282,7 @@ not_an_narray.equals?(narr) { <span class="o">|</span>el_1, el_2<span class="o">
     <div class="entry-detail" id="to_s(io:IO,settings=Formatter::Settings.new):Nil-instance-method">
       <div class="signature">
         
-        def <strong>to_s</strong>(io : IO, settings = <span class="t">Formatter</span><span class="t">::</span><span class="t">Settings</span>.<span class="k">new</span>) : Nil
+        def <strong>to_s</strong>(io : IO, settings = <span class="t">Formatter</span><span class="t">::</span><span class="t">Settings</span>.new) : Nil
 
         <a class="method-permalink" href="#to_s%28io%3AIO%2Csettings%3DFormatter%3A%3ASettings.new%29%3ANil-instance-method">#</a>
       </div>
@@ -4202,7 +4303,7 @@ not_an_narray.equals?(narr) { <span class="o">|</span>el_1, el_2<span class="o">
     <div class="entry-detail" id="to_s(settings=Formatter::Settings.new):String-instance-method">
       <div class="signature">
         
-        def <strong>to_s</strong>(settings = <span class="t">Formatter</span><span class="t">::</span><span class="t">Settings</span>.<span class="k">new</span>) : String
+        def <strong>to_s</strong>(settings = <span class="t">Formatter</span><span class="t">::</span><span class="t">Settings</span>.new) : String
 
         <a class="method-permalink" href="#to_s%28settings%3DFormatter%3A%3ASettings.new%29%3AString-instance-method">#</a>
       </div>
@@ -4233,8 +4334,8 @@ not_an_narray.equals?(narr) { <span class="o">|</span>el_1, el_2<span class="o">
           <p>If this <code><a href="../Phase/MultiIndexable.html">MultiIndexable</a></code> is a scalar (see <code><a href="../Phase/MultiIndexable.html#scalar%3F%3ABool-instance-method">#scalar?</a></code>), <code><a href="../Phase/MultiIndexable.html#to_scalar%3AT-instance-method">#to_scalar</a></code> will
 return the sole element that it contains. This method will raise a
 <code><a href="../Phase/ShapeError.html">ShapeError</a></code> if <code>self<a href="../Phase/MultiIndexable.html#scalar%3F%3ABool-instance-method">.scalar?</a></code> returns <code>false</code>.</p>
-<pre><code class="language-crystal"><span class="t">NArray</span>.<span class="k">new</span>([<span class="s">&#39;a&#39;</span>]).to_scalar <span class="c"># =&gt; &#39;a&#39;</span>
-<span class="t">NArray</span>.<span class="k">new</span>([[<span class="s">&#39;a&#39;</span>, <span class="s">&#39;b&#39;</span>], [<span class="s">&#39;c&#39;</span>, <span class="s">&#39;d&#39;</span>]]).to_scalar <span class="c"># raises ShapeError</span></code></pre>
+<pre><code class="language-crystal"><span class="t">NArray</span>.new([<span class="s">&#39;a&#39;</span>]).to_scalar <span class="c"># =&gt; &#39;a&#39;</span>
+<span class="t">NArray</span>.new([[<span class="s">&#39;a&#39;</span>, <span class="s">&#39;b&#39;</span>], [<span class="s">&#39;c&#39;</span>, <span class="s">&#39;d&#39;</span>]]).to_scalar <span class="c"># raises ShapeError</span></code></pre>
         </div>
       
       <br/>
@@ -4245,19 +4346,19 @@ return the sole element that it contains. This method will raise a
       </div>
     </div>
   
-    <div class="entry-detail" id="to_scalar?:T?-instance-method">
+    <div class="entry-detail" id="to_scalar?:T|Nil-instance-method">
       <div class="signature">
         
-        def <strong>to_scalar?</strong> : T?
+        def <strong>to_scalar?</strong> : T | Nil
 
-        <a class="method-permalink" href="#to_scalar%3F%3AT%3F-instance-method">#</a>
+        <a class="method-permalink" href="#to_scalar%3F%3AT%7CNil-instance-method">#</a>
       </div>
       
         <div class="doc">
           
           <p>Identical to <code><a href="../Phase/MultiIndexable.html#to_scalar%3AT-instance-method">#to_scalar</a></code>, but returns <code>nil</code> in case of an error.</p>
-<pre><code class="language-crystal"><span class="t">NArray</span>.<span class="k">new</span>([<span class="s">&#39;a&#39;</span>]).to_scalar <span class="c"># =&gt; &#39;a&#39;</span>
-<span class="t">NArray</span>.<span class="k">new</span>([[<span class="s">&#39;a&#39;</span>, <span class="s">&#39;b&#39;</span>], [<span class="s">&#39;c&#39;</span>, <span class="s">&#39;d&#39;</span>]]).to_scalar <span class="c"># =&gt; nil</span></code></pre>
+<pre><code class="language-crystal"><span class="t">NArray</span>.new([<span class="s">&#39;a&#39;</span>]).to_scalar <span class="c"># =&gt; &#39;a&#39;</span>
+<span class="t">NArray</span>.new([[<span class="s">&#39;a&#39;</span>, <span class="s">&#39;b&#39;</span>], [<span class="s">&#39;c&#39;</span>, <span class="s">&#39;d&#39;</span>]]).to_scalar <span class="c"># =&gt; nil</span></code></pre>
         </div>
       
       <br/>
@@ -4319,12 +4420,12 @@ unless you are certain your coordinate is already canonicalized.</p>
       </div>
     </div>
   
-    <div class="entry-detail" id="view(region:Indexable?|IndexRegion=nil):View(self,T)-instance-method">
+    <div class="entry-detail" id="view(region:Indexable|Nil|IndexRegion=nil):View(self,T)-instance-method">
       <div class="signature">
         
-        def <strong>view</strong>(region : Indexable? | <a href="../Phase/IndexRegion.html">IndexRegion</a> = <span class="n">nil</span>) : <a href="../Phase/View.html">View</a>(<span class="k">self</span>, T)
+        def <strong>view</strong>(region : Indexable | Nil | <a href="../Phase/IndexRegion.html">IndexRegion</a> = <span class="n">nil</span>) : <a href="../Phase/View.html">View</a>(<span class="k">self</span>, T)
 
-        <a class="method-permalink" href="#view%28region%3AIndexable%3F%7CIndexRegion%3Dnil%29%3AView%28self%2CT%29-instance-method">#</a>
+        <a class="method-permalink" href="#view%28region%3AIndexable%7CNil%7CIndexRegion%3Dnil%29%3AView%28self%2CT%29-instance-method">#</a>
       </div>
       
       <br/>
@@ -4352,89 +4453,6 @@ unless you are certain your coordinate is already canonicalized.</p>
     </div>
   
 
-
-
-  <h2>
-    <a id="macro-detail" class="anchor" href="#macro-detail">
-  <svg class="octicon-link" aria-hidden="true">
-    <use href="#octicon-link"/>
-  </svg>
-</a>
-    Macro Detail
-  </h2>
-  
-    <div class="entry-detail" id="coord_splat_overload(name)-macro">
-      <div class="signature">
-        
-        macro <strong>coord_splat_overload</strong>(name)
-
-        <a class="method-permalink" href="#coord_splat_overload%28name%29-macro">#</a>
-      </div>
-      
-      <br/>
-      <div>
-        
-          [<a href="https://github.com/in-phase/ph-core/blob/faefb580069f511d51683190c6a7f4a72a11e8f0/src/multi_indexable.cr#L610" target="_blank">View source</a>]
-        
-      </div>
-    </div>
-  
-    <div class="entry-detail" id="def_elementwise_binary(name)-macro">
-      <div class="signature">
-        
-        macro <strong>def_elementwise_binary</strong>(name)
-
-        <a class="method-permalink" href="#def_elementwise_binary%28name%29-macro">#</a>
-      </div>
-      
-      <br/>
-      <div>
-        
-          [<a href="https://github.com/in-phase/ph-core/blob/faefb580069f511d51683190c6a7f4a72a11e8f0/src/multi_indexable.cr#L975" target="_blank">View source</a>]
-        
-      </div>
-    </div>
-  
-    <div class="entry-detail" id="def_elementwise_unary(name)-macro">
-      <div class="signature">
-        
-        macro <strong>def_elementwise_unary</strong>(name)
-
-        <a class="method-permalink" href="#def_elementwise_unary%28name%29-macro">#</a>
-      </div>
-      
-      <br/>
-      <div>
-        
-          [<a href="https://github.com/in-phase/ph-core/blob/faefb580069f511d51683190c6a7f4a72a11e8f0/src/multi_indexable.cr#L998" target="_blank">View source</a>]
-        
-      </div>
-    </div>
-  
-    <div class="entry-detail" id="region_splat_overload(name)-macro">
-      <div class="signature">
-        
-        macro <strong>region_splat_overload</strong>(name)
-
-        <a class="method-permalink" href="#region_splat_overload%28name%29-macro">#</a>
-      </div>
-      
-        <div class="doc">
-          
-          <p><span class="flag orange">TODO</span>  rename these?
-These primarily exist for user clarity (could easily have all these methods
-forward all their args to a single funciton to handle tuple-packaging, but
-would leave a rather opaque method signature behind)</p>
-        </div>
-      
-      <br/>
-      <div>
-        
-          [<a href="https://github.com/in-phase/ph-core/blob/faefb580069f511d51683190c6a7f4a72a11e8f0/src/multi_indexable.cr#L603" target="_blank">View source</a>]
-        
-      </div>
-    </div>
-  
 
 
 </div>

@@ -3,8 +3,9 @@
 <head>
   <meta charset="utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="generator" content="Crystal Docs 1.5.0">
-<meta name="crystal_docs.project_version" content="main">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Crystal Docs 1.10.1">
+<meta name="crystal_docs.project_version" content="HEAD">
 <meta name="crystal_docs.project_name" content="ph-core">
 
 
@@ -13,7 +14,7 @@
 <script type="text/javascript" src="../../../js/doc.js"></script>
 
   <meta name="repository-name" content="ph-core">
-  <title>Phase::MultiIndexable::Formatter::Settings - ph-core main</title>
+  <title>Phase::MultiIndexable::Formatter::Settings - ph-core HEAD</title>
   <script type="text/javascript">
     CrystalDocs.base_path = "../../../";
   </script>
@@ -22,9 +23,14 @@
 
 <svg class="hidden">
   <symbol id="octicon-link" viewBox="0 0 16 16">
-    <path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path>
+    <path fill="currentColor" fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path>
   </symbol>
 </svg>
+<input type="checkbox" id="sidebar-btn">
+<label for="sidebar-btn" id="sidebar-btn-label">
+  <svg class="open" xmlns="http://www.w3.org/2000/svg" height="2em" width="2em" viewBox="0 0 512 512"><title>Open Sidebar</title><path fill="currentColor" d="M80 96v64h352V96H80zm0 112v64h352v-64H80zm0 112v64h352v-64H80z"></path></svg>
+  <svg class="close" xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" viewBox="0 0 512 512"><title>Close Sidebar</title><path fill="currentColor" d="m118.6 73.4-45.2 45.2L210.7 256 73.4 393.4l45.2 45.2L256 301.3l137.4 137.3 45.2-45.2L301.3 256l137.3-137.4-45.2-45.2L256 210.7Z"></path></svg>
+</label>
 <div class="sidebar">
   <div class="sidebar-header">
     <div class="search-box">
@@ -39,7 +45,7 @@
       </h1>
 
       <span class="project-version">
-        main
+        HEAD
       </span>
     </div>
   </div>
@@ -320,7 +326,9 @@
 <div class="main-content">
 <h1 class="type-name">
 
-  <span class="kind">class</span> Phase::MultiIndexable::Formatter::Settings
+  <span class="kind">
+    class
+  </span> Phase::<wbr>MultiIndexable::<wbr>Formatter::<wbr>Settings
 
 </h1>
 
@@ -341,8 +349,8 @@
 
   <p>Every instance of <code><a href="../../../Phase/MultiIndexable/Formatter/Settings.html">Settings</a></code> stores configuration options that can
 be provided to <code><a href="../../../Phase/MultiIndexable/Formatter.html">MultiIndexable::Formatter</a></code>. Additionally, <code><a href="../../../Phase/MultiIndexable/Formatter/Settings.html">Settings</a></code>
-can store a project-wide formatter configuration (via <code><a href="../../../Phase/MultiIndexable/Formatter/Settings.html#project_settings%3Aself%3F-class-method">.project_settings</a></code>
-and <code><a href="../../../Phase/MultiIndexable/Formatter/Settings.html#project_settings%3D%28project_settings%3Aself%3F%29-class-method">.project_settings=</a></code>), and load system-wide configuration (via <code>self<a href="../../../Phase/MultiIndexable/Formatter/Settings.html#user_settings%3Aself%3F-class-method">.user_settings</a></code>).</p>
+can store a project-wide formatter configuration (via <code><a href="../../../Phase/MultiIndexable/Formatter/Settings.html#project_settings%3Aself%7CNil-class-method">.project_settings</a></code>
+and <code><a href="../../../Phase/MultiIndexable/Formatter/Settings.html#project_settings%3D%28project_settings%3Aself%7CNil%29-class-method">.project_settings=</a></code>), and load system-wide configuration (via <code>self<a href="../../../Phase/MultiIndexable/Formatter/Settings.html#user_settings%3Aself%7CNil-class-method">.user_settings</a></code>).</p>
 <h3><a id="where-does-settings-get-its-data-from" class="anchor" href="#where-does-settings-get-its-data-from">
   <svg class="octicon-link" aria-hidden="true">
     <use href="#octicon-link"/>
@@ -357,13 +365,15 @@ configuration from <code><a href="../../../Phase/MultiIndexable/Formatter/Settin
 <p><code><a href="../../../Phase/MultiIndexable/Formatter/Settings.html#new-class-method">Settings.new</a></code> will check everything on this list (starting at the top)
 until it finds suitable settings, and then returns those.</p>
 <ul>
-<li><code><a href="../../../Phase/MultiIndexable/Formatter/Settings.html#project_settings%3Aself%3F-class-method">Settings.project_settings</a></code> (<code>nil</code> by default, but can be altered via
-<code><a href="../../../Phase/MultiIndexable/Formatter/Settings.html#project_settings%3D%28project_settings%3Aself%3F%29-class-method">.project_settings=</a></code>)</li>
-<li><code><a href="../../../Phase/MultiIndexable/Formatter/Settings.html#user_settings%3Aself%3F-class-method">Settings.user_settings</a></code> (attempts to cache and return settings from a
-<code>formatter.yaml</code> file. See <code><a href="../../../Phase/MultiIndexable/Formatter/Settings.html#user_settings%3Aself%3F-class-method">.user_settings</a></code> for details)</li>
+<li><code><a href="../../../Phase/MultiIndexable/Formatter/Settings.html#project_settings%3Aself%7CNil-class-method">Settings.project_settings</a></code> (<code>nil</code> by default, but can be altered via
+<code><a href="../../../Phase/MultiIndexable/Formatter/Settings.html#project_settings%3D%28project_settings%3Aself%7CNil%29-class-method">.project_settings=</a></code>)</li>
+<li><code><a href="../../../Phase/MultiIndexable/Formatter/Settings.html#user_settings%3Aself%7CNil-class-method">Settings.user_settings</a></code> (attempts to cache and return settings from a
+<code>formatter.yaml</code> file. See <code><a href="../../../Phase/MultiIndexable/Formatter/Settings.html#user_settings%3Aself%7CNil-class-method">.user_settings</a></code> for details)</li>
 <li><code><a href="../../../Phase/MultiIndexable/Formatter/Settings.html#default%3Aself-class-method">Settings.default</a></code> (the default configuration that we, the developers
 of Phase, think is nice)</li>
 </ul>
+
+
 
 
 
@@ -432,6 +442,7 @@ of Phase, think is nice)</li>
 
 
 
+  
   <h2>
     <a id="constructors" class="anchor" href="#constructors">
   <svg class="octicon-link" aria-hidden="true">
@@ -462,22 +473,10 @@ of Phase, think is nice)</li>
         
       </li>
     
-      <li class="entry-summary">
-        <a href="#project_settings%3Aself%3F-class-method" class="signature"><strong>.project_settings</strong> : <span class="k">self</span>?</a>
-        
-      </li>
-    
-      <li class="entry-summary">
-        <a href="#user_settings%3Aself%3F-class-method" class="signature"><strong>.user_settings</strong> : <span class="k">self</span>?</a>
-        
-          <div class="summary"><p><span class="flag orange">TODO</span>  document properly once this is set in stone tries to read from PHASE_CONFIG_DIR - if the file isn't there, reads from XDG_CONFIG_DIR/phase.</p></div>
-        
-      </li>
-    
   </ul>
 
 
-
+  
   <h2>
     <a id="class-method-summary" class="anchor" href="#class-method-summary">
   <svg class="octicon-link" aria-hidden="true">
@@ -489,14 +488,28 @@ of Phase, think is nice)</li>
   <ul class="list-summary">
     
       <li class="entry-summary">
-        <a href="#project_settings%3D%28project_settings%3Aself%3F%29-class-method" class="signature"><strong>.project_settings=</strong>(project_settings : <span class="k">self</span>?)</a>
+        <a href="#project_settings%3Aself%7CNil-class-method" class="signature"><strong>.project_settings</strong> : <span class="k">self</span> | Nil</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#project_settings%3D%28project_settings%3Aself%7CNil%29-class-method" class="signature"><strong>.project_settings=</strong>(project_settings : <span class="k">self</span> | Nil)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#user_settings%3Aself%7CNil-class-method" class="signature"><strong>.user_settings</strong> : <span class="k">self</span> | Nil</a>
+        
+          <div class="summary"><p><span class="flag orange">TODO</span>  document properly once this is set in stone tries to read from PHASE_CONFIG_DIR - if the file isn't there, reads from XDG_CONFIG_DIR/phase.</p></div>
         
       </li>
     
   </ul>
 
 
+  
 
+  
   <h2>
     <a id="instance-method-summary" class="anchor" href="#instance-method-summary">
   <svg class="octicon-link" aria-hidden="true">
@@ -534,10 +547,14 @@ of Phase, think is nice)</li>
       <li class="entry-summary">
         <a href="#colors%3AArray%28Colorize%3A%3AColorRGB%7CSymbol%29-instance-method" class="signature"><strong>#colors</strong> : Array(Colorize::ColorRGB | Symbol)</a>
         
+          <div class="summary"><p>The formatter output can be colorized according to its nesting level - the brackets around sets of elements are colored with <code>colors[0]</code>, the brackets around sets of rows are colored with <code>colors[1]</code>, and so on.</p></div>
+        
       </li>
     
       <li class="entry-summary">
         <a href="#colors%3D%28colors%3AArray%28Colorize%3A%3AColorRGB%7CSymbol%29%29-instance-method" class="signature"><strong>#colors=</strong>(colors : Array(Colorize::ColorRGB | Symbol))</a>
+        
+          <div class="summary"><p>The formatter output can be colorized according to its nesting level - the brackets around sets of elements are colored with <code>colors[0]</code>, the brackets around sets of rows are colored with <code>colors[1]</code>, and so on.</p></div>
         
       </li>
     
@@ -554,10 +571,14 @@ of Phase, think is nice)</li>
       <li class="entry-summary">
         <a href="#display_limit%3AArray%28Int32%29-instance-method" class="signature"><strong>#display_limit</strong> : Array(Int32)</a>
         
+          <div class="summary"><p>The maximum number of elements to display in a single row before truncating output.</p></div>
+        
       </li>
     
       <li class="entry-summary">
         <a href="#display_limit%3D%28display_limit%3AArray%28Int32%29%29-instance-method" class="signature"><strong>#display_limit=</strong>(display_limit : Array(Int32))</a>
+        
+          <div class="summary"><p>The maximum number of elements to display in a single row before truncating output.</p></div>
         
       </li>
     
@@ -603,43 +624,50 @@ of Phase, think is nice)</li>
 
 
 
+  <div class="methods-inherited">
+    
+      
 
 
-<div class="methods-inherited">
+      
+
+
+      
+
+
+      
+
+
+    
+      
+
+
+      
+
+
+      
+
+
+      
+
+
+    
+      
+
+
+      
+
+
+      
+
+
+      
+
+
+    
+  </div>
+
   
-    
-
-
-    
-
-
-    
-
-
-  
-    
-
-
-    
-
-
-    
-
-
-  
-    
-
-
-    
-
-
-    
-
-
-  
-</div>
-
-
   <h2>
     <a id="constructor-detail" class="anchor" href="#constructor-detail">
   <svg class="octicon-link" aria-hidden="true">
@@ -713,12 +741,24 @@ of Phase, think is nice)</li>
       </div>
     </div>
   
-    <div class="entry-detail" id="project_settings:self?-class-method">
+
+
+  
+  <h2>
+    <a id="class-method-detail" class="anchor" href="#class-method-detail">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Class Method Detail
+  </h2>
+  
+    <div class="entry-detail" id="project_settings:self|Nil-class-method">
       <div class="signature">
         
-        def self.<strong>project_settings</strong> : <span class="k">self</span>?
+        def self.<strong>project_settings</strong> : <span class="k">self</span> | Nil
 
-        <a class="method-permalink" href="#project_settings%3Aself%3F-class-method">#</a>
+        <a class="method-permalink" href="#project_settings%3Aself%7CNil-class-method">#</a>
       </div>
       
       <br/>
@@ -729,12 +769,28 @@ of Phase, think is nice)</li>
       </div>
     </div>
   
-    <div class="entry-detail" id="user_settings:self?-class-method">
+    <div class="entry-detail" id="project_settings=(project_settings:self|Nil)-class-method">
       <div class="signature">
         
-        def self.<strong>user_settings</strong> : <span class="k">self</span>?
+        def self.<strong>project_settings=</strong>(project_settings : <span class="k">self</span> | Nil)
 
-        <a class="method-permalink" href="#user_settings%3Aself%3F-class-method">#</a>
+        <a class="method-permalink" href="#project_settings%3D%28project_settings%3Aself%7CNil%29-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/in-phase/ph-core/blob/faefb580069f511d51683190c6a7f4a72a11e8f0/src/multi_indexable/formatter/settings.cr#L35" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="user_settings:self|Nil-class-method">
+      <div class="signature">
+        
+        def self.<strong>user_settings</strong> : <span class="k">self</span> | Nil
+
+        <a class="method-permalink" href="#user_settings%3Aself%7CNil-class-method">#</a>
       </div>
       
         <div class="doc">
@@ -755,35 +811,9 @@ BETTER_ERROR: Better error message for failed read</p>
   
 
 
-
-  <h2>
-    <a id="class-method-detail" class="anchor" href="#class-method-detail">
-  <svg class="octicon-link" aria-hidden="true">
-    <use href="#octicon-link"/>
-  </svg>
-</a>
-    Class Method Detail
-  </h2>
-  
-    <div class="entry-detail" id="project_settings=(project_settings:self?)-class-method">
-      <div class="signature">
-        
-        def self.<strong>project_settings=</strong>(project_settings : <span class="k">self</span>?)
-
-        <a class="method-permalink" href="#project_settings%3D%28project_settings%3Aself%3F%29-class-method">#</a>
-      </div>
-      
-      <br/>
-      <div>
-        
-          [<a href="https://github.com/in-phase/ph-core/blob/faefb580069f511d51683190c6a7f4a72a11e8f0/src/multi_indexable/formatter/settings.cr#L35" target="_blank">View source</a>]
-        
-      </div>
-    </div>
   
 
-
-
+  
   <h2>
     <a id="instance-method-detail" class="anchor" href="#instance-method-detail">
   <svg class="octicon-link" aria-hidden="true">
@@ -923,6 +953,17 @@ settings.brackets <span class="o">=</span> [{<span class="s">&quot;&lt;&quot;</s
         <a class="method-permalink" href="#colors%3AArray%28Colorize%3A%3AColorRGB%7CSymbol%29-instance-method">#</a>
       </div>
       
+        <div class="doc">
+          
+          <p>The formatter output can be colorized according to its nesting level -
+the brackets around sets of elements are colored with <code>colors[0]</code>, the
+brackets around sets of rows are colored with <code>colors[1]</code>, and so on.
+Note that this array can be whatever length you want - the formatter
+will restart the color cycle after reaching the end of the color array.</p>
+<p>For a list of valid colors, see the <code>Colorize</code> module in the standard
+library.</p>
+        </div>
+      
       <br/>
       <div>
         
@@ -938,6 +979,17 @@ settings.brackets <span class="o">=</span> [{<span class="s">&quot;&lt;&quot;</s
 
         <a class="method-permalink" href="#colors%3D%28colors%3AArray%28Colorize%3A%3AColorRGB%7CSymbol%29%29-instance-method">#</a>
       </div>
+      
+        <div class="doc">
+          
+          <p>The formatter output can be colorized according to its nesting level -
+the brackets around sets of elements are colored with <code>colors[0]</code>, the
+brackets around sets of rows are colored with <code>colors[1]</code>, and so on.
+Note that this array can be whatever length you want - the formatter
+will restart the color cycle after reaching the end of the color array.</p>
+<p>For a list of valid colors, see the <code>Colorize</code> module in the standard
+library.</p>
+        </div>
       
       <br/>
       <div>
@@ -987,6 +1039,11 @@ settings.brackets <span class="o">=</span> [{<span class="s">&quot;&lt;&quot;</s
         <a class="method-permalink" href="#display_limit%3AArray%28Int32%29-instance-method">#</a>
       </div>
       
+        <div class="doc">
+          
+          <p>The maximum number of elements to display in a single row before truncating output.</p>
+        </div>
+      
       <br/>
       <div>
         
@@ -1002,6 +1059,11 @@ settings.brackets <span class="o">=</span> [{<span class="s">&quot;&lt;&quot;</s
 
         <a class="method-permalink" href="#display_limit%3D%28display_limit%3AArray%28Int32%29%29-instance-method">#</a>
       </div>
+      
+        <div class="doc">
+          
+          <p>The maximum number of elements to display in a single row before truncating output.</p>
+        </div>
       
       <br/>
       <div>
@@ -1133,7 +1195,6 @@ notation to attempt to fit them into this length.</p>
       </div>
     </div>
   
-
 
 
 

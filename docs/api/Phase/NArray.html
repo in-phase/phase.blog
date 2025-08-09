@@ -3,8 +3,9 @@
 <head>
   <meta charset="utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="generator" content="Crystal Docs 1.5.0">
-<meta name="crystal_docs.project_version" content="main">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Crystal Docs 1.10.1">
+<meta name="crystal_docs.project_version" content="HEAD">
 <meta name="crystal_docs.project_name" content="ph-core">
 
 
@@ -13,7 +14,7 @@
 <script type="text/javascript" src="../js/doc.js"></script>
 
   <meta name="repository-name" content="ph-core">
-  <title>Phase::NArray(T) - ph-core main</title>
+  <title>Phase::NArray(T) - ph-core HEAD</title>
   <script type="text/javascript">
     CrystalDocs.base_path = "../";
   </script>
@@ -90,9 +91,14 @@ document.getElementById("theme-toggle").addEventListener("click", () => {
 
 <svg class="hidden">
   <symbol id="octicon-link" viewBox="0 0 16 16">
-    <path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path>
+    <path fill="currentColor" fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path>
   </symbol>
 </svg>
+<input type="checkbox" id="sidebar-btn">
+<label for="sidebar-btn" id="sidebar-btn-label">
+  <svg class="open" xmlns="http://www.w3.org/2000/svg" height="2em" width="2em" viewBox="0 0 512 512"><title>Open Sidebar</title><path fill="currentColor" d="M80 96v64h352V96H80zm0 112v64h352v-64H80zm0 112v64h352v-64H80z"></path></svg>
+  <svg class="close" xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" viewBox="0 0 512 512"><title>Close Sidebar</title><path fill="currentColor" d="m118.6 73.4-45.2 45.2L210.7 256 73.4 393.4l45.2 45.2L256 301.3l137.4 137.3 45.2-45.2L301.3 256l137.3-137.4-45.2-45.2L256 210.7Z"></path></svg>
+</label>
 <div class="sidebar">
   <div class="sidebar-header">
     <div class="search-box">
@@ -107,7 +113,7 @@ document.getElementById("theme-toggle").addEventListener("click", () => {
       </h1>
 
       <span class="project-version">
-        main
+        HEAD
       </span>
     </div>
   </div>
@@ -388,7 +394,9 @@ document.getElementById("theme-toggle").addEventListener("click", () => {
 <div class="main-content">
 <h1 class="type-name">
 
-  <span class="kind">class</span> Phase::NArray(T)
+  <span class="kind">
+    class
+  </span> Phase::<wbr>NArray(T)
 
 </h1>
 
@@ -411,6 +419,8 @@ document.getElementById("theme-toggle").addEventListener("click", () => {
 It is the most general implementation of Abstract{{@type}}, and as a result
 only implements primitive data operations (construction, data reading,
 data writing, and region sampling / slicing).</p>
+
+
 
 
 
@@ -464,6 +474,7 @@ data writing, and region sampling / slicing).</p>
 
 
 
+  
   <h2>
     <a id="constructors" class="anchor" href="#constructors">
   <svg class="octicon-link" aria-hidden="true">
@@ -501,7 +512,7 @@ data writing, and region sampling / slicing).</p>
   </ul>
 
 
-
+  
   <h2>
     <a id="class-method-summary" class="anchor" href="#class-method-summary">
   <svg class="octicon-link" aria-hidden="true">
@@ -577,7 +588,9 @@ data writing, and region sampling / slicing).</p>
   </ul>
 
 
+  
 
+  
   <h2>
     <a id="instance-method-summary" class="anchor" href="#instance-method-summary">
   <svg class="octicon-link" aria-hidden="true">
@@ -686,7 +699,7 @@ data writing, and region sampling / slicing).</p>
       </li>
     
       <li class="entry-summary">
-        <a href="#fit%28new_shape%2C%2A%2Calign%3AHash%28Int32%2CNArray%3A%3AAlignment%7CInt32%29%3F%3Dnil%2Cpad_withvalue%3Dnil%29-instance-method" class="signature"><strong>#fit</strong>(new_shape, *, align : Hash(Int32, NArray::Alignment | Int32)? = <span class="n">nil</span>, pad_with value = <span class="n">nil</span>)</a>
+        <a href="#fit%28new_shape%2C%2A%2Calign%3AHash%28Int32%2CNArray%3A%3AAlignment%7CInt32%29%7CNil%3Dnil%2Cpad_withvalue%3Dnil%29-instance-method" class="signature"><strong>#fit</strong>(new_shape, *, align : Hash(Int32, NArray::Alignment | Int32) | Nil = <span class="n">nil</span>, pad_with value = <span class="n">nil</span>)</a>
         
       </li>
     
@@ -823,11 +836,9 @@ data writing, and region sampling / slicing).</p>
 
 
 
-
-
-<div class="methods-inherited">
-  
+  <div class="methods-inherited">
     
+      
 
   <h3>Instance methods inherited from module <code><a href="../Phase/Buffered.html">Phase::Buffered(T)</a></code></h3>
   
@@ -849,10 +860,10 @@ data writing, and region sampling / slicing).</p>
   
 
 
-    
+      
 
 
-    
+      
 
   <h3>Class methods inherited from module <code><a href="../Phase/Buffered.html">Phase::Buffered(T)</a></code></h3>
   
@@ -879,8 +890,11 @@ data writing, and region sampling / slicing).</p>
   
 
 
-  
+      
+
+
     
+      
 
   <h3>Instance methods inherited from module <code><a href="../Phase/MultiIndexable.html">Phase::MultiIndexable(T)</a></code></h3>
   
@@ -985,8 +999,8 @@ data writing, and region sampling / slicing).</p>
     []</a>, 
     
   
-    <a href="../Phase/MultiIndexable.html#%5B%5D%3F%28bool_mask%3AMultiIndexable%28Bool%29%29%3AMultiIndexable%28T%3F%29-instance-method" class="tooltip">
-      <span>[]?(bool_mask : MultiIndexable(Bool)) : MultiIndexable(T?)<br/>[]?(region : Indexable, drop : Bool = <span class="t">MultiIndexable</span><span class="t">::</span><span class="t">DROP_BY_DEFAULT</span>) : MultiIndexable(T)?<br/>[]?(region : IndexRegion) : MultiIndexable(T)?<br/>[]?(*region_literal, drop : Bool = <span class="t">MultiIndexable</span><span class="t">::</span><span class="t">DROP_BY_DEFAULT</span>)</span>
+    <a href="../Phase/MultiIndexable.html#%5B%5D%3F%28bool_mask%3AMultiIndexable%28Bool%29%29%3AMultiIndexable%28T%7CNil%29-instance-method" class="tooltip">
+      <span>[]?(bool_mask : MultiIndexable(Bool)) : MultiIndexable(T | Nil)<br/>[]?(region : Indexable, drop : Bool = <span class="t">MultiIndexable</span><span class="t">::</span><span class="t">DROP_BY_DEFAULT</span>) : MultiIndexable(T) | Nil<br/>[]?(region : IndexRegion) : MultiIndexable(T) | Nil<br/>[]?(*region_literal, drop : Bool = <span class="t">MultiIndexable</span><span class="t">::</span><span class="t">DROP_BY_DEFAULT</span>)</span>
     []?</a>, 
     
   
@@ -1221,7 +1235,7 @@ data writing, and region sampling / slicing).</p>
     
   
     <a href="../Phase/MultiIndexable.html#to_s%28io%3AIO%2Csettings%3DFormatter%3A%3ASettings.new%29%3ANil-instance-method" class="tooltip">
-      <span>to_s(io : IO, settings = <span class="t">Formatter</span><span class="t">::</span><span class="t">Settings</span>.<span class="k">new</span>) : Nil<br/>to_s(settings = <span class="t">Formatter</span><span class="t">::</span><span class="t">Settings</span>.<span class="k">new</span>) : String</span>
+      <span>to_s(io : IO, settings = <span class="t">Formatter</span><span class="t">::</span><span class="t">Settings</span>.new) : Nil<br/>to_s(settings = <span class="t">Formatter</span><span class="t">::</span><span class="t">Settings</span>.new) : String</span>
     to_s</a>, 
     
   
@@ -1230,8 +1244,8 @@ data writing, and region sampling / slicing).</p>
     to_scalar</a>, 
     
   
-    <a href="../Phase/MultiIndexable.html#to_scalar%3F%3AT%3F-instance-method" class="tooltip">
-      <span>to_scalar? : T?</span>
+    <a href="../Phase/MultiIndexable.html#to_scalar%3F%3AT%7CNil-instance-method" class="tooltip">
+      <span>to_scalar? : T | Nil</span>
     to_scalar?</a>, 
     
   
@@ -1245,17 +1259,17 @@ data writing, and region sampling / slicing).</p>
     unsafe_fetch_element</a>, 
     
   
-    <a href="../Phase/MultiIndexable.html#view%28region%3AIndexable%3F%7CIndexRegion%3Dnil%29%3AView%28self%2CT%29-instance-method" class="tooltip">
-      <span>view(region : Indexable? | IndexRegion = <span class="n">nil</span>) : View(<span class="k">self</span>, T)<br/>view(*region) : View(<span class="k">self</span>, T)</span>
+    <a href="../Phase/MultiIndexable.html#view%28region%3AIndexable%7CNil%7CIndexRegion%3Dnil%29%3AView%28self%2CT%29-instance-method" class="tooltip">
+      <span>view(region : Indexable | Nil | IndexRegion = <span class="n">nil</span>) : View(<span class="k">self</span>, T)<br/>view(*region) : View(<span class="k">self</span>, T)</span>
     view</a>
     
   
 
 
-    
+      
 
 
-    
+      
 
   <h3>Class methods inherited from module <code><a href="../Phase/MultiIndexable.html">Phase::MultiIndexable(T)</a></code></h3>
   
@@ -1267,28 +1281,61 @@ data writing, and region sampling / slicing).</p>
   
 
 
+      
+
+  <h3>Macros inherited from module <code><a href="../Phase/MultiIndexable.html">Phase::MultiIndexable(T)</a></code></h3>
   
-    
-
-
-    
-
-
-    
-
-
   
+    <a href="../Phase/MultiIndexable.html#coord_splat_overload%28name%29-macro" class="tooltip">
+      <span>coord_splat_overload(name)</span>
+    coord_splat_overload</a>, 
     
-
-
-    
-
-
-    
-
-
   
+    <a href="../Phase/MultiIndexable.html#def_elementwise_binary%28name%29-macro" class="tooltip">
+      <span>def_elementwise_binary(name)</span>
+    def_elementwise_binary</a>, 
     
+  
+    <a href="../Phase/MultiIndexable.html#def_elementwise_unary%28name%29-macro" class="tooltip">
+      <span>def_elementwise_unary(name)</span>
+    def_elementwise_unary</a>, 
+    
+  
+    <a href="../Phase/MultiIndexable.html#region_splat_overload%28name%29-macro" class="tooltip">
+      <span>region_splat_overload(name)</span>
+    region_splat_overload</a>
+    
+  
+
+
+    
+      
+
+
+      
+
+
+      
+
+
+      
+
+
+    
+      
+
+
+      
+
+
+      
+
+
+      
+
+
+    
+      
 
   <h3>Instance methods inherited from module <code><a href="../Phase/MultiWritable.html">Phase::MultiWritable(T)</a></code></h3>
   
@@ -1340,14 +1387,17 @@ data writing, and region sampling / slicing).</p>
   
 
 
-    
+      
+
+
+      
+
+
+      
 
 
     
-
-
-  
-    
+      
 
   <h3>Instance methods inherited from module <code><a href="../Phase/MultiIndexable.html">Phase::MultiIndexable(T)</a></code></h3>
   
@@ -1452,8 +1502,8 @@ data writing, and region sampling / slicing).</p>
     []</a>, 
     
   
-    <a href="../Phase/MultiIndexable.html#%5B%5D%3F%28bool_mask%3AMultiIndexable%28Bool%29%29%3AMultiIndexable%28T%3F%29-instance-method" class="tooltip">
-      <span>[]?(bool_mask : MultiIndexable(Bool)) : MultiIndexable(T?)<br/>[]?(region : Indexable, drop : Bool = <span class="t">MultiIndexable</span><span class="t">::</span><span class="t">DROP_BY_DEFAULT</span>) : MultiIndexable(T)?<br/>[]?(region : IndexRegion) : MultiIndexable(T)?<br/>[]?(*region_literal, drop : Bool = <span class="t">MultiIndexable</span><span class="t">::</span><span class="t">DROP_BY_DEFAULT</span>)</span>
+    <a href="../Phase/MultiIndexable.html#%5B%5D%3F%28bool_mask%3AMultiIndexable%28Bool%29%29%3AMultiIndexable%28T%7CNil%29-instance-method" class="tooltip">
+      <span>[]?(bool_mask : MultiIndexable(Bool)) : MultiIndexable(T | Nil)<br/>[]?(region : Indexable, drop : Bool = <span class="t">MultiIndexable</span><span class="t">::</span><span class="t">DROP_BY_DEFAULT</span>) : MultiIndexable(T) | Nil<br/>[]?(region : IndexRegion) : MultiIndexable(T) | Nil<br/>[]?(*region_literal, drop : Bool = <span class="t">MultiIndexable</span><span class="t">::</span><span class="t">DROP_BY_DEFAULT</span>)</span>
     []?</a>, 
     
   
@@ -1688,7 +1738,7 @@ data writing, and region sampling / slicing).</p>
     
   
     <a href="../Phase/MultiIndexable.html#to_s%28io%3AIO%2Csettings%3DFormatter%3A%3ASettings.new%29%3ANil-instance-method" class="tooltip">
-      <span>to_s(io : IO, settings = <span class="t">Formatter</span><span class="t">::</span><span class="t">Settings</span>.<span class="k">new</span>) : Nil<br/>to_s(settings = <span class="t">Formatter</span><span class="t">::</span><span class="t">Settings</span>.<span class="k">new</span>) : String</span>
+      <span>to_s(io : IO, settings = <span class="t">Formatter</span><span class="t">::</span><span class="t">Settings</span>.new) : Nil<br/>to_s(settings = <span class="t">Formatter</span><span class="t">::</span><span class="t">Settings</span>.new) : String</span>
     to_s</a>, 
     
   
@@ -1697,8 +1747,8 @@ data writing, and region sampling / slicing).</p>
     to_scalar</a>, 
     
   
-    <a href="../Phase/MultiIndexable.html#to_scalar%3F%3AT%3F-instance-method" class="tooltip">
-      <span>to_scalar? : T?</span>
+    <a href="../Phase/MultiIndexable.html#to_scalar%3F%3AT%7CNil-instance-method" class="tooltip">
+      <span>to_scalar? : T | Nil</span>
     to_scalar?</a>, 
     
   
@@ -1712,17 +1762,17 @@ data writing, and region sampling / slicing).</p>
     unsafe_fetch_element</a>, 
     
   
-    <a href="../Phase/MultiIndexable.html#view%28region%3AIndexable%3F%7CIndexRegion%3Dnil%29%3AView%28self%2CT%29-instance-method" class="tooltip">
-      <span>view(region : Indexable? | IndexRegion = <span class="n">nil</span>) : View(<span class="k">self</span>, T)<br/>view(*region) : View(<span class="k">self</span>, T)</span>
+    <a href="../Phase/MultiIndexable.html#view%28region%3AIndexable%7CNil%7CIndexRegion%3Dnil%29%3AView%28self%2CT%29-instance-method" class="tooltip">
+      <span>view(region : Indexable | Nil | IndexRegion = <span class="n">nil</span>) : View(<span class="k">self</span>, T)<br/>view(*region) : View(<span class="k">self</span>, T)</span>
     view</a>
     
   
 
 
-    
+      
 
 
-    
+      
 
   <h3>Class methods inherited from module <code><a href="../Phase/MultiIndexable.html">Phase::MultiIndexable(T)</a></code></h3>
   
@@ -1734,50 +1784,89 @@ data writing, and region sampling / slicing).</p>
   
 
 
+      
+
+  <h3>Macros inherited from module <code><a href="../Phase/MultiIndexable.html">Phase::MultiIndexable(T)</a></code></h3>
   
+  
+    <a href="../Phase/MultiIndexable.html#coord_splat_overload%28name%29-macro" class="tooltip">
+      <span>coord_splat_overload(name)</span>
+    coord_splat_overload</a>, 
     
+  
+    <a href="../Phase/MultiIndexable.html#def_elementwise_binary%28name%29-macro" class="tooltip">
+      <span>def_elementwise_binary(name)</span>
+    def_elementwise_binary</a>, 
+    
+  
+    <a href="../Phase/MultiIndexable.html#def_elementwise_unary%28name%29-macro" class="tooltip">
+      <span>def_elementwise_unary(name)</span>
+    def_elementwise_unary</a>, 
+    
+  
+    <a href="../Phase/MultiIndexable.html#region_splat_overload%28name%29-macro" class="tooltip">
+      <span>region_splat_overload(name)</span>
+    region_splat_overload</a>
+    
+  
 
 
     
+      
+
+
+      
+
+
+      
+
+
+      
 
 
     
+      
 
+
+      
+
+
+      
+
+
+      
+
+
+    
+      
+
+
+      
+
+
+      
+
+
+      
+
+
+    
+      
+
+
+      
+
+
+      
+
+
+      
+
+
+    
+  </div>
 
   
-    
-
-
-    
-
-
-    
-
-
-  
-    
-
-
-    
-
-
-    
-
-
-  
-    
-
-
-    
-
-
-    
-
-
-  
-</div>
-
-
   <h2>
     <a id="constructor-detail" class="anchor" href="#constructor-detail">
   <svg class="octicon-link" aria-hidden="true">
@@ -1815,23 +1904,23 @@ data writing, and region sampling / slicing).</p>
           
           <p>Creates an <code>{{@type}}</code> from a nested array with uniform dimensions.
 For example:</p>
-<pre><code class="language-crystal">{{@type}}.<span class="k">new</span>([[<span class="n">1</span>, <span class="n">0</span>, <span class="n">0</span>], [<span class="n">0</span>, <span class="n">1</span>, <span class="n">0</span>], [<span class="n">0</span>, <span class="n">0</span>, <span class="n">1</span>]])</code></pre>
+<pre><code class="language-crystal"><span class="o">{{</span>@type}}.new([[<span class="n">1</span>, <span class="n">0</span>, <span class="n">0</span>], [<span class="n">0</span>, <span class="n">1</span>, <span class="n">0</span>], [<span class="n">0</span>, <span class="n">0</span>, <span class="n">1</span>]])</code></pre>
 <p>Would create the 3x3 identity matrix of type <code>{{@type}}(Int32)</code>.</p>
 <p>This constructor will figure out the types of the scalars at the
 bottom of the nested array at compile time, which allows mixing
 datatypes effortlessly.
 For example, to create a matrix with 0.5 on the diagonals:</p>
-<pre><code class="language-crystal">{{@type}}.<span class="k">new</span>([[<span class="n">0.5</span>, <span class="n">0</span>, <span class="n">0</span>], [<span class="n">0</span>, <span class="n">0.5</span>, <span class="n">0</span>], [<span class="n">0</span>, <span class="n">0</span>, <span class="n">0.5</span>]])</code></pre>
+<pre><code class="language-crystal"><span class="o">{{</span>@type}}.new([[<span class="n">0.5</span>, <span class="n">0</span>, <span class="n">0</span>], [<span class="n">0</span>, <span class="n">0.5</span>, <span class="n">0</span>], [<span class="n">0</span>, <span class="n">0</span>, <span class="n">0.5</span>]])</code></pre>
 <p>This may seem trivial, but note that the <code>0.5</code>s are implicit
 <code>Float32</code> literals, whereas the <code>0</code>s are implicit <code>Int32</code> literals.
 So, the type returned by that example will actually be an <code>{{@type}}(Float32 | Int32)</code>.
 This also works for more disorganized examples:</p>
-<pre><code class="language-crystal">{{@type}}.<span class="k">new</span>([[<span class="s">&quot;We can mix types&quot;</span>, <span class="n">2</span>, <span class="n">:do</span>], [<span class="s">&quot;C&quot;</span>, <span class="n">0.0</span>, <span class="s">&quot;l stuff.&quot;</span>]])</code></pre>
+<pre><code class="language-crystal"><span class="o">{{</span>@type}}.new([[<span class="s">&quot;We can mix types&quot;</span>, <span class="n">2</span>, <span class="n">:do</span>], [<span class="s">&quot;C&quot;</span>, <span class="n">0.0</span>, <span class="s">&quot;l stuff.&quot;</span>]])</code></pre>
 <p>The above line will create an <code>{{@type}}(String | Int32 | Symbol | Float32)</code>.</p>
 <p>When a nested array with non-uniform dimensions is passed, this method will
 raise a <code><a href="../Phase/DimensionError.html">DimensionError</a></code>.
 For example:</p>
-<pre><code class="language-crystal">{{@type}}.<span class="k">new</span>([[<span class="n">1</span>], [<span class="n">1</span>, <span class="n">2</span>]]) <span class="c"># =&gt; DimensionError</span></code></pre>
+<pre><code class="language-crystal"><span class="o">{{</span>@type}}.new([[<span class="n">1</span>], [<span class="n">1</span>, <span class="n">2</span>]]) <span class="c"># =&gt; DimensionError</span></code></pre>
         </div>
       
       <br/>
@@ -1883,7 +1972,7 @@ otherwise, pad subarrays along each axis to match whichever is largest in that a
   
 
 
-
+  
   <h2>
     <a id="class-method-detail" class="anchor" href="#class-method-detail">
   <svg class="octicon-link" aria-hidden="true">
@@ -1929,7 +2018,7 @@ NArray[[1, 2, 3]] == NArray.new([[1, 2, 3]])</p>
 The provided callback should map a multidimensional index, <em>coord</em>, (and an optional packed
 index) to the value you wish to store at that position.
 For example, to create the 2x2 identity matrix:</p>
-<pre><code class="language-crystal"><span class="t">Phase</span><span class="t">::</span>{{@type}}.build([<span class="n">2</span>, <span class="n">2</span>]) <span class="k">do</span> <span class="o">|</span>coord<span class="o">|</span>
+<pre><code class="language-crystal"><span class="t">Phase</span><span class="t">::</span><span class="o">{{</span>@type}}.build([<span class="n">2</span>, <span class="n">2</span>]) <span class="k">do</span> <span class="o">|</span>coord<span class="o">|</span>
   <span class="k">if</span> coord[<span class="n">0</span>] <span class="o">==</span> coord[<span class="n">1</span>]
     <span class="n">1</span>
   <span class="k">else</span>
@@ -1942,7 +2031,7 @@ For example, to create the 2x2 identity matrix:</p>
   0, 0, 1]]</code></pre>
 <p>The buffer index allows you to easily index elements in lexicographic order.
 For example:</p>
-<pre><code class="language-crystal">{{@type}}.build([<span class="n">5</span>, <span class="n">1</span>]) { <span class="o">|</span>coord, index<span class="o">|</span> index }</code></pre>
+<pre><code class="language-crystal"><span class="o">{{</span>@type}}.build([<span class="n">5</span>, <span class="n">1</span>]) { <span class="o">|</span>coord, index<span class="o">|</span> index }</code></pre>
 <p>Will create:</p>
 <pre><code class="language-text">[[0],
  [1],
@@ -2047,7 +2136,7 @@ For example:</p>
           
           <p>Fills an <code>{{@type}}</code> of given shape with a specified value.
 For example, to create a zero vector:</p>
-<pre><code class="language-crystal">{{@type}}.fill([<span class="n">3</span>, <span class="n">1</span>], <span class="n">0</span>)</code></pre>
+<pre><code class="language-crystal"><span class="o">{{</span>@type}}.fill([<span class="n">3</span>, <span class="n">1</span>], <span class="n">0</span>)</code></pre>
 <p>Will produce</p>
 <pre><code class="language-text">[[0],
  [0],
@@ -2119,7 +2208,9 @@ for <code>Struct</code>s. If you want to populate an {{@type}} with <code>Object
   
 
 
+  
 
+  
   <h2>
     <a id="instance-method-detail" class="anchor" href="#instance-method-detail">
   <svg class="octicon-link" aria-hidden="true">
@@ -2470,12 +2561,12 @@ if the <code><a href="../Phase/MultiIndexable.html">MultiIndexable</a></code> yo
       </div>
     </div>
   
-    <div class="entry-detail" id="fit(new_shape,*,align:Hash(Int32,NArray::Alignment|Int32)?=nil,pad_withvalue=nil)-instance-method">
+    <div class="entry-detail" id="fit(new_shape,*,align:Hash(Int32,NArray::Alignment|Int32)|Nil=nil,pad_withvalue=nil)-instance-method">
       <div class="signature">
         
-        def <strong>fit</strong>(new_shape, *, align : Hash(Int32, NArray::Alignment | Int32)? = <span class="n">nil</span>, pad_with value = <span class="n">nil</span>)
+        def <strong>fit</strong>(new_shape, *, align : Hash(Int32, NArray::Alignment | Int32) | Nil = <span class="n">nil</span>, pad_with value = <span class="n">nil</span>)
 
-        <a class="method-permalink" href="#fit%28new_shape%2C%2A%2Calign%3AHash%28Int32%2CNArray%3A%3AAlignment%7CInt32%29%3F%3Dnil%2Cpad_withvalue%3Dnil%29-instance-method">#</a>
+        <a class="method-permalink" href="#fit%28new_shape%2C%2A%2Calign%3AHash%28Int32%2CNArray%3A%3AAlignment%7CInt32%29%7CNil%3Dnil%2Cpad_withvalue%3Dnil%29-instance-method">#</a>
       </div>
       
       <br/>
@@ -2779,8 +2870,8 @@ pad(0, {0 =&gt; {2, 2}, 1 =&gt; {3, 4}, -1 =&gt; {0, 5}})</p>
           <p>Returns the total number of elements in this <code><a href="../Phase/MultiIndexable.html">MultiIndexable</a></code>.
 This quantity is always equal to <code>shape.product</code>. However, this method is
 almost always more performant than computing the product directly.</p>
-<pre><code class="language-crystal"><span class="t">NArray</span>.<span class="k">new</span>([<span class="s">&#39;a&#39;</span>, <span class="s">&#39;b&#39;</span>, <span class="s">&#39;c&#39;</span>]).size <span class="c"># =&gt; 3</span>
-<span class="t">NArray</span>.<span class="k">new</span>([[<span class="n">0</span>, <span class="n">1</span>], [<span class="n">1</span>, <span class="n">0</span>]]).size <span class="c"># =&gt; 4</span></code></pre>
+<pre><code class="language-crystal"><span class="t">NArray</span>.new([<span class="s">&#39;a&#39;</span>, <span class="s">&#39;b&#39;</span>, <span class="s">&#39;c&#39;</span>]).size <span class="c"># =&gt; 3</span>
+<span class="t">NArray</span>.new([[<span class="n">0</span>, <span class="n">1</span>], [<span class="n">1</span>, <span class="n">0</span>]]).size <span class="c"># =&gt; 4</span></code></pre>
         </div>
       
       <br/>
@@ -2926,7 +3017,6 @@ and the shape of <code>region</code> matches the shape of <code>src</code>.</p>
       </div>
     </div>
   
-
 
 
 

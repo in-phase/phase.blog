@@ -3,8 +3,9 @@
 <head>
   <meta charset="utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="generator" content="Crystal Docs 1.5.0">
-<meta name="crystal_docs.project_version" content="main">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Crystal Docs 1.10.1">
+<meta name="crystal_docs.project_version" content="HEAD">
 <meta name="crystal_docs.project_name" content="ph-core">
 
 
@@ -13,7 +14,7 @@
 <script type="text/javascript" src="../js/doc.js"></script>
 
   <meta name="repository-name" content="ph-core">
-  <title>Phase::RegionIterator(I) - ph-core main</title>
+  <title>Phase::RegionIterator(I) - ph-core HEAD</title>
   <script type="text/javascript">
     CrystalDocs.base_path = "../";
   </script>
@@ -22,9 +23,14 @@
 
 <svg class="hidden">
   <symbol id="octicon-link" viewBox="0 0 16 16">
-    <path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path>
+    <path fill="currentColor" fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path>
   </symbol>
 </svg>
+<input type="checkbox" id="sidebar-btn">
+<label for="sidebar-btn" id="sidebar-btn-label">
+  <svg class="open" xmlns="http://www.w3.org/2000/svg" height="2em" width="2em" viewBox="0 0 512 512"><title>Open Sidebar</title><path fill="currentColor" d="M80 96v64h352V96H80zm0 112v64h352v-64H80zm0 112v64h352v-64H80z"></path></svg>
+  <svg class="close" xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" viewBox="0 0 512 512"><title>Close Sidebar</title><path fill="currentColor" d="m118.6 73.4-45.2 45.2L210.7 256 73.4 393.4l45.2 45.2L256 301.3l137.4 137.3 45.2-45.2L301.3 256l137.3-137.4-45.2-45.2L256 210.7Z"></path></svg>
+</label>
 <div class="sidebar">
   <div class="sidebar-header">
     <div class="search-box">
@@ -39,7 +45,7 @@
       </h1>
 
       <span class="project-version">
-        main
+        HEAD
       </span>
     </div>
   </div>
@@ -320,7 +326,9 @@
 <div class="main-content">
 <h1 class="type-name">
 
-  <span class="kind">class</span> Phase::RegionIterator(I)
+  <span class="kind">
+    class
+  </span> Phase::<wbr>RegionIterator(I)
 
 </h1>
 
@@ -341,7 +349,7 @@
 
   <p><code><a href="../Phase/RegionIterator.html">RegionIterator</a></code> iterates over all <code><a href="../Phase/IndexRegion.html">IndexRegion</a></code>s with a given <em>chunk_shape</em> whose
 coordinates lie within a given <em>src_shape</em>. For example:</p>
-<pre><code class="language-crystal">iter <span class="o">=</span> <span class="t">RegionIterator</span>.<span class="k">new</span>(src_shape: [<span class="n">2</span>, <span class="n">5</span>], chunk_shape: [<span class="n">1</span>, <span class="n">2</span>]) <span class="c"># the parameter names are only included for clarity</span>
+<pre><code class="language-crystal">iter <span class="o">=</span> <span class="t">RegionIterator</span>.new(src_shape: [<span class="n">2</span>, <span class="n">5</span>], chunk_shape: [<span class="n">1</span>, <span class="n">2</span>]) <span class="c"># the parameter names are only included for clarity</span>
 iter.<span class="k">next</span> <span class="c"># =&gt; [0..0, 0..1]</span>
 iter.<span class="k">next</span> <span class="c"># =&gt; [0..0, 2..3]</span>
 iter.<span class="k">next</span> <span class="c"># =&gt; [1..1, 0..1]</span>
@@ -353,6 +361,8 @@ vertex stride is equal to the chunk shape.</p>
 behaviour at the boundary (note that in the above example, column 4 is
 totally excluded because two columns did not evenly divide five), and
 dimension dropping (see <code><a href="../Phase/IndexRegion.html">IndexRegion</a></code> for details).</p>
+
+
 
 
 
@@ -402,6 +412,7 @@ dimension dropping (see <code><a href="../Phase/IndexRegion.html">IndexRegion</a
 
 
 
+  
   <h2>
     <a id="constructors" class="anchor" href="#constructors">
   <svg class="octicon-link" aria-hidden="true">
@@ -413,23 +424,25 @@ dimension dropping (see <code><a href="../Phase/IndexRegion.html">IndexRegion</a
   <ul class="list-summary">
     
       <li class="entry-summary">
-        <a href="#new%28src_shape%3AShape%28I%29%2Cchunk_shape%3AShape%28I%29%2Cstrides%3ACoord%3F%3Dnil%2Cdegeneracy%3Dnil%2Cfringe_behaviour%3AFringeBehaviour%3DFringeBehaviour%3A%3ADISCARD%2C%26block%3AIndexRegion%28I%29-%3EIterator%28Indexable%28I%29%29%29-class-method" class="signature"><strong>.new</strong>(src_shape : Shape(I), chunk_shape : Shape(I), strides : Coord? = <span class="n">nil</span>, degeneracy = <span class="n">nil</span>, fringe_behaviour : FringeBehaviour = <span class="t">FringeBehaviour</span><span class="t">::</span><span class="t">DISCARD</span>, &block : IndexRegion(I) -> Iterator(Indexable(I)))</a>
+        <a href="#new%28src_shape%3AShape%28I%29%2Cchunk_shape%3AShape%28I%29%2Cstrides%3ACoord%7CNil%3Dnil%2Cdegeneracy%3Dnil%2Cfringe_behaviour%3AFringeBehaviour%3DFringeBehaviour%3A%3ADISCARD%2C%26block%3AIndexRegion%28I%29-%3EIterator%28Indexable%28I%29%29%29-class-method" class="signature"><strong>.new</strong>(src_shape : Shape(I), chunk_shape : Shape(I), strides : Coord | Nil = <span class="n">nil</span>, degeneracy = <span class="n">nil</span>, fringe_behaviour : FringeBehaviour = <span class="t">FringeBehaviour</span><span class="t">::</span><span class="t">DISCARD</span>, &block : IndexRegion(I) -> Iterator(Indexable(I)))</a>
         
           <div class="summary"><p><span class="flag orange">TODO</span>  iter inputs, etc</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#new%28src_shape%3AIndexable%28I%29%2Cchunk_shape%3AShape%28I%29%2Cstrides%3ACoord%3F%3Dnil%2Cdegeneracy%3Dnil%2Cfringe_behaviour%3AFringeBehaviour%3DFringeBehaviour%3A%3ADISCARD%29-class-method" class="signature"><strong>.new</strong>(src_shape : Indexable(I), chunk_shape : Shape(I), strides : Coord? = <span class="n">nil</span>, degeneracy = <span class="n">nil</span>, fringe_behaviour : FringeBehaviour = <span class="t">FringeBehaviour</span><span class="t">::</span><span class="t">DISCARD</span>)</a>
+        <a href="#new%28src_shape%3AIndexable%28I%29%2Cchunk_shape%3AShape%28I%29%2Cstrides%3ACoord%7CNil%3Dnil%2Cdegeneracy%3Dnil%2Cfringe_behaviour%3AFringeBehaviour%3DFringeBehaviour%3A%3ADISCARD%29-class-method" class="signature"><strong>.new</strong>(src_shape : Indexable(I), chunk_shape : Shape(I), strides : Coord | Nil = <span class="n">nil</span>, degeneracy = <span class="n">nil</span>, fringe_behaviour : FringeBehaviour = <span class="t">FringeBehaviour</span><span class="t">::</span><span class="t">DISCARD</span>)</a>
         
       </li>
     
   </ul>
 
 
+  
 
+  
 
-
+  
   <h2>
     <a id="instance-method-summary" class="anchor" href="#instance-method-summary">
   <svg class="octicon-link" aria-hidden="true">
@@ -473,53 +486,63 @@ dimension dropping (see <code><a href="../Phase/IndexRegion.html">IndexRegion</a
 
 
 
+  <div class="methods-inherited">
+    
+      
 
 
-<div class="methods-inherited">
+      
+
+
+      
+
+
+      
+
+
+    
+      
+
+
+      
+
+
+      
+
+
+      
+
+
+    
+      
+
+
+      
+
+
+      
+
+
+      
+
+
+    
+      
+
+
+      
+
+
+      
+
+
+      
+
+
+    
+  </div>
+
   
-    
-
-
-    
-
-
-    
-
-
-  
-    
-
-
-    
-
-
-    
-
-
-  
-    
-
-
-    
-
-
-    
-
-
-  
-    
-
-
-    
-
-
-    
-
-
-  
-</div>
-
-
   <h2>
     <a id="constructor-detail" class="anchor" href="#constructor-detail">
   <svg class="octicon-link" aria-hidden="true">
@@ -529,12 +552,12 @@ dimension dropping (see <code><a href="../Phase/IndexRegion.html">IndexRegion</a
     Constructor Detail
   </h2>
   
-    <div class="entry-detail" id="new(src_shape:Shape(I),chunk_shape:Shape(I),strides:Coord?=nil,degeneracy=nil,fringe_behaviour:FringeBehaviour=FringeBehaviour::DISCARD,&amp;block:IndexRegion(I)-&gt;Iterator(Indexable(I)))-class-method">
+    <div class="entry-detail" id="new(src_shape:Shape(I),chunk_shape:Shape(I),strides:Coord|Nil=nil,degeneracy=nil,fringe_behaviour:FringeBehaviour=FringeBehaviour::DISCARD,&amp;block:IndexRegion(I)-&gt;Iterator(Indexable(I)))-class-method">
       <div class="signature">
         
-        def self.<strong>new</strong>(src_shape : <a href="../Phase/Shape.html">Shape</a>(I), chunk_shape : <a href="../Phase/Shape.html">Shape</a>(I), strides : <a href="../Phase/Coord.html">Coord</a>? = <span class="n">nil</span>, degeneracy = <span class="n">nil</span>, fringe_behaviour : <a href="../Phase/RegionIterator/FringeBehaviour.html">FringeBehaviour</a> = <span class="t">FringeBehaviour</span><span class="t">::</span><span class="t">DISCARD</span>, &block : <a href="../Phase/IndexRegion.html">IndexRegion</a>(I) -> Iterator(Indexable(I)))
+        def self.<strong>new</strong>(src_shape : <a href="../Phase/Shape.html">Shape</a>(I), chunk_shape : <a href="../Phase/Shape.html">Shape</a>(I), strides : <a href="../Phase/Coord.html">Coord</a> | Nil = <span class="n">nil</span>, degeneracy = <span class="n">nil</span>, fringe_behaviour : <a href="../Phase/RegionIterator/FringeBehaviour.html">FringeBehaviour</a> = <span class="t">FringeBehaviour</span><span class="t">::</span><span class="t">DISCARD</span>, &block : <a href="../Phase/IndexRegion.html">IndexRegion</a>(I) -> Iterator(Indexable(I)))
 
-        <a class="method-permalink" href="#new%28src_shape%3AShape%28I%29%2Cchunk_shape%3AShape%28I%29%2Cstrides%3ACoord%3F%3Dnil%2Cdegeneracy%3Dnil%2Cfringe_behaviour%3AFringeBehaviour%3DFringeBehaviour%3A%3ADISCARD%2C%26block%3AIndexRegion%28I%29-%3EIterator%28Indexable%28I%29%29%29-class-method">#</a>
+        <a class="method-permalink" href="#new%28src_shape%3AShape%28I%29%2Cchunk_shape%3AShape%28I%29%2Cstrides%3ACoord%7CNil%3Dnil%2Cdegeneracy%3Dnil%2Cfringe_behaviour%3AFringeBehaviour%3DFringeBehaviour%3A%3ADISCARD%2C%26block%3AIndexRegion%28I%29-%3EIterator%28Indexable%28I%29%29%29-class-method">#</a>
       </div>
       
         <div class="doc">
@@ -550,12 +573,12 @@ dimension dropping (see <code><a href="../Phase/IndexRegion.html">IndexRegion</a
       </div>
     </div>
   
-    <div class="entry-detail" id="new(src_shape:Indexable(I),chunk_shape:Shape(I),strides:Coord?=nil,degeneracy=nil,fringe_behaviour:FringeBehaviour=FringeBehaviour::DISCARD)-class-method">
+    <div class="entry-detail" id="new(src_shape:Indexable(I),chunk_shape:Shape(I),strides:Coord|Nil=nil,degeneracy=nil,fringe_behaviour:FringeBehaviour=FringeBehaviour::DISCARD)-class-method">
       <div class="signature">
         
-        def self.<strong>new</strong>(src_shape : Indexable(I), chunk_shape : <a href="../Phase/Shape.html">Shape</a>(I), strides : <a href="../Phase/Coord.html">Coord</a>? = <span class="n">nil</span>, degeneracy = <span class="n">nil</span>, fringe_behaviour : <a href="../Phase/RegionIterator/FringeBehaviour.html">FringeBehaviour</a> = <span class="t">FringeBehaviour</span><span class="t">::</span><span class="t">DISCARD</span>)
+        def self.<strong>new</strong>(src_shape : Indexable(I), chunk_shape : <a href="../Phase/Shape.html">Shape</a>(I), strides : <a href="../Phase/Coord.html">Coord</a> | Nil = <span class="n">nil</span>, degeneracy = <span class="n">nil</span>, fringe_behaviour : <a href="../Phase/RegionIterator/FringeBehaviour.html">FringeBehaviour</a> = <span class="t">FringeBehaviour</span><span class="t">::</span><span class="t">DISCARD</span>)
 
-        <a class="method-permalink" href="#new%28src_shape%3AIndexable%28I%29%2Cchunk_shape%3AShape%28I%29%2Cstrides%3ACoord%3F%3Dnil%2Cdegeneracy%3Dnil%2Cfringe_behaviour%3AFringeBehaviour%3DFringeBehaviour%3A%3ADISCARD%29-class-method">#</a>
+        <a class="method-permalink" href="#new%28src_shape%3AIndexable%28I%29%2Cchunk_shape%3AShape%28I%29%2Cstrides%3ACoord%7CNil%3Dnil%2Cdegeneracy%3Dnil%2Cfringe_behaviour%3AFringeBehaviour%3DFringeBehaviour%3A%3ADISCARD%29-class-method">#</a>
       </div>
       
       <br/>
@@ -568,9 +591,11 @@ dimension dropping (see <code><a href="../Phase/IndexRegion.html">IndexRegion</a
   
 
 
+  
 
+  
 
-
+  
   <h2>
     <a id="instance-method-detail" class="anchor" href="#instance-method-detail">
   <svg class="octicon-link" aria-hidden="true">
@@ -675,7 +700,6 @@ are no more elements.</p>
       </div>
     </div>
   
-
 
 
 

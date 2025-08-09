@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Phase</title>
-    <link>/</link>
+    <link>/phase.blog/</link>
     <description>Recent content on Phase</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 14 Aug 2020 00:00:00 +0000</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 14 Aug 2020 00:00:00 +0000</lastBuildDate><atom:link href="/phase.blog/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Extra cool post</title>
-      <link>/posts/eight/</link>
+      <link>/phase.blog/posts/eight/</link>
       <pubDate>Fri, 14 Aug 2020 00:00:00 +0000</pubDate>
       
-      <guid>/posts/eight/</guid>
+      <guid>/phase.blog/posts/eight/</guid>
       <description>This is a post?
 Here&amp;rsquo;s a link to the reference material</description>
     </item>
@@ -20,70 +20,70 @@ Here&amp;rsquo;s a link to the reference material</description>
     
     <item>
       <title>First post</title>
-      <link>/posts/first/</link>
+      <link>/phase.blog/posts/first/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/posts/first/</guid>
+      <guid>/phase.blog/posts/first/</guid>
       <description>This is a post?
 Here&amp;rsquo;s a link to the reference material</description>
     </item>
     
     <item>
       <title>Second post</title>
-      <link>/posts/fifth/</link>
+      <link>/phase.blog/posts/fifth/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/posts/fifth/</guid>
+      <guid>/phase.blog/posts/fifth/</guid>
       <description>This is a post?
 Here&amp;rsquo;s a link to the reference material</description>
     </item>
     
     <item>
       <title>Second post</title>
-      <link>/posts/fourth/</link>
+      <link>/phase.blog/posts/fourth/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/posts/fourth/</guid>
+      <guid>/phase.blog/posts/fourth/</guid>
       <description>This is a post?
 Here&amp;rsquo;s a link to the reference material</description>
     </item>
     
     <item>
       <title>Second post</title>
-      <link>/posts/seventh/</link>
+      <link>/phase.blog/posts/seventh/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/posts/seventh/</guid>
+      <guid>/phase.blog/posts/seventh/</guid>
       <description>This is a post?
 Here&amp;rsquo;s a link to the reference material</description>
     </item>
     
     <item>
       <title>Second post</title>
-      <link>/posts/sixth/</link>
+      <link>/phase.blog/posts/sixth/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/posts/sixth/</guid>
+      <guid>/phase.blog/posts/sixth/</guid>
       <description>This is a post?
 Here&amp;rsquo;s a link to the reference material</description>
     </item>
     
     <item>
       <title>Second post</title>
-      <link>/posts/third/</link>
+      <link>/phase.blog/posts/third/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/posts/third/</guid>
+      <guid>/phase.blog/posts/third/</guid>
       <description>This is a post?
 Here&amp;rsquo;s a link to the reference material</description>
     </item>
     
     <item>
       <title>Tutorial: Make Your Own MultiIndexable</title>
-      <link>/posts/second/</link>
+      <link>/phase.blog/posts/second/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/posts/second/</guid>
+      <guid>/phase.blog/posts/second/</guid>
       <description>Basics ph-core offers a standard data type, Phase::NArray that will suffice for most of your multidimensional data storage and manipulation needs. However, storing information linearly in memory isn&amp;rsquo;t always the most effective appraoch, and sometimes isn&amp;rsquo;t possible. Phase::MultiIndexable is an interface defining a common set of rules we expect any multidimensional array to obey; and by implementing this interface, you can treat your own type almost like an NArray.
 Let&amp;rsquo;s say we want to be able to access any 5-digit number, using each place value as a coordinate.</description>
     </item>

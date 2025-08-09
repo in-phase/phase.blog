@@ -3,8 +3,9 @@
 <head>
   <meta charset="utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="generator" content="Crystal Docs 1.5.0">
-<meta name="crystal_docs.project_version" content="main">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Crystal Docs 1.10.1">
+<meta name="crystal_docs.project_version" content="HEAD">
 <meta name="crystal_docs.project_name" content="ph-core">
 
 
@@ -13,7 +14,7 @@
 <script type="text/javascript" src="../js/doc.js"></script>
 
   <meta name="repository-name" content="ph-core">
-  <title>Phase::ReadonlyView(S, R) - ph-core main</title>
+  <title>Phase::ReadonlyView(S, R) - ph-core HEAD</title>
   <script type="text/javascript">
     CrystalDocs.base_path = "../";
   </script>
@@ -90,9 +91,14 @@ document.getElementById("theme-toggle").addEventListener("click", () => {
 
 <svg class="hidden">
   <symbol id="octicon-link" viewBox="0 0 16 16">
-    <path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path>
+    <path fill="currentColor" fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path>
   </symbol>
 </svg>
+<input type="checkbox" id="sidebar-btn">
+<label for="sidebar-btn" id="sidebar-btn-label">
+  <svg class="open" xmlns="http://www.w3.org/2000/svg" height="2em" width="2em" viewBox="0 0 512 512"><title>Open Sidebar</title><path fill="currentColor" d="M80 96v64h352V96H80zm0 112v64h352v-64H80zm0 112v64h352v-64H80z"></path></svg>
+  <svg class="close" xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" viewBox="0 0 512 512"><title>Close Sidebar</title><path fill="currentColor" d="m118.6 73.4-45.2 45.2L210.7 256 73.4 393.4l45.2 45.2L256 301.3l137.4 137.3 45.2-45.2L301.3 256l137.3-137.4-45.2-45.2L256 210.7Z"></path></svg>
+</label>
 <div class="sidebar">
   <div class="sidebar-header">
     <div class="search-box">
@@ -107,7 +113,7 @@ document.getElementById("theme-toggle").addEventListener("click", () => {
       </h1>
 
       <span class="project-version">
-        main
+        HEAD
       </span>
     </div>
   </div>
@@ -388,12 +394,16 @@ document.getElementById("theme-toggle").addEventListener("click", () => {
 <div class="main-content">
 <h1 class="type-name">
 
-  <span class="kind">class</span> Phase::ReadonlyView(S, R)
+  <span class="kind">
+    class
+  </span> Phase::<wbr>ReadonlyView(S, R)
 
 </h1>
 
 
   <ul class="superclass-hierarchy"><li class="superclass"><a href="../Phase/ReadonlyView.html">Phase::ReadonlyView(S, R)</a></li><li class="superclass">Reference</li><li class="superclass">Object</li></ul>
+
+
 
 
 
@@ -469,6 +479,7 @@ document.getElementById("theme-toggle").addEventListener("click", () => {
 
 
 
+  
   <h2>
     <a id="constructors" class="anchor" href="#constructors">
   <svg class="octicon-link" aria-hidden="true">
@@ -487,9 +498,11 @@ document.getElementById("theme-toggle").addEventListener("click", () => {
   </ul>
 
 
+  
 
+  
 
-
+  
   <h2>
     <a id="instance-method-summary" class="anchor" href="#instance-method-summary">
   <svg class="octicon-link" aria-hidden="true">
@@ -506,7 +519,7 @@ document.getElementById("theme-toggle").addEventListener("click", () => {
       </li>
     
       <li class="entry-summary">
-        <a href="#permute%28order%3AEnumerable%3F%3Dnil%29%3Aself-instance-method" class="signature"><strong>#permute</strong>(order : Enumerable? = <span class="n">nil</span>) : <span class="k">self</span></a>
+        <a href="#permute%28order%3AEnumerable%7CNil%3Dnil%29%3Aself-instance-method" class="signature"><strong>#permute</strong>(order : Enumerable | Nil = <span class="n">nil</span>) : <span class="k">self</span></a>
         
       </li>
     
@@ -518,7 +531,7 @@ document.getElementById("theme-toggle").addEventListener("click", () => {
       </li>
     
       <li class="entry-summary">
-        <a href="#permute%21%28order%3AEnumerable%3F%3Dnil%29%3Aself-instance-method" class="signature"><strong>#permute!</strong>(order : Enumerable? = <span class="n">nil</span>) : <span class="k">self</span></a>
+        <a href="#permute%21%28order%3AEnumerable%7CNil%3Dnil%29%3Aself-instance-method" class="signature"><strong>#permute!</strong>(order : Enumerable | Nil = <span class="n">nil</span>) : <span class="k">self</span></a>
         
       </li>
     
@@ -610,11 +623,9 @@ document.getElementById("theme-toggle").addEventListener("click", () => {
 
 
 
-
-
-<div class="methods-inherited">
-  
+  <div class="methods-inherited">
     
+      
 
   <h3>Instance methods inherited from module <code><a href="../Phase/MultiIndexable.html">Phase::MultiIndexable(R)</a></code></h3>
   
@@ -719,8 +730,8 @@ document.getElementById("theme-toggle").addEventListener("click", () => {
     []</a>, 
     
   
-    <a href="../Phase/MultiIndexable.html#%5B%5D%3F%28bool_mask%3AMultiIndexable%28Bool%29%29%3AMultiIndexable%28T%3F%29-instance-method" class="tooltip">
-      <span>[]?(bool_mask : MultiIndexable(Bool)) : MultiIndexable(T?)<br/>[]?(region : Indexable, drop : Bool = <span class="t">MultiIndexable</span><span class="t">::</span><span class="t">DROP_BY_DEFAULT</span>) : MultiIndexable(T)?<br/>[]?(region : IndexRegion) : MultiIndexable(T)?<br/>[]?(*region_literal, drop : Bool = <span class="t">MultiIndexable</span><span class="t">::</span><span class="t">DROP_BY_DEFAULT</span>)</span>
+    <a href="../Phase/MultiIndexable.html#%5B%5D%3F%28bool_mask%3AMultiIndexable%28Bool%29%29%3AMultiIndexable%28T%7CNil%29-instance-method" class="tooltip">
+      <span>[]?(bool_mask : MultiIndexable(Bool)) : MultiIndexable(T | Nil)<br/>[]?(region : Indexable, drop : Bool = <span class="t">MultiIndexable</span><span class="t">::</span><span class="t">DROP_BY_DEFAULT</span>) : MultiIndexable(T) | Nil<br/>[]?(region : IndexRegion) : MultiIndexable(T) | Nil<br/>[]?(*region_literal, drop : Bool = <span class="t">MultiIndexable</span><span class="t">::</span><span class="t">DROP_BY_DEFAULT</span>)</span>
     []?</a>, 
     
   
@@ -955,7 +966,7 @@ document.getElementById("theme-toggle").addEventListener("click", () => {
     
   
     <a href="../Phase/MultiIndexable.html#to_s%28io%3AIO%2Csettings%3DFormatter%3A%3ASettings.new%29%3ANil-instance-method" class="tooltip">
-      <span>to_s(io : IO, settings = <span class="t">Formatter</span><span class="t">::</span><span class="t">Settings</span>.<span class="k">new</span>) : Nil<br/>to_s(settings = <span class="t">Formatter</span><span class="t">::</span><span class="t">Settings</span>.<span class="k">new</span>) : String</span>
+      <span>to_s(io : IO, settings = <span class="t">Formatter</span><span class="t">::</span><span class="t">Settings</span>.new) : Nil<br/>to_s(settings = <span class="t">Formatter</span><span class="t">::</span><span class="t">Settings</span>.new) : String</span>
     to_s</a>, 
     
   
@@ -964,8 +975,8 @@ document.getElementById("theme-toggle").addEventListener("click", () => {
     to_scalar</a>, 
     
   
-    <a href="../Phase/MultiIndexable.html#to_scalar%3F%3AT%3F-instance-method" class="tooltip">
-      <span>to_scalar? : T?</span>
+    <a href="../Phase/MultiIndexable.html#to_scalar%3F%3AT%7CNil-instance-method" class="tooltip">
+      <span>to_scalar? : T | Nil</span>
     to_scalar?</a>, 
     
   
@@ -979,17 +990,17 @@ document.getElementById("theme-toggle").addEventListener("click", () => {
     unsafe_fetch_element</a>, 
     
   
-    <a href="../Phase/MultiIndexable.html#view%28region%3AIndexable%3F%7CIndexRegion%3Dnil%29%3AView%28self%2CT%29-instance-method" class="tooltip">
-      <span>view(region : Indexable? | IndexRegion = <span class="n">nil</span>) : View(<span class="k">self</span>, T)<br/>view(*region) : View(<span class="k">self</span>, T)</span>
+    <a href="../Phase/MultiIndexable.html#view%28region%3AIndexable%7CNil%7CIndexRegion%3Dnil%29%3AView%28self%2CT%29-instance-method" class="tooltip">
+      <span>view(region : Indexable | Nil | IndexRegion = <span class="n">nil</span>) : View(<span class="k">self</span>, T)<br/>view(*region) : View(<span class="k">self</span>, T)</span>
     view</a>
     
   
 
 
-    
+      
 
 
-    
+      
 
   <h3>Class methods inherited from module <code><a href="../Phase/MultiIndexable.html">Phase::MultiIndexable(R)</a></code></h3>
   
@@ -1001,50 +1012,89 @@ document.getElementById("theme-toggle").addEventListener("click", () => {
   
 
 
+      
+
+  <h3>Macros inherited from module <code><a href="../Phase/MultiIndexable.html">Phase::MultiIndexable(R)</a></code></h3>
   
+  
+    <a href="../Phase/MultiIndexable.html#coord_splat_overload%28name%29-macro" class="tooltip">
+      <span>coord_splat_overload(name)</span>
+    coord_splat_overload</a>, 
     
+  
+    <a href="../Phase/MultiIndexable.html#def_elementwise_binary%28name%29-macro" class="tooltip">
+      <span>def_elementwise_binary(name)</span>
+    def_elementwise_binary</a>, 
+    
+  
+    <a href="../Phase/MultiIndexable.html#def_elementwise_unary%28name%29-macro" class="tooltip">
+      <span>def_elementwise_unary(name)</span>
+    def_elementwise_unary</a>, 
+    
+  
+    <a href="../Phase/MultiIndexable.html#region_splat_overload%28name%29-macro" class="tooltip">
+      <span>region_splat_overload(name)</span>
+    region_splat_overload</a>
+    
+  
 
 
     
+      
+
+
+      
+
+
+      
+
+
+      
 
 
     
+      
 
+
+      
+
+
+      
+
+
+      
+
+
+    
+      
+
+
+      
+
+
+      
+
+
+      
+
+
+    
+      
+
+
+      
+
+
+      
+
+
+      
+
+
+    
+  </div>
 
   
-    
-
-
-    
-
-
-    
-
-
-  
-    
-
-
-    
-
-
-    
-
-
-  
-    
-
-
-    
-
-
-    
-
-
-  
-</div>
-
-
   <h2>
     <a id="constructor-detail" class="anchor" href="#constructor-detail">
   <svg class="octicon-link" aria-hidden="true">
@@ -1072,9 +1122,11 @@ document.getElementById("theme-toggle").addEventListener("click", () => {
   
 
 
+  
 
+  
 
-
+  
   <h2>
     <a id="instance-method-detail" class="anchor" href="#instance-method-detail">
   <svg class="octicon-link" aria-hidden="true">
@@ -1100,12 +1152,12 @@ document.getElementById("theme-toggle").addEventListener("click", () => {
       </div>
     </div>
   
-    <div class="entry-detail" id="permute(order:Enumerable?=nil):self-instance-method">
+    <div class="entry-detail" id="permute(order:Enumerable|Nil=nil):self-instance-method">
       <div class="signature">
         
-        def <strong>permute</strong>(order : Enumerable? = <span class="n">nil</span>) : <span class="k">self</span>
+        def <strong>permute</strong>(order : Enumerable | Nil = <span class="n">nil</span>) : <span class="k">self</span>
 
-        <a class="method-permalink" href="#permute%28order%3AEnumerable%3F%3Dnil%29%3Aself-instance-method">#</a>
+        <a class="method-permalink" href="#permute%28order%3AEnumerable%7CNil%3Dnil%29%3Aself-instance-method">#</a>
       </div>
       
       <br/>
@@ -1137,12 +1189,12 @@ document.getElementById("theme-toggle").addEventListener("click", () => {
       </div>
     </div>
   
-    <div class="entry-detail" id="permute!(order:Enumerable?=nil):self-instance-method">
+    <div class="entry-detail" id="permute!(order:Enumerable|Nil=nil):self-instance-method">
       <div class="signature">
         
-        def <strong>permute!</strong>(order : Enumerable? = <span class="n">nil</span>) : <span class="k">self</span>
+        def <strong>permute!</strong>(order : Enumerable | Nil = <span class="n">nil</span>) : <span class="k">self</span>
 
-        <a class="method-permalink" href="#permute%21%28order%3AEnumerable%3F%3Dnil%29%3Aself-instance-method">#</a>
+        <a class="method-permalink" href="#permute%21%28order%3AEnumerable%7CNil%3Dnil%29%3Aself-instance-method">#</a>
       </div>
       
       <br/>
@@ -1443,7 +1495,6 @@ unless you are certain your coordinate is already canonicalized.</p>
       </div>
     </div>
   
-
 
 
 

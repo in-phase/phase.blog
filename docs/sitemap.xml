@@ -2,33 +2,33 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>/posts/eight/</loc>
+    <loc>/phase.blog/posts/eight/</loc>
     <lastmod>2020-08-14T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/</loc>
+    <loc>/phase.blog/</loc>
     <lastmod>2020-08-14T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/posts/</loc>
+    <loc>/phase.blog/posts/</loc>
     <lastmod>2020-08-14T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/archives/</loc>
+    <loc>/phase.blog/archives/</loc>
   </url><url>
-    <loc>/categories/</loc>
+    <loc>/phase.blog/categories/</loc>
   </url><url>
-    <loc>/posts/first/</loc>
+    <loc>/phase.blog/posts/first/</loc>
   </url><url>
-    <loc>/posts/fifth/</loc>
+    <loc>/phase.blog/posts/fifth/</loc>
   </url><url>
-    <loc>/posts/fourth/</loc>
+    <loc>/phase.blog/posts/fourth/</loc>
   </url><url>
-    <loc>/posts/seventh/</loc>
+    <loc>/phase.blog/posts/seventh/</loc>
   </url><url>
-    <loc>/posts/sixth/</loc>
+    <loc>/phase.blog/posts/sixth/</loc>
   </url><url>
-    <loc>/posts/third/</loc>
+    <loc>/phase.blog/posts/third/</loc>
   </url><url>
-    <loc>/tags/</loc>
+    <loc>/phase.blog/tags/</loc>
   </url><url>
-    <loc>/posts/second/</loc>
+    <loc>/phase.blog/posts/second/</loc>
   </url>
 </urlset>
